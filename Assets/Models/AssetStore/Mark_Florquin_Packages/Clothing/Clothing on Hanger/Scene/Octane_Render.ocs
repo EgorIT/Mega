@@ -1,0 +1,5376 @@
+<?xml version='1.0' encoding='utf-8'?>
+<OCS2 version='2240000'>
+ <graph id='1' type='4' name='Project settings'>
+  <node id='2' type='70' name='Project settings' position='0 0'>
+   <attr name='renderPriority' type='2'>2</attr>
+   <attr name='clayMode' type='2'>0</attr>
+   <attr name='subsampling' type='2'>1</attr>
+   <attr name='fitResolution' type='1'>0</attr>
+   <attr name='backgroundImagePath' type='11'></attr>
+   <attr name='useBackgroundImage' type='1'>0</attr>
+   <attr name='renderRendertargetNodes' type='1'>1</attr>
+   <attr name='renderMeshNodes' type='1'>0</attr>
+   <attr name='renderMaterialNodes' type='1'>0</attr>
+   <attr name='renderTextureNodes' type='1'>0</attr>
+   <attr name='time' type='6'>0</attr>
+   <attr name='shutterAlignment' type='2'>3</attr>
+   <attr name='shutterTime' type='6'>0.0416667</attr>
+   <attr name='framesPerSecond' type='6'>24</attr>
+  </node>
+  <node id='3' type='56' name='Preview Render Target' position='0 0'>
+   <pin name='camera'>
+    <node id='4' type='13'>
+     <pin name='orthographic'>
+      <node id='5' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='sensorWidth'>
+      <node id='6' type='6'>
+       <attr name='value' type='8'>36 0 0</attr>
+      </node>
+     </pin>
+     <pin name='focalLength'>
+      <node id='7' type='6'>
+       <attr name='value' type='8'>50 0 0</attr>
+      </node>
+     </pin>
+     <pin name='fstop'>
+      <node id='8' type='6'>
+       <attr name='value' type='8'>2.8 0 0</attr>
+      </node>
+     </pin>
+     <pin name='fov'>
+      <node id='9' type='6'>
+       <attr name='value' type='8'>39.5978 0 0</attr>
+      </node>
+     </pin>
+     <pin name='scale'>
+      <node id='10' type='6'>
+       <attr name='value' type='8'>2.22774 0 0</attr>
+      </node>
+     </pin>
+     <pin name='pixelAspectRatio'>
+      <node id='11' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='aperture'>
+      <node id='12' type='6'>
+       <attr name='value' type='8'>0.892857 0 0</attr>
+      </node>
+     </pin>
+     <pin name='apertureAspectRatio'>
+      <node id='13' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='aperture_edge'>
+      <node id='14' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='autofocus'>
+      <node id='15' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='focalDepth'>
+      <node id='16' type='6'>
+       <attr name='value' type='8'>1.11803 0 0</attr>
+      </node>
+     </pin>
+     <pin name='nearClipDepth'>
+      <node id='17' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='lensShift'>
+      <node id='18' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='distortion'>
+      <node id='19' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='pos'>
+      <node id='20' type='6'>
+       <attr name='value' type='8'>2.4063 1.11489 1.72567</attr>
+      </node>
+     </pin>
+     <pin name='target'>
+      <node id='21' type='6'>
+       <attr name='value' type='8'>0.0224 1.14729 -0.246462</attr>
+      </node>
+     </pin>
+     <pin name='up'>
+      <node id='22' type='6'>
+       <attr name='value' type='8'>0 1 0</attr>
+      </node>
+     </pin>
+     <pin name='perspectiveCorrection'>
+      <node id='23' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='stereoOutput'>
+      <node id='24' type='57'>
+       <attr name='value' type='2'>0</attr>
+      </node>
+     </pin>
+     <pin name='stereoMode'>
+      <node id='25' type='57'>
+       <attr name='value' type='2'>1</attr>
+      </node>
+     </pin>
+     <pin name='stereodist'>
+      <node id='26' type='6'>
+       <attr name='value' type='8'>0.065 0 0</attr>
+      </node>
+     </pin>
+     <pin name='leftFilter'>
+      <node id='27' type='33'>
+       <attr name='value' type='8'>1 0 0.812</attr>
+      </node>
+     </pin>
+     <pin name='rightFilter'>
+      <node id='28' type='33'>
+       <attr name='value' type='8'>0 1 0.188</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='resolution'>
+    <node id='29' type='12'>
+     <attr name='value' type='4'>1024 512 0</attr>
+     <attr name='preset' type='2'>403</attr>
+     <attr name='aspectRatio' type='6'>0</attr>
+    </node>
+   </pin>
+   <pin name='environment'>
+    <node id='30' type='37'>
+     <pin name='texture'>
+      <node id='31' type='33'>
+       <attr name='value' type='8'>1 1 1</attr>
+      </node>
+     </pin>
+     <pin name='power'>
+      <node id='32' type='6'>
+       <attr name='value' type='8'>0.65 0 0</attr>
+      </node>
+     </pin>
+     <pin name='importance_sampling'>
+      <node id='33' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='kernel'>
+    <node id='34' type='24'>
+     <pin name='maxsamples'>
+      <node id='35' type='9'>
+       <attr name='value' type='4'>500 0 0</attr>
+      </node>
+     </pin>
+     <pin name='GI_mode'>
+      <node id='36' type='57'>
+       <attr name='value' type='2'>3</attr>
+      </node>
+     </pin>
+     <pin name='speculardepth'>
+      <node id='37' type='9'>
+       <attr name='value' type='4'>5 0 0</attr>
+      </node>
+     </pin>
+     <pin name='glossydepth'>
+      <node id='38' type='9'>
+       <attr name='value' type='4'>2 0 0</attr>
+      </node>
+     </pin>
+     <pin name='diffusedepth'>
+      <node id='39' type='9'>
+       <attr name='value' type='4'>2 0 0</attr>
+      </node>
+     </pin>
+     <pin name='aodist'>
+      <node id='40' type='6'>
+       <attr name='value' type='8'>3 0 0</attr>
+      </node>
+     </pin>
+     <pin name='pathTermPower'>
+      <node id='41' type='6'>
+       <attr name='value' type='8'>0.3 0 0</attr>
+      </node>
+     </pin>
+     <pin name='rayepsilon'>
+      <node id='42' type='6'>
+       <attr name='value' type='8'>0.0001 0 0</attr>
+      </node>
+     </pin>
+     <pin name='filtersize'>
+      <node id='43' type='6'>
+       <attr name='value' type='8'>1.2 0 0</attr>
+      </node>
+     </pin>
+     <pin name='alphashadows'>
+      <node id='44' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='alphachannel'>
+      <node id='45' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='keep_environment'>
+      <node id='46' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='coherentRatio'>
+      <node id='47' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='staticNoise'>
+      <node id='48' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='renderLayer'>
+    <node id='49' type='90'>
+     <pin name='enabled'>
+      <node id='50' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='layerId'>
+      <node id='51' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='invert'>
+      <node id='52' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='visibilityOnly'>
+      <node id='53' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='renderPasses'>
+    <node id='54' type='86'>
+     <pin name='renderPassEmit'>
+      <node id='55' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassEnvironment'>
+      <node id='56' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassDiffuseDirect'>
+      <node id='57' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassDiffuseIndirect'>
+      <node id='58' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassReflectionDirect'>
+      <node id='59' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassReflectionIndirect'>
+      <node id='60' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassRefraction'>
+      <node id='61' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassTransmission'>
+      <node id='62' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassSSS'>
+      <node id='63' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassPostProcessing'>
+      <node id='64' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='postProcEnvironment'>
+      <node id='65' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLayerShadows'>
+      <node id='66' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLayerBlackShadows'>
+      <node id='67' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLayerColorShadows'>
+      <node id='68' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLayerReflections'>
+      <node id='69' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassAmbientLight'>
+      <node id='70' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassSunLight'>
+      <node id='71' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight1'>
+      <node id='72' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight2'>
+      <node id='73' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight3'>
+      <node id='74' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight4'>
+      <node id='75' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight5'>
+      <node id='76' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight6'>
+      <node id='77' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight7'>
+      <node id='78' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight8'>
+      <node id='79' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassInfoAfterBeauty'>
+      <node id='80' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassInfoMaxSamples'>
+      <node id='81' type='9'>
+       <attr name='value' type='4'>128 0 0</attr>
+      </node>
+     </pin>
+     <pin name='distributedTracing'>
+      <node id='82' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='filtersize'>
+      <node id='83' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='applyTonemapping'>
+      <node id='84' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='renderPassGeometricNormal'>
+      <node id='85' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassVertexNormal'>
+      <node id='86' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassShadingNormal'>
+      <node id='87' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassZDepth'>
+      <node id='88' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='Z_depth_max'>
+      <node id='89' type='6'>
+       <attr name='value' type='8'>5 0 0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassPosition'>
+      <node id='90' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassUvCoord'>
+      <node id='91' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='UV_max'>
+      <node id='92' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='uvSet'>
+      <node id='93' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassTangentU'>
+      <node id='94' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassMotionVector'>
+      <node id='95' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='maxSpeed'>
+      <node id='96' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassMaterialId'>
+      <node id='97' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassObjectId'>
+      <node id='98' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLightPassId'>
+      <node id='99' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassRenderLayerId'>
+      <node id='100' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassRenderLayerMask'>
+      <node id='101' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassWireframe'>
+      <node id='102' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassAmbientOcclusion'>
+      <node id='103' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassAOMaxSamples'>
+      <node id='104' type='9'>
+       <attr name='value' type='4'>1024 0 0</attr>
+      </node>
+     </pin>
+     <pin name='aodist'>
+      <node id='105' type='6'>
+       <attr name='value' type='8'>3 0 0</attr>
+      </node>
+     </pin>
+     <pin name='alphashadows'>
+      <node id='106' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='imager'>
+    <node id='107' type='15'>
+     <pin name='exposure'>
+      <node id='108' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='gamma'>
+      <node id='109' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='highlightCompression'>
+      <node id='110' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='response'>
+      <node id='111' type='57'>
+       <attr name='value' type='2'>105</attr>
+      </node>
+     </pin>
+     <pin name='vignetting'>
+      <node id='112' type='6'>
+       <attr name='value' type='8'>0.3 0 0</attr>
+      </node>
+     </pin>
+     <pin name='saturation'>
+      <node id='113' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='hotpixel_removal'>
+      <node id='114' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='premultiplied_alpha'>
+      <node id='115' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='min_display_samples'>
+      <node id='116' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='dithering'>
+      <node id='117' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='saturate_to_white'>
+      <node id='118' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='white_balance'>
+      <node id='119' type='33'>
+       <attr name='value' type='8'>1 1 1</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='postproc'>
+    <node id='120' type='61'>
+     <pin name='on_off'>
+      <node id='121' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='bloom_power'>
+      <node id='122' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='glare_power'>
+      <node id='123' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='glare_ray_amount'>
+      <node id='124' type='9'>
+       <attr name='value' type='4'>3 0 0</attr>
+      </node>
+     </pin>
+     <pin name='glare_angle'>
+      <node id='125' type='6'>
+       <attr name='value' type='8'>15 0 0</attr>
+      </node>
+     </pin>
+     <pin name='glare_blur'>
+      <node id='126' type='6'>
+       <attr name='value' type='8'>0.001 0 0</attr>
+      </node>
+     </pin>
+     <pin name='spectral_intensity'>
+      <node id='127' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='spectral_shift'>
+      <node id='128' type='6'>
+       <attr name='value' type='8'>2 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <graph id='129' type='6' name='Storage' position='0 0'>
+  </graph>
+ </graph>
+ <graph id='130' type='1' name='Scene'>
+  <node id='131' type='1' name='Hanger.obj' position='134.075 -77.5551'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='132' type='17'>
+     <pin name='diffuse'>
+      <node id='133' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='134' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='135' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='136' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='137' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='138' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='139' type='1' name='Hanger.obj' position='446.075 130.445'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='140' type='17'>
+     <pin name='diffuse'>
+      <node id='141' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='142' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='143' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='144' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='145' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='146' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='147' type='1' name='Hanger.obj' position='63.0753 -122.555'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='148' type='17'>
+     <pin name='diffuse'>
+      <node id='149' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='150' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='151' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='152' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='153' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='154' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='155' type='1' name='Hanger.obj' position='302.075 98.4449'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='156' type='17'>
+     <pin name='diffuse'>
+      <node id='157' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='158' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='159' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='160' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='161' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='162' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='163' type='1' name='Hanger.obj' position='188.075 10.4449'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='164' type='17'>
+     <pin name='diffuse'>
+      <node id='165' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='166' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='167' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='168' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='169' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='170' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='171' type='1' name='Hanger.obj' position='529.075 60.4449'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='172' type='17'>
+     <pin name='diffuse'>
+      <node id='173' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='174' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='175' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='176' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='177' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='178' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='179' type='1' name='Hanger.obj' position='610.075 231.445'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='180' type='17'>
+     <pin name='diffuse'>
+      <node id='181' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='182' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='183' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='184' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='185' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='186' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='187' type='1' name='Hanger.obj' position='537.075 173.445'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='188' type='17'>
+     <pin name='diffuse'>
+      <node id='189' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='190' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='191' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='192' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='193' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='194' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='195' type='1' name='Hanger.obj' position='347.075 187.445'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='196' type='17'>
+     <pin name='diffuse'>
+      <node id='197' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='198' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='199' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='200' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='201' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='202' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='203' type='1' name='Hanger.obj' position='-19.9247 356.445'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='204' type='17'>
+     <pin name='diffuse'>
+      <node id='205' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='206' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='207' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='208' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='209' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='210' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='211' type='1' name='Hanger.obj' position='-76.9247 280.445'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='212' type='17'>
+     <pin name='diffuse'>
+      <node id='213' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='214' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='215' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='216' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='217' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='218' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='219' type='1' name='Hanger.obj' position='69.0753 405.445'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='220' type='17'>
+     <pin name='diffuse'>
+      <node id='221' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='222' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='223' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='224' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='225' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='226' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='227' type='1' name='Hanger.obj' position='-144.925 209.445'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='228' type='17'>
+     <pin name='diffuse'>
+      <node id='229' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='230' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='231' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='232' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='233' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='234' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='235' type='1' name='Hanger.obj' position='-190.925 123.445'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='236' type='17'>
+     <pin name='diffuse'>
+      <node id='237' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='238' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='239' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='240' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='241' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='242' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='243' type='1' name='Casual Jacket.obj' position='719 -158'>
+   <attr name='filename' type='11'>..\Models\Casual Jacket.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Blue_Jacket_Closed_1_H1' dynamicType='7'>
+    <node id='244' type='16'>
+     <pin name='diffuse'>
+      <node id='245' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Casual Jacket_23_Diffuse_2k.png</attr>
+       <pin name='power'>
+        <node id='246' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='247' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='248' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='249' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='250' type='78'>
+         <pin name='uvSet'>
+          <node id='251' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='252' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='specular'>
+      <node id='253' type='31'>
+       <attr name='value' type='6'>0.281</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='254' type='31'>
+       <attr name='value' type='6'>0.65</attr>
+      </node>
+     </pin>
+     <pin name='index'>
+      <node id='255' type='6'>
+       <attr name='value' type='8'>1.3 0 0</attr>
+      </node>
+     </pin>
+     <pin name='normal'>
+      <node id='256' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Casual Jacket_Normal_2k.png</attr>
+       <pin name='power'>
+        <node id='257' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='258' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='259' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='260' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='261' type='78'>
+         <pin name='uvSet'>
+          <node id='262' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='263' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='264' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='265' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='266' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='filmwidth'>
+      <node id='267' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='filmindex'>
+      <node id='268' type='6'>
+       <attr name='value' type='8'>1.45 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='269' type='1' name='Leather Jacket Open 2.obj' position='800.226 206.335'>
+   <attr name='filename' type='11'>..\Models\Leather Jacket Open 2.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Black_Leather_Jacket_Open_1_H1' dynamicType='7'>
+    <node id='270' type='16'>
+     <pin name='diffuse'>
+      <node id='271' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Open 2_30_Diffuse_2k.png</attr>
+       <pin name='power'>
+        <node id='272' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='273' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='274' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='275' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='276' type='78'>
+         <pin name='uvSet'>
+          <node id='277' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='278' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='specular'>
+      <node id='279' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='280' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='index'>
+      <node id='281' type='6'>
+       <attr name='value' type='8'>1.439 0 0</attr>
+      </node>
+     </pin>
+     <pin name='normal'>
+      <node id='282' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Open 2_Normal_2k.png</attr>
+       <pin name='power'>
+        <node id='283' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='284' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='285' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='286' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='287' type='78'>
+         <pin name='uvSet'>
+          <node id='288' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='289' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='290' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='291' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='292' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='filmwidth'>
+      <node id='293' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='filmindex'>
+      <node id='294' type='6'>
+       <attr name='value' type='8'>1.45 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='295' type='1' name='Hanger.obj' position='248 56'>
+   <attr name='filename' type='11'>..\Models\Hanger.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='defaultMat_Hanger' dynamicType='7'>
+    <node id='296' type='17'>
+     <pin name='diffuse'>
+      <node id='297' type='33'>
+       <attr name='value' type='8'>0.7 0.7 0.7</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='298' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='299' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='300' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='301' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='302' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='303' type='1' name='Leather Jacket Closed 2.obj' position='1106.23 21.3346'>
+   <attr name='filename' type='11'>..\Models\Leather Jacket Closed 2.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Black_Leather_Jacket_Fully_Closed_1_H1' dynamicType='7' connect='304'/>
+  </node>
+  <node id='305' type='1' name='Long Coat.obj' position='800.226 286.335'>
+   <attr name='filename' type='11'>..\Models\Long Coat.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Black_Coat_Closed_1_H1' dynamicType='7'>
+    <node id='306' type='16'>
+     <pin name='diffuse'>
+      <node id='307' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Long Coat_19_Diffuse_2k.png</attr>
+       <pin name='power'>
+        <node id='308' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='309' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='310' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='311' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='312' type='78'>
+         <pin name='uvSet'>
+          <node id='313' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='314' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='specular'>
+      <node id='315' type='31'>
+       <attr name='value' type='6'>0.431</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='316' type='31'>
+       <attr name='value' type='6'>0.269</attr>
+      </node>
+     </pin>
+     <pin name='index'>
+      <node id='317' type='6'>
+       <attr name='value' type='8'>1.384 0 0</attr>
+      </node>
+     </pin>
+     <pin name='normal'>
+      <node id='318' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Long Coat_Normal_2k.png</attr>
+       <pin name='power'>
+        <node id='319' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='320' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='321' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='322' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='323' type='78'>
+         <pin name='uvSet'>
+          <node id='324' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='325' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='326' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='327' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='328' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='filmwidth'>
+      <node id='329' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='filmindex'>
+      <node id='330' type='6'>
+       <attr name='value' type='8'>1.45 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='331' type='1' name='Glitter Jacket.obj' position='841 15'>
+   <attr name='filename' type='11'>..\Models\Glitter Jacket.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Red_Glitter_closed_2_H1' dynamicType='7'>
+    <node id='332' type='17'>
+     <pin name='diffuse'>
+      <node id='333' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Glitter Jacket_15_Diffuse_2k.png</attr>
+       <pin name='power'>
+        <node id='334' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='335' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='336' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='337' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='338' type='78'>
+         <pin name='uvSet'>
+          <node id='339' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='340' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='341' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='normal'>
+      <node id='342' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Glitter Jacket_Normal_2k.png</attr>
+       <pin name='power'>
+        <node id='343' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='344' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='345' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='346' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='347' type='78'>
+         <pin name='uvSet'>
+          <node id='348' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='349' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='350' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='351' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='352' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='353' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='354' type='1' name='Pull-1.obj' position='800.226 326.335'>
+   <attr name='filename' type='11'>..\Models\Pull-1.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Copper_Pull_1_H1' dynamicType='7'>
+    <node id='355' type='16'>
+     <pin name='diffuse'>
+      <node id='356' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Copper Pull_13_Diffuse_2k.png</attr>
+       <pin name='power'>
+        <node id='357' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='358' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='359' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='360' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='361' type='78'>
+         <pin name='uvSet'>
+          <node id='362' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='363' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='specular'>
+      <node id='364' type='31'>
+       <attr name='value' type='6'>0.125</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='365' type='31'>
+       <attr name='value' type='6'>0.3625</attr>
+      </node>
+     </pin>
+     <pin name='index'>
+      <node id='366' type='6'>
+       <attr name='value' type='8'>3.437 0 0</attr>
+      </node>
+     </pin>
+     <pin name='normal'>
+      <node id='367' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Copper Pull_Normal_2k.png</attr>
+       <pin name='power'>
+        <node id='368' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='369' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='370' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='371' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='372' type='78'>
+         <pin name='uvSet'>
+          <node id='373' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='374' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='375' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='376' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='377' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='filmwidth'>
+      <node id='378' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='filmindex'>
+      <node id='379' type='6'>
+       <attr name='value' type='8'>1.45 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='380' type='1' name='Leather Coat Closed.obj' position='928.226 -214.665'>
+   <attr name='filename' type='11'>..\Models\Leather Coat Closed.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Leather_Coat_Closed_1_H1' dynamicType='7' connect='381'/>
+  </node>
+  <node id='382' type='1' name='Zebra-Jacket.obj' position='772.226 -51.6654'>
+   <attr name='filename' type='11'>..\Models\Zebra-Jacket.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Zebra_Jacket_1_H1' dynamicType='7'>
+    <node id='383' type='17'>
+     <pin name='diffuse'>
+      <node id='384' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Zebra Jacket_10_Diffuse_2k.png</attr>
+       <pin name='power'>
+        <node id='385' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='386' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='387' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='388' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='389' type='78'>
+         <pin name='uvSet'>
+          <node id='390' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='391' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='392' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='normal'>
+      <node id='393' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Zebra Jacket_Normal_2k.png</attr>
+       <pin name='power'>
+        <node id='394' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='395' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='396' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='397' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='398' type='78'>
+         <pin name='uvSet'>
+          <node id='399' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='400' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='401' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='402' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='403' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='404' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='405' type='1' name='Leather Jacket Closed.obj' position='1003.23 152.335'>
+   <attr name='filename' type='11'>..\Models\Leather Jacket Closed.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Red_Leather_Jacket_Closed_2_H1' dynamicType='7' connect='406'/>
+  </node>
+  <node id='407' type='1' name='Shiny Jacket.obj' position='800.226 366.335'>
+   <attr name='filename' type='11'>..\Models\Shiny Jacket.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Champagne_Closed_1_H1_1' dynamicType='7'>
+    <node id='408' type='16'>
+     <pin name='diffuse'>
+      <node id='409' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Shiny Jacket_5_Diffuse_2k.png</attr>
+       <pin name='power'>
+        <node id='410' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='411' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='412' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='413' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='414' type='78'>
+         <pin name='uvSet'>
+          <node id='415' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='416' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='specular'>
+      <node id='417' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='418' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='index'>
+      <node id='419' type='6'>
+       <attr name='value' type='8'>2.516 0 0</attr>
+      </node>
+     </pin>
+     <pin name='normal'>
+      <node id='420' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Shiny Jacket_Normal_2k.png</attr>
+       <pin name='power'>
+        <node id='421' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='422' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='423' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='424' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='425' type='78'>
+         <pin name='uvSet'>
+          <node id='426' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='427' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='428' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='429' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='430' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='filmwidth'>
+      <node id='431' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='filmindex'>
+      <node id='432' type='6'>
+       <attr name='value' type='8'>1.45 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='433' type='1' name='Leather Jacket Open.obj' position='800.226 246.335'>
+   <attr name='filename' type='11'>..\Models\Leather Jacket Open.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Red_Leather_Jacket_Open_2_H1' dynamicType='7'>
+    <node id='434' type='16'>
+     <pin name='diffuse'>
+      <node id='435' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Open_18_Diffuse_2k.png</attr>
+       <pin name='power'>
+        <node id='436' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='437' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='438' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='439' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='440' type='78'>
+         <pin name='uvSet'>
+          <node id='441' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='442' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='specular'>
+      <node id='443' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='444' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='index'>
+      <node id='445' type='6'>
+       <attr name='value' type='8'>1.366 0 0</attr>
+      </node>
+     </pin>
+     <pin name='normal'>
+      <node id='446' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Open_Normal_2k.png</attr>
+       <pin name='power'>
+        <node id='447' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='448' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='449' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='450' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='451' type='78'>
+         <pin name='uvSet'>
+          <node id='452' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='453' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='454' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='455' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='456' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='filmwidth'>
+      <node id='457' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='filmindex'>
+      <node id='458' type='6'>
+       <attr name='value' type='8'>1.45 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='459' type='1' name='Shirt-1.obj' position='800.226 406.335'>
+   <attr name='filename' type='11'>..\Models\Shirt-1.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='' dynamicType='7'>
+    <node id='460' type='17'>
+     <pin name='diffuse'>
+      <node id='461' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Shirt_27_Diffuse_2k.png</attr>
+       <pin name='power'>
+        <node id='462' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='463' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='464' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='465' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='466' type='78'>
+         <pin name='uvSet'>
+          <node id='467' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='468' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='469' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='normal'>
+      <node id='470' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Shirt_Normal_2k.png</attr>
+       <pin name='power'>
+        <node id='471' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='472' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='473' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='474' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='475' type='78'>
+         <pin name='uvSet'>
+          <node id='476' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='477' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='478' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='479' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='480' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='481' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='482' type='1' name='Short Leather Jacket Closed.obj' position='800.226 446.335'>
+   <attr name='filename' type='11'>..\Models\Short Leather Jacket Closed.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Grey_Jacket_Half_Open_1_H1' dynamicType='7'>
+    <node id='483' type='16'>
+     <pin name='diffuse'>
+      <node id='484' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Short Leather Jacket Closed_6_Diffuse_2k.png</attr>
+       <pin name='power'>
+        <node id='485' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='486' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='487' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='488' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='489' type='78'>
+         <pin name='uvSet'>
+          <node id='490' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='491' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='specular'>
+      <node id='492' type='31'>
+       <attr name='value' type='6'>0.7125</attr>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='493' type='31'>
+       <attr name='value' type='6'>0.275</attr>
+      </node>
+     </pin>
+     <pin name='index'>
+      <node id='494' type='6'>
+       <attr name='value' type='8'>1.3 0 0</attr>
+      </node>
+     </pin>
+     <pin name='normal'>
+      <node id='495' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Short Leather Jacket Closed_Normal_2k.png</attr>
+       <pin name='power'>
+        <node id='496' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='497' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='498' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='499' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='500' type='78'>
+         <pin name='uvSet'>
+          <node id='501' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='502' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='503' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='504' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='505' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='filmwidth'>
+      <node id='506' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='filmindex'>
+      <node id='507' type='6'>
+       <attr name='value' type='8'>1.45 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='508' type='1' name='Jeans Jacket.obj' position='708 -105'>
+   <attr name='filename' type='11'>..\Models\Jeans Jacket.obj</attr>
+   <attr name='objectLayerImport' type='2'>1</attr>
+   <attr name='scaleUnitType' type='2'>4</attr>
+   <attr name='useSuppliedVertexNormals' type='1'>1</attr>
+   <attr name='maxSmoothAngle' type='6'>89</attr>
+   <attr name='defaultHairThickness' type='6'>0.0001</attr>
+   <attr name='subdLevel' type='2'>0</attr>
+   <attr name='subdSharpness' type='6'>0</attr>
+   <attr name='subdBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingBoundInterp' type='2'>3</attr>
+   <attr name='subdFaceVaryingPropagateCorners' type='1'>0</attr>
+   <attr name='subdScheme' type='2'>1</attr>
+   <attr name='windingOrder' type='2'>1</attr>
+   <attr name='useSuppliedSmoothGroupsAsBoundaries' type='1'>0</attr>
+   <attr name='importMtlMaterials' type='1'>1</attr>
+   <attr name='diffuse' type='1'>1</attr>
+   <attr name='glossy' type='1'>1</attr>
+   <attr name='specular' type='1'>1</attr>
+   <attr name='importImageTextures' type='1'>1</attr>
+   <attr name='textureDiffuse' type='1'>1</attr>
+   <attr name='textureDiffuseAsFloatImage' type='1'>0</attr>
+   <attr name='textureSpecular' type='1'>1</attr>
+   <attr name='textureSpecularAsFloatImage' type='1'>1</attr>
+   <attr name='textureRoughness' type='1'>1</attr>
+   <attr name='textureRoughnessAsFloatImage' type='1'>1</attr>
+   <attr name='textureBump' type='1'>1</attr>
+   <attr name='textureBumpAsFloatImage' type='1'>1</attr>
+   <attr name='textureBumpUseScale' type='1'>1</attr>
+   <attr name='textureOpacity' type='1'>1</attr>
+   <attr name='textureOpacityAsFloatImage' type='1'>1</attr>
+   <attr name='textureAutoAlphaImage' type='1'>1</attr>
+   <attr name='glossySpecularScale' type='6'>1</attr>
+   <attr name='textureOpacityValueInvert' type='1'>0</attr>
+   <attr name='textureOpacityInvert' type='1'>0</attr>
+   <attr name='rgbColorSpaceId' type='2'>0</attr>
+   <pin name='_Jeans_Jacket_1_H1' dynamicType='7'>
+    <node id='509' type='17'>
+     <pin name='diffuse'>
+      <node id='510' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Jeans Jacket_14_Diffuse_2k.png</attr>
+       <pin name='power'>
+        <node id='511' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='512' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='513' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='514' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='515' type='78'>
+         <pin name='uvSet'>
+          <node id='516' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='517' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='roughness'>
+      <node id='518' type='31'>
+       <attr name='value' type='6'>0</attr>
+      </node>
+     </pin>
+     <pin name='normal'>
+      <node id='519' type='34'>
+       <attr name='filename' type='11'>..\Models\Textures\Jeans Jacket_Normal_2k.png</attr>
+       <pin name='power'>
+        <node id='520' type='31'>
+         <attr name='value' type='6'>1</attr>
+        </node>
+       </pin>
+       <pin name='gamma'>
+        <node id='521' type='6'>
+         <attr name='value' type='8'>2.2 0 0</attr>
+        </node>
+       </pin>
+       <pin name='invert'>
+        <node id='522' type='11'>
+         <attr name='value' type='1'>0</attr>
+        </node>
+       </pin>
+       <pin name='transform'>
+        <node id='523' type='67'>
+         <attr name='rotationOrder' type='2'>2</attr>
+         <attr name='rotation' type='8'>0 0 0</attr>
+         <attr name='scale' type='8'>1 1 1</attr>
+         <attr name='translation' type='8'>0 0 0</attr>
+        </node>
+       </pin>
+       <pin name='projection'>
+        <node id='524' type='78'>
+         <pin name='uvSet'>
+          <node id='525' type='9'>
+           <attr name='value' type='4'>1 0 0</attr>
+          </node>
+         </pin>
+        </node>
+       </pin>
+       <pin name='borderMode'>
+        <node id='526' type='57'>
+         <attr name='value' type='2'>0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='opacity'>
+      <node id='527' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='smooth'>
+      <node id='528' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='edgesRounding'>
+      <node id='529' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='matte'>
+      <node id='530' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+  <node id='531' type='4' name='Placement' position='-38.6986 715.779'>
+   <pin name='transform'>
+    <node id='532' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0.198</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='533'/>
+  </node>
+  <node id='534' type='3' name='Geometry group' position='122.301 188.78'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='303'/>
+   <pin name='Input 2' dynamicType='12' connect='163'/>
+  </node>
+  <node id='535' type='4' name='Placement' position='282.281 475.025'>
+   <pin name='transform'>
+    <node id='536' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 -0.1</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='537'/>
+  </node>
+  <node id='538' type='3' name='Geometry group' position='68.3014 100.78'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='405'/>
+   <pin name='Input 2' dynamicType='12' connect='131'/>
+  </node>
+  <node id='539' type='4' name='Placement' position='26.3014 232.779'>
+   <pin name='transform'>
+    <node id='540' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 -1.041</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='538'/>
+  </node>
+  <node id='537' type='3' name='Geometry group' position='281.301 365.779'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='433'/>
+   <pin name='Input 2' dynamicType='12' connect='195'/>
+  </node>
+  <node id='541' type='4' name='Placement' position='92.3014 317.779'>
+   <pin name='transform'>
+    <node id='542' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 1.346</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='534'/>
+  </node>
+  <node id='543' type='4' name='Placement' position='-44.6986 187.779'>
+   <pin name='transform'>
+    <node id='544' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0.058</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='545'/>
+  </node>
+  <node id='545' type='3' name='Geometry group' position='-2.69861 55.7795'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='269'/>
+   <pin name='Input 2' dynamicType='12' connect='147'/>
+  </node>
+  <node id='546' type='3' name='Geometry group' position='291.037 755.655'>
+   <attr name='pin_count' type='2'>20</attr>
+   <pin name='Input 1' dynamicType='12' connect='531'/>
+   <pin name='Input 2' dynamicType='12' connect='547'/>
+   <pin name='Input 3' dynamicType='12' connect='548'/>
+   <pin name='Input 4' dynamicType='12' connect='549'/>
+   <pin name='Input 5' dynamicType='12' connect='550'/>
+   <pin name='Input 6' dynamicType='12' connect='543'/>
+   <pin name='Input 7' dynamicType='12'/>
+   <pin name='Input 8' dynamicType='12'/>
+   <pin name='Input 9' dynamicType='12' connect='551'/>
+   <pin name='Input 10' dynamicType='12'/>
+   <pin name='Input 11' dynamicType='12'/>
+   <pin name='Input 12' dynamicType='12'/>
+   <pin name='Input 13' dynamicType='12' connect='541'/>
+   <pin name='Input 14' dynamicType='12' connect='539'/>
+   <pin name='Input 15' dynamicType='12' connect='552'/>
+   <pin name='Input 16' dynamicType='12' connect='535'/>
+   <pin name='Input 17' dynamicType='12'/>
+   <pin name='Input 18' dynamicType='12' connect='553'/>
+   <pin name='Input 19' dynamicType='12' connect='554'/>
+   <pin name='Input 20' dynamicType='12' connect='555'/>
+  </node>
+  <node id='554' type='4' name='Placement' position='429.301 483.779'>
+   <pin name='transform'>
+    <node id='556' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 -0.652</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='557'/>
+  </node>
+  <node id='557' type='3' name='Geometry group' position='471.301 351.78'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='508'/>
+   <pin name='Input 2' dynamicType='12' connect='187'/>
+  </node>
+  <node id='558' type='3' name='Geometry group' position='380.301 308.78'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='380'/>
+   <pin name='Input 2' dynamicType='12' connect='139'/>
+  </node>
+  <node id='559' type='3' name='Geometry group' position='463.301 238.78'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12'/>
+   <pin name='Input 2' dynamicType='12' connect='171'/>
+  </node>
+  <node id='553' type='4' name='Placement' position='338.301 440.779'>
+   <pin name='transform'>
+    <node id='560' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 -0.87</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='558'/>
+  </node>
+  <node id='548' type='4' name='Placement' position='-184.699 590.779'>
+   <pin name='transform'>
+    <node id='561' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0.375</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='562'/>
+  </node>
+  <node id='562' type='3' name='Geometry group' position='-142.699 458.779'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='407'/>
+   <pin name='Input 2' dynamicType='12' connect='211'/>
+  </node>
+  <node id='551' type='4' name='Placement' position='140.226 366.335'>
+   <pin name='transform'>
+    <node id='563' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 1.138</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='564'/>
+  </node>
+  <node id='555' type='4' name='Placement' position='502.301 541.779'>
+   <pin name='transform'>
+    <node id='565' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 -0.395</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='566'/>
+  </node>
+  <node id='567' type='3' name='Geometry group' position='-85.6986 534.779'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='459'/>
+   <pin name='Input 2' dynamicType='12' connect='203'/>
+  </node>
+  <node id='566' type='3' name='Geometry group' position='544.301 409.779'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='243'/>
+   <pin name='Input 2' dynamicType='12' connect='179'/>
+  </node>
+  <node id='547' type='4' name='Placement' position='-127.699 666.779'>
+   <pin name='transform'>
+    <node id='568' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 -0.217</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='567'/>
+  </node>
+  <node id='552' type='4' name='Placement' position='194.301 408.779'>
+   <pin name='transform'>
+    <node id='569' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0.93</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='570'/>
+  </node>
+  <node id='533' type='3' name='Geometry group' position='3.30141 583.779'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='482'/>
+   <pin name='Input 2' dynamicType='12' connect='219'/>
+  </node>
+  <node id='570' type='3' name='Geometry group' position='236.301 276.779'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='331'/>
+   <pin name='Input 2' dynamicType='12' connect='155'/>
+  </node>
+  <node id='564' type='3' name='Geometry group' position='182.226 234.335'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='382'/>
+   <pin name='Input 2' dynamicType='12' connect='295'/>
+  </node>
+  <node id='406' type='17' name='_Red_Leather_Jacket_Closed_2_H1' position='1504.37 172.727'>
+   <pin name='diffuse' connect='571'/>
+   <pin name='roughness'>
+    <node id='572' type='31'>
+     <attr name='value' type='6'>0</attr>
+    </node>
+   </pin>
+   <pin name='normal'>
+    <node id='573' type='34'>
+     <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Closed_Normal_2k.png</attr>
+     <pin name='power'>
+      <node id='574' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='gamma'>
+      <node id='575' type='6'>
+       <attr name='value' type='8'>2.2 0 0</attr>
+      </node>
+     </pin>
+     <pin name='invert'>
+      <node id='576' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='transform'>
+      <node id='577' type='67'>
+       <attr name='rotationOrder' type='2'>2</attr>
+       <attr name='rotation' type='8'>0 0 0</attr>
+       <attr name='scale' type='8'>1 1 1</attr>
+       <attr name='translation' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='projection'>
+      <node id='578' type='78'>
+       <pin name='uvSet'>
+        <node id='579' type='9'>
+         <attr name='value' type='4'>1 0 0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='borderMode'>
+      <node id='580' type='57'>
+       <attr name='value' type='2'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='opacity'>
+    <node id='581' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='smooth'>
+    <node id='582' type='11'>
+     <attr name='value' type='1'>1</attr>
+    </node>
+   </pin>
+   <pin name='edgesRounding'>
+    <node id='583' type='6'>
+     <attr name='value' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='matte'>
+    <node id='584' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='585' type='34' name='Leather Jacket Closed 2_3_Diffuse_2k.png' position='1235.37 -209.273'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Closed 2_3_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='586' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='587' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='588' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='589' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='590' type='78'>
+     <pin name='uvSet'>
+      <node id='591' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='592' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='593' type='34' name='Leather Jacket Closed 2_2_Diffuse_2k.png' position='1235.37 -249.273'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Closed 2_2_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='594' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='595' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='596' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='597' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='598' type='78'>
+     <pin name='uvSet'>
+      <node id='599' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='600' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='601' type='34' name='Leather Jacket Closed 2_1_Diffuse_2k.png' position='1235.37 -289.273'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Closed 2_1_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='602' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='603' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='604' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='605' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='606' type='78'>
+     <pin name='uvSet'>
+      <node id='607' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='608' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='609' type='34' name='Leather Jacket Closed 2_4_Diffuse_2k.png' position='1235.37 -169.273'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Closed 2_4_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='610' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='611' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='612' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='613' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='614' type='78'>
+     <pin name='uvSet'>
+      <node id='615' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='616' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='304' type='17' name='_Black_Leather_Jacket_Fully_Closed_1_H1' position='1232.37 -119.273'>
+   <pin name='diffuse' connect='601'/>
+   <pin name='roughness'>
+    <node id='617' type='31'>
+     <attr name='value' type='6'>0</attr>
+    </node>
+   </pin>
+   <pin name='normal'>
+    <node id='618' type='34'>
+     <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Closed 2_Normal_2k.png</attr>
+     <pin name='power'>
+      <node id='619' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='gamma'>
+      <node id='620' type='6'>
+       <attr name='value' type='8'>2.2 0 0</attr>
+      </node>
+     </pin>
+     <pin name='invert'>
+      <node id='621' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='transform'>
+      <node id='622' type='67'>
+       <attr name='rotationOrder' type='2'>2</attr>
+       <attr name='rotation' type='8'>0 0 0</attr>
+       <attr name='scale' type='8'>1 1 1</attr>
+       <attr name='translation' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='projection'>
+      <node id='623' type='78'>
+       <pin name='uvSet'>
+        <node id='624' type='9'>
+         <attr name='value' type='4'>1 0 0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='borderMode'>
+      <node id='625' type='57'>
+       <attr name='value' type='2'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='opacity'>
+    <node id='626' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='smooth'>
+    <node id='627' type='11'>
+     <attr name='value' type='1'>1</attr>
+    </node>
+   </pin>
+   <pin name='edgesRounding'>
+    <node id='628' type='6'>
+     <attr name='value' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='matte'>
+    <node id='629' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='630' type='34' name='Leather Jacket Closed_25_Diffuse_2k.png' position='1510.37 26.7274'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Closed_25_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='631' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='632' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='633' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='634' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='635' type='78'>
+     <pin name='uvSet'>
+      <node id='636' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='637' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='638' type='34' name='Leather Jacket Closed_29_Diffuse_2k.png' position='1510.37 -53.2726'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Closed_29_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='639' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='640' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='641' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='642' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='643' type='78'>
+     <pin name='uvSet'>
+      <node id='644' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='645' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='646' type='34' name='Leather Jacket Closed_26_Diffuse_2k.png' position='1510.37 66.7274'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Closed_26_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='647' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='648' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='649' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='650' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='651' type='78'>
+     <pin name='uvSet'>
+      <node id='652' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='653' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='654' type='34' name='Leather Jacket Closed_12_Diffuse_2k.png' position='1510.37 -13.2726'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Closed_12_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='655' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='656' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='657' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='658' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='659' type='78'>
+     <pin name='uvSet'>
+      <node id='660' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='661' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='571' type='34' name='Leather Jacket Closed_28_Diffuse_2k.png' position='1510.37 106.727'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Jacket Closed_28_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='662' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='663' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='664' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='665' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='666' type='78'>
+     <pin name='uvSet'>
+      <node id='667' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='668' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='669' type='3' name='Geometry group' position='-210.699 387.779'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='354'/>
+   <pin name='Input 2' dynamicType='12' connect='227'/>
+  </node>
+  <node id='550' type='4' name='Placement' position='-298.699 433.779'>
+   <pin name='transform'>
+    <node id='670' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0.787</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='671'/>
+  </node>
+  <node id='549' type='4' name='Placement' position='-252.699 519.779'>
+   <pin name='transform'>
+    <node id='672' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0.59</attr>
+    </node>
+   </pin>
+   <pin name='geometry' connect='669'/>
+  </node>
+  <node id='671' type='3' name='Geometry group' position='-256.699 301.779'>
+   <attr name='pin_count' type='2'>2</attr>
+   <pin name='Input 1' dynamicType='12' connect='305'/>
+   <pin name='Input 2' dynamicType='12' connect='235'/>
+  </node>
+  <node id='673' type='34' name='Leather Coat Closed_21_Diffuse_2k.png' position='1147.37 -535.273'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Coat Closed_21_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='674' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='675' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='676' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='677' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='678' type='78'>
+     <pin name='uvSet'>
+      <node id='679' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='680' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='681' type='34' name='Leather Coat Closed_20_Diffuse_2k.png' position='1147.37 -575.273'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Coat Closed_20_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='682' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='683' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='684' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='685' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='686' type='78'>
+     <pin name='uvSet'>
+      <node id='687' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='688' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='689' type='34' name='Leather Coat Closed_11_Diffuse_2k.png' position='1147.37 -615.273'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Coat Closed_11_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='690' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='691' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='692' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='693' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='694' type='78'>
+     <pin name='uvSet'>
+      <node id='695' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='696' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='381' type='16' name='_Leather_Coat_Closed_1_H1' position='1150.37 -366.273'>
+   <pin name='diffuse' connect='681'/>
+   <pin name='specular'>
+    <node id='697' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='roughness'>
+    <node id='698' type='31'>
+     <attr name='value' type='6'>0.225</attr>
+    </node>
+   </pin>
+   <pin name='index'>
+    <node id='699' type='6'>
+     <attr name='value' type='8'>1.811 0 0</attr>
+    </node>
+   </pin>
+   <pin name='normal'>
+    <node id='700' type='34'>
+     <attr name='filename' type='11'>..\Models\Textures\Leather Coat Closed_Normal_2k.png</attr>
+     <pin name='power'>
+      <node id='701' type='31'>
+       <attr name='value' type='6'>1</attr>
+      </node>
+     </pin>
+     <pin name='gamma'>
+      <node id='702' type='6'>
+       <attr name='value' type='8'>2.2 0 0</attr>
+      </node>
+     </pin>
+     <pin name='invert'>
+      <node id='703' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='transform'>
+      <node id='704' type='67'>
+       <attr name='rotationOrder' type='2'>2</attr>
+       <attr name='rotation' type='8'>0 0 0</attr>
+       <attr name='scale' type='8'>1 1 1</attr>
+       <attr name='translation' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='projection'>
+      <node id='705' type='78'>
+       <pin name='uvSet'>
+        <node id='706' type='9'>
+         <attr name='value' type='4'>1 0 0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='borderMode'>
+      <node id='707' type='57'>
+       <attr name='value' type='2'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='opacity'>
+    <node id='708' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='smooth'>
+    <node id='709' type='11'>
+     <attr name='value' type='1'>1</attr>
+    </node>
+   </pin>
+   <pin name='edgesRounding'>
+    <node id='710' type='6'>
+     <attr name='value' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='filmwidth'>
+    <node id='711' type='31'>
+     <attr name='value' type='6'>0</attr>
+    </node>
+   </pin>
+   <pin name='filmindex'>
+    <node id='712' type='6'>
+     <attr name='value' type='8'>1.45 0 0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='713' type='34' name='Leather Coat Closed_24_Diffuse_2k.png' position='1147.37 -455.273'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Coat Closed_24_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='714' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='715' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='716' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='717' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='718' type='78'>
+     <pin name='uvSet'>
+      <node id='719' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='720' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='721' type='34' name='Leather Coat Closed_22_Diffuse_2k.png' position='1147.37 -495.273'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Coat Closed_22_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='722' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='723' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='724' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='725' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='726' type='78'>
+     <pin name='uvSet'>
+      <node id='727' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='728' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='729' type='34' name='Leather Coat Closed_31_Diffuse_2k.png' position='1147.37 -415.273'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Coat Closed_31_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='730' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='731' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='732' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='733' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='734' type='78'>
+     <pin name='uvSet'>
+      <node id='735' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='736' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='737' type='34' name='Leather Coat Closed_32_Diffuse_2k.png' position='1146.37 -661.273'>
+   <attr name='filename' type='11'>..\Models\Textures\Leather Coat Closed_32_Diffuse_2k.png</attr>
+   <pin name='power'>
+    <node id='738' type='31'>
+     <attr name='value' type='6'>1</attr>
+    </node>
+   </pin>
+   <pin name='gamma'>
+    <node id='739' type='6'>
+     <attr name='value' type='8'>2.2 0 0</attr>
+    </node>
+   </pin>
+   <pin name='invert'>
+    <node id='740' type='11'>
+     <attr name='value' type='1'>0</attr>
+    </node>
+   </pin>
+   <pin name='transform'>
+    <node id='741' type='67'>
+     <attr name='rotationOrder' type='2'>2</attr>
+     <attr name='rotation' type='8'>0 0 0</attr>
+     <attr name='scale' type='8'>1 1 1</attr>
+     <attr name='translation' type='8'>0 0 0</attr>
+    </node>
+   </pin>
+   <pin name='projection'>
+    <node id='742' type='78'>
+     <pin name='uvSet'>
+      <node id='743' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='borderMode'>
+    <node id='744' type='57'>
+     <attr name='value' type='2'>0</attr>
+    </node>
+   </pin>
+  </node>
+  <node id='745' type='56' name='Render target' position='286.796 863.032'>
+   <pin name='camera'>
+    <node id='746' type='13'>
+     <pin name='orthographic'>
+      <node id='747' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='sensorWidth'>
+      <node id='748' type='6'>
+       <attr name='value' type='8'>36 0 0</attr>
+      </node>
+     </pin>
+     <pin name='focalLength'>
+      <node id='749' type='6'>
+       <attr name='value' type='8'>50 0 0</attr>
+      </node>
+     </pin>
+     <pin name='fstop'>
+      <node id='750' type='6'>
+       <attr name='value' type='8'>2.8 0 0</attr>
+      </node>
+     </pin>
+     <pin name='fov'>
+      <node id='751' type='6'>
+       <attr name='value' type='8'>39.5978 0 0</attr>
+      </node>
+     </pin>
+     <pin name='scale'>
+      <node id='752' type='6'>
+       <attr name='value' type='8'>0.815706 0 0</attr>
+      </node>
+     </pin>
+     <pin name='pixelAspectRatio'>
+      <node id='753' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='aperture'>
+      <node id='754' type='6'>
+       <attr name='value' type='8'>0.892857 0 0</attr>
+      </node>
+     </pin>
+     <pin name='apertureAspectRatio'>
+      <node id='755' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='aperture_edge'>
+      <node id='756' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='autofocus'>
+      <node id='757' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='focalDepth'>
+      <node id='758' type='6'>
+       <attr name='value' type='8'>1.32274 0 0</attr>
+      </node>
+     </pin>
+     <pin name='nearClipDepth'>
+      <node id='759' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='lensShift'>
+      <node id='760' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='distortion'>
+      <node id='761' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='pos'>
+      <node id='762' type='6'>
+       <attr name='value' type='8'>-1.09205 1.40739 0.740485</attr>
+      </node>
+     </pin>
+     <pin name='target'>
+      <node id='763' type='6'>
+       <attr name='value' type='8'>-0.280443 1.30471 -0.0432723</attr>
+      </node>
+     </pin>
+     <pin name='up'>
+      <node id='764' type='6'>
+       <attr name='value' type='8'>0 1 0</attr>
+      </node>
+     </pin>
+     <pin name='perspectiveCorrection'>
+      <node id='765' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='stereoOutput'>
+      <node id='766' type='57'>
+       <attr name='value' type='2'>0</attr>
+      </node>
+     </pin>
+     <pin name='stereoMode'>
+      <node id='767' type='57'>
+       <attr name='value' type='2'>1</attr>
+      </node>
+     </pin>
+     <pin name='stereodist'>
+      <node id='768' type='6'>
+       <attr name='value' type='8'>0.065 0 0</attr>
+      </node>
+     </pin>
+     <pin name='leftFilter'>
+      <node id='769' type='33'>
+       <attr name='value' type='8'>1 0 0.812</attr>
+      </node>
+     </pin>
+     <pin name='rightFilter'>
+      <node id='770' type='33'>
+       <attr name='value' type='8'>0 1 0.188</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='resolution'>
+    <node id='771' type='12'>
+     <attr name='value' type='4'>1280 720 0</attr>
+     <attr name='preset' type='2'>10000</attr>
+     <attr name='aspectRatio' type='6'>0</attr>
+    </node>
+   </pin>
+   <pin name='environment'>
+    <node id='772' type='14'>
+     <pin name='sundir'>
+      <node id='773' type='30'>
+       <attr name='value' type='8'>0.61775 0.70341 -0.351568</attr>
+       <pin name='latitude'>
+        <node id='774' type='6'>
+         <attr name='value' type='8'>-37.0437 0 0</attr>
+        </node>
+       </pin>
+       <pin name='longitude'>
+        <node id='775' type='6'>
+         <attr name='value' type='8'>174.509 0 0</attr>
+        </node>
+       </pin>
+       <pin name='month'>
+        <node id='776' type='9'>
+         <attr name='value' type='4'>3 0 0</attr>
+        </node>
+       </pin>
+       <pin name='day'>
+        <node id='777' type='9'>
+         <attr name='value' type='4'>1 0 0</attr>
+        </node>
+       </pin>
+       <pin name='hour'>
+        <node id='778' type='6'>
+         <attr name='value' type='8'>10 0 0</attr>
+        </node>
+       </pin>
+       <pin name='gmtoffset'>
+        <node id='779' type='9'>
+         <attr name='value' type='4'>12 0 0</attr>
+        </node>
+       </pin>
+      </node>
+     </pin>
+     <pin name='turbidity'>
+      <node id='780' type='6'>
+       <attr name='value' type='8'>5.319 0 0</attr>
+      </node>
+     </pin>
+     <pin name='power'>
+      <node id='781' type='6'>
+       <attr name='value' type='8'>1.671 0 0</attr>
+      </node>
+     </pin>
+     <pin name='northoffset'>
+      <node id='782' type='6'>
+       <attr name='value' type='8'>0.571 0 0</attr>
+      </node>
+     </pin>
+     <pin name='model'>
+      <node id='783' type='57'>
+       <attr name='value' type='2'>1</attr>
+      </node>
+     </pin>
+     <pin name='sky_color'>
+      <node id='784' type='33'>
+       <attr name='value' type='8'>1 1 1</attr>
+      </node>
+     </pin>
+     <pin name='sunset_color'>
+      <node id='785' type='33'>
+       <attr name='value' type='8'>1 1 1</attr>
+      </node>
+     </pin>
+     <pin name='sun_size'>
+      <node id='786' type='6'>
+       <attr name='value' type='8'>1.266 0 0</attr>
+      </node>
+     </pin>
+     <pin name='importance_sampling'>
+      <node id='787' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='mesh' connect='546'/>
+   <pin name='kernel'>
+    <node id='788' type='25'>
+     <pin name='maxsamples'>
+      <node id='789' type='9'>
+       <attr name='value' type='4'>16000 0 0</attr>
+      </node>
+     </pin>
+     <pin name='maxDiffuseDepth'>
+      <node id='790' type='9'>
+       <attr name='value' type='4'>8 0 0</attr>
+      </node>
+     </pin>
+     <pin name='maxGlossyDepth'>
+      <node id='791' type='9'>
+       <attr name='value' type='4'>24 0 0</attr>
+      </node>
+     </pin>
+     <pin name='pathTermPower'>
+      <node id='792' type='6'>
+       <attr name='value' type='8'>0.3 0 0</attr>
+      </node>
+     </pin>
+     <pin name='rayepsilon'>
+      <node id='793' type='6'>
+       <attr name='value' type='8'>0.0001 0 0</attr>
+      </node>
+     </pin>
+     <pin name='filtersize'>
+      <node id='794' type='6'>
+       <attr name='value' type='8'>1.2 0 0</attr>
+      </node>
+     </pin>
+     <pin name='alphashadows'>
+      <node id='795' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='alphachannel'>
+      <node id='796' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='keep_environment'>
+      <node id='797' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='caustic_blur'>
+      <node id='798' type='6'>
+       <attr name='value' type='8'>0.01 0 0</attr>
+      </node>
+     </pin>
+     <pin name='giClamp'>
+      <node id='799' type='6'>
+       <attr name='value' type='8'>1e+006 0 0</attr>
+      </node>
+     </pin>
+     <pin name='coherentRatio'>
+      <node id='800' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='staticNoise'>
+      <node id='801' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='renderLayer'>
+    <node id='802' type='90'>
+     <pin name='enabled'>
+      <node id='803' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='layerId'>
+      <node id='804' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='invert'>
+      <node id='805' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='visibilityOnly'>
+      <node id='806' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='renderPasses'>
+    <node id='807' type='86'>
+     <pin name='renderPassEmit'>
+      <node id='808' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassEnvironment'>
+      <node id='809' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassDiffuseDirect'>
+      <node id='810' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassDiffuseIndirect'>
+      <node id='811' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassReflectionDirect'>
+      <node id='812' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassReflectionIndirect'>
+      <node id='813' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassRefraction'>
+      <node id='814' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassTransmission'>
+      <node id='815' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassSSS'>
+      <node id='816' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassPostProcessing'>
+      <node id='817' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='postProcEnvironment'>
+      <node id='818' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLayerShadows'>
+      <node id='819' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLayerBlackShadows'>
+      <node id='820' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLayerColorShadows'>
+      <node id='821' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLayerReflections'>
+      <node id='822' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassAmbientLight'>
+      <node id='823' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassSunLight'>
+      <node id='824' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight1'>
+      <node id='825' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight2'>
+      <node id='826' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight3'>
+      <node id='827' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight4'>
+      <node id='828' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight5'>
+      <node id='829' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight6'>
+      <node id='830' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight7'>
+      <node id='831' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLight8'>
+      <node id='832' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassInfoAfterBeauty'>
+      <node id='833' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassInfoMaxSamples'>
+      <node id='834' type='9'>
+       <attr name='value' type='4'>128 0 0</attr>
+      </node>
+     </pin>
+     <pin name='distributedTracing'>
+      <node id='835' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='filtersize'>
+      <node id='836' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='applyTonemapping'>
+      <node id='837' type='11'>
+       <attr name='value' type='1'>1</attr>
+      </node>
+     </pin>
+     <pin name='renderPassGeometricNormal'>
+      <node id='838' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassVertexNormal'>
+      <node id='839' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassShadingNormal'>
+      <node id='840' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassZDepth'>
+      <node id='841' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='Z_depth_max'>
+      <node id='842' type='6'>
+       <attr name='value' type='8'>5 0 0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassPosition'>
+      <node id='843' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassUvCoord'>
+      <node id='844' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='UV_max'>
+      <node id='845' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='uvSet'>
+      <node id='846' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassTangentU'>
+      <node id='847' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassMotionVector'>
+      <node id='848' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='maxSpeed'>
+      <node id='849' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassMaterialId'>
+      <node id='850' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassObjectId'>
+      <node id='851' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassLightPassId'>
+      <node id='852' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassRenderLayerId'>
+      <node id='853' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassRenderLayerMask'>
+      <node id='854' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassWireframe'>
+      <node id='855' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassAmbientOcclusion'>
+      <node id='856' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='renderPassAOMaxSamples'>
+      <node id='857' type='9'>
+       <attr name='value' type='4'>1024 0 0</attr>
+      </node>
+     </pin>
+     <pin name='aodist'>
+      <node id='858' type='6'>
+       <attr name='value' type='8'>3 0 0</attr>
+      </node>
+     </pin>
+     <pin name='alphashadows'>
+      <node id='859' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='imager'>
+    <node id='860' type='15'>
+     <pin name='exposure'>
+      <node id='861' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='gamma'>
+      <node id='862' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='highlightCompression'>
+      <node id='863' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='response'>
+      <node id='864' type='57'>
+       <attr name='value' type='2'>105</attr>
+      </node>
+     </pin>
+     <pin name='vignetting'>
+      <node id='865' type='6'>
+       <attr name='value' type='8'>0.3 0 0</attr>
+      </node>
+     </pin>
+     <pin name='saturation'>
+      <node id='866' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='hotpixel_removal'>
+      <node id='867' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='premultiplied_alpha'>
+      <node id='868' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='min_display_samples'>
+      <node id='869' type='9'>
+       <attr name='value' type='4'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='dithering'>
+      <node id='870' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='saturate_to_white'>
+      <node id='871' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='white_balance'>
+      <node id='872' type='33'>
+       <attr name='value' type='8'>1 1 1</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+   <pin name='postproc'>
+    <node id='873' type='61'>
+     <pin name='on_off'>
+      <node id='874' type='11'>
+       <attr name='value' type='1'>0</attr>
+      </node>
+     </pin>
+     <pin name='bloom_power'>
+      <node id='875' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='glare_power'>
+      <node id='876' type='6'>
+       <attr name='value' type='8'>1 0 0</attr>
+      </node>
+     </pin>
+     <pin name='glare_ray_amount'>
+      <node id='877' type='9'>
+       <attr name='value' type='4'>3 0 0</attr>
+      </node>
+     </pin>
+     <pin name='glare_angle'>
+      <node id='878' type='6'>
+       <attr name='value' type='8'>15 0 0</attr>
+      </node>
+     </pin>
+     <pin name='glare_blur'>
+      <node id='879' type='6'>
+       <attr name='value' type='8'>0.001 0 0</attr>
+      </node>
+     </pin>
+     <pin name='spectral_intensity'>
+      <node id='880' type='6'>
+       <attr name='value' type='8'>0 0 0</attr>
+      </node>
+     </pin>
+     <pin name='spectral_shift'>
+      <node id='881' type='6'>
+       <attr name='value' type='8'>2 0 0</attr>
+      </node>
+     </pin>
+    </node>
+   </pin>
+  </node>
+ </graph>
+</OCS2>

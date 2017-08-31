@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fc884495974ffe24bbb49529e57006ca
+timeCreated: 1503397128
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: SFNS Display
+  fontNames:
+  - SFNS Display
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

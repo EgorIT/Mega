@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: a6341c926a69f084087ba2d674d7331e
+timeCreated: 1503330514
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: PTF NORDIC Rnd
+  fontNames:
+  - PTF NORDIC Rnd
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

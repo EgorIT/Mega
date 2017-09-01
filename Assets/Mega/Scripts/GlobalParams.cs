@@ -12,7 +12,7 @@ namespace Assets.Mega.Scripts {
 
         public static float sizeOrtocameraMidlleFragment = 5;
 
-        public static float sizeOrtocameraAllMega = 1;
+        public static float sizeOrtocameraAllMega = 100;
         public static Vector3 eulerAnglesForCameraInAllMega = new Vector3(24, 54, 0);
 
         public static Vector3 eulerAnglesForCameraInShops = new Vector3(24, 54, 0);

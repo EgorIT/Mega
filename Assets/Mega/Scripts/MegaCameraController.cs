@@ -26,7 +26,7 @@ public class MegaCameraController : MonoBehaviour {
 
     public Camera perspectiveCamera;
 
-    public TypeCameraOnState currentTypeCameraOnState = TypeCameraOnState.none;
+    public TypeCameraOnState currentTypeCameraOnState = TypeCameraOnState.orto;
 
     public Coroutine moveBack;
     public Vector3 lastGoodPos;
@@ -197,7 +197,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public IEnumerator IEnumSetNewPosCamera(Vector3 endPos, Vector3 endAng, float finalSizeCamera, TypeCameraOnState newTypeCameraOnState) {
-        var finalDistans = -5;
+        var finalDistans = -500;
         if(currentTypeCameraOnState == newTypeCameraOnState) {
             if(newTypeCameraOnState == TypeCameraOnState.orto) {
                 if(moveCamera != null) {

@@ -34,7 +34,7 @@ namespace Assets.Mega.Scripts {
         public void StartState () {
             MainLogic.inst.interfaceMega.SetActive(false);
             imageOne.raycastTarget = true;
-            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInStateOne, GlobalParams.sizeOrtocameraStateOne, typeCameraOnState);
+            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInAllMega, GlobalParams.sizeOrtocameraAllMega, typeCameraOnState);
         }
 
         public ViewStates GetViewStates() {

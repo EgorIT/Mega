@@ -17,10 +17,10 @@ public class Video : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetKeyDown("q"))
+		/*if (Input.GetKeyDown("q"))
 		{
 			StartCoroutine(Fade());
-		}
+		}*/
 	}
 
 	private IEnumerator Fade()

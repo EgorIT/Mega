@@ -47,7 +47,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void GoToMainScene() {
-            SceneManager.LoadScene("LightTest 1");
+            SceneManager.LoadScene("New");
         }
     }
 }

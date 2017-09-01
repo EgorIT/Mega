@@ -47,7 +47,7 @@ public class MegaCameraController : MonoBehaviour {
         if (dontUseSwipeAndPinch) {
             return;
         }
-        if(SceneManager.GetActiveScene().name != "LightTest 1") {
+        if(SceneManager.GetActiveScene().name != "New") {
             MoveInPersp(dX, dY);
 
         } else {
@@ -72,7 +72,7 @@ public class MegaCameraController : MonoBehaviour {
         if (dontUseSwipeAndPinch) {
             return;
         }
-        if(SceneManager.GetActiveScene().name != "LightTest 1") {
+        if(SceneManager.GetActiveScene().name != "New") {
 
         } else {
             switch(MainLogic.inst.GetViewCurrentStates()) {
@@ -128,7 +128,7 @@ public class MegaCameraController : MonoBehaviour {
             StopCoroutine(moveBack);
             moveBack = null;
         }
-        moveBack = StartCoroutine(IEnumChangePosAndAngOrtoCamera(lastGoodPos, GlobalParams.eulerAnglesForCameraInShops, -5, listCamerasOrto[0].orthographicSize, GlobalParams.timeToBackFromBorder));
+        moveBack = StartCoroutine(IEnumChangePosAndAngOrtoCamera(lastGoodPos, GlobalParams.eulerAnglesForCameraInShops, GlobalParams.finalDistansOrto, listCamerasOrto[0].orthographicSize, GlobalParams.timeToBackFromBorder));
     }
 
     public void CheckOrtoSize () {
@@ -197,14 +197,13 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public IEnumerator IEnumSetNewPosCamera(Vector3 endPos, Vector3 endAng, float finalSizeCamera, TypeCameraOnState newTypeCameraOnState) {
-        var finalDistans = -500;
         if(currentTypeCameraOnState == newTypeCameraOnState) {
             if(newTypeCameraOnState == TypeCameraOnState.orto) {
                 if(moveCamera != null) {
                     StopCoroutine(moveCamera);
                     moveCamera = null;
                 }
-                yield return moveCamera = StartCoroutine(IEnumChangePosAndAngOrtoCamera(endPos, endAng, finalDistans, finalSizeCamera, GlobalParams.timeToFly));
+                yield return moveCamera = StartCoroutine(IEnumChangePosAndAngOrtoCamera(endPos, endAng, GlobalParams.finalDistansOrto, finalSizeCamera, GlobalParams.timeToFly));
             }
             if(newTypeCameraOnState == TypeCameraOnState.perspective) {
                 if(moveCamera != null) {
@@ -219,7 +218,7 @@ public class MegaCameraController : MonoBehaviour {
                     StopCoroutine(moveCamera);
                     moveCamera = null;
                 }
-                yield return moveCamera = StartCoroutine(IEnumSwapPerspectiveToOrto(endPos, endAng, finalDistans, finalSizeCamera));
+                yield return moveCamera = StartCoroutine(IEnumSwapPerspectiveToOrto(endPos, endAng, GlobalParams.finalDistansOrto, finalSizeCamera));
             }
             if(newTypeCameraOnState == TypeCameraOnState.perspective) {
                 if(moveCamera != null) {

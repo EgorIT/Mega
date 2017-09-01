@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Assets.Mega.Scripts {
-    
+
     public class StateOne : MonoBehaviour, IPointerDownHandler, iViewState {
         public Image imageOne;
         public ViewStates viewStates;
@@ -16,15 +16,15 @@ namespace Assets.Mega.Scripts {
             MainLogic.inst.ChangeState(ViewStates.allMega);
         }
 
-        public void Start() {
+        public void Start () {
             MainLogic.inst.listViewStates.Add(this);
             MainLogic.inst.ChangeState(viewStates);
         }
 
 
-        public void EndState() {
+        public void EndState () {
             imageOne.raycastTarget = false;
-
+            Video.inst.FadeOff();
         }
 
         public void CheckThis () {
@@ -32,12 +32,13 @@ namespace Assets.Mega.Scripts {
         }
 
         public void StartState () {
+            Video.inst.FadeOn();
             MainLogic.inst.interfaceMega.SetActive(false);
             imageOne.raycastTarget = true;
             MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInAllMega, GlobalParams.sizeOrtocameraAllMega, typeCameraOnState);
         }
 
-        public ViewStates GetViewStates() {
+        public ViewStates GetViewStates () {
             return viewStates;
         }
 

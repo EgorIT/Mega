@@ -20,6 +20,7 @@ namespace Assets.Mega.Scripts {
         public static float sizeOrtocameraStateOne = 0.09f;
         public static Vector3 eulerAnglesForCameraInStateOne = new Vector3(3, 0, 0);
 
+        public static float finalDistansOrto = -500;
 
         public static float timeToBackFromBorder = 0.5f;
         public static float timeToFly = 2f;
@@ -31,7 +32,7 @@ namespace Assets.Mega.Scripts {
         public static float cameraXMinPerspective = 60f;
 
 
-        public static float ortoMinSize = 0.05f;
-        public static float ortoMaxSize = 2f;
+        public static float ortoMinSize = 5f;
+        public static float ortoMaxSize = 150f;
     }
 }

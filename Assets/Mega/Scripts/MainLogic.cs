@@ -90,8 +90,8 @@ namespace Assets.Mega.Scripts {
         }
 
         public IEnumerator IEnumGoToSceneFirstLook(string nameScene, Transform transform) {
-            MegaCameraController.inst.SetNewPosCamera(transform.position, GlobalParams.eulerAnglesForCameraInShops, 0, TypeCameraOnState.perspective);
-            yield return new WaitForSeconds(1.5f);
+            MegaCameraController.inst.SetNewPosCamera(transform.position, GlobalParams.eulerAnglesForCameraInAllMega, 5, TypeCameraOnState.orto);
+            yield return new WaitForSeconds(1.0f);
             SceneManager.LoadSceneAsync(nameScene);
         }
 

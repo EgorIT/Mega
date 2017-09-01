@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ShopTable : MonoBehaviour
 {
-	public Text term;
-	public Text shopName;
-	public Text shopDescription;
+	public Text Term;
+	public Text ShopName;
+	public Text ShopDescription;
 	public Image icon;
 	
 	// Use this for initialization

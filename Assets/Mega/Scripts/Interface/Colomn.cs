@@ -6,10 +6,4 @@ using UnityEngine.UI;
 public class Colomn : MonoBehaviour
 {
 	public Text[] texts;
-	public ChangesInfo changesInfo;
-
-	public void Click(string name)
-	{
-		changesInfo.SetShop(name);
-	}
 }

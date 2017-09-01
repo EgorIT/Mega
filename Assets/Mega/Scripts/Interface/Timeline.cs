@@ -132,12 +132,6 @@ public class Timeline : MonoBehaviour {
         yield return null;
     }
 
-    public void SwapWindows()
-    {
-        shopTable.RollOut();
-        shopsList.RollIn();
-    }
-
     public void RollOut () {
         StartCoroutine(Rolling(false));
     }

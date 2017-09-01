@@ -8,8 +8,6 @@ public class InterfaceController : MonoBehaviour
 
 	public Table table;
 	public Timeline timeline;
-	public ChangesInfo changesInfo;
-	public TableData tableData;
 
 	public void TableOn()
 	{
@@ -34,10 +32,5 @@ public class InterfaceController : MonoBehaviour
 	void Awake ()
 	{
 		instance = this;
-	}
-
-	public void SetShop(string name)
-	{
-		changesInfo.SetShop(name);
 	}
 }

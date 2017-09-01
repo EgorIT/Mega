@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Table : MonoBehaviour {
     public float seconds;
-    public TableData tableData;
-    
+
     private RectTransform rt;
     private Coroutine countdown;
     private Vector3 outPosition = new Vector3(0, -560, 0);

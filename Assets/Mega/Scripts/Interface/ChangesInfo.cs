@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Assets.Mega.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,12 +14,9 @@ public class ChangesInfo : MonoBehaviour
 	public GameObject content;
 	public ScrollRect scrRect;
 	public List<Shop> db = new List<Shop>();
-	public ShopTable shopTable;
-	public Table list;
-	public Table shop;
 	
 	private bool hidden = true;
-	private string temporaryString = "В данном периоде реконструкции на Вашем объекте будут произведены технические работы. К первому числу указанного квартала Вам необходимо освободить объект";
+	
 	public class Term
 	{
 		public string termName;
@@ -40,19 +36,6 @@ public class ChangesInfo : MonoBehaviour
 			description = descr;
 			iconName = icn;
 		}
-	}
-
-	public void SetShop(string name)
-	{
-		
-		Shop newShop = db.Find(x => x.name == name);
-		Debug.Log(name+" "+newShop+" "+newShop.name);
-		shopTable.shopName.text = newShop.name;
-		if (newShop.description =="")
-		shopTable.shopDescription.text = temporaryString;
-		//shopTable.icon
-		list.RollOut();
-		shop.RollIn();
 	}
 
 	public void FillDatabase()
@@ -317,7 +300,6 @@ public class ChangesInfo : MonoBehaviour
 			col.GetComponent<RectTransform>().anchoredPosition = new Vector2(400*i, 0);
 			col.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
 			Colomn unfilledColomn = col.GetComponent<Colomn>();
-			unfilledColomn.changesInfo = this;
 			for (int j = 0; j < unfilledColomn.texts.Length; j++)
 			{
 				if (k < termsList[number].shops.Count)

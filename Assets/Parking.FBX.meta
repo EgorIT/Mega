@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: dc2872436b59b0446b36a66d7c25866d
-timeCreated: 1504132810
+guid: 5be7630f412a377439f47e125327b9fd
+timeCreated: 1504235637
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cube_1
-    100004: Cube_2
-    100006: Cube_4
-    100008: Cylinder_3
-    100010: //RootNode
-    400000: Cube
-    400002: Cube_1
-    400004: Cube_2
-    400006: Cube_4
-    400008: Cylinder_3
-    400010: //RootNode
-    2300000: Cube
-    2300002: Cube_1
-    2300004: Cube_2
-    2300006: Cube_4
-    2300008: Cylinder_3
-    3300000: Cube
-    3300002: Cube_1
-    3300004: Cube_2
-    3300006: Cube_4
-    3300008: Cylinder_3
-    4300000: Cylinder_3
-    4300002: Cube
-    4300004: Cube_1
-    4300006: Cube_2
-    4300008: Cube_4
+    100000: //RootNode
+    100002: Shape2844
+    100004: Shape3747
+    100006: Shape4476
+    100008: Shape4477
+    100010: Shape61
+    400000: //RootNode
+    400002: Shape2844
+    400004: Shape3747
+    400006: Shape4476
+    400008: Shape4477
+    400010: Shape61
+    2300000: Shape2844
+    2300002: Shape3747
+    2300004: Shape4476
+    2300006: Shape4477
+    2300008: Shape61
+    3300000: Shape2844
+    3300002: Shape3747
+    3300004: Shape4476
+    3300006: Shape4477
+    3300008: Shape61
+    4300000: Shape2844
+    4300002: Shape3747
+    4300004: Shape4476
+    4300006: Shape4477
+    4300008: Shape61
     7400000: Take 001
     9500000: //RootNode
   materials:
@@ -60,7 +60,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.5
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

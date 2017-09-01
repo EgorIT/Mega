@@ -3,8 +3,8 @@
 namespace Assets.Mega.Scripts {
     public class KeyController : MonoBehaviour {
         private float speedKey = 2;
-        private float speedTouch = 0.3f;//0.003f;
-        private float speedZoom = 0.3f;//0.003f;
+        private float speedTouch = 0.03f;//0.003f;
+        private float speedZoom = 0.03f;//0.003f;
 
         public bool isFirstLookScene;
 

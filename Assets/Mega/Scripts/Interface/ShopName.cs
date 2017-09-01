@@ -11,7 +11,7 @@ public class ShopName : MonoBehaviour
 	public void Click()
 	{
 		
-		colomn.Click(gameObject.GetComponent<Text>().text);
+		//colomn.Click(gameObject.GetComponent<Text>().text);
 	}
 
 	// Use this for initialization

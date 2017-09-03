@@ -1,0 +1,129 @@
+fileFormatVersion: 2
+guid: 9ff34d5b94d88d6489cea1ea39549dce
+timeCreated: 1504453839
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: polySurface712_polySurface715
+    100004: polySurface712_polySurface721
+    100006: polySurface724_polySurface712_polySurface727
+    100008: polySurface724_polySurface712_polySurface729
+    100010: polySurface733
+    100012: polySurface734
+    100014: polySurface737
+    100016: polySurface738
+    100018: polySurface741
+    100020: polySurface820_polySurface728_polySurface724_polySurface712
+    400000: //RootNode
+    400002: polySurface712_polySurface715
+    400004: polySurface712_polySurface721
+    400006: polySurface724_polySurface712_polySurface727
+    400008: polySurface724_polySurface712_polySurface729
+    400010: polySurface733
+    400012: polySurface734
+    400014: polySurface737
+    400016: polySurface738
+    400018: polySurface741
+    400020: polySurface820_polySurface728_polySurface724_polySurface712
+    2300000: polySurface712_polySurface715
+    2300002: polySurface712_polySurface721
+    2300004: polySurface724_polySurface712_polySurface727
+    2300006: polySurface724_polySurface712_polySurface729
+    2300008: polySurface733
+    2300010: polySurface734
+    2300012: polySurface737
+    2300014: polySurface738
+    2300016: polySurface741
+    2300018: polySurface820_polySurface728_polySurface724_polySurface712
+    3300000: polySurface712_polySurface715
+    3300002: polySurface712_polySurface721
+    3300004: polySurface724_polySurface712_polySurface727
+    3300006: polySurface724_polySurface712_polySurface729
+    3300008: polySurface733
+    3300010: polySurface734
+    3300012: polySurface737
+    3300014: polySurface738
+    3300016: polySurface741
+    3300018: polySurface820_polySurface728_polySurface724_polySurface712
+    4300000: polySurface712_polySurface715
+    4300002: polySurface712_polySurface721
+    4300004: polySurface724_polySurface712_polySurface727
+    4300006: polySurface724_polySurface712_polySurface729
+    4300008: polySurface733
+    4300010: polySurface734
+    4300012: polySurface737
+    4300014: polySurface738
+    4300016: polySurface741
+    4300018: polySurface820_polySurface728_polySurface724_polySurface712
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

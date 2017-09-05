@@ -9,8 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class ScenesEditor : MonoBehaviour {
 
-	[MenuItem("ScenesEditor/CheckRoofMaterials")]
-	static void CheckRoofMaterials()
+	[MenuItem("ScenesEditor/DoRoof")]
+	static void DoRoof()
 	{
 		List<string> materialPaths = new List<string>();
 		EditorSceneManager.OpenScene("Assets/Scenes/New 2.unity");
@@ -40,17 +40,26 @@ public class ScenesEditor : MonoBehaviour {
 			Debug.Log(material);
 			Debug.Log(AssetDatabase.GetAssetPath(material));
 			AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(material), "Assets/Materials/Roof/"+material.name+".mat");
+			//AssetDatabase.("Assets/Materials/Roof/" + material.name + ".mat");
 			materialPaths.Add("Assets/Materials/Roof/"+material.name+".mat");
 		}
 
 		foreach (MeshRenderer meshRenderer in mr)
 		{
-			foreach (Material meshRendererMaterial in meshRenderer.materials)
+			for (int i = 0; i < meshRenderer.sharedMaterials.Length; i++)
 			{
-				
+				Material a = mt.First(x => x.name == meshRenderer.sharedMaterials[i].name);
+				Debug.Log(AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Roof/" + a.name + ".mat"));
+				//meshRenderer.sharedMaterials[i] = AssetDatabase.
+				meshRenderer.sharedMaterials[i] = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Roof/" + a.name + ".mat");
+				Debug.Log(meshRenderer.sharedMaterials[i].name);
+				Debug.Log(AssetDatabase.GetAssetPath(meshRenderer.sharedMaterials[i]));
 			}
 		}
+
 		
+		EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
+
 		/*foreach (string materialPath in materialPaths)
 		{
 			Material openedAsset = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
@@ -60,6 +69,28 @@ public class ScenesEditor : MonoBehaviour {
 				openedAsset.SetFloat("_Mode",2f);
 			}
 		}*/
+
+	}
+	
+	[MenuItem("ScenesEditor/CheckMaterials")]
+	static void CheckMaterials()
+	{
+		EditorSceneManager.OpenScene("Assets/Scenes/New 2.unity");
+		GameObject go = GameObject.FindWithTag("Roof");
+		//List <Material> mt = new List<Material>();
+		int length = go.GetComponentsInChildren<MeshRenderer>().Length;
 		
+		MeshRenderer[] mr = new MeshRenderer[length];
+		mr = go.GetComponentsInChildren<MeshRenderer>();
+		Debug.Log(mr[0]+" "+ mr.Length);
+
+		foreach (MeshRenderer meshRenderer in mr)
+		{
+			foreach (Material meshRendererSharedMaterial in meshRenderer.sharedMaterials)
+			{
+				Debug.Log(meshRendererSharedMaterial.name);
+				Debug.Log(AssetDatabase.GetAssetPath(meshRendererSharedMaterial));
+			}
+		}
 	}
 }

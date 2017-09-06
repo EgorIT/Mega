@@ -7,7 +7,7 @@ namespace Assets.Mega.Scripts {
     public class StateShops : MonoBehaviour, iViewState {
         public ViewStates viewStates;
         public List<BlockShops> listBlockShopses = new List<BlockShops>();
-        public TypeCameraOnState typeCameraOnState;
+        private TypeCameraOnState typeCameraOnState = TypeCameraOnState.perspective;
         public BlockShops currentBlockShops;
 
 
@@ -30,7 +30,7 @@ namespace Assets.Mega.Scripts {
                     break;
                 }
             }
-            MegaCameraController.inst.SetNewPosCamera(currentBlockShops.centerForCamera, GlobalParams.eulerAnglesForCameraInShops, currentBlockShops.sizeForOrtoCamera, typeCameraOnState);
+            //MegaCameraController.inst.SetNewPosCamera(currentBlockShops.centerForCamera, GlobalParams.eulerAnglesForCameraInShops, currentBlockShops.sizeForOrtoCamera, typeCameraOnState);
         }
 
         public ViewStates GetViewStates () {

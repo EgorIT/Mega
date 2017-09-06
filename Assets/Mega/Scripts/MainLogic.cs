@@ -32,6 +32,8 @@ namespace Assets.Mega.Scripts {
 
         public List<Transform> borders = new List<Transform>();
 
+        public GameObject roof;
+
         public void Awake() {
             inst = this;
         }
@@ -54,6 +56,7 @@ namespace Assets.Mega.Scripts {
             viewCurrentStates = ViewStates.none;
             ChangeState(ViewStates.shops);
         }
+
 
 
 
@@ -86,14 +89,14 @@ namespace Assets.Mega.Scripts {
             }
             Debug.Log(currentSceneName);
             Debug.Log(currentTransform);
-            StartCoroutine(IEnumGoToSceneFirstLook(currentSceneName, currentTransform));
+            //StartCoroutine(IEnumGoToSceneFirstLook(currentSceneName, currentTransform));
         }
 
-        public IEnumerator IEnumGoToSceneFirstLook(string nameScene, Transform transform) {
+        /*public IEnumerator IEnumGoToSceneFirstLook(string nameScene, Transform transform) {
             MegaCameraController.inst.SetNewPosCamera(transform.position, GlobalParams.eulerAnglesForCameraInAllMega, 5, TypeCameraOnState.orto);
             yield return new WaitForSeconds(1.0f);
             SceneManager.LoadSceneAsync(nameScene);
-        }
+        }*/
 
         /*public void GoToAllSeeTransform () {
             MegaCameraController.inst.SetNewPosCamera(AllSeeTransform.position, 

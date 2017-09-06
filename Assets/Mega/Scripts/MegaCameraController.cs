@@ -22,32 +22,36 @@ public class MegaCameraController : MonoBehaviour {
     public Transform angelXCamera;
     public Transform disCamera;
 
-    public List<Camera> listCamerasOrto;
+    //public List<Camera> listCamerasOrto;
 
     public Camera perspectiveCamera;
 
-    public TypeCameraOnState currentTypeCameraOnState = TypeCameraOnState.orto;
+    private TypeCameraOnState currentTypeCameraOnState = TypeCameraOnState.perspective;
 
     public Coroutine moveBack;
     public Vector3 lastGoodPos;
     public Vector3 currentEndAng;
+    public float currentDistans;
+    public float currentFieldOfView;
     public bool dontUseSwipeAndPinch;
+
+    public bool isFirstLookScene;
 
     public void Awake () {
         inst = this;
     }
 
-    public void Start() {
+    public void Start () {
         currentEndAng = new Vector3(angelXCamera.eulerAngles.x, angelYCamera.eulerAngles.y, 0);
 
     }
 
 
     public void MoveFromSwipe (float dX, float dY) {
-        if (dontUseSwipeAndPinch) {
+        if(dontUseSwipeAndPinch) {
             return;
         }
-        if(SceneManager.GetActiveScene().name != "New") {
+        if(isFirstLookScene) {
             MoveInPersp(dX, dY);
 
         } else {
@@ -56,7 +60,7 @@ public class MegaCameraController : MonoBehaviour {
                     break;
                 case ViewStates.allMega:
                 case ViewStates.shops:
-                    MoveInOrto(-dX, -dY);
+                    MoveInAllMega(-dX, -dY);
                     break;
                 case ViewStates.firstFaceLook:
                     MoveInPersp(dX, dY);
@@ -69,18 +73,20 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void ZoomFromPinch (float dZoom) {
-        if (dontUseSwipeAndPinch) {
+        if(dontUseSwipeAndPinch) {
             return;
         }
-        if(SceneManager.GetActiveScene().name != "New") {
-
+        if(isFirstLookScene) {
+            if (dZoom > 0) {
+                GoOutFirstLook();
+            }
         } else {
             switch(MainLogic.inst.GetViewCurrentStates()) {
                 case ViewStates.one:
                     break;
                 case ViewStates.allMega:
                 case ViewStates.shops:
-                    ZoomInOrto(dZoom);
+                    ZoomInPer(dZoom);
                     break;
                 case ViewStates.firstFaceLook:
                     break;
@@ -88,18 +94,35 @@ public class MegaCameraController : MonoBehaviour {
                     break;
             }
         }
-
     }
 
-    public void ZoomInOrto (float dZoom) {
-        for(int i = 0; i < listCamerasOrto.Count; i++) {
-            listCamerasOrto[i].orthographicSize = listCamerasOrto[i].orthographicSize + dZoom;
-            listCamerasOrto[i].enabled = true;
+    public void PauseForUI() {
+        StartCoroutine(IEnumPausaForUI());
+    }
+
+    public IEnumerator IEnumPausaForUI () {
+        dontUseSwipeAndPinch = true;
+        yield return new WaitForSeconds(GlobalParams.timeToFly*1.5f);
+        dontUseSwipeAndPinch = false;
+    }
+
+    public void ZoomInPer (float dZoom) {
+        disCamera.localPosition += new Vector3(0, 0, dZoom);
+        CheckPerSize();
+        currentDistans = disCamera.localPosition.z;
+    }
+
+    public void CheckPerSize () {
+        if(disCamera.localPosition.z < GlobalParams.maxDistancePesr) {
+            disCamera.localPosition = new Vector3(0, 0, GlobalParams.maxDistancePesr);
         }
-        CheckOrtoSize();
+        if(disCamera.localPosition.z > GlobalParams.minDistancePesr) {
+            //disCamera.localPosition = new Vector3(0, 0, GlobalParams.minDistancePesr);
+            GoToFirstLook();
+        }
     }
 
-    public void MoveInOrto (float x, float y) {
+    public void MoveInAllMega (float x, float y) {
         angelYCamera.Translate(new Vector3(x, 0, y));
         var newX = posCamera.position.x + angelYCamera.localPosition.x;
         var newY = posCamera.position.z + angelYCamera.localPosition.z;
@@ -121,25 +144,30 @@ public class MegaCameraController : MonoBehaviour {
             GoToGoodPos();
         }
         posCamera.position = new Vector3(newX, posCamera.position.y, newY);
+        currentFieldOfView = perspectiveCamera.fieldOfView;
+        currentDistans = disCamera.localPosition.z;
     }
 
-    public void GoToGoodPos() {
-        if (moveBack != null) {
+    public void GoToGoodPos () {
+        if(moveBack != null) {
             StopCoroutine(moveBack);
             moveBack = null;
         }
-        moveBack = StartCoroutine(IEnumChangePosAndAngOrtoCamera(lastGoodPos, GlobalParams.eulerAnglesForCameraInShops, GlobalParams.finalDistansOrto, listCamerasOrto[0].orthographicSize, GlobalParams.timeToBackFromBorder));
+        moveBack = StartCoroutine(IEnumChangePosAndAngPersCamera(lastGoodPos, GlobalParams.eulerAnglesForCameraInShops, currentFieldOfView, currentDistans, true));
     }
 
-    public void CheckOrtoSize () {
-        for(int i = 0; i < listCamerasOrto.Count; i++) {
-            if(listCamerasOrto[i].orthographicSize > GlobalParams.ortoMaxSize) {
-                listCamerasOrto[i].orthographicSize = GlobalParams.ortoMaxSize;
-            }
-            if(listCamerasOrto[i].orthographicSize < GlobalParams.ortoMinSize) {
-                listCamerasOrto[i].orthographicSize = GlobalParams.ortoMinSize;
-            }
-        }
+    public void GoToFirstLook() {
+        PauseForUI();
+        MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
+        isFirstLookScene = true;
+        MainLogic.inst.roof.SetActive(true);
+    }
+
+    public void GoOutFirstLook() {
+        PauseForUI();
+        MainLogic.inst.ChangeState(ViewStates.allMega);
+        isFirstLookScene = false;
+        MainLogic.inst.roof.SetActive(false);
     }
 
     public void CheckPozitionCamera () {
@@ -189,30 +217,31 @@ public class MegaCameraController : MonoBehaviour {
         //Debug.Log(angelXCamera.localEulerAngles.x);
     }
 
-    public void SetNewPosCamera (Vector3 endPos, Vector3 endAng, float finalSizeCamera, TypeCameraOnState newTypeCameraOnState) {
-        if (mainCoroutine != null) {
+    public void SetNewPosCamera (Vector3 endPos, Vector3 endAng, float finalFieldOfView, float finalDistans, bool isFast) {
+        Debug.Log(isFast);
+        if(mainCoroutine != null) {
             StopCoroutine(mainCoroutine);
         }
-        mainCoroutine = StartCoroutine(IEnumSetNewPosCamera(endPos, endAng, finalSizeCamera, newTypeCameraOnState));
+        mainCoroutine = StartCoroutine(IEnumSetNewPosCamera(endPos, endAng, finalFieldOfView, finalDistans, TypeCameraOnState.perspective, isFast));
     }
 
-    public IEnumerator IEnumSetNewPosCamera(Vector3 endPos, Vector3 endAng, float finalSizeCamera, TypeCameraOnState newTypeCameraOnState) {
+    public IEnumerator IEnumSetNewPosCamera (Vector3 endPos, Vector3 endAng, float finalFieldOfView, float finalDistans, TypeCameraOnState newTypeCameraOnState, bool isFast) {
         if(currentTypeCameraOnState == newTypeCameraOnState) {
-            if(newTypeCameraOnState == TypeCameraOnState.orto) {
+            /*if(newTypeCameraOnState == TypeCameraOnState.orto) {
                 if(moveCamera != null) {
                     StopCoroutine(moveCamera);
                     moveCamera = null;
                 }
                 yield return moveCamera = StartCoroutine(IEnumChangePosAndAngOrtoCamera(endPos, endAng, GlobalParams.finalDistansOrto, finalSizeCamera, GlobalParams.timeToFly));
-            }
+            }*/
             if(newTypeCameraOnState == TypeCameraOnState.perspective) {
                 if(moveCamera != null) {
                     StopCoroutine(moveCamera);
                     moveCamera = null;
                 }
-                yield return moveCamera = StartCoroutine(IEnumChangePosAndAngPersCamera(endPos, endAng, 0, 60));
+                yield return moveCamera = StartCoroutine(IEnumChangePosAndAngPersCamera(endPos, endAng, finalFieldOfView, finalDistans, isFast));
             }
-        } else {
+        }/* else {
             if(newTypeCameraOnState == TypeCameraOnState.orto) {
                 if(moveCamera != null) {
                     StopCoroutine(moveCamera);
@@ -227,11 +256,96 @@ public class MegaCameraController : MonoBehaviour {
                 }
                 yield return moveCamera = StartCoroutine(IEnumSwapOrtoToPerspective(endPos, endAng, finalSizeCamera));
             }
-        }
+        }*/
         currentEndAng = new Vector3(angelXCamera.eulerAngles.x, angelYCamera.eulerAngles.y, 0);
+        currentDistans = finalDistans;
+        currentFieldOfView = finalFieldOfView;
     }
 
-    public IEnumerator IEnumSwapOrtoToPerspective (Vector3 endPos, Vector3 endAng, float finalSizeCamera) {
+
+
+
+
+
+    private IEnumerator IEnumChangePosAndAngPersCamera (Vector3 endPos, Vector3 endAng, float finalFieldOfView, float finalDistans, bool isFast) {
+        var startPosition = posCamera.localPosition;
+        var startEulerAnglesY = angelYCamera.localEulerAngles.y;
+        var startEulerAnglesX = angelXCamera.localEulerAngles.x;
+        var startDisCamera = disCamera.localPosition.z;
+        var startFieldOfView = perspectiveCamera.fieldOfView;
+        var startPerlocalEulerAngles = perspectiveCamera.transform.localEulerAngles;
+        float time = GlobalParams.timeToFly;
+        float currentTime = 0;
+        while(currentTime < time) {
+            var t = currentTime / time;
+            posCamera.position = Vector3.Lerp(startPosition, endPos, t);
+            angelYCamera.localEulerAngles = new Vector3(0, Mathf.LerpAngle(startEulerAnglesY, endAng.y, t), 0);
+            angelXCamera.localEulerAngles = new Vector3(Mathf.LerpAngle(startEulerAnglesX, endAng.x, t * t), 0, 0);
+            if (isFast) {
+                disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 0.3f)));
+            } else {
+                disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 6f)));
+            }
+            
+            perspectiveCamera.transform.localEulerAngles =
+                new Vector3(Mathf.LerpAngle(startPerlocalEulerAngles.x, 0, t),
+                    Mathf.LerpAngle(startPerlocalEulerAngles.y, 0, t),
+                    Mathf.LerpAngle(startPerlocalEulerAngles.z, 0, t));
+            if (isFast) {
+                var f = Mathf.Lerp(startFieldOfView, finalFieldOfView, Mathf.Pow(t, 6f));
+                perspectiveCamera.fieldOfView = f < 1 ? 1 : f;
+            } else {
+                var f = Mathf.Lerp(startFieldOfView, finalFieldOfView, Mathf.Pow(t, 1f));
+                perspectiveCamera.fieldOfView = f < 1 ? 1 : f;
+            }
+            
+            
+
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+        perspectiveCamera.transform.localEulerAngles = Vector3.zero;
+        perspectiveCamera.fieldOfView = finalFieldOfView;
+        posCamera.position = endPos;
+        angelYCamera.localEulerAngles = new Vector3(0, endAng.y, 0);
+        angelXCamera.localEulerAngles = new Vector3(endAng.x, 0, 0);
+
+        if(LittleShopController.inst) {
+            LittleShopController.inst.SetAngelsForIcons(angelYCamera.localEulerAngles.y);
+        }
+
+        disCamera.localPosition = new Vector3(0, 0, finalDistans);
+        yield return null;
+        currentTypeCameraOnState = TypeCameraOnState.perspective;
+        moveCamera = null;
+    }
+
+    /* public float GetFieldOfView (float sizeOrto) {
+       var w = (sizeOrto / Screen.height) * Screen.width;
+       var atan = (Mathf.Atan2(w * 0.5f, 2.2f) / 3.14f) * 180;//1.1=38
+       return atan;
+   }*/
+
+    /*public void CheckOrtoSize () {
+     for(int i = 0; i < listCamerasOrto.Count; i++) {
+         if(listCamerasOrto[i].orthographicSize > GlobalParams.ortoMaxSize) {
+             listCamerasOrto[i].orthographicSize = GlobalParams.ortoMaxSize;
+         }
+         /*if(listCamerasOrto[i].orthographicSize < GlobalParams.ortoMinSize) {
+             listCamerasOrto[i].orthographicSize = GlobalParams.ortoMinSize;
+         }
+     }
+ }*/
+
+    /*public void ZoomInOrto (float dZoom) {
+       for(int i = 0; i < listCamerasOrto.Count; i++) {
+           listCamerasOrto[i].orthographicSize = listCamerasOrto[i].orthographicSize + dZoom;
+           listCamerasOrto[i].enabled = true;
+       }
+       CheckOrtoSize();
+   }*/
+
+    /*public IEnumerator IEnumSwapOrtoToPerspective (Vector3 endPos, Vector3 endAng, float finalSizeCamera) {
         var startPosition = posCamera.localPosition;
         var startEulerAnglesY = angelYCamera.localEulerAngles.y;
         var startEulerAnglesX = angelXCamera.localEulerAngles.x;
@@ -270,57 +384,7 @@ public class MegaCameraController : MonoBehaviour {
         yield return null;
         currentTypeCameraOnState = TypeCameraOnState.perspective;
         moveCamera = null;
-    }
-
-    public IEnumerator IEnumSwapPerspectiveToOrto (Vector3 endPos, Vector3 endAng, float finalDistans, float finalSizeCamera) {
-        dontUseSwipeAndPinch = true;
-        var startPosition = posCamera.localPosition;
-        var startEulerAnglesY = angelYCamera.localEulerAngles.y;
-        var startEulerAnglesX = angelXCamera.localEulerAngles.x;
-        var startDisCamera = disCamera.localPosition.z;
-        var startFieldOfView = perspectiveCamera.fieldOfView;
-        var finalFieldOfView = GetFieldOfView(finalSizeCamera);
-        var startPerlocalEulerAngles = perspectiveCamera.transform.localEulerAngles;
-        //Debug.Log(finalFieldOfView);
-
-        float time = GlobalParams.timeToFly;
-        float currentTime = 0;
-        while(currentTime < time) {
-            var t = currentTime / time;
-            posCamera.position = Vector3.Lerp(startPosition, endPos, t);
-            angelYCamera.localEulerAngles = new Vector3(0, Mathf.LerpAngle(startEulerAnglesY, endAng.y, t), 0);
-            angelXCamera.localEulerAngles = new Vector3(Mathf.LerpAngle(startEulerAnglesX, endAng.x, t * t), 0, 0);
-            disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, t * t * t));
-            perspectiveCamera.fieldOfView = Mathf.Lerp(startFieldOfView, finalFieldOfView, t * t);
-            perspectiveCamera.transform.localEulerAngles =
-                new Vector3(Mathf.LerpAngle(startPerlocalEulerAngles.x, 0, t),
-                    Mathf.LerpAngle(startPerlocalEulerAngles.y, 0, t),
-                    Mathf.LerpAngle(startPerlocalEulerAngles.z, 0, t));
-            currentTime += Time.deltaTime;
-            yield return null;
-        }
-        perspectiveCamera.transform.localEulerAngles = Vector3.zero;
-        perspectiveCamera.fieldOfView = finalFieldOfView;
-        posCamera.position = endPos;
-        angelYCamera.localEulerAngles = new Vector3(0, endAng.y, 0);
-        angelXCamera.localEulerAngles = new Vector3(endAng.x, 0, 0);
-        disCamera.localPosition = new Vector3(0, 0, finalDistans);
-        for(int i = 0; i < listCamerasOrto.Count; i++) {
-            listCamerasOrto[i].orthographicSize = finalSizeCamera;
-            listCamerasOrto[i].enabled = true;
-        }
-        perspectiveCamera.enabled = false;
-        yield return null;
-        currentTypeCameraOnState = TypeCameraOnState.orto;
-        dontUseSwipeAndPinch = false;
-        moveCamera = null;
-    }
-
-    public float GetFieldOfView (float sizeOrto) {
-        var w = (sizeOrto / Screen.height) * Screen.width;
-        var atan = (Mathf.Atan2(w * 0.5f, 2.2f) / 3.14f) * 180;//1.1=38
-        return atan;
-    }
+    }*/
 
     /*public float GetSizeOrto(float fieldOfView ) {
         var w = Mathf.Tan((fieldOfView / 180) * 3.14f) * 1.33f * 2;
@@ -328,46 +392,7 @@ public class MegaCameraController : MonoBehaviour {
         return sizeOrto;
     }*/
 
-    private IEnumerator IEnumChangePosAndAngPersCamera (Vector3 endPos, Vector3 endAng, float finalDistans, float finalSizeCamera) {
-        var startPosition = posCamera.localPosition;
-        var startEulerAnglesY = angelYCamera.localEulerAngles.y;
-        var startEulerAnglesX = angelXCamera.localEulerAngles.x;
-        var startDisCamera = disCamera.localPosition.z;
-        var startFieldOfView = perspectiveCamera.fieldOfView;
-        var startPerlocalEulerAngles = perspectiveCamera.transform.localEulerAngles;
-        float time = GlobalParams.timeToFly;
-        float currentTime = 0;
-        while(currentTime < time) {
-            var t = currentTime / time;
-            posCamera.position = Vector3.Lerp(startPosition, endPos, t);
-            angelYCamera.localEulerAngles = new Vector3(0, Mathf.LerpAngle(startEulerAnglesY, endAng.y, t), 0);
-            angelXCamera.localEulerAngles = new Vector3(Mathf.LerpAngle(startEulerAnglesX, endAng.x, t * t), 0, 0);
-            disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, 0, t * t * t));
-            perspectiveCamera.transform.localEulerAngles =
-                new Vector3(Mathf.LerpAngle(startPerlocalEulerAngles.x, 0, t),
-                    Mathf.LerpAngle(startPerlocalEulerAngles.y, 0, t),
-                    Mathf.LerpAngle(startPerlocalEulerAngles.z, 0, t));
-            perspectiveCamera.fieldOfView = Mathf.Lerp(startFieldOfView, 60, t * t);
-
-            currentTime += Time.deltaTime;
-            yield return null;
-        }
-        perspectiveCamera.transform.localEulerAngles = Vector3.zero;
-        perspectiveCamera.fieldOfView = 60;
-        posCamera.position = endPos;
-        angelYCamera.localEulerAngles = new Vector3(0, endAng.y, 0);
-        angelXCamera.localEulerAngles = new Vector3(endAng.x, 0, 0);
-        if (LittleShopController.inst) {
-            LittleShopController.inst.SetAngelsForIcons(angelYCamera.localEulerAngles.y);
-        }
-        
-        disCamera.localPosition = Vector3.zero;
-        yield return null;
-        currentTypeCameraOnState = TypeCameraOnState.perspective;
-        moveCamera = null;
-    }
-
-    private IEnumerator IEnumChangePosAndAngOrtoCamera (Vector3 endPos, Vector3 endAng, float finalDistans, float finalSizeCamera, float time) {
+    /*private IEnumerator IEnumChangePosAndAngOrtoCamera (Vector3 endPos, Vector3 endAng, float finalDistans, float finalSizeCamera, float time) {
         //endPos += new Vector3(-1, 0, -1);
         var startPosition = posCamera.localPosition;
         var startEulerAnglesY = angelYCamera.localEulerAngles.y;
@@ -411,10 +436,49 @@ public class MegaCameraController : MonoBehaviour {
         moveCamera = null;
 
     }
+    */
 
-    private void Update () {
-        //CheckPoint(0,1,MainLogic.inst.borders[2].position);
-        //Debug.Log(moveCamera);
+    /*public IEnumerator IEnumSwapPerspectiveToOrto (Vector3 endPos, Vector3 endAng, float finalDistans, float finalSizeCamera) {
+    dontUseSwipeAndPinch = true;
+    var startPosition = posCamera.localPosition;
+    var startEulerAnglesY = angelYCamera.localEulerAngles.y;
+    var startEulerAnglesX = angelXCamera.localEulerAngles.x;
+    var startDisCamera = disCamera.localPosition.z;
+    var startFieldOfView = perspectiveCamera.fieldOfView;
+    var finalFieldOfView = GetFieldOfView(finalSizeCamera);
+    var startPerlocalEulerAngles = perspectiveCamera.transform.localEulerAngles;
+    //Debug.Log(finalFieldOfView);
+
+    float time = GlobalParams.timeToFly;
+    float currentTime = 0;
+    while(currentTime < time) {
+        var t = currentTime / time;
+        posCamera.position = Vector3.Lerp(startPosition, endPos, t);
+        angelYCamera.localEulerAngles = new Vector3(0, Mathf.LerpAngle(startEulerAnglesY, endAng.y, t), 0);
+        angelXCamera.localEulerAngles = new Vector3(Mathf.LerpAngle(startEulerAnglesX, endAng.x, t * t), 0, 0);
+        disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, t * t * t));
+        perspectiveCamera.fieldOfView = Mathf.Lerp(startFieldOfView, finalFieldOfView, t * t);
+        perspectiveCamera.transform.localEulerAngles =
+            new Vector3(Mathf.LerpAngle(startPerlocalEulerAngles.x, 0, t),
+                Mathf.LerpAngle(startPerlocalEulerAngles.y, 0, t),
+                Mathf.LerpAngle(startPerlocalEulerAngles.z, 0, t));
+        currentTime += Time.deltaTime;
+        yield return null;
     }
+    perspectiveCamera.transform.localEulerAngles = Vector3.zero;
+    perspectiveCamera.fieldOfView = finalFieldOfView;
+    posCamera.position = endPos;
+    angelYCamera.localEulerAngles = new Vector3(0, endAng.y, 0);
+    angelXCamera.localEulerAngles = new Vector3(endAng.x, 0, 0);
+    disCamera.localPosition = new Vector3(0, 0, finalDistans);
+    for(int i = 0; i < listCamerasOrto.Count; i++) {
+        listCamerasOrto[i].orthographicSize = finalSizeCamera;
+        listCamerasOrto[i].enabled = true;
+    }
+    perspectiveCamera.enabled = false;
+    yield return null;
+    currentTypeCameraOnState = TypeCameraOnState.orto;
+    dontUseSwipeAndPinch = false;
+    moveCamera = null;
+}*/
 }
-

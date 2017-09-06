@@ -7,7 +7,7 @@ namespace Assets.Mega.Scripts {
     public class StateOne : MonoBehaviour, IPointerDownHandler, iViewState {
         public Image imageOne;
         public ViewStates viewStates;
-        public TypeCameraOnState typeCameraOnState;
+        private TypeCameraOnState typeCameraOnState = TypeCameraOnState.perspective;
 
         public Transform StateLookTransform;
 
@@ -35,7 +35,7 @@ namespace Assets.Mega.Scripts {
             Video.inst.FadeOn();
             MainLogic.inst.interfaceMega.SetActive(false);
             imageOne.raycastTarget = true;
-            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInAllMega, GlobalParams.sizeOrtocameraAllMega, typeCameraOnState);
+            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInAllMega, GlobalParams.fieldOfViewOnStateOne, GlobalParams.distansOnStateOne, false);
         }
 
         public ViewStates GetViewStates () {

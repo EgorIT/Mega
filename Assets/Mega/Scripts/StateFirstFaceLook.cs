@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Assets.Mega.Scripts {
     public class StateFirstFaceLook : MonoBehaviour, iViewState {
         public ViewStates viewStates;
-        public TypeCameraOnState typeCameraOnState;
+        private TypeCameraOnState typeCameraOnState = TypeCameraOnState.perspective;
         public Transform StateLookTransform;
 
         public void Start () {
@@ -23,7 +23,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void StartState () {
-            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInShops, 0, typeCameraOnState);
+            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInShops, GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, true);
         }
 
         /*public IEnumerator IEnumLoadSceneFirstFaceLook() {

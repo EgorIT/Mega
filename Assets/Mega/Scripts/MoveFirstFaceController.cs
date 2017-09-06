@@ -16,7 +16,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
-            MegaCameraController.inst.currentTypeCameraOnState = TypeCameraOnState.perspective;
+            //MegaCameraController.inst.currentTypeCameraOnState = TypeCameraOnState.perspective;
         }
 
         public void MoveForThisFloorPoint(PointMoveOnFirstFaceScene pointMoveOnFirstFaceScene) {
@@ -42,8 +42,7 @@ namespace Assets.Mega.Scripts {
 
         public IEnumerator IEnumCheckSwipe (Vector3 pointMove, float deltaY, Vector3 endAng) {
             yield return new WaitForSeconds(0.5f);
-            MegaCameraController.inst.SetNewPosCamera(pointMove + Vector3.up * deltaY,
-                endAng, 0, TypeCameraOnState.perspective);
+            //MegaCameraController.inst.SetNewPosCamera(pointMove + Vector3.up * deltaY, endAng, 0);
         }
 
         public void GoToMainScene() {

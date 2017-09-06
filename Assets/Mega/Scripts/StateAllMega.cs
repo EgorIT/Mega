@@ -5,7 +5,7 @@ using UnityEngine.UI;
 namespace Assets.Mega.Scripts {
     public class StateAllMega : MonoBehaviour, iViewState {
         public ViewStates viewStates;
-        public TypeCameraOnState typeCameraOnState;
+        private TypeCameraOnState typeCameraOnState = TypeCameraOnState.perspective;
 
         public Transform StateLookTransform;
         
@@ -19,7 +19,7 @@ namespace Assets.Mega.Scripts {
 
         public void StartState () {
             MainLogic.inst.interfaceMega.SetActive(true);
-            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInAllMega, GlobalParams.sizeOrtocameraAllMega, typeCameraOnState);
+            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInAllMega, GlobalParams.fieldOfViewOnAllMega, GlobalParams.distansOnAllMega, false);
         }
 
         public ViewStates GetViewStates () {

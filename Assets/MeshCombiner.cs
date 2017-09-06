@@ -72,7 +72,6 @@ namespace Assets.Mega.Scripts {
                 Debug.Log(combiners.Count);
                 subMesh.CombineMeshes(combiners.ToArray(), true);
                 submeshes.Add(subMesh);
-                Unwrapping.GenerateSecondaryUVSet(subMesh);
             }
 
             List<CombineInstance> finalCombiners = new List<CombineInstance>();

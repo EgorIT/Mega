@@ -42,19 +42,26 @@ public class ScenesEditor : MonoBehaviour {
 			AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(material), "Assets/Materials/Roof/"+material.name+".mat");
 			//AssetDatabase.("Assets/Materials/Roof/" + material.name + ".mat");
 			materialPaths.Add("Assets/Materials/Roof/"+material.name+".mat");
+			AssetDatabase.ImportAsset("Assets/Materials/Roof/"+material.name+".mat");
 		}
 
+		
 		foreach (MeshRenderer meshRenderer in mr)
 		{
+			Material[] matArray = new Material[meshRenderer.sharedMaterials.Length];
 			for (int i = 0; i < meshRenderer.sharedMaterials.Length; i++)
 			{
 				Material a = mt.First(x => x.name == meshRenderer.sharedMaterials[i].name);
 				Debug.Log(AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Roof/" + a.name + ".mat"));
 				//meshRenderer.sharedMaterials[i] = AssetDatabase.
-				meshRenderer.sharedMaterials[i] = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Roof/" + a.name + ".mat");
+				Material matmat = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Roof/" + a.name + ".mat");
+				Debug.Log("1" +matmat.name +" "+ AssetDatabase.GetAssetPath(matmat));
+				//meshRenderer.sharedMaterials[i] = matmat;//AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Roof/" + a.name + ".mat");
+				matArray[i] = matmat;
 				Debug.Log(meshRenderer.sharedMaterials[i].name);
 				Debug.Log(AssetDatabase.GetAssetPath(meshRenderer.sharedMaterials[i]));
 			}
+			meshRenderer.sharedMaterials = matArray;
 		}
 
 		

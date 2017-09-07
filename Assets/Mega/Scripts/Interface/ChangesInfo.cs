@@ -44,7 +44,6 @@ public class ChangesInfo : MonoBehaviour
 
 	public void SetShop(string name)
 	{
-		
 		Shop newShop = db.Find(x => x.name == name);
 		Debug.Log(name+" "+newShop+" "+newShop.name);
 		shopTable.shopName.text = newShop.name;

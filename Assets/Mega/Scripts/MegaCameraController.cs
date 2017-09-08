@@ -11,9 +11,14 @@ public enum TypeCameraOnState {
     none
 }
 
+public enum TypeMoveCamera {
+    fast,
+    slow,
+    normal
+}
+
 public class MegaCameraController : MonoBehaviour {
     public static MegaCameraController inst;
-
     public Coroutine moveCamera;
     public Coroutine mainCoroutine;
 
@@ -21,9 +26,7 @@ public class MegaCameraController : MonoBehaviour {
     public Transform angelYCamera;
     public Transform angelXCamera;
     public Transform disCamera;
-
     //public List<Camera> listCamerasOrto;
-
     public Camera perspectiveCamera;
 
     private TypeCameraOnState currentTypeCameraOnState = TypeCameraOnState.perspective;
@@ -37,15 +40,18 @@ public class MegaCameraController : MonoBehaviour {
 
     public bool isFirstLookScene;
 
+    public float distansAllMega;
+    public Vector3 stateLookVector3AllMega;
+
     public void Awake () {
         inst = this;
     }
 
     public void Start () {
+        //
         currentEndAng = new Vector3(angelXCamera.eulerAngles.x, angelYCamera.eulerAngles.y, 0);
 
     }
-
 
     public void MoveFromSwipe (float dX, float dY) {
         if(dontUseSwipeAndPinch) {
@@ -69,7 +75,6 @@ public class MegaCameraController : MonoBehaviour {
                     break;
             }
         }
-
     }
 
     public void ZoomFromPinch (float dZoom) {
@@ -113,13 +118,16 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void CheckPerSize () {
-        if(disCamera.localPosition.z < GlobalParams.maxDistancePesr) {
+        if(GetCurrentDistans() < GlobalParams.maxDistancePesr) {
             disCamera.localPosition = new Vector3(0, 0, GlobalParams.maxDistancePesr);
         }
-        if(disCamera.localPosition.z > GlobalParams.minDistancePesr) {
-            //disCamera.localPosition = new Vector3(0, 0, GlobalParams.minDistancePesr);
+        if(GetCurrentDistans() > GlobalParams.minDistancePesr) {
             GoToFirstLook();
         }
+    }
+
+    public float GetCurrentDistans() {
+        return currentDistans;
     }
 
     public void MoveInAllMega (float x, float y) {
@@ -153,10 +161,12 @@ public class MegaCameraController : MonoBehaviour {
             StopCoroutine(moveBack);
             moveBack = null;
         }
-        moveBack = StartCoroutine(IEnumChangePosAndAngPersCamera(lastGoodPos, GlobalParams.eulerAnglesForCameraInShops, currentFieldOfView, currentDistans, true));
+        moveBack = StartCoroutine(IEnumChangePosAndAngPersCamera(lastGoodPos, GlobalParams.eulerAnglesForCameraInShops, 
+            currentFieldOfView, GetCurrentDistans(), TypeMoveCamera.normal));
     }
 
     public void GoToFirstLook() {
+
         PauseForUI();
         MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
         isFirstLookScene = true;
@@ -165,6 +175,8 @@ public class MegaCameraController : MonoBehaviour {
 
     public void GoOutFirstLook() {
         PauseForUI();
+        distansAllMega = GlobalParams.minDistancePesr - 100;
+        stateLookVector3AllMega = posCamera.position;
         MainLogic.inst.ChangeState(ViewStates.allMega);
         isFirstLookScene = false;
         MainLogic.inst.roof.SetActive(false);
@@ -217,15 +229,16 @@ public class MegaCameraController : MonoBehaviour {
         //Debug.Log(angelXCamera.localEulerAngles.x);
     }
 
-    public void SetNewPosCamera (Vector3 endPos, Vector3 endAng, float finalFieldOfView, float finalDistans, bool isFast) {
-        Debug.Log(isFast);
+    public void SetNewPosCamera (Vector3 endPos, Vector3 endAng, float finalFieldOfView, float finalDistans, TypeMoveCamera typeMoveCamera) {
+        //Debug.Log(isFast);
         if(mainCoroutine != null) {
             StopCoroutine(mainCoroutine);
         }
-        mainCoroutine = StartCoroutine(IEnumSetNewPosCamera(endPos, endAng, finalFieldOfView, finalDistans, TypeCameraOnState.perspective, isFast));
+        mainCoroutine = StartCoroutine(IEnumSetNewPosCamera(endPos, endAng, finalFieldOfView, finalDistans, TypeCameraOnState.perspective, typeMoveCamera));
     }
 
-    public IEnumerator IEnumSetNewPosCamera (Vector3 endPos, Vector3 endAng, float finalFieldOfView, float finalDistans, TypeCameraOnState newTypeCameraOnState, bool isFast) {
+    public IEnumerator IEnumSetNewPosCamera (Vector3 endPos, Vector3 endAng, float finalFieldOfView, 
+        float finalDistans, TypeCameraOnState newTypeCameraOnState, TypeMoveCamera typeMoveCamera) {
         if(currentTypeCameraOnState == newTypeCameraOnState) {
             /*if(newTypeCameraOnState == TypeCameraOnState.orto) {
                 if(moveCamera != null) {
@@ -239,7 +252,7 @@ public class MegaCameraController : MonoBehaviour {
                     StopCoroutine(moveCamera);
                     moveCamera = null;
                 }
-                yield return moveCamera = StartCoroutine(IEnumChangePosAndAngPersCamera(endPos, endAng, finalFieldOfView, finalDistans, isFast));
+                yield return moveCamera = StartCoroutine(IEnumChangePosAndAngPersCamera(endPos, endAng, finalFieldOfView, finalDistans, typeMoveCamera));
             }
         }/* else {
             if(newTypeCameraOnState == TypeCameraOnState.orto) {
@@ -262,12 +275,7 @@ public class MegaCameraController : MonoBehaviour {
         currentFieldOfView = finalFieldOfView;
     }
 
-
-
-
-
-
-    private IEnumerator IEnumChangePosAndAngPersCamera (Vector3 endPos, Vector3 endAng, float finalFieldOfView, float finalDistans, bool isFast) {
+    private IEnumerator IEnumChangePosAndAngPersCamera (Vector3 endPos, Vector3 endAng, float finalFieldOfView, float finalDistans, TypeMoveCamera typeMoveCamera) {
         var startPosition = posCamera.localPosition;
         var startEulerAnglesY = angelYCamera.localEulerAngles.y;
         var startEulerAnglesX = angelXCamera.localEulerAngles.x;
@@ -281,25 +289,32 @@ public class MegaCameraController : MonoBehaviour {
             posCamera.position = Vector3.Lerp(startPosition, endPos, t);
             angelYCamera.localEulerAngles = new Vector3(0, Mathf.LerpAngle(startEulerAnglesY, endAng.y, t), 0);
             angelXCamera.localEulerAngles = new Vector3(Mathf.LerpAngle(startEulerAnglesX, endAng.x, t * t), 0, 0);
-            if (isFast) {
-                disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 0.3f)));
-            } else {
-                disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 6f)));
+            float f;
+            switch (typeMoveCamera) {
+                case TypeMoveCamera.fast:
+                    disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 0.3f)));
+                    f = Mathf.Lerp(startFieldOfView, finalFieldOfView, Mathf.Pow(t, 6f));
+                    perspectiveCamera.fieldOfView = f < 1 ? 1 : f;
+                    break;
+                case TypeMoveCamera.slow:
+                    disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 6f)));
+                    f = Mathf.Lerp(startFieldOfView, finalFieldOfView, Mathf.Pow(t, 1f));
+                    perspectiveCamera.fieldOfView = f < 1 ? 1 : f;
+                    break;
+                case TypeMoveCamera.normal:
+                    disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, t));
+                    f = Mathf.Lerp(startFieldOfView, finalFieldOfView, t);
+                    perspectiveCamera.fieldOfView = f < 1 ? 1 : f;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("typeMoveCamera", typeMoveCamera, null);
             }
-            
+
             perspectiveCamera.transform.localEulerAngles =
                 new Vector3(Mathf.LerpAngle(startPerlocalEulerAngles.x, 0, t),
                     Mathf.LerpAngle(startPerlocalEulerAngles.y, 0, t),
                     Mathf.LerpAngle(startPerlocalEulerAngles.z, 0, t));
-            if (isFast) {
-                var f = Mathf.Lerp(startFieldOfView, finalFieldOfView, Mathf.Pow(t, 6f));
-                perspectiveCamera.fieldOfView = f < 1 ? 1 : f;
-            } else {
-                var f = Mathf.Lerp(startFieldOfView, finalFieldOfView, Mathf.Pow(t, 1f));
-                perspectiveCamera.fieldOfView = f < 1 ? 1 : f;
-            }
-            
-            
+
 
             currentTime += Time.deltaTime;
             yield return null;

@@ -32,10 +32,13 @@ namespace Assets.Mega.Scripts {
         }
 
         public void StartState () {
+            MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
+            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(0.1f, 0, -100f);
             Video.inst.FadeOn();
             MainLogic.inst.interfaceMega.SetActive(false);
             imageOne.raycastTarget = true;
-            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInAllMega, GlobalParams.fieldOfViewOnStateOne, GlobalParams.distansOnStateOne, false);
+            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInAllMega, 
+                GlobalParams.fieldOfViewOnStateOne, GlobalParams.distansOnStateOne, TypeMoveCamera.slow);
         }
 
         public ViewStates GetViewStates () {

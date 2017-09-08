@@ -5356,6 +5356,8 @@ ModelImporter:
     110696: pPlane997
     110698: pPlane998
     110700: pPlane999
+    110702: pPlane1998_MeshPart0
+    110704: pPlane1998_MeshPart1
     400000: group1
     400002: group10
     400004: group10 1
@@ -10707,6 +10709,8 @@ ModelImporter:
     410696: pPlane997
     410698: pPlane998
     410700: pPlane999
+    410702: pPlane1998_MeshPart0
+    410704: pPlane1998_MeshPart1
     2300000: pCube1
     2300002: pCylinder1
     2300004: pCylinder10
@@ -15834,6 +15838,8 @@ ModelImporter:
     2310248: pPlane997
     2310250: pPlane998
     2310252: pPlane999
+    2310254: pPlane1998_MeshPart0
+    2310256: pPlane1998_MeshPart1
     3300000: pCube1
     3300002: pCylinder1
     3300004: pCylinder10
@@ -20961,6 +20967,8 @@ ModelImporter:
     3310248: pPlane997
     3310250: pPlane998
     3310252: pPlane999
+    3310254: pPlane1998_MeshPart0
+    3310256: pPlane1998_MeshPart1
     4300000: pPlane1
     4300002: pPlane2
     4300004: pPlane3
@@ -26088,6 +26096,8 @@ ModelImporter:
     4310248: polySurface841
     4310250: pPlane2009
     4310252: pPlane2047
+    4310254: pPlane1998_MeshPart0
+    4310256: pPlane1998_MeshPart1
     7400000: Take 001
     9500000: //RootNode
   materials:

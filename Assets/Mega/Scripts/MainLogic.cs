@@ -65,6 +65,7 @@ namespace Assets.Mega.Scripts {
             currentNumberBlockShops = number;
             viewCurrentStates = ViewStates.none;
             ChangeState(ViewStates.shops);
+            FloorController.inst.SetQuartal(number);
         }
 
 

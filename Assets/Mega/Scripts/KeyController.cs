@@ -20,6 +20,8 @@ namespace Assets.Mega.Scripts {
 
         public float i = 0;
 
+        public bool stabilizationFlag;
+
         public void Update () {
             float x = 0;
             float y = 0;
@@ -52,12 +54,23 @@ namespace Assets.Mega.Scripts {
             }
 
             if(Input.GetKey(KeyCode.Mouse0)) {
-                swipeFlag = true;
-                var v3 = Input.mousePosition - lastPosCur;
-                touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouse, Time.deltaTime * v3.y * speedSwipeMouse);
-                //Debug.Log(touch.deltaPosition);
+                if (stabilizationFlag) {
+                    swipeFlag = true;
+                    var v3 = Input.mousePosition - lastPosCur;
+                   // Debug.Log(v3.sqrMagnitude);
+                    if(MoveFirstFaceController.inst && v3.sqrMagnitude > 50) {
+                        MoveFirstFaceController.inst.StopClickCoroutine();
+                    }
+
+                    touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouse, Time.deltaTime * v3.y * speedSwipeMouse);
+                }
+                stabilizationFlag = true;
+                lastPosCur = Input.mousePosition;
             }
-            lastPosCur = Input.mousePosition;
+            else {
+                stabilizationFlag = false;
+            }
+            
 
             if(swipeFlag) {
                 if (Math.Abs(MegaCameraController.inst.disCamera.localPosition.z) < 0.0001) {

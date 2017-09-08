@@ -9,9 +9,20 @@ namespace Assets.Mega.Scripts {
         public ViewStates viewStates;
         private TypeCameraOnState typeCameraOnState = TypeCameraOnState.perspective;
         public Transform StateLookTransform;
+        public List<Transform> listStateLooksTransform = new List<Transform>();
+
+        public Transform rootStateLooksTransform;
 
         public void Start () {
+            ScanAllPoints();
             MainLogic.inst.listViewStates.Add(this);
+        }
+
+        public void ScanAllPoints() {
+            var allPoints = rootStateLooksTransform.GetComponentsInChildren<Transform>();
+            for (int i = 1; i < allPoints.Length; i++) {
+                listStateLooksTransform.Add(allPoints[i]);
+            }
         }
 
         public void EndState () {
@@ -22,8 +33,22 @@ namespace Assets.Mega.Scripts {
             MainLogic.inst.ChangeState(viewStates);
         }
 
+        public Vector3 FindPoint() {
+            float dis = float.MaxValue;
+            int index = 0;
+            for (int i = 0; i < listStateLooksTransform.Count; i++) {
+                var newDis = (listStateLooksTransform[i].position - MegaCameraController.inst.posCamera.position).sqrMagnitude;
+                if (newDis < dis) {
+                    dis = newDis;
+                    index = i;
+                }
+            }
+            return listStateLooksTransform[index].position;
+        }
+
         public void StartState () {
-            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInShops, GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, true);
+            MegaCameraController.inst.SetNewPosCamera(FindPoint(), GlobalParams.eulerAnglesForCameraInShops, 
+                GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.fast);
         }
 
         /*public IEnumerator IEnumLoadSceneFirstFaceLook() {

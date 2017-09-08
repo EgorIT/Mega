@@ -7,7 +7,7 @@ namespace Assets.Mega.Scripts {
         public ViewStates viewStates;
         private TypeCameraOnState typeCameraOnState = TypeCameraOnState.perspective;
 
-        public Transform StateLookTransform;
+        //public Transform StateLookTransform;
         
         public void Start () {
             MainLogic.inst.listViewStates.Add(this);
@@ -19,7 +19,8 @@ namespace Assets.Mega.Scripts {
 
         public void StartState () {
             MainLogic.inst.interfaceMega.SetActive(true);
-            MegaCameraController.inst.SetNewPosCamera(StateLookTransform.position, GlobalParams.eulerAnglesForCameraInAllMega, GlobalParams.fieldOfViewOnAllMega, GlobalParams.distansOnAllMega, false);
+            MegaCameraController.inst.SetNewPosCamera(MegaCameraController.inst.stateLookVector3AllMega, GlobalParams.eulerAnglesForCameraInAllMega, 
+                GlobalParams.fieldOfViewOnAllMega, MegaCameraController.inst.distansAllMega, TypeMoveCamera.slow);
         }
 
         public ViewStates GetViewStates () {

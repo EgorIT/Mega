@@ -20,10 +20,14 @@ namespace Assets.Mega.Scripts {
         }
 
         public void MoveForThisFloorPoint(PointMoveOnFirstFaceScene pointMoveOnFirstFaceScene) {
+            if (!MegaCameraController.inst.isFirstLookScene) {
+                return;
+            }
             if (clickCoroutine != null) {
                 StopCoroutine(clickCoroutine);
             }
-            clickCoroutine = StartCoroutine(IEnumCheckSwipe(pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition, 0.638f, MegaCameraController.inst.currentEndAng));
+            clickCoroutine = StartCoroutine(IEnumCheckSwipe(pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition, 
+                0.638f, MegaCameraController.inst.currentEndAng));
         }
 
         public void MoveForThisShop (PointerMoveToShop pointerMoveToShop) {
@@ -42,7 +46,8 @@ namespace Assets.Mega.Scripts {
 
         public IEnumerator IEnumCheckSwipe (Vector3 pointMove, float deltaY, Vector3 endAng) {
             yield return new WaitForSeconds(0.5f);
-            //MegaCameraController.inst.SetNewPosCamera(pointMove + Vector3.up * deltaY, endAng, 0);
+            MegaCameraController.inst.SetNewPosCamera(pointMove + Vector3.up * deltaY, endAng, 
+                GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.normal);
         }
 
         public void GoToMainScene() {

@@ -33,6 +33,8 @@ namespace Assets.Mega.Scripts {
 
         public GameObject roof;
 
+        public List<GameObject> listToOnTEMP = new List<GameObject>();
+
         public void Awake() {
             inst = this;
         }
@@ -42,6 +44,15 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
+
+            for (int i = 0; i < listToOnTEMP.Count; i++) {
+                if (listToOnTEMP[i] != null) {
+                    //listToOnTEMP[i].SetActive(true);
+                }
+                
+            }
+            MainLogic.inst.roof.SetActive(false);
+
             if (Application.platform != RuntimePlatform.WindowsEditor) {
                 //WindowMod.StartFromController();
             }
@@ -57,7 +68,18 @@ namespace Assets.Mega.Scripts {
         }
 
 
-
+        public void Update() {
+            if (MegaCameraController.inst.GetCurrentDistans() < -10000) {
+                if (!roof.activeSelf) {
+                    roof.SetActive(true);
+                }
+            }
+            if(MegaCameraController.inst.GetCurrentDistans() > -10000 && MegaCameraController.inst.GetCurrentDistans() < -1) {
+                if(roof.activeSelf) {
+                    roof.SetActive(false);
+                }
+            }
+        }
 
         public void ChangeState(ViewStates newState) {
             if (viewCurrentStates == newState) {

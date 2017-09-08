@@ -46,8 +46,10 @@ db.Add(new ChangesInfo.Shop("Benetton", "",""));
 db.Add(new ChangesInfo.Shop("Bershka", "",""));
 db.Add(new ChangesInfo.Shop("Betkhoven", "",""));
 db.Add(new ChangesInfo.Shop("BORK", "",""));
+db.Add(new ChangesInfo.Shop("BOBBI BROWN", "",""));
 db.Add(new ChangesInfo.Shop("Calvin Klein Jeans", "",""));
 db.Add(new ChangesInfo.Shop("Calzedonia", "",""));
+db.Add(new ChangesInfo.Shop("CAMP DAVID", "",""));
 db.Add(new ChangesInfo.Shop("Carlo Pazolini", "",""));
 db.Add(new ChangesInfo.Shop("Caterina Leman", "",""));
 db.Add(new ChangesInfo.Shop("CHANEL", "",""));
@@ -81,6 +83,7 @@ db.Add(new ChangesInfo.Shop("Happy Steps", "",""));
 db.Add(new ChangesInfo.Shop("Helmige", "",""));
 db.Add(new ChangesInfo.Shop("Henderson", "",""));
 db.Add(new ChangesInfo.Shop("Hogl", "",""));
+db.Add(new ChangesInfo.Shop("ILE DE BEAUTE", "",""));
 db.Add(new ChangesInfo.Shop("Intimissimi", "",""));
 db.Add(new ChangesInfo.Shop("IQTOY Pravilnie igrushki", "",""));
 db.Add(new ChangesInfo.Shop("Jo Malone", "",""));
@@ -113,11 +116,14 @@ db.Add(new ChangesInfo.Shop("Michaela", "",""));
 db.Add(new ChangesInfo.Shop("Mlesna", "",""));
 db.Add(new ChangesInfo.Shop("Moscow Jewelry Factory", "",""));
 db.Add(new ChangesInfo.Shop("Mothercare", "",""));
+db.Add(new ChangesInfo.Shop("MTC", "",""));
 db.Add(new ChangesInfo.Shop("Musetti", "",""));
 db.Add(new ChangesInfo.Shop("Musetti", "",""));
 db.Add(new ChangesInfo.Shop("Neopharm", "",""));
+db.Add(new ChangesInfo.Shop("NATURE REPUBLIC", "",""));
 db.Add(new ChangesInfo.Shop("NIKA", "",""));
 db.Add(new ChangesInfo.Shop("Nike", "",""));
+db.Add(new ChangesInfo.Shop("NYX", "",""));
 db.Add(new ChangesInfo.Shop("ObedBufet", "",""));
 db.Add(new ChangesInfo.Shop("Oysho", "",""));
 db.Add(new ChangesInfo.Shop("Papa John`s", "",""));
@@ -135,6 +141,7 @@ db.Add(new ChangesInfo.Shop("Reima", "",""));
 db.Add(new ChangesInfo.Shop("Rendez-Vous", "",""));
 db.Add(new ChangesInfo.Shop("Reserved", "",""));
 db.Add(new ChangesInfo.Shop("Rive Gauche", "",""));
+db.Add(new ChangesInfo.Shop("Samsonite", "",""));
 db.Add(new ChangesInfo.Shop("Samsung", "",""));
 db.Add(new ChangesInfo.Shop("Scotch & Soda", "",""));
 db.Add(new ChangesInfo.Shop("Shvilli", "",""));
@@ -162,14 +169,119 @@ db.Add(new ChangesInfo.Shop("Vagabond", "",""));
 db.Add(new ChangesInfo.Shop("Vangold", "",""));
 db.Add(new ChangesInfo.Shop("Vans", "",""));
 db.Add(new ChangesInfo.Shop("Vash razmer", "",""));
+db.Add(new ChangesInfo.Shop("VICTORIA SECRET", "",""));
 db.Add(new ChangesInfo.Shop("Wokker", "",""));
 db.Add(new ChangesInfo.Shop("Yu Kids Island", "",""));
 db.Add(new ChangesInfo.Shop("ZARA", "",""));
 db.Add(new ChangesInfo.Shop("ZARA", "",""));
 db.Add(new ChangesInfo.Shop("Zara Home", "",""));
+db.Add(new ChangesInfo.Shop("COLIN'S", "",""));
+db.Add(new ChangesInfo.Shop("ESTELLE A-STORE", "",""));
+db.Add(new ChangesInfo.Shop("L'ETOILE", "",""));
+db.Add(new ChangesInfo.Shop("SNEZHNAYA KOROLEVA", "",""));
+db.Add(new ChangesInfo.Shop("SPRINKLER", "",""));
+db.Add(new ChangesInfo.Shop("BOILER ROOM", "",""));
+db.Add(new ChangesInfo.Shop("PERSONA", "",""));
+db.Add(new ChangesInfo.Shop("BERLINER", "",""));
+db.Add(new ChangesInfo.Shop("MOSCOW JEWELLERY FACTORY", "",""));
+db.Add(new ChangesInfo.Shop("CK UNDERWEAR", "",""));
+db.Add(new ChangesInfo.Shop("O'STIN", "",""));
+db.Add(new ChangesInfo.Shop("MICHAELLA", "",""));
+db.Add(new ChangesInfo.Shop("OCHKARIK", "",""));
+db.Add(new ChangesInfo.Shop("KAREN MILLEN", "",""));
+db.Add(new ChangesInfo.Shop("STOCKMAN", "",""));
+db.Add(new ChangesInfo.Shop("BODY SHOP", "",""));
+db.Add(new ChangesInfo.Shop("MOA", "",""));
+db.Add(new ChangesInfo.Shop("KOFAYNAYA KONTATA", "",""));
+db.Add(new ChangesInfo.Shop("MARKS & SPENCER", "",""));
+db.Add(new ChangesInfo.Shop("MARKS & SPENCER", "",""));
+db.Add(new ChangesInfo.Shop("OBED BUFET", "",""));
+db.Add(new ChangesInfo.Shop("CORREA'S", "",""));
+db.Add(new ChangesInfo.Shop("DKNY ACCESSORIES", "",""));
+db.Add(new ChangesInfo.Shop("CK JEANS", "",""));
+db.Add(new ChangesInfo.Shop("X.O.", "",""));
+db.Add(new ChangesInfo.Shop("PEPE JEANS", "",""));
+db.Add(new ChangesInfo.Shop("HUNKERMOLLER", "",""));
+db.Add(new ChangesInfo.Shop("TOMMY HILFIGER", "",""));
+db.Add(new ChangesInfo.Shop("IMAGINARIUM", "",""));
+db.Add(new ChangesInfo.Shop("QUICKSILVER", "",""));
+db.Add(new ChangesInfo.Shop("IQTOY", "",""));
+db.Add(new ChangesInfo.Shop("CORSO COMO", "",""));
+db.Add(new ChangesInfo.Shop("PAPA JOHN'S", "",""));
+db.Add(new ChangesInfo.Shop("PUMA", "",""));
+db.Add(new ChangesInfo.Shop("RIGLA", "",""));
+db.Add(new ChangesInfo.Shop("KLEH'S", "",""));
+db.Add(new ChangesInfo.Shop("ADIDAS", "",""));
+db.Add(new ChangesInfo.Shop("BANANA REPUBLIC", "",""));
+db.Add(new ChangesInfo.Shop("JACK WOLFSKIN", "",""));
+db.Add(new ChangesInfo.Shop("LOVE REPUBLIC", "",""));
+db.Add(new ChangesInfo.Shop("PULL & BEAR", "",""));
+db.Add(new ChangesInfo.Shop("LADY COLLECTION", "",""));
+db.Add(new ChangesInfo.Shop("ARMANI", "",""));
+db.Add(new ChangesInfo.Shop("UDC", "",""));
+db.Add(new ChangesInfo.Shop("PLOVBERRY", "",""));
+db.Add(new ChangesInfo.Shop("TOGAS", "",""));
+db.Add(new ChangesInfo.Shop("GIPFEL", "",""));
+db.Add(new ChangesInfo.Shop("YVES ROSHER", "",""));
+db.Add(new ChangesInfo.Shop("PANDORA", "",""));
+db.Add(new ChangesInfo.Shop("DIVA", "",""));
+db.Add(new ChangesInfo.Shop("ZARINA", "",""));
+db.Add(new ChangesInfo.Shop("JEANS SYMPHONY", "",""));
+db.Add(new ChangesInfo.Shop("MOSKOVSKOYE VREMYA", "",""));
+db.Add(new ChangesInfo.Shop("KIKO", "",""));
+db.Add(new ChangesInfo.Shop("STREAT BEAT", "",""));
+db.Add(new ChangesInfo.Shop("MARMALATO", "",""));
+db.Add(new ChangesInfo.Shop("M.VIDEO", "",""));
+db.Add(new ChangesInfo.Shop("MIN O MIN", "",""));
+db.Add(new ChangesInfo.Shop("SUPER STEP", "",""));
+db.Add(new ChangesInfo.Shop("UNDIZ", "",""));
+db.Add(new ChangesInfo.Shop("MEZZATORRE", "",""));
+db.Add(new ChangesInfo.Shop("SWAROWSKI", "",""));
+db.Add(new ChangesInfo.Shop("BOBBY BROWN", "",""));
+db.Add(new ChangesInfo.Shop("MANGO", "",""));
+db.Add(new ChangesInfo.Shop("LFT", "",""));
+db.Add(new ChangesInfo.Shop("PANCHO PIZZA", "",""));
+db.Add(new ChangesInfo.Shop("ADIDAS ORIGINALS", "",""));
+db.Add(new ChangesInfo.Shop("BUSTIER", "",""));
+db.Add(new ChangesInfo.Shop("HELLY HANSEN", "",""));
+db.Add(new ChangesInfo.Shop("GIPFEL", "",""));
+db.Add(new ChangesInfo.Shop("HAPPY STEP", "",""));
+db.Add(new ChangesInfo.Shop("STRADIVARIUS", "",""));
+db.Add(new ChangesInfo.Shop("SVYAZNOY", "",""));
 
+	
+	
 	db.ForEach(x=> x.name = x.name.ToUpper());
-	SetInfo();
+	db = db.OrderBy(x => x.name).ToList();
+	
+	//db.ForEach(x=>Debug.Log(x.name));
+	/*#region development
+
+	//db.ForEach(x=> Debug.Log(x.name));
+	
+	List<ShopCap> shCap = new List<ShopCap>();
+	shCap = GameObject.FindObjectsOfType<ShopCap>().ToList();
+
+	shCap.ForEach(x =>
+	{
+		ChangesInfo.Shop k = new ChangesInfo.Shop(x.name,"","");
+		bool cont = false;
+		db.ForEach(y =>
+		{
+			
+			if (y.name == k.name)
+			{
+				cont = true;
+			}
+		});
+		if (!cont)
+		{
+			//Debug.Log(k.name+" "+x.gameObject.name);
+			//Debug.Log(textfordebug.text+k.name+textfordebug2.text);
+		}
+	});
+	#endregion*/
+	//SetInfo();
 }
 	
 	public void SetInfo()
@@ -204,6 +316,7 @@ db.Add(new ChangesInfo.Shop("Zara Home", "",""));
 				if (k < db.Count)
 				{
 					unfilledColomn.texts[j].text = db[k].name;
+					//Debug.Log(db[k].name);
 				}
 				else
 				{

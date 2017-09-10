@@ -1,18 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Mega.Scripts;
 using UnityEngine;
 
-public class ShopCap : MonoBehaviour
-{
+public class ShopCap : MonoBehaviour {
+    public string name;
 
-	public string name;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public float deltaX;
+    public float deltaZ;
+
+    public bool useFactor;
+
+    public TableShop tableShop;
 }

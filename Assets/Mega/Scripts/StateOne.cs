@@ -33,7 +33,7 @@ namespace Assets.Mega.Scripts {
 
         public void StartState () {
             MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
-            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(0.1f, 0, -100f);
+            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
             Video.inst.FadeOn();
             MainLogic.inst.interfaceMega.SetActive(false);
             imageOne.raycastTarget = true;

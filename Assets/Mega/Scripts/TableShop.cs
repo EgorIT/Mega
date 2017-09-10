@@ -14,17 +14,24 @@ namespace Assets.Mega.Scripts {
     }*/
 
     public class TableShop : MonoBehaviour {
+        public float testX;
+        public float testZ;
+
         public GameObject iconShop;
         public Coroutine showCoro;
         public TextMesh text;
         public Text text1;
         public string shopName;
+        public ShopCap shopCap;
+
+        public Vector3 startPos;
+
 
         public void Awake () {
         }
 
         public void Start () {
-           
+            
             TableController.inst.listLittleShops.Add(this);
 
         }
@@ -53,6 +60,12 @@ namespace Assets.Mega.Scripts {
                 showCoro = null;
             }
             showCoro = StartCoroutine(IEnumChangeScale(GlobalParams.scaleIconShop));
+        }
+
+        public void Update() {
+            var dv3 = transform.position - startPos;
+            testX = dv3.x;
+            testZ = dv3.z;
         }
 
         public IEnumerator IEnumChangeScale (Vector3 endScale) {

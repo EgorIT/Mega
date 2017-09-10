@@ -27,8 +27,21 @@ namespace Assets.Mega.Scripts {
                 var tableShop = Instantiate(prefabTableShop);
                 tableShop.gameObject.SetActive(true);
                 tableShop.transform.parent = allTable.transform;
-                tableShop.transform.position = allShopCap[i].transform.position + Vector3.up * 2;
+                if (allShopCap[i].useFactor) {
+                    tableShop.transform.position = allShopCap[i].transform.position + new Vector3(allShopCap[i].deltaX, 0, allShopCap[i].deltaZ) + Vector3.up * 2;
+                    var mesh = allShopCap[i].GetComponent<MeshFilter>();
+                    for (int j = 0; j < mesh.mesh.uv.Length; j++) {
+                        Debug.Log(mesh.mesh.uv[i].x + "= x");
+                        Debug.Log(mesh.mesh.uv[i].y + "= y");
+                    }
+                } else {
+                    tableShop.transform.position = allShopCap[i].transform.position + Vector3.up * 2;
+                    tableShop.startPos = tableShop.transform.position;
+                }
+                
                 tableShop.SetName(allShopCap[i].name);
+                tableShop.shopCap = allShopCap[i];
+                allShopCap[i].tableShop = tableShop;
             }
 
             StartCoroutine(WaitToDis());

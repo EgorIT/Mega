@@ -18,6 +18,7 @@ public class ChangesInfo : MonoBehaviour
 	public ShopTable shopTable;
 	public Table list;
 	public Table shop;
+	public AllCaps allCaps;
 	
 	private bool hidden = true;
 	private string temporaryString = "В данном периоде реконструкции на Вашем объекте будут произведены технические работы. К первому числу указанного квартала Вам необходимо освободить объект";
@@ -291,7 +292,7 @@ public class ChangesInfo : MonoBehaviour
 	}
 
 	public void SetInfo(int number)
-	{
+	{ allCaps.Refresh();
 		//Debug.Log(number);
 		if (colomns.Length != 0)
 		{
@@ -322,6 +323,7 @@ public class ChangesInfo : MonoBehaviour
 				if (k < termsList[number].shops.Count)
 				{
 					unfilledColomn.texts[j].text = termsList[number].shops[k];
+					allCaps.Activate(termsList[number].shops[k]);
 				}
 				else
 				{

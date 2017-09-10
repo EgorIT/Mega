@@ -166,21 +166,28 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void GoToFirstLook() {
-        IconsController.inst.DisAllShops();
+        TableController.inst.DisAllShops();
         PauseForUI();
         MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
         isFirstLookScene = true;
-        MainLogic.inst.SwapRoof(true);
+        StartCoroutine(WaitToOff());
+        //MainLogic.inst.SwapRoof(true);
     }
 
     public void GoOutFirstLook() {
-        IconsController.inst.ShowAllShops();
+        TableController.inst.ShowAllShops();
         PauseForUI();
         distansAllMega = GlobalParams.minDistancePesr - 100;
         stateLookVector3AllMega = posCamera.position;
         MainLogic.inst.ChangeState(ViewStates.allMega);
         isFirstLookScene = false;
+        
         MainLogic.inst.SwapRoof(false);
+    }
+
+    public IEnumerator WaitToOff() {
+        yield return new WaitForSeconds(GlobalParams.timeToFly - 0.2f);
+        MainLogic.inst.SwapRoof(true);
     }
 
     public void CheckPozitionCamera () {
@@ -326,8 +333,8 @@ public class MegaCameraController : MonoBehaviour {
         angelYCamera.localEulerAngles = new Vector3(0, endAng.y, 0);
         angelXCamera.localEulerAngles = new Vector3(endAng.x, 0, 0);
 
-        if(IconsController.inst) {
-            IconsController.inst.SetAngelsForIcons(angelYCamera.localEulerAngles.y);
+        if(TableController.inst) {
+            TableController.inst.SetAngelsForIcons(angelYCamera.localEulerAngles.y);
         }
 
         disCamera.localPosition = new Vector3(0, 0, finalDistans);

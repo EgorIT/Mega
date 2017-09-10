@@ -80,17 +80,17 @@ namespace Assets.Mega.Scripts {
 
 
         public void Update() {
-            if (MegaCameraController.inst.GetCurrentDistans() < -10000) {
+            if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega + 1000) {
                 if (!roofs[0].activeSelf) {
                     SwapRoof(true);
-                    IconsController.inst.RoofToOn();
+                    TableController.inst.RoofToOn();
                 }
 
             }
-            if(MegaCameraController.inst.GetCurrentDistans() > -10000 && MegaCameraController.inst.GetCurrentDistans() < -1) {
+            if(MegaCameraController.inst.GetCurrentDistans() > GlobalParams.distansOnAllMega + 1000 && MegaCameraController.inst.GetCurrentDistans() < -1001) {
                 if(roofs[0].activeSelf) {
                     SwapRoof(false);
-                    IconsController.inst.RoofToOff();
+                    TableController.inst.RoofToOff();
                 }
             }
 
@@ -142,7 +142,7 @@ namespace Assets.Mega.Scripts {
         }*/
 
         public void GoMiddleView() {
-            IconsController.inst.ShowAllShops();
+            TableController.inst.ShowAllShops();
         }
 
         public void GoViewStateOne() {

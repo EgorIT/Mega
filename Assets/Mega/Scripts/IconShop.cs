@@ -30,8 +30,6 @@ namespace Assets.Mega.Scripts {
             if(text1 != null) {
                 text1.text = shopName;
             }
-
-
             IconsController.inst.listLittleShops.Add(this);
 
         }

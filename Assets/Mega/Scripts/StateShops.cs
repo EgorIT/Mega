@@ -9,14 +9,14 @@ namespace Assets.Mega.Scripts {
         public List<BlockShops> listBlockShopses = new List<BlockShops>();
         private TypeCameraOnState typeCameraOnState = TypeCameraOnState.perspective;
         public BlockShops currentBlockShops;
-
-
+        
         public void Start () {
             var allBlockShopses = FindObjectsOfType<BlockShops>();
             for (int i = 0; i < allBlockShopses.Length; i++) {
                 listBlockShopses.Add(allBlockShopses[i]);
             }
             MainLogic.inst.listViewStates.Add(this);
+            //
         }
         
         public void EndState () {

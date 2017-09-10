@@ -22,6 +22,7 @@ namespace Assets.Mega.Scripts {
             DisAllShops();
         }
 
+
         public void SetAngelsForIcons(float y) {
             for(int i = 0; i < listLittleShops.Count; i++) {
                 listLittleShops[i].iconShop.transform.eulerAngles = new Vector3(0, y, 0);

@@ -156,7 +156,7 @@ public class ChangesInfo : MonoBehaviour
 		t2017q4.shops.Add("Ex-DECATHLON AREA <color=#787A79ff>Ремонт</color>");
 		
 		
-		Term t2017q4y = new Term();
+		/*Term t2017q4y = new Term();
 		t2017q4y.termName = "2018";
 		t2017q4y.shops = new List<string>();
 		t2017q4y.shops.Add("STRADIVARIUS");
@@ -177,7 +177,7 @@ public class ChangesInfo : MonoBehaviour
 		t2017q4y.shops.Add("GIPFEL");
 		t2017q4y.shops.Add("Дороги <color=#787A79ff>Реконструкция</color>");
 		t2017q4y.shops.Add("CUP <color=#787A79ff>Плиточные работы</color>");
-		t2017q4y.shops.Add("Ex-DECATHLON AREA <color=#787A79ff>Ремонт</color>");
+		t2017q4y.shops.Add("Ex-DECATHLON AREA <color=#787A79ff>Ремонт</color>");*/
 		
 		Term t2018q1 = new Term();
 		t2018q1.termName = "I<size=60>кв.</size>  2018";
@@ -241,7 +241,7 @@ public class ChangesInfo : MonoBehaviour
 		t2018q4.shops.Add("IKEA <color=#787A79ff>Реконструкция</color>");
 		t2018q4.shops.Add("Парковка <color=#787A79ff>1 уровень</color>");
 		
-		Term t2018q4y = new Term();
+		/*Term t2018q4y = new Term();
 		t2018q4y.termName = "2019";
 		t2018q4y.shops = new List<string>();
 		t2018q4y.shops.Add("ALBLONE");
@@ -252,7 +252,7 @@ public class ChangesInfo : MonoBehaviour
 		t2018q4y.shops.Add("<color=#787A79ff>Новый служебный коридор</color>");
 		t2018q4y.shops.Add("<color=#787A79ff>Перемещение коммунальных предприятий</color>");
 		t2018q4y.shops.Add("IKEA <color=#787A79ff>Реконструкция</color>");
-		t2018q4y.shops.Add("Парковка <color=#787A79ff>1 уровень</color>");
+		t2018q4y.shops.Add("Парковка <color=#787A79ff>1 уровень</color>");*/
 			
 		
 		Term t2019q1 = new Term();
@@ -282,12 +282,12 @@ public class ChangesInfo : MonoBehaviour
 		t2019q1.shops.Add("Парковка <color=#787A79ff>1 уровень</color>");
 		
 		termsList.Add(t2017q4);
-		termsList.Add(t2017q4y);
+		//termsList.Add(t2017q4y);
 		termsList.Add(t2018q1);
 		termsList.Add(t2018q2);
 		termsList.Add(t2018q3);
 		termsList.Add(t2018q4);
-		termsList.Add(t2018q4y);
+		//termsList.Add(t2018q4y);
 		termsList.Add(t2019q1);
 	}
 
@@ -322,6 +322,7 @@ public class ChangesInfo : MonoBehaviour
 			{
 				if (k < termsList[number].shops.Count)
 				{
+					//Debug.Log(termsList[number].shops[k]);
 					unfilledColomn.texts[j].text = termsList[number].shops[k];
 					allCaps.Activate(termsList[number].shops[k]);
 				}

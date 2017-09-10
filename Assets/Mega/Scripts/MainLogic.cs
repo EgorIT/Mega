@@ -14,6 +14,8 @@ namespace Assets.Mega.Scripts {
     }
 
     public class MainLogic : MonoBehaviour {
+        public bool isTest;
+
         public static MainLogic inst;
         
         public List<SceneForFirstFaceLook> AllFirstFaceLookScenes = new List<SceneForFirstFaceLook>();
@@ -35,6 +37,8 @@ namespace Assets.Mega.Scripts {
 
         public List<GameObject> listToOnTEMP = new List<GameObject>();
 
+        public bool iconFlag;
+
         public void Awake() {
             inst = this;
         }
@@ -44,20 +48,15 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
+            roof.SetActive(true);
 
             for (int i = 0; i < listToOnTEMP.Count; i++) {
                 if (listToOnTEMP[i] != null) {
-                    //listToOnTEMP[i].SetActive(true);
+                    if (!isTest) {
+                        listToOnTEMP[i].SetActive(true);
+                    }
                 }
-                
             }
-            MainLogic.inst.roof.SetActive(false);
-
-            if (Application.platform != RuntimePlatform.WindowsEditor) {
-                //WindowMod.StartFromController();
-            }
-            
-            //GoToAllSeeTransform();
         }
 
         public void SetQuarter(int number) {
@@ -73,13 +72,18 @@ namespace Assets.Mega.Scripts {
             if (MegaCameraController.inst.GetCurrentDistans() < -10000) {
                 if (!roof.activeSelf) {
                     roof.SetActive(true);
+                    IconsController.inst.RoofToOn();
                 }
+
             }
             if(MegaCameraController.inst.GetCurrentDistans() > -10000 && MegaCameraController.inst.GetCurrentDistans() < -1) {
                 if(roof.activeSelf) {
                     roof.SetActive(false);
+                    IconsController.inst.RoofToOff();
                 }
             }
+
+
         }
 
         public void ChangeState(ViewStates newState) {
@@ -127,7 +131,7 @@ namespace Assets.Mega.Scripts {
         }*/
 
         public void GoMiddleView() {
-            LittleShopController.inst.ShowAllShops();
+            IconsController.inst.ShowAllShops();
         }
 
         public void GoViewStateOne() {

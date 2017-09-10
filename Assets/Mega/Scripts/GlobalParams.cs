@@ -15,7 +15,7 @@ namespace Assets.Mega.Scripts {
         public static float timeToFly = 2f;
         public static float timeToShowIcons = 0.4f;
 
-        public static Vector3 scaleIconShop = new Vector3(0.4f, 0.4f, 0.4f);
+        public static Vector3 scaleIconShop = new Vector3(0.1f, 0.1f, 0.1f);
 
         public static float cameraXmaxPerspective = -60f;
         public static float cameraXMinPerspective = 60f;
@@ -30,7 +30,7 @@ namespace Assets.Mega.Scripts {
         public static float distansOnAllMega = -12000f;
         public static float distansOnFirstLook = 0f;
 
-        public static float minDistancePesr = -3000f;
+        public static float minDistancePesr = -1000f;
         public static float maxDistancePesr = -13000f;
 
         //public static float ortoMinSize = 5f;

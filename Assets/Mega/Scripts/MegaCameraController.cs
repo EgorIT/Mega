@@ -166,7 +166,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void GoToFirstLook() {
-
+        IconsController.inst.DisAllShops();
         PauseForUI();
         MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
         isFirstLookScene = true;
@@ -174,6 +174,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void GoOutFirstLook() {
+        IconsController.inst.ShowAllShops();
         PauseForUI();
         distansAllMega = GlobalParams.minDistancePesr - 100;
         stateLookVector3AllMega = posCamera.position;
@@ -325,8 +326,8 @@ public class MegaCameraController : MonoBehaviour {
         angelYCamera.localEulerAngles = new Vector3(0, endAng.y, 0);
         angelXCamera.localEulerAngles = new Vector3(endAng.x, 0, 0);
 
-        if(LittleShopController.inst) {
-            LittleShopController.inst.SetAngelsForIcons(angelYCamera.localEulerAngles.y);
+        if(IconsController.inst) {
+            IconsController.inst.SetAngelsForIcons(angelYCamera.localEulerAngles.y);
         }
 
         disCamera.localPosition = new Vector3(0, 0, finalDistans);

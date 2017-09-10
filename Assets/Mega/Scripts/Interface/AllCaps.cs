@@ -19,11 +19,10 @@ public class AllCaps : MonoBehaviour {
 
 	public void Activate(string name)
 	{
-		allCaps.Where(x =>
+		allCaps.ForEach(x =>
 		{
 			if (x.name == name)
 				x.gameObject.SetActive(true);
-			return true;
 		});
 	}
 }

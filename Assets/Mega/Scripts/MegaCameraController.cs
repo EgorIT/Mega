@@ -170,7 +170,7 @@ public class MegaCameraController : MonoBehaviour {
         PauseForUI();
         MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
         isFirstLookScene = true;
-        MainLogic.inst.roof.SetActive(true);
+        MainLogic.inst.SwapRoof(true);
     }
 
     public void GoOutFirstLook() {
@@ -180,7 +180,7 @@ public class MegaCameraController : MonoBehaviour {
         stateLookVector3AllMega = posCamera.position;
         MainLogic.inst.ChangeState(ViewStates.allMega);
         isFirstLookScene = false;
-        MainLogic.inst.roof.SetActive(false);
+        MainLogic.inst.SwapRoof(false);
     }
 
     public void CheckPozitionCamera () {

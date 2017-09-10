@@ -33,7 +33,7 @@ namespace Assets.Mega.Scripts {
 
         public List<Transform> borders = new List<Transform>();
 
-        public GameObject roof;
+        public List<GameObject> roofs;
 
         public List<GameObject> listToOnTEMP = new List<GameObject>();
 
@@ -48,14 +48,25 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
-            roof.SetActive(true);
-
-            for (int i = 0; i < listToOnTEMP.Count; i++) {
+            SwapRoof(true);
+            /*if (isTest) {
+                var allToOff = GameObject.FindGameObjectsWithTag("TempOff");
+                for (int i = 0; i < allToOff.Length; i++) {
+                    allToOff[i].SetActive(false);
+                }
+            }*/
+            /*for (int i = 0; i < listToOnTEMP.Count; i++) {
                 if (listToOnTEMP[i] != null) {
                     if (!isTest) {
                         listToOnTEMP[i].SetActive(true);
                     }
                 }
+            }*/
+        }
+
+        public void SwapRoof(bool var) {
+            for (int i = 0; i < roofs.Count; i++) {
+                roofs[i].SetActive(var);
             }
         }
 
@@ -70,15 +81,15 @@ namespace Assets.Mega.Scripts {
 
         public void Update() {
             if (MegaCameraController.inst.GetCurrentDistans() < -10000) {
-                if (!roof.activeSelf) {
-                    roof.SetActive(true);
+                if (!roofs[0].activeSelf) {
+                    SwapRoof(true);
                     IconsController.inst.RoofToOn();
                 }
 
             }
             if(MegaCameraController.inst.GetCurrentDistans() > -10000 && MegaCameraController.inst.GetCurrentDistans() < -1) {
-                if(roof.activeSelf) {
-                    roof.SetActive(false);
+                if(roofs[0].activeSelf) {
+                    SwapRoof(false);
                     IconsController.inst.RoofToOff();
                 }
             }

@@ -4,11 +4,7 @@
     <list id="db4028d5-5810-4db2-82fc-0a5c848cad96" name="Default" comment="Revert: Init" />
     <list id="f8db80fc-c75f-4ccf-8652-35369a088001" name="Revert: Revert: Init" comment="" />
     <list id="2ab7d953-599a-46b9-a58d-eab92a904e02" name="Revert: Global Project Merge" comment="Revert: Global Project Merge" />
-    <list default="true" id="af8b92bd-8b5d-47a8-84d9-ea403a203249" name="Revert: Init" comment="Revert: Init">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllCaps.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllCaps.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ChangesInfo.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ChangesInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs" />
-    </list>
+    <list default="true" id="af8b92bd-8b5d-47a8-84d9-ea403a203249" name="Revert: Init" comment="Revert: Init" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -178,8 +174,8 @@
       <file leaf-file-name="Timeline.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+            <state relative-caret-position="330">
+              <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
               <folding>
                 <marker date="1505066030160" expanded="false" signature="6:127" ph="..." />
                 <marker date="1505066030160" expanded="true" signature="167:4421" ph="{...}" />
@@ -263,13 +259,11 @@
       <file leaf-file-name="ShopCap.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ShopCap.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="45">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding>
-                <marker date="1504983433530" expanded="false" signature="6:78" ph="..." />
-                <marker date="1504983433530" expanded="true" signature="116:259" ph="{...}" />
-                <marker date="1504983433530" expanded="true" signature="188:195" ph="{...}" />
-                <marker date="1504983433530" expanded="true" signature="250:257" ph="{...}" />
+                <marker date="1505066858885" expanded="false" signature="6:66" ph="..." />
+                <marker date="1505066858885" expanded="true" signature="281:283" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -527,7 +521,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -624,14 +618,14 @@
         <state relative-caret-position="510">
           <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
           <folding>
-            <marker date="1505045491134" expanded="false" signature="6:72" ph="..." />
-            <marker date="1505045491134" expanded="true" signature="104:1724" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="182:975" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="443:556" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="587:703" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="738:827" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="862:925" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="961:975" ph="{...}" />
+            <marker date="1505066858914" expanded="false" signature="6:72" ph="..." />
+            <marker date="1505066858914" expanded="true" signature="104:1722" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="182:975" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="443:556" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="587:703" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="738:827" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="862:925" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="961:975" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -820,14 +814,14 @@
         <state relative-caret-position="510">
           <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
           <folding>
-            <marker date="1505045491134" expanded="false" signature="6:72" ph="..." />
-            <marker date="1505045491134" expanded="true" signature="104:1724" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="182:975" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="443:556" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="587:703" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="738:827" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="862:925" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="961:975" ph="{...}" />
+            <marker date="1505066858914" expanded="false" signature="6:72" ph="..." />
+            <marker date="1505066858914" expanded="true" signature="104:1722" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="182:975" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="443:556" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="587:703" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="738:827" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="862:925" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="961:975" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1016,14 +1010,14 @@
         <state relative-caret-position="540">
           <caret line="36" column="42" lean-forward="true" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
           <folding>
-            <marker date="1505045491134" expanded="false" signature="6:72" ph="..." />
-            <marker date="1505045491134" expanded="true" signature="104:1724" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="182:975" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="443:556" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="587:703" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="738:827" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="862:925" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="961:975" ph="{...}" />
+            <marker date="1505066858914" expanded="false" signature="6:72" ph="..." />
+            <marker date="1505066858914" expanded="true" signature="104:1722" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="182:975" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="443:556" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="587:703" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="738:827" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="862:925" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="961:975" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1182,14 +1176,14 @@
         <state relative-caret-position="540">
           <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
           <folding>
-            <marker date="1505045491134" expanded="false" signature="6:72" ph="..." />
-            <marker date="1505045491134" expanded="true" signature="104:1724" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="182:975" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="443:556" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="587:703" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="738:827" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="862:925" ph="{...}" />
-            <marker date="1505045491134" expanded="true" signature="961:975" ph="{...}" />
+            <marker date="1505066858914" expanded="false" signature="6:72" ph="..." />
+            <marker date="1505066858914" expanded="true" signature="104:1722" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="182:975" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="443:556" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="587:703" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="738:827" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="862:925" ph="{...}" />
+            <marker date="1505066858914" expanded="true" signature="961:975" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1340,13 +1334,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ShopCap.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="45">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
-            <marker date="1504983433530" expanded="false" signature="6:78" ph="..." />
-            <marker date="1504983433530" expanded="true" signature="116:259" ph="{...}" />
-            <marker date="1504983433530" expanded="true" signature="188:195" ph="{...}" />
-            <marker date="1504983433530" expanded="true" signature="250:257" ph="{...}" />
+            <marker date="1505066858885" expanded="false" signature="6:66" ph="..." />
+            <marker date="1505066858885" expanded="true" signature="281:283" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1399,8 +1391,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+        <state relative-caret-position="330">
+          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
           <folding>
             <marker date="1505066030160" expanded="false" signature="6:127" ph="..." />
             <marker date="1505066030160" expanded="true" signature="167:4421" ph="{...}" />

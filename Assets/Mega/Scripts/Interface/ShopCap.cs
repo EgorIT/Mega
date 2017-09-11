@@ -12,4 +12,19 @@ public class ShopCap : MonoBehaviour {
     public bool useFactor;
 
     public TableShop tableShop;
+
+    public void OnDisable() {
+        tableShop.EnableShop();
+        //Debug.Log("OnDisable " + gameObject.name);
+    }
+
+    public void OnEnable() {
+        if (tableShop) {
+            tableShop.DisableShop();
+        }
+        
+        //Debug.Log("OnEnable " + gameObject.name);
+    }
+
+
 }

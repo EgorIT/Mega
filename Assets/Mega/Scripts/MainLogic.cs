@@ -33,11 +33,12 @@ namespace Assets.Mega.Scripts {
 
         public List<Transform> borders = new List<Transform>();
 
-        public List<GameObject> roofs;
+        //public List<GameObject> roofs;
 
         public List<GameObject> listToOnTEMP = new List<GameObject>();
 
         public bool iconFlag;
+        public bool roofEnable;
 
         public void Awake() {
             inst = this;
@@ -65,9 +66,9 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SwapRoof(bool var) {
-            for (int i = 0; i < roofs.Count; i++) {
+            /*for (int i = 0; i < roofs.Count; i++) {
                 roofs[i].SetActive(var);
-            }
+            }*/
         }
 
         public void SetQuarter(int number) {
@@ -81,15 +82,19 @@ namespace Assets.Mega.Scripts {
 
         public void Update() {
             if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega + 1000) {
-                if (!roofs[0].activeSelf) {
+                if (!roofEnable) {
                     //SwapRoof(true);
+                    roofEnable = true;
+                    RoofProcessor.inst.DoStandard();
                     TableController.inst.RoofToOn();
                 }
 
             }
             if(MegaCameraController.inst.GetCurrentDistans() > GlobalParams.distansOnAllMega + 1000 && MegaCameraController.inst.GetCurrentDistans() < -1001) {
-                if(roofs[0].activeSelf) {
-                    //SwapRoof(false);
+                if(roofEnable) {
+                    roofEnable = false;
+                    SwapRoof(false);
+                    RoofProcessor.inst.DoTransparent();
                     TableController.inst.RoofToOff();
                 }
             }

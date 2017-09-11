@@ -9,9 +9,9 @@ public class Timeline : MonoBehaviour {
     public ChangesInfo changesInfo;
     public RectTransform line;
     private int currentNumber = 0;
-   
-    
-    
+
+
+
     private RectTransform rt;
     private Vector3 outPosition = new Vector3(0, -75.5f, 0);
     private Vector3 inPosition = new Vector3(0, 75.5f, 0);
@@ -25,8 +25,7 @@ public class Timeline : MonoBehaviour {
         rt.anchoredPosition = outPosition;
     }
 
-    void OnEnable()
-    {
+    void OnEnable () {
         RollIn();
     }
 
@@ -37,40 +36,36 @@ public class Timeline : MonoBehaviour {
         //StartCoroutine(SwitchTimesWithDelay(number));
     }
 
-    public IEnumerator MoveLine(int number)
-    {
-        Vector2 targetPosition = new Vector2(number*180,0);
-        
+    public IEnumerator MoveLine (int number) {
+        Vector2 targetPosition = new Vector2(number * 180, 0);
+
         float time = 0;
         Vector3 startPosition = line.anchoredPosition;
 
         while(time < 0.3f) {
-               line.anchoredPosition = Vector3.Lerp(startPosition, targetPosition, time / 0.3f);
-            for (int i = 0; i <= line.anchoredPosition.x/180; i++)
-            {
+            line.anchoredPosition = Vector3.Lerp(startPosition, targetPosition, time / 0.3f);
+            for(int i = 0; i <= line.anchoredPosition.x / 180; i++) {
                 timeButtons[i].SetPressed();
             }
-            for (int i = (int)line.anchoredPosition.x/180; i < 9; i++)
-            {
+            for(int i = (int)line.anchoredPosition.x / 180; i < 9; i++) {
                 timeButtons[i].SetNormal();
             }
             time += Time.deltaTime;
             yield return null;
         }
         line.anchoredPosition = targetPosition;//Vector3.Lerp(startPosition, targetPosition, time / 0.3f);
-        for (int i = 0; i <= line.anchoredPosition.x/180; i++)
-        {
+        for(int i = 0; i <= line.anchoredPosition.x / 180; i++) {
             timeButtons[i].SetPressed();
         }
-        for (int i = (int)line.anchoredPosition.x/180+1; i < 9; i++)
-        {
+        for(int i = (int)line.anchoredPosition.x / 180 + 1; i < 9; i++) {
             timeButtons[i].SetNormal();
         }
-        
+
         timeButtons[0].SetNormal();
         timeButtons[8].SetNormal();
-        if (number>=3)
-            changesInfo.SetInfo(number-3);
+        if(number >= 3)
+            changesInfo.SetInfo(number - 3);
+
         shopsList.RollIn();
         yield return null;
     }
@@ -101,8 +96,8 @@ public class Timeline : MonoBehaviour {
         }
         currentNumber = number;
         int year = 2017 + currentNumber / 5;
-        if (number>=4 && number<=11)
-        changesInfo.SetInfo(number-4);
+        if(number >= 4 && number <= 11)
+            changesInfo.SetInfo(number - 4);
         //text.text = year.ToString();
         yield return null;
     }
@@ -110,7 +105,7 @@ public class Timeline : MonoBehaviour {
     public void RollIn () {
         StartCoroutine(Rolling(true));
     }
-    
+
     private IEnumerator Rolling (bool rollIn) {
         float time = 0;
         Vector3 startPosition = rt.anchoredPosition;
@@ -132,8 +127,7 @@ public class Timeline : MonoBehaviour {
         yield return null;
     }
 
-    public void SwapWindows()
-    {
+    public void SwapWindows () {
         shopTable.RollOut();
         shopsList.RollIn();
     }

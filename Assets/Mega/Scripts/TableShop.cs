@@ -55,6 +55,9 @@ namespace Assets.Mega.Scripts {
         }
 
         public void EnableShop () {
+            if (!shopCap.isActiveAndEnabled) {
+                return;
+            }
             if(showCoro != null) {
                 StopCoroutine(showCoro);
                 showCoro = null;

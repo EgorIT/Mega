@@ -48,7 +48,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
-            SwapRoof(true);
+            //SwapRoof(true);
             /*if (isTest) {
                 var allToOff = GameObject.FindGameObjectsWithTag("TempOff");
                 for (int i = 0; i < allToOff.Length; i++) {
@@ -82,14 +82,14 @@ namespace Assets.Mega.Scripts {
         public void Update() {
             if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega + 1000) {
                 if (!roofs[0].activeSelf) {
-                    SwapRoof(true);
+                    //SwapRoof(true);
                     TableController.inst.RoofToOn();
                 }
 
             }
             if(MegaCameraController.inst.GetCurrentDistans() > GlobalParams.distansOnAllMega + 1000 && MegaCameraController.inst.GetCurrentDistans() < -1001) {
                 if(roofs[0].activeSelf) {
-                    SwapRoof(false);
+                    //SwapRoof(false);
                     TableController.inst.RoofToOff();
                 }
             }

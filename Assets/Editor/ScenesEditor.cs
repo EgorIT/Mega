@@ -13,7 +13,7 @@ public class ScenesEditor : MonoBehaviour {
 	static void DoRoof()
 	{
 		List<string> materialPaths = new List<string>();
-		EditorSceneManager.OpenScene("Assets/Scenes/New 2.unity");
+		EditorSceneManager.OpenScene("Assets/Scenes/Roof.unity");
 		GameObject go = GameObject.FindWithTag("Roof");
 		List <Material> mt = new List<Material>();
 		int length = go.GetComponentsInChildren<MeshRenderer>().Length;
@@ -44,7 +44,6 @@ public class ScenesEditor : MonoBehaviour {
 			materialPaths.Add("Assets/Materials/Roof/"+material.name+".mat");
 			AssetDatabase.ImportAsset("Assets/Materials/Roof/"+material.name+".mat");
 		}
-
 		
 		foreach (MeshRenderer meshRenderer in mr)
 		{
@@ -64,7 +63,6 @@ public class ScenesEditor : MonoBehaviour {
 			meshRenderer.sharedMaterials = matArray;
 		}
 
-		
 		EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
 
 		/*foreach (string materialPath in materialPaths)
@@ -76,7 +74,6 @@ public class ScenesEditor : MonoBehaviour {
 				openedAsset.SetFloat("_Mode",2f);
 			}
 		}*/
-
 	}
 	
 	[MenuItem("ScenesEditor/CheckMaterials")]

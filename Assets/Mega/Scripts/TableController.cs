@@ -11,11 +11,11 @@ namespace Assets.Mega.Scripts {
 
         public TableShop prefabTableShop;
 
-        public void Awake() {
+        public void Awake () {
             inst = this;
         }
 
-        public void Start() {
+        public void Start () {
             var allTable = new GameObject();
             allTable.name = "allTable";
             allTable.transform.position = Vector3.zero;
@@ -23,22 +23,36 @@ namespace Assets.Mega.Scripts {
             allTable.transform.localScale = Vector3.one;
 
             var allShopCap = FindObjectsOfType<ShopCap>();
-            for (int i = 0; i < allShopCap.Length; i++) {
+            for(int i = 0; i < allShopCap.Length; i++) {
                 var tableShop = Instantiate(prefabTableShop);
                 tableShop.gameObject.SetActive(true);
-                tableShop.transform.parent = allTable.transform;
-                if (allShopCap[i].useFactor) {
-                    tableShop.transform.position = allShopCap[i].transform.position + new Vector3(allShopCap[i].deltaX, 0, allShopCap[i].deltaZ) + Vector3.up * 2;
-                    var mesh = allShopCap[i].GetComponent<MeshFilter>();
-                    for (int j = 0; j < mesh.mesh.uv.Length; j++) {
-                        Debug.Log(mesh.mesh.uv[i].x + "= x");
-                        Debug.Log(mesh.mesh.uv[i].y + "= y");
-                    }
-                } else {
-                    tableShop.transform.position = allShopCap[i].transform.position + Vector3.up * 2;
-                    tableShop.startPos = tableShop.transform.position;
+               // tableShop.transform.parent = allTable.transform;
+                tableShop.transform.parent = allShopCap[i].transform;
+
+
+                var mesh = allShopCap[i].GetComponent<MeshFilter>();
+                Vector3 midl = Vector3.zero;
+                for(int j = 0; j < mesh.mesh.vertices.Length; j++) {
+                    midl += mesh.mesh.vertices[j];
                 }
-                
+                midl = midl * (1f / mesh.mesh.vertices.Length);
+
+                tableShop.transform.localPosition = new Vector3(midl.x, 0, midl.z) + Vector3.up * 2;
+
+                /*if(allShopCap[i].useFactor) {
+                    tableShop.transform.position =
+                        allShopCap[i].transform.position - new Vector3(midl.x, 0, midl.z) + Vector3.up * 2;
+                } else {
+                    tableShop.transform.position =
+                        allShopCap[i].transform.position + new Vector3(midl.x, 0, midl.z) + Vector3.up * 2;
+                }*/
+
+
+                /* } else {
+                     tableShop.transform.position = allShopCap[i].transform.position + Vector3.up * 2;
+                     tableShop.startPos = tableShop.transform.position;
+                 }*/
+                tableShop.transform.parent = allTable.transform;
                 tableShop.SetName(allShopCap[i].name);
                 tableShop.shopCap = allShopCap[i];
                 allShopCap[i].tableShop = tableShop;
@@ -47,24 +61,24 @@ namespace Assets.Mega.Scripts {
             StartCoroutine(WaitToDis());
         }
 
-        public IEnumerator WaitToDis() {
+        public IEnumerator WaitToDis () {
             yield return new WaitForSeconds(0.2f);
             DisAllShops();
         }
 
 
-        public void SetAngelsForIcons(float y) {
+        public void SetAngelsForIcons (float y) {
             for(int i = 0; i < listLittleShops.Count; i++) {
                 listLittleShops[i].iconShop.transform.eulerAngles = new Vector3(0, y, 0);
             }
         }
 
-        public void RoofToOff() {
-            if (swapRoof) {
+        public void RoofToOff () {
+            if(swapRoof) {
                 ShowAllShops();
                 swapRoof = false;
             }
-            
+
         }
 
         public void RoofToOn () {
@@ -72,7 +86,7 @@ namespace Assets.Mega.Scripts {
                 DisAllShops();
                 swapRoof = true;
             }
-            
+
         }
 
         public void ShowAllShops () {
@@ -81,7 +95,7 @@ namespace Assets.Mega.Scripts {
             }
         }
 
-        public void DisAllShops() {
+        public void DisAllShops () {
             for(int i = 0; i < listLittleShops.Count; i++) {
                 listLittleShops[i].DisableShop();
             }

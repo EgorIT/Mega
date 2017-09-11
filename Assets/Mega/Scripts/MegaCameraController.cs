@@ -48,7 +48,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void Start () {
-        //
+        currentDistans = GlobalParams.distansOnStateOne;
         currentEndAng = new Vector3(angelXCamera.eulerAngles.x, angelYCamera.eulerAngles.y, 0);
 
     }

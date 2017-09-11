@@ -29,9 +29,9 @@ namespace Assets.Mega.Scripts {
 
         }
 
-        public void SetThis() {
+        /*public void SetThis() {
             MainLogic.inst.ChangeState(viewStates);
-        }
+        }*/
 
         public Vector3 FindPoint() {
             float dis = float.MaxValue;

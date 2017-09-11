@@ -65,7 +65,7 @@ namespace Assets.Mega.Scripts {
 
            // MegaCameraController.inst.SetNewPosCamera(v3, 
            //     finalCameraTransform.eulerAngles, GlobalParams.distancePointForCameraMidlleFragment, GlobalParams.sizeOrtocameraMidlleFragment);
-            MainLogic.inst.GoMiddleView();
+            //MainLogic.inst.GoMiddleView();
         }
 
         public void ShowPerimeter() {

@@ -55,7 +55,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void EnableShop () {
-            if (!shopCap.isActiveAndEnabled) {
+            if(!shopCap.gameObject.activeInHierarchy) {
                 return;
             }
             if(showCoro != null) {
@@ -72,6 +72,8 @@ namespace Assets.Mega.Scripts {
         }
 
         public IEnumerator IEnumChangeScale (Vector3 endScale) {
+          
+
             var startScale = iconShop.transform.localScale;
 
             float time = GlobalParams.timeToShowIcons;

@@ -34,6 +34,7 @@ public class ChangesInfo : MonoBehaviour
 		public string name;
 		public string description;
 		public string iconName;
+		public bool interactable = true;
 
 		public Shop(string nm, string descr, string icn)
 		{
@@ -41,10 +42,19 @@ public class ChangesInfo : MonoBehaviour
 			description = descr;
 			iconName = icn;
 		}
+		
+		public Shop(string nm, string descr, string icn, bool inter)
+		{
+			name = nm;
+			description = descr;
+			iconName = icn;
+			interactable = inter;
+		}
 	}
 
 	public void SetShop(string name)
 	{
+		Debug.Log("shop name to set is "+name);
 		Shop newShop = db.Find(x => x.name == name);
 		Debug.Log(name+" "+newShop+" "+newShop.name);
 		shopTable.shopName.text = newShop.name;
@@ -71,11 +81,11 @@ public class ChangesInfo : MonoBehaviour
 		db.Add(new Shop("ACCESSORIES", "",""));
 		db.Add(new Shop("CK JEANS", "",""));
 		db.Add(new Shop("PANDORA", "",""));
-		db.Add(new Shop("IGLA", "",""));
+		db.Add(new Shop("RIGLA", "",""));
 		db.Add(new Shop("GIPFEL", "",""));
-		db.Add(new Shop("Дороги <color=#787A79ff>Реконструкция</color>", "",""));
-		db.Add(new Shop("CUP <color=#787A79ff>Плиточные работы</color>", "",""));
-		db.Add(new Shop("Ex-DECATHLON AREA <color=#787A79ff>Ремонт</color>", "",""));
+		db.Add(new Shop("Дороги <color=#787A79ff>Реконструкция</color>", "","",false));
+		db.Add(new Shop("CUP <color=#787A79ff>Плиточные работы</color>", "","",false));
+		db.Add(new Shop("Ex-DECATHLON AREA <color=#787A79ff>Ремонт</color>", "","",false));
 		db.Add(new Shop("MANGO", "",""));
 		db.Add(new Shop("CORSO COMO", "",""));
 		db.Add(new Shop("MASCOTTE", "",""));
@@ -85,7 +95,7 @@ public class ChangesInfo : MonoBehaviour
 		db.Add(new Shop("REEBOK CLASSIC", "",""));
 		db.Add(new Shop("LUSIO", "",""));
 		db.Add(new Shop("MAC", "",""));
-		db.Add(new Shop("STOCKMAN <color=#787A79ff>Перепланировка</color>", "",""));
+		db.Add(new Shop("STOCKMAN <color=#787A79ff>Перепланировка</color>", "","",false));
 		db.Add(new Shop("KIKO", "",""));
 		db.Add(new Shop("YVES ROCHER", "",""));
 		db.Add(new Shop("ILE DE BEAUTE", "",""));
@@ -104,11 +114,11 @@ public class ChangesInfo : MonoBehaviour
 		db.Add(new Shop("ECONICA", "",""));
 		db.Add(new Shop("STRELLSON", "",""));
 		db.Add(new Shop("ECCO ECCO KIDS", "",""));
-		db.Add(new Shop("STOCKMAN <color=#787A79ff>Реконструкция</color>", "",""));
-		db.Add(new Shop("<color=#787A79ff>Новый служебный коридор</color>", "",""));
-		db.Add(new Shop("<color=#787A79ff>Перемещение коммунальных предприятий</color>", "",""));
-		db.Add(new Shop("IKEA <color=#787A79ff>Реконструкция</color>", "",""));
-		db.Add(new Shop("Парковка <color=#787A79ff>1 уровень</color>", "",""));
+		db.Add(new Shop("STOCKMAN <color=#787A79ff>Реконструкция</color>", "","",false));
+		db.Add(new Shop("<color=#787A79ff>Новый служебный коридор</color>", "","",false));
+		db.Add(new Shop("<color=#787A79ff>Перемещение коммунальных предприятий</color>", "","",false));
+		db.Add(new Shop("IKEA <color=#787A79ff>Реконструкция</color>", "","",false));
+		db.Add(new Shop("Парковка <color=#787A79ff>1 уровень</color>", "","",false));
 		db.Add(new Shop("LAUREN VIDAL", "",""));
 		db.Add(new Shop("U.S. POLO", "",""));
 		db.Add(new Shop("GUESS", "",""));
@@ -123,7 +133,8 @@ public class ChangesInfo : MonoBehaviour
 		db.Add(new Shop("SAMSONITE", "",""));
 		db.Add(new Shop("JEANS SYMPHONY", "",""));
 		db.Add(new Shop("JEANS SYMPHONY", "",""));
-		db.Add(new Shop("AUCHAN <color=#787A79ff>Реконструкция</color>", "",""));
+		db.Add(new Shop("AUCHAN <color=#787A79ff>Реконструкция</color>", "","",false));
+		db.Add(new Shop("<color=#787A79ff>Подготовительные работы</color>", "","",false));
 	}
 
 	public List<Term> terms;
@@ -131,6 +142,21 @@ public class ChangesInfo : MonoBehaviour
 	void Start()
 	{
 		FillDatabase();
+		
+		Term t2017q1 = new Term();
+		t2017q1.termName = "I<size=60>кв.</size> 2017";
+		t2017q1.shops = new List<string>();
+		t2017q1.shops.Add("<color=#787A79ff>Подготовительные работы</color>");
+		
+		Term t2017q2 = new Term();
+		t2017q2.termName = "II<size=60>кв.</size> 2017";
+		t2017q2.shops = new List<string>();
+		t2017q2.shops.Add("<color=#787A79ff>Подготовительные работы</color>");
+		
+		Term t2017q3 = new Term();
+		t2017q3.termName = "III<size=60>кв.</size> 2017";
+		t2017q3.shops = new List<string>();
+		t2017q3.shops.Add("<color=#787A79ff>Подготовительные работы</color>");
 		
 		Term t2017q4 = new Term();
 		t2017q4.termName = "IV<size=60>кв.</size> 2017";
@@ -149,7 +175,7 @@ public class ChangesInfo : MonoBehaviour
 		t2017q4.shops.Add("ACCESSORIES");
 		t2017q4.shops.Add("CK JEANS");
 		t2017q4.shops.Add("PANDORA");
-		t2017q4.shops.Add("IGLA");
+		t2017q4.shops.Add("RIGLA");
 		t2017q4.shops.Add("GIPFEL");
 		t2017q4.shops.Add("Дороги <color=#787A79ff>Реконструкция</color>");
 		t2017q4.shops.Add("CUP <color=#787A79ff>Плиточные работы</color>");
@@ -281,6 +307,9 @@ public class ChangesInfo : MonoBehaviour
 		t2019q1.shops.Add("AUCHAN <color=#787A79ff>Реконструкция</color>");
 		t2019q1.shops.Add("Парковка <color=#787A79ff>1 уровень</color>");
 		
+		termsList.Add(t2017q1);
+		termsList.Add(t2017q2);
+		termsList.Add(t2017q3);
 		termsList.Add(t2017q4);
 		//termsList.Add(t2017q4y);
 		termsList.Add(t2018q1);
@@ -324,6 +353,15 @@ public class ChangesInfo : MonoBehaviour
 				{
 					//Debug.Log(termsList[number].shops[k]);
 					unfilledColomn.texts[j].text = termsList[number].shops[k];
+					Shop sh = db.First(x => x.name == termsList[number].shops[k]);
+					if (sh!=null)
+					{
+						if (!sh.interactable)
+						{
+							unfilledColomn.texts[j].gameObject.GetComponent<Button>().interactable = false;
+						}
+					}
+
 					allCaps.Activate(termsList[number].shops[k]);
 				}
 				else

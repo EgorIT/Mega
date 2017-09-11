@@ -63,8 +63,7 @@ public class Timeline : MonoBehaviour {
 
         timeButtons[0].SetNormal();
         timeButtons[8].SetNormal();
-        if(number >= 3)
-            changesInfo.SetInfo(number - 3);
+            changesInfo.SetInfo(number);
 
         shopsList.RollIn();
         yield return null;

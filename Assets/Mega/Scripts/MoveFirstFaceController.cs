@@ -26,8 +26,12 @@ namespace Assets.Mega.Scripts {
             if (clickCoroutine != null) {
                 StopCoroutine(clickCoroutine);
             }
+            //Debug.Log(pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition);
+            //var g = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            //g.transform.position = pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition;
+
             clickCoroutine = StartCoroutine(IEnumCheckSwipe(pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition, 
-                0.638f, MegaCameraController.inst.currentEndAng));
+                1.638f, MegaCameraController.inst.currentEndAng));
         }
 
         public void MoveForThisShop (PointerMoveToShop pointerMoveToShop) {

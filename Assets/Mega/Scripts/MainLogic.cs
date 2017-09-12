@@ -23,7 +23,7 @@ namespace Assets.Mega.Scripts {
 
         public List<iViewState> listViewStates = new List<iViewState>();
 
-        public Transform AllSeeTransform;
+        //public Transform AllSeeTransform;
         public List<Sprite> listPlans;
         //public SpriteRenderer spriteRendererPlan;
 
@@ -49,6 +49,10 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
+            interfaceMega = GameObject.Find("PanelInterface");
+            if (interfaceMega) {
+                interfaceMega.SetActive(false);
+            }
             //SwapRoof(true);
             /*if (isTest) {
                 var allToOff = GameObject.FindGameObjectsWithTag("TempOff");

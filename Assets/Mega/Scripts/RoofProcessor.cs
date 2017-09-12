@@ -115,7 +115,7 @@ public class RoofProcessor : MonoBehaviour {
         }
         yield return null;
     }
-    // Use this for initialization
+
     void Start () {
         List<MeshRenderer> mrl = new List<MeshRenderer>();
         GameObject go = GameObject.FindWithTag("Roof");

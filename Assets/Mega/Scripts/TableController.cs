@@ -7,7 +7,7 @@ namespace Assets.Mega.Scripts {
         public static TableController inst;
         public List<TableShop> listLittleShops;
 
-        private bool swapRoof = true;
+        //private bool swapRoof = true;
 
         public TableShop prefabTableShop;
 
@@ -36,8 +36,7 @@ namespace Assets.Mega.Scripts {
                     midl += mesh.mesh.vertices[j];
                 }
                 midl = midl * (1f / mesh.mesh.vertices.Length);
-
-                tableShop.transform.localPosition = new Vector3(midl.x, 0, midl.z) + Vector3.up * 2;
+                tableShop.transform.localPosition = new Vector3(midl.x, 0, midl.z);
 
                 /*if(allShopCap[i].useFactor) {
                     tableShop.transform.position =
@@ -53,6 +52,7 @@ namespace Assets.Mega.Scripts {
                      tableShop.startPos = tableShop.transform.position;
                  }*/
                 tableShop.transform.parent = allTable.transform;
+                tableShop.transform.localPosition += Vector3.up * 2; 
                 tableShop.SetName(allShopCap[i].name);
                 tableShop.shopCap = allShopCap[i];
                 allShopCap[i].tableShop = tableShop;
@@ -73,7 +73,7 @@ namespace Assets.Mega.Scripts {
             }
         }
 
-        public void RoofToOff () {
+        /*public void RoofToOff () {
             if(swapRoof) {
                 ShowAllShops();
                 swapRoof = false;
@@ -83,11 +83,11 @@ namespace Assets.Mega.Scripts {
 
         public void RoofToOn () {
             if(!swapRoof) {
-                DisAllShops();
-                swapRoof = true;
+                
+                swapRoofswapRoof = true;
             }
 
-        }
+        }*/
 
         public void ShowAllShops () {
             for(int i = 0; i < listLittleShops.Count; i++) {

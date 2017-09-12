@@ -25,10 +25,7 @@ namespace Assets.Mega.Scripts {
             }
         }
 
-        public void EndState () {
-
-        }
-
+        
         /*public void SetThis() {
             MainLogic.inst.ChangeState(viewStates);
         }*/
@@ -47,9 +44,21 @@ namespace Assets.Mega.Scripts {
         }
 
         public void StartState () {
+            
             MegaCameraController.inst.SetNewPosCamera(FindPoint(), GlobalParams.eulerAnglesForCameraInShops, 
                 GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.fast);
+            StartCoroutine(WaitAfterStartState());
         }
+
+        public IEnumerator WaitAfterStartState() {
+            yield return new WaitForSeconds(GlobalParams.timeToFly - 0.2f);
+            RoofProcessor.inst.DoStandard();
+        }
+
+        public void EndState () {
+            RoofProcessor.inst.DoTransparent();
+        }
+
 
         /*public IEnumerator IEnumLoadSceneFirstFaceLook() {
             

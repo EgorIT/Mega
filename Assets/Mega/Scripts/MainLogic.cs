@@ -38,7 +38,7 @@ namespace Assets.Mega.Scripts {
         public List<GameObject> listToOnTEMP = new List<GameObject>();
 
         public bool iconFlag;
-        public bool roofEnable;
+        public bool roofEnable = true;
 
         public void Awake() {
             inst = this;
@@ -86,7 +86,7 @@ namespace Assets.Mega.Scripts {
                     //SwapRoof(true);
                     roofEnable = true;
                     RoofProcessor.inst.DoStandard();
-                    TableController.inst.RoofToOn();
+                    TableController.inst.DisAllShops();
                 }
 
             }
@@ -95,7 +95,7 @@ namespace Assets.Mega.Scripts {
                     roofEnable = false;
                     SwapRoof(false);
                     RoofProcessor.inst.DoTransparent();
-                    TableController.inst.RoofToOff();
+                    TableController.inst.ShowAllShops();
                 }
             }
 
@@ -106,6 +106,7 @@ namespace Assets.Mega.Scripts {
             if (viewCurrentStates == newState) {
                 return;
             }
+            //Debug.Log("newState = " + newState.ToString());
             for (int i = 0; i < listViewStates.Count; i++) {
                 if (listViewStates[i].GetViewStates() == viewCurrentStates) {
                     listViewStates[i].EndState();
@@ -146,9 +147,9 @@ namespace Assets.Mega.Scripts {
             LittleShopController.inst.DisAllShops();
         }*/
 
-        public void GoMiddleView() {
+        /*public void GoMiddleView() {
             TableController.inst.ShowAllShops();
-        }
+        }*/
 
         public void GoViewStateOne() {
            

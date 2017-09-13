@@ -16,7 +16,7 @@ private var i=0;
 
 function Start()
 {
-	Debug.Log(Application.dataPath);
+	///Debug.Log(Application.dataPath);
 }
 
 function Update () {

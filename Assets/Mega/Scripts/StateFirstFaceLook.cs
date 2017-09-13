@@ -6,12 +6,23 @@ using UnityEngine.UI;
 
 namespace Assets.Mega.Scripts {
     public class StateFirstFaceLook : MonoBehaviour, iViewState {
+        public static StateFirstFaceLook inst;
+        public List<PointMoveOnFirstFaceScene> listPointMoveOnFirstFaceScene = new List<PointMoveOnFirstFaceScene>();
+
+        public Coroutine clickCoroutine;
         public ViewStates viewStates;
         private TypeCameraOnState typeCameraOnState = TypeCameraOnState.perspective;
         public Transform StateLookTransform;
         public List<Transform> listStateLooksTransform = new List<Transform>();
 
         public Transform rootStateLooksTransform;
+
+        public bool isHardMove;
+        public PointerMoveToShop hardMovePointerMoveToShop;
+
+        public void Awake() {
+            inst = this;
+        }
 
         public void Start () {
             ScanAllPoints();
@@ -24,11 +35,6 @@ namespace Assets.Mega.Scripts {
                 listStateLooksTransform.Add(allPoints[i]);
             }
         }
-
-        
-        /*public void SetThis() {
-            MainLogic.inst.ChangeState(viewStates);
-        }*/
 
         public Vector3 FindPoint() {
             float dis = float.MaxValue;
@@ -44,25 +50,35 @@ namespace Assets.Mega.Scripts {
         }
 
         public void StartState () {
-            
-            MegaCameraController.inst.SetNewPosCamera(FindPoint(), GlobalParams.eulerAnglesForCameraInShops, 
-                GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.fast);
-            StartCoroutine(WaitAfterStartState());
+            if (isHardMove) {
+                MegaCameraController.inst.SetNewPosCamera(FindPoint(), GlobalParams.eulerAnglesForCameraInShops,
+                    GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.fast);
+                StartCoroutine(WaitAfterStartState());
+            }
+            else {
+                MegaCameraController.inst.SetNewPosCamera(hardMovePointerMoveToShop.lookPoint.position, 
+                    hardMovePointerMoveToShop.lookPoint.eulerAngles,
+                    GlobalParams.fieldOfViewOnFirstLook, 
+                    GlobalParams.distansOnFirstLook, 
+                    TypeMoveCamera.fast);
+                StartCoroutine(WaitAfterStartState());
+            }
         }
 
         public IEnumerator WaitAfterStartState() {
             yield return new WaitForSeconds(GlobalParams.timeToFly - 0.2f);
-            RoofProcessor.inst.DoStandard();
+            if (RoofProcessor.inst) {
+                RoofProcessor.inst.DoStandard();
+            }
+            
         }
 
         public void EndState () {
-            RoofProcessor.inst.DoTransparent();
-        }
-
-
-        /*public IEnumerator IEnumLoadSceneFirstFaceLook() {
+            if (RoofProcessor.inst) {
+                RoofProcessor.inst.DoTransparent();
+            }
             
-        }*/
+        }
 
         public ViewStates GetViewStates () {
             return viewStates;
@@ -72,5 +88,34 @@ namespace Assets.Mega.Scripts {
             return typeCameraOnState;
         }
 
+        public void MoveForThisFloorPoint (PointMoveOnFirstFaceScene pointMoveOnFirstFaceScene) {
+            if(!MegaCameraController.inst.isFirstLookScene) {
+                return;
+            }
+            if(clickCoroutine != null) {
+                StopCoroutine(clickCoroutine);
+            }
+            clickCoroutine = StartCoroutine(IEnumCheckSwipe(pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition,
+                1.638f, MegaCameraController.inst.currentEndAng));
+        }
+
+        public void MoveForThisShop (PointerMoveToShop pointerMoveToShop) {
+            if(clickCoroutine != null) {
+                StopCoroutine(clickCoroutine);
+            }
+            clickCoroutine = StartCoroutine(IEnumCheckSwipe(pointerMoveToShop.lookPoint.position, 0, pointerMoveToShop.lookPoint.eulerAngles));
+        }
+
+        public void StopClickCoroutine () {
+            if(clickCoroutine != null) {
+                StopCoroutine(clickCoroutine);
+            }
+        }
+
+        public IEnumerator IEnumCheckSwipe (Vector3 pointMove, float deltaY, Vector3 endAng) {
+            yield return new WaitForSeconds(0.5f);
+            MegaCameraController.inst.SetNewPosCamera(pointMove + Vector3.up * deltaY, endAng,
+                GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.normal);
+        }
     }
 }

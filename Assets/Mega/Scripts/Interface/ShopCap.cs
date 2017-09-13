@@ -12,6 +12,7 @@ public class ShopCap : MonoBehaviour {
     public bool useFactor;
 
     public TableShop tableShop;
+    public PointerMoveToShop pointerMoveToShop;
 
     public void OnDisable() {
         if (tableShop) {
@@ -26,6 +27,14 @@ public class ShopCap : MonoBehaviour {
         }
         
         //Debug.Log("OnEnable " + gameObject.name);
+    }
+
+    public void Setup() {
+        pointerMoveToShop = GetComponentInChildren<PointerMoveToShop>();
+        if (pointerMoveToShop) {
+            pointerMoveToShop.Setup();    
+        }
+
     }
 
 

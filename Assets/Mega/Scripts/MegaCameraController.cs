@@ -122,7 +122,7 @@ public class MegaCameraController : MonoBehaviour {
             disCamera.localPosition = new Vector3(0, 0, GlobalParams.maxDistancePesr);
         }
         if(GetCurrentDistans() > GlobalParams.minDistancePesr) {
-            GoToFirstLook();
+            GoToFirstLook(true);
         }
     }
 
@@ -165,9 +165,10 @@ public class MegaCameraController : MonoBehaviour {
             currentFieldOfView, GetCurrentDistans(), TypeMoveCamera.normal));
     }
 
-    public void GoToFirstLook() {
+    public void GoToFirstLook(bool isHardMove) {
         TableController.inst.DisAllShops();
         PauseForUI();
+        StateFirstFaceLook.inst.isHardMove = isHardMove;
         MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
         isFirstLookScene = true;
         StartCoroutine(WaitToOff());
@@ -181,13 +182,10 @@ public class MegaCameraController : MonoBehaviour {
         stateLookVector3AllMega = posCamera.position;
         MainLogic.inst.ChangeState(ViewStates.allMega);
         isFirstLookScene = false;
-        
-        MainLogic.inst.SwapRoof(false);
     }
 
     public IEnumerator WaitToOff() {
         yield return new WaitForSeconds(GlobalParams.timeToFly - 0.2f);
-        MainLogic.inst.SwapRoof(true);
     }
 
     public void CheckPozitionCamera () {

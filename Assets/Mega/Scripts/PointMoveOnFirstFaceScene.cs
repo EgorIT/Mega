@@ -14,13 +14,13 @@ namespace Assets.Mega.Scripts {
 
         public void OnPointerDown (PointerEventData data) {
             pointerEventData = data;
-            MoveFirstFaceController.inst.MoveForThisFloorPoint(this);
+            StateFirstFaceLook.inst.MoveForThisFloorPoint(this);
             //Debug.Log("OnPointerDown " + gameObject.name);
 
         }
 
         public void AddThis() {
-            MoveFirstFaceController.inst.listPointMoveOnFirstFaceScene.Add(this);
+            StateFirstFaceLook.inst.listPointMoveOnFirstFaceScene.Add(this);
         }
 
         public void SetThis() {

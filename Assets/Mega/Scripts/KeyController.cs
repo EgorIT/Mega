@@ -58,8 +58,8 @@ namespace Assets.Mega.Scripts {
                     swipeFlag = true;
                     var v3 = Input.mousePosition - lastPosCur;
                    // Debug.Log(v3.sqrMagnitude);
-                    if(MoveFirstFaceController.inst && v3.sqrMagnitude > 50) {
-                        MoveFirstFaceController.inst.StopClickCoroutine();
+                    if(StateFirstFaceLook.inst && v3.sqrMagnitude > 50) {
+                        StateFirstFaceLook.inst.StopClickCoroutine();
                     }
 
                     touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouse, Time.deltaTime * v3.y * speedSwipeMouse);
@@ -91,8 +91,8 @@ namespace Assets.Mega.Scripts {
                     //Debug.Log("x = " + touch.deltaPosition.x);
                     //Debug.Log("y = " + touch.deltaPosition.y);
                     if(touch.deltaPosition.x > 0.001f || touch.deltaPosition.y > 0.001f) {
-                        if(MoveFirstFaceController.inst) {
-                            MoveFirstFaceController.inst.StopClickCoroutine();
+                        if(StateFirstFaceLook.inst) {
+                            StateFirstFaceLook.inst.StopClickCoroutine();
                         }
                     }
                     x = -touch.deltaPosition.x * speedTouch;
@@ -119,8 +119,8 @@ namespace Assets.Mega.Scripts {
                 deltaMagnitudeDiff = (prevTouchDeltaMag - touchDeltaMag) * speedZoom;
                 deltaMagnitudeDiff *= (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
 
-                if(MoveFirstFaceController.inst) {
-                    MoveFirstFaceController.inst.StopClickCoroutine();
+                if(StateFirstFaceLook.inst) {
+                    StateFirstFaceLook.inst.StopClickCoroutine();
                 }
             }
 

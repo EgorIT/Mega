@@ -20,21 +20,13 @@ namespace Assets.Mega.Scripts {
         
         public List<SceneForFirstFaceLook> AllFirstFaceLookScenes = new List<SceneForFirstFaceLook>();
         private ViewStates viewCurrentStates = ViewStates.none;
-
         public List<iViewState> listViewStates = new List<iViewState>();
-
-        //public Transform AllSeeTransform;
         public List<Sprite> listPlans;
-        //public SpriteRenderer spriteRendererPlan;
 
         public GameObject interfaceMega;
-
         public int currentNumberBlockShops;
 
         public List<Transform> borders = new List<Transform>();
-
-        //public List<GameObject> roofs;
-
         public List<GameObject> listToOnTEMP = new List<GameObject>();
 
         public bool iconFlag;
@@ -49,7 +41,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
-            interfaceMega = GameObject.Find("PanelInterface");
+            interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
             if (interfaceMega) {
                 interfaceMega.SetActive(false);
             }
@@ -69,12 +61,6 @@ namespace Assets.Mega.Scripts {
             }*/
         }
 
-        public void SwapRoof(bool var) {
-            /*for (int i = 0; i < roofs.Count; i++) {
-                roofs[i].SetActive(var);
-            }*/
-        }
-
         public void SetQuarter(int number) {
             //spriteRendererPlan.sprite = listPlans[number];
             currentNumberBlockShops = number;
@@ -87,9 +73,10 @@ namespace Assets.Mega.Scripts {
         public void Update() {
             if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega + 1000) {
                 if (!roofEnable) {
-                    //SwapRoof(true);
                     roofEnable = true;
-                    RoofProcessor.inst.DoStandard();
+                    if (RoofProcessor.inst) {
+                        RoofProcessor.inst.DoStandard();
+                    }
                     TableController.inst.DisAllShops();
                 }
 
@@ -97,8 +84,9 @@ namespace Assets.Mega.Scripts {
             if(MegaCameraController.inst.GetCurrentDistans() > GlobalParams.distansOnAllMega + 1000 && MegaCameraController.inst.GetCurrentDistans() < -1001) {
                 if(roofEnable) {
                     roofEnable = false;
-                    SwapRoof(false);
-                    RoofProcessor.inst.DoTransparent();
+                    if (RoofProcessor.inst) {
+                        RoofProcessor.inst.DoTransparent();
+                    }
                     TableController.inst.ShowAllShops();
                 }
             }

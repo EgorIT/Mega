@@ -14,6 +14,11 @@ public class ShopCap : MonoBehaviour {
     public TableShop tableShop;
     public PointerMoveToShop pointerMoveToShop;
 
+    public void MoveCamera()
+    {
+        
+    }
+
     public void OnDisable() {
         if (tableShop) {
             tableShop.EnableShop();

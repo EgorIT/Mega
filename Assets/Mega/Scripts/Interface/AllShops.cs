@@ -15,6 +15,7 @@ public class AllShops : MonoBehaviour {
 	public Table shop;
 	public ShopTable shopTable;
 	public ChangesInfo changesInfo;
+	public Backer backer;
 	
 	private string temporaryString = "В данном периоде реконструкции на Вашем объекте будут произведены технические работы. К первому числу указанного квартала Вам необходимо освободить объект";
 	
@@ -24,8 +25,12 @@ public class AllShops : MonoBehaviour {
 		ChangesInfo.Shop newShop = db.Find(x => x.name == name);
 		Debug.Log(name+" "+newShop+" "+newShop.name);
 		shopTable.shopName.text = newShop.name;
-		if (newShop.description =="")
+		if (newShop.description == "")
+		{
 			shopTable.shopDescription.text = temporaryString;
+			shopTable.icon.sprite = changesInfo.shopPreviews.FindPreview(newShop.name);
+		}
+		backer.all = true;
 		//shopTable.icon
 		list.RollOut();
 		shop.RollIn();
@@ -311,11 +316,14 @@ db.Add(new ChangesInfo.Shop("SVYAZNOY", "",""));
 			col.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
 			Colomn unfilledColomn = col.GetComponent<Colomn>();
 			unfilledColomn.changesInfo = changesInfo;
+			unfilledColomn.allShops = this;
+			unfilledColomn.all = true;
 			for (int j = 0; j < unfilledColomn.texts.Length; j++)
 			{
 				if (k < db.Count)
 				{
 					unfilledColomn.texts[j].text = db[k].name;
+					
 					//Debug.Log(db[k].name);
 				}
 				else

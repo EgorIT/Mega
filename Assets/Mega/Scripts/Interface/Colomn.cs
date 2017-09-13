@@ -7,9 +7,18 @@ public class Colomn : MonoBehaviour
 {
 	public Text[] texts;
 	public ChangesInfo changesInfo;
+	public AllShops allShops;
+	public bool all = false;
 
 	public void Click(string name)
 	{
-		changesInfo.SetShop(name);
+		if (all)
+		{
+			allShops.SetShop(name);
+		}
+		else
+		{
+			changesInfo.SetShop(name);
+		}
 	}
 }

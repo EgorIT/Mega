@@ -19,6 +19,7 @@ public class ChangesInfo : MonoBehaviour
 	public Table list;
 	public Table shop;
 	public AllCaps allCaps;
+	public ShopPreviews shopPreviews;
 	
 	private bool hidden = true;
 	private string temporaryString = "В данном периоде реконструкции на Вашем объекте будут произведены технические работы. К первому числу указанного квартала Вам необходимо освободить объект";
@@ -56,10 +57,15 @@ public class ChangesInfo : MonoBehaviour
 	{
 		Debug.Log("shop name to set is "+name);
 		Shop newShop = db.Find(x => x.name == name);
-		Debug.Log(name+" "+newShop+" "+newShop.name);
-		shopTable.shopName.text = newShop.name;
-		if (newShop.description =="")
-		shopTable.shopDescription.text = temporaryString;
+		if (newShop != null)
+		{
+			Debug.Log(name + " " + newShop + " " + newShop.name);
+			shopTable.shopName.text = newShop.name;
+			if (newShop.description == "")
+				shopTable.shopDescription.text = temporaryString;
+			shopTable.icon.sprite = shopPreviews.FindPreview(newShop.name);
+		}
+
 		//shopTable.icon
 		list.RollOut();
 		shop.RollIn();
@@ -71,14 +77,14 @@ public class ChangesInfo : MonoBehaviour
 		db.Add(new Shop("BANANA REPUBLIC", "",""));
 		db.Add(new Shop("LACOSTE", "",""));
 		db.Add(new Shop("IMAGINARIUM", "",""));
-		db.Add(new Shop("X.O", "",""));
-		db.Add(new Shop("McNEAL", "",""));
+		db.Add(new Shop("X.O.", "",""));
+		db.Add(new Shop("MCNEAL", "",""));
 		db.Add(new Shop("CHRISTIAN BERG", "",""));
 		db.Add(new Shop("MARKS & SPENCER", "",""));
 		db.Add(new Shop("EUROSET", "",""));
 		db.Add(new Shop("SONY", "",""));
 		db.Add(new Shop("BORK", "",""));
-		db.Add(new Shop("ACCESSORIES", "",""));
+		db.Add(new Shop("DKNY ACCESSORIES", "",""));
 		db.Add(new Shop("CK JEANS", "",""));
 		db.Add(new Shop("PANDORA", "",""));
 		db.Add(new Shop("RIGLA", "",""));
@@ -89,7 +95,7 @@ public class ChangesInfo : MonoBehaviour
 		db.Add(new Shop("MANGO", "",""));
 		db.Add(new Shop("CORSO COMO", "",""));
 		db.Add(new Shop("MASCOTTE", "",""));
-		db.Add(new Shop("SWAROVSKI", "",""));
+		db.Add(new Shop("SWAROWSKI", "",""));
 		db.Add(new Shop("MAC", "",""));
 		db.Add(new Shop("REEBOK", "",""));
 		db.Add(new Shop("REEBOK CLASSIC", "",""));
@@ -97,32 +103,32 @@ public class ChangesInfo : MonoBehaviour
 		db.Add(new Shop("MAC", "",""));
 		db.Add(new Shop("STOCKMAN <color=#787A79ff>Перепланировка</color>", "","",false));
 		db.Add(new Shop("KIKO", "",""));
-		db.Add(new Shop("YVES ROCHER", "",""));
+		db.Add(new Shop("YVES ROSHER", "",""));
 		db.Add(new Shop("ILE DE BEAUTE", "",""));
 		db.Add(new Shop("ILE DE BEAUTE", "",""));
 		db.Add(new Shop("5 KARMANOV", "",""));
 		db.Add(new Shop("KIEHL’S", "",""));
-		db.Add(new Shop("BOBBI BROWN", "",""));
+		db.Add(new Shop("BOBBY BROWN", "",""));
 		db.Add(new Shop("DE FACTO", "",""));
 		db.Add(new Shop("MARMALATO", "",""));
 		db.Add(new Shop("BUSTIER", "",""));
 		db.Add(new Shop("LUSH", "",""));
 		db.Add(new Shop("KIRA PLASTININA", "",""));
 		db.Add(new Shop("MARKS & SPENCER", "",""));
-		db.Add(new Shop("ALBLONE", "",""));
+		db.Add(new Shop("ALBIONE", "",""));
 		db.Add(new Shop("MEZZATORRE", "",""));
-		db.Add(new Shop("ECONICA", "",""));
+		db.Add(new Shop("ECONIKA", "",""));
 		db.Add(new Shop("STRELLSON", "",""));
-		db.Add(new Shop("ECCO ECCO KIDS", "",""));
+		db.Add(new Shop("ECCO, ECCO KIDS", "",""));
 		db.Add(new Shop("STOCKMAN <color=#787A79ff>Реконструкция</color>", "","",false));
 		db.Add(new Shop("<color=#787A79ff>Новый служебный коридор</color>", "","",false));
 		db.Add(new Shop("<color=#787A79ff>Перемещение коммунальных предприятий</color>", "","",false));
 		db.Add(new Shop("IKEA <color=#787A79ff>Реконструкция</color>", "","",false));
 		db.Add(new Shop("Парковка <color=#787A79ff>1 уровень</color>", "","",false));
 		db.Add(new Shop("LAUREN VIDAL", "",""));
-		db.Add(new Shop("U.S. POLO", "",""));
+		db.Add(new Shop("U.S.POLO ASSN", "",""));
 		db.Add(new Shop("GUESS", "",""));
-		db.Add(new Shop("QUIKSILVER", "",""));
+		db.Add(new Shop("QUICKSILVER", "",""));
 		db.Add(new Shop("LEGO", "",""));
 		db.Add(new Shop("BERSHKA", "",""));
 		db.Add(new Shop("SUPERSTEP", "",""));
@@ -165,14 +171,14 @@ public class ChangesInfo : MonoBehaviour
 		t2017q4.shops.Add("BANANA REPUBLIC");
 		t2017q4.shops.Add("LACOSTE");
 		t2017q4.shops.Add("IMAGINARIUM");
-		t2017q4.shops.Add("X.O");
-		t2017q4.shops.Add("McNEAL");
+		t2017q4.shops.Add("X.O.");
+		t2017q4.shops.Add("MCNEAL");
 		t2017q4.shops.Add("CHRISTIAN BERG");
 		t2017q4.shops.Add("MARKS & SPENCER");
 		t2017q4.shops.Add("EUROSET");
 		t2017q4.shops.Add("SONY");
 		t2017q4.shops.Add("BORK");
-		t2017q4.shops.Add("ACCESSORIES");
+		t2017q4.shops.Add("DKNY ACCESSORIES");
 		t2017q4.shops.Add("CK JEANS");
 		t2017q4.shops.Add("PANDORA");
 		t2017q4.shops.Add("RIGLA");
@@ -211,7 +217,7 @@ public class ChangesInfo : MonoBehaviour
 		t2018q1.shops.Add("MANGO");
 		t2018q1.shops.Add("CORSO COMO");
 		t2018q1.shops.Add("MASCOTTE");
-		t2018q1.shops.Add("SWAROVSKI");
+		t2018q1.shops.Add("SWAROWSKI");
 		t2018q1.shops.Add("MAC");
 		t2018q1.shops.Add("REEBOK");
 		t2018q1.shops.Add("LUSIO");
@@ -222,7 +228,7 @@ public class ChangesInfo : MonoBehaviour
 		t2018q2.termName = "II<size=60>кв.</size>  2018";
 		t2018q2.shops = new List<string>();
 		t2018q2.shops.Add("KIKO");
-		t2018q2.shops.Add("YVES ROCHER");
+		t2018q2.shops.Add("YVES ROSHER");
 		t2018q2.shops.Add("ILE DE BEAUTE");
 		t2018q2.shops.Add("MASCOTTE");
 		t2018q2.shops.Add("REEBOK");
@@ -234,9 +240,9 @@ public class ChangesInfo : MonoBehaviour
 		Term t2018q3 = new Term();
 		t2018q3.termName = "III<size=60>кв.</size>  2018";
 		t2018q3.shops = new List<string>();
-		t2018q3.shops.Add("YVES ROCHER");
+		t2018q3.shops.Add("YVES ROSHER");
 		t2018q3.shops.Add("KIEHL’S");
-		t2018q3.shops.Add("BOBBI BROWN");
+		t2018q3.shops.Add("BOBBY BROWN");
 		t2018q3.shops.Add("DE FACTO");
 		t2018q3.shops.Add("MARMALATO");
 		t2018q3.shops.Add("BUSTIER");
@@ -244,11 +250,11 @@ public class ChangesInfo : MonoBehaviour
 		t2018q3.shops.Add("KIRA PLASTININA");
 		t2018q3.shops.Add("ILE DE BEAUTE");
 		t2018q3.shops.Add("MARKS & SPENCER");
-		t2018q3.shops.Add("ALBLONE");
+		t2018q3.shops.Add("ALBIONE");
 		t2018q3.shops.Add("MEZZATORRE");
-		t2018q3.shops.Add("ECONICA");
+		t2018q3.shops.Add("ECONIKA");
 		t2018q3.shops.Add("STRELLSON");
-		t2018q3.shops.Add("ECCO ECCO KIDS");
+		t2018q3.shops.Add("ECCO, ECCO KIDS");
 		t2018q3.shops.Add("STOCKMAN <color=#787A79ff>Реконструкция</color>");
 		t2018q3.shops.Add("<color=#787A79ff>Новый служебный коридор</color>");
 		t2018q3.shops.Add("<color=#787A79ff>Перемещение коммунальных предприятий</color>");
@@ -257,9 +263,9 @@ public class ChangesInfo : MonoBehaviour
 		Term t2018q4 = new Term();
 		t2018q4.termName = "IV<size=60>кв.</size>  2018";
 		t2018q4.shops = new List<string>();
-		t2018q4.shops.Add("ALBLONE");
+		t2018q4.shops.Add("ALBIONE");
 		t2018q4.shops.Add("MEZZATORRE");
-		t2018q4.shops.Add("ECONICA");
+		t2018q4.shops.Add("ECONIKA");
 		t2018q4.shops.Add("STRELLSON");
 		t2018q4.shops.Add("STOCKMAN <color=#787A79ff>Реконструкция</color>");
 		t2018q4.shops.Add("<color=#787A79ff>Новый служебный коридор</color>");
@@ -284,14 +290,14 @@ public class ChangesInfo : MonoBehaviour
 		Term t2019q1 = new Term();
 		t2019q1.termName = "I<size=60>кв.</size>  2019";
 		t2019q1.shops = new List<string>();
-		t2019q1.shops.Add("ALBLONE");
+		t2019q1.shops.Add("ALBIONE");
 		t2019q1.shops.Add("MEZZATORRE");
-		t2019q1.shops.Add("ECONICA");
+		t2019q1.shops.Add("ECONIKA");
 		t2019q1.shops.Add("STRELLSON");
 		t2019q1.shops.Add("LAUREN VIDAL");
-		t2019q1.shops.Add("U.S. POLO");
+		t2019q1.shops.Add("U.S.POLO ASSN");
 		t2019q1.shops.Add("GUESS");
-		t2019q1.shops.Add("QUIKSILVER");
+		t2019q1.shops.Add("QUICKSILVER");
 		t2019q1.shops.Add("LEGO");
 		t2019q1.shops.Add("BERSHKA");
 		t2019q1.shops.Add("SUPERSTEP");
@@ -353,6 +359,7 @@ public class ChangesInfo : MonoBehaviour
 				{
 					//Debug.Log(termsList[number].shops[k]);
 					unfilledColomn.texts[j].text = termsList[number].shops[k];
+					//Debug.Log(termsList[number].shops[k]);
 					Shop sh = db.First(x => x.name == termsList[number].shops[k]);
 					if (sh!=null)
 					{

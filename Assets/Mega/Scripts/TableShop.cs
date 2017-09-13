@@ -31,9 +31,11 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start () {
-            
             TableController.inst.listLittleShops.Add(this);
+        }
 
+        public void ClickTable() {
+            shopCap.pointerMoveToShop.GoToThisShop();
         }
 
         public void SetName(string var) {

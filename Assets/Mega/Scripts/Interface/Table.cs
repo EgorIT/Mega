@@ -64,7 +64,7 @@ public class Table : MonoBehaviour {
     }
 
     public IEnumerator CountdownCoroutine (float seconds) {
-        Debug.Log("start countdown");
+        //Debug.Log("start countdown");
         yield return new WaitForSeconds(seconds);
         RollOut();
         yield return null;

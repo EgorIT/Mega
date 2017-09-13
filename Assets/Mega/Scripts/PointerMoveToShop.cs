@@ -33,13 +33,16 @@ namespace Assets.Mega.Scripts {
             pointerEventData = data;
             if (MegaCameraController.inst.isFirstLookScene) {
                 StateFirstFaceLook.inst.MoveForThisShop(this);
-            } else {
-                StateFirstFaceLook.inst.hardMovePointerMoveToShop = this;
-                MegaCameraController.inst.GoToFirstLook(false);
-                Debug.Log("OnPointerDown " + gameObject.name);
             }
         }
 
+        public void GoToThisShop() {
+            if(!MegaCameraController.inst.isFirstLookScene) {
+                StateFirstFaceLook.inst.hardMovePointerMoveToShop = this;
+                MegaCameraController.inst.GoToFirstLook(false);
+                //Debug.Log("OnPointerDown " + gameObject.name);
+            }
+        }
 
         /*public void GoToFirstLook () {
             TableController.inst.DisAllShops();

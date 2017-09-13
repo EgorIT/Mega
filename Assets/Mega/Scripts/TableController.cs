@@ -52,10 +52,13 @@ namespace Assets.Mega.Scripts {
                      tableShop.startPos = tableShop.transform.position;
                  }*/
                 tableShop.transform.parent = allTable.transform;
-                tableShop.transform.localPosition += Vector3.up * 2; 
+                tableShop.transform.localPosition = new Vector3(tableShop.transform.localPosition.x, 5.5f, tableShop.transform.localPosition.z);
+                //tableShop.transform.localScale = Vector3.zero;
+                tableShop.transform.localScale = GlobalParams.scaleIconShop;
                 tableShop.SetName(allShopCap[i].name);
                 tableShop.shopCap = allShopCap[i];
                 allShopCap[i].tableShop = tableShop;
+                allShopCap[i].Setup();
             }
 
             StartCoroutine(WaitToDis());

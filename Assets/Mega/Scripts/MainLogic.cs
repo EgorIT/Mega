@@ -74,7 +74,9 @@ namespace Assets.Mega.Scripts {
             if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega + 1000) {
                 if (!roofEnable) {
                     roofEnable = true;
-                    RoofProcessor.inst.DoStandard();
+                    if (RoofProcessor.inst) {
+                        RoofProcessor.inst.DoStandard();
+                    }
                     TableController.inst.DisAllShops();
                 }
 
@@ -82,7 +84,9 @@ namespace Assets.Mega.Scripts {
             if(MegaCameraController.inst.GetCurrentDistans() > GlobalParams.distansOnAllMega + 1000 && MegaCameraController.inst.GetCurrentDistans() < -1001) {
                 if(roofEnable) {
                     roofEnable = false;
-                    RoofProcessor.inst.DoTransparent();
+                    if (RoofProcessor.inst) {
+                        RoofProcessor.inst.DoTransparent();
+                    }
                     TableController.inst.ShowAllShops();
                 }
             }

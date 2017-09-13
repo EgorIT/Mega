@@ -4,30 +4,27 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GoToShop : MonoBehaviour
-{
+public class GoToShop : MonoBehaviour {
 
-	private AllCaps allCaps;
-	private Image image;
-	
-	public void PushButton()
-	{
-		ShopCap shopCap = allCaps.allCaps.First(x => x.GetComponent<ShopCap>().name == image.name);
-		if (shopCap != null)
-		{
-			shopCap.MoveCamera();
-		}
-	}
+    public AllCaps allCaps;
+    public Image image;
 
-	// Use this for initialization
-	void Start ()
-	{
-		allCaps = GameObject.FindObjectOfType<AllCaps>();
-		image = gameObject.GetComponent<Image>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void PushButton () {
+        for (int i = 0; i < allCaps.allCaps.Count; i++) {
+            if (allCaps.allCaps[i].name == image.sprite.name) {
+                allCaps.allCaps[i].MoveCamera();
+            }
+            
+        }
+        //ShopCap shopCap = allCaps.allCaps.First(x => x.GetComponent<ShopCap>().name == image.name);
+        //if(shopCap != null) {
+        //    shopCap.MoveCamera();
+        //}
+    }
+
+    void Start () {
+        allCaps = GameObject.FindObjectOfType<AllCaps>();
+        image = gameObject.GetComponent<Image>();
+    }
+
 }

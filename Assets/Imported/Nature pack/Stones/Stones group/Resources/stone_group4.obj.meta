@@ -1,9 +1,16 @@
 fileFormatVersion: 2
 guid: a114cbb42efcf5d438218e3c01e796a6
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 21
   fileIDToRecycleName:
+    100000: polySurface3
+    100002: //RootNode
+    400000: polySurface3
+    400002: //RootNode
+    2300000: polySurface3
+    3300000: polySurface3
     4300000: polySurface3
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0
@@ -26,6 +33,7 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -33,7 +41,10 @@ ModelImporter:
     globalScale: 0.8
     meshCompression: 0
     addColliders: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -49,6 +60,7 @@ ModelImporter:
     normalSmoothAngle: 180
     normalImportMode: 1
     tangentImportMode: 4
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

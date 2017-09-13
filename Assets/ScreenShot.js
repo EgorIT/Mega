@@ -9,7 +9,7 @@ private var i=0;
 
 	@MenuItem ("Test tools/ScreenShot")
 	static function Screen () {
-		Application.CaptureScreenshot("KingOfDirt_ScreenShot.png",1);
+		ScreenCapture.CaptureScreenshot("KingOfDirt_ScreenShot.png",1);
 	}
 
 #endif
@@ -22,7 +22,7 @@ function Start()
 function Update () {
 	if(Input.GetKeyDown(KeyCode.LeftShift))
 	{
-		Application.CaptureScreenshot("Screen_"+  i+".png",1);
+		ScreenCapture.CaptureScreenshot("Screen_"+  i+".png",1);
 		i++;
 	}
 }

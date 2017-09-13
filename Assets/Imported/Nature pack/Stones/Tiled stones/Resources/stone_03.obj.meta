@@ -1,9 +1,16 @@
 fileFormatVersion: 2
 guid: 9c8e8466e9b5b6d49b91dabefc282630
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 21
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: stone_03:polySurface37
+    400000: //RootNode
+    400002: stone_03:polySurface37
+    2300000: stone_03:polySurface37
+    3300000: stone_03:polySurface37
     4300000: stone_03:polySurface37
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0
@@ -26,6 +33,7 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -33,7 +41,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -49,6 +60,7 @@ ModelImporter:
     normalSmoothAngle: 180
     normalImportMode: 1
     tangentImportMode: 4
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

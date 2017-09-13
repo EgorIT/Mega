@@ -11,6 +11,8 @@ public class ShopCap : MonoBehaviour {
 
     public bool useFactor;
 
+    public bool test;
+
     public TableShop tableShop;
     public PointerMoveToShop pointerMoveToShop;
 
@@ -31,6 +33,13 @@ public class ShopCap : MonoBehaviour {
         }
         
         //Debug.Log("OnEnable " + gameObject.name);
+    }
+
+    public void Update() {
+        if (test) {
+            test = false;
+            pointerMoveToShop.test = true;
+        }
     }
 
     public void Setup() {

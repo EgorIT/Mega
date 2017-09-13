@@ -9,6 +9,71 @@ using UnityEngine.SceneManagement;
 
 public class ScenesEditor : MonoBehaviour {
 
+	[MenuItem("ScenesEditor/DoCaps")]
+	static void DoCaps()
+	{
+		EditorSceneManager.OpenScene("Assets/Mega/Scenes/Caps.unity");
+		GameObject caps = GameObject.FindWithTag("Caps");
+		GameObject capsSalt = GameObject.FindWithTag("CapsSalt");
+
+		ShopPreviews previews = caps.GetComponentInChildren<ShopPreviews>();
+		List<ShopCap> saltList = capsSalt.GetComponentsInChildren<ShopCap>().ToList();
+		
+		Debug.Log(caps.transform.childCount);
+		Debug.Log(saltList.Count);
+
+		int i = 0;
+		while (i<134)
+		{
+			/*Debug.Log(caps.transform.GetChild(i).GetComponent<ShopCap>().name +" "+ caps.transform.GetChild(i).name);
+			Debug.Log(capsSalt.transform.GetChild(i).GetComponent<ShopCap>().name +" "+ capsSalt.transform.GetChild(i).name);
+			Debug.Log("");*/
+			//Debug.Log(i);
+			bool ex = false;
+			foreach (Sprite sprite in previews.sprites)
+			{
+				if (capsSalt.transform.GetChild(i).GetComponent<ShopCap>()!=null)
+				if (sprite.name == capsSalt.transform.GetChild(i).GetComponent<ShopCap>().name)
+				{
+					ex = true;
+				}
+			}
+			if (!ex)
+			{
+				if (capsSalt.transform.GetChild(i).GetComponent<ShopCap>()!=null)
+				{
+					Debug.Log(capsSalt.transform.GetChild(i).GetComponent<ShopCap>().name);
+					Debug.Log(capsSalt.transform.GetChild(i).name);
+				}
+				
+			
+			}
+
+			i++;
+		}
+		/*capsList.ForEach(x =>
+		{
+			capsList.ForEach(y =>
+			{
+				if (x.gameObject.name == y.gameObject.name && x.gameObject.GetInstanceID()!=y.gameObject.GetInstanceID())
+				{
+					Debug.Log(x.gameObject.name);
+				}
+			});
+			
+		});*/
+		/*
+		capsList.ForEach(x =>
+		{
+			saltList.ForEach(y =>
+			{
+				if (x.gameObject.name==y.gameObject.name)
+			});
+			
+		});*/
+		EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
+	}
+
 	[MenuItem("ScenesEditor/DoRoof")]
 	static void DoRoof()
 	{

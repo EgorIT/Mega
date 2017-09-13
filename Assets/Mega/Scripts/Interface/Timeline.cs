@@ -9,7 +9,7 @@ public class Timeline : MonoBehaviour {
     public ChangesInfo changesInfo;
     public RectTransform line;
     private int currentNumber = 0;
-
+    public Table allShopsTable;
 
 
     private RectTransform rt;
@@ -64,7 +64,8 @@ public class Timeline : MonoBehaviour {
         timeButtons[0].SetNormal();
         timeButtons[8].SetNormal();
             changesInfo.SetInfo(number);
-
+        
+        allShopsTable.RollOut();
         shopsList.RollIn();
         yield return null;
     }

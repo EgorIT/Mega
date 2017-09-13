@@ -181,13 +181,10 @@ public class MegaCameraController : MonoBehaviour {
         stateLookVector3AllMega = posCamera.position;
         MainLogic.inst.ChangeState(ViewStates.allMega);
         isFirstLookScene = false;
-        
-        MainLogic.inst.SwapRoof(false);
     }
 
     public IEnumerator WaitToOff() {
         yield return new WaitForSeconds(GlobalParams.timeToFly - 0.2f);
-        MainLogic.inst.SwapRoof(true);
     }
 
     public void CheckPozitionCamera () {

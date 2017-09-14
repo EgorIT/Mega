@@ -33,6 +33,7 @@ namespace Assets.Mega.Scripts {
         public static float minDistancePesr = -1000f;
         public static float maxDistancePesr = -10000;
 
+        public static float needTimeToSleep = 120f;
         //public static float ortoMinSize = 5f;
         //public static float ortoMaxSize = 150f;
 

@@ -43,6 +43,13 @@ namespace Assets.Mega.Scripts {
             return viewCurrentStates;
         }
 
+        public float currentTime;
+        
+
+        public void ResetTime() {
+            MainLogic.inst.currentTime = 0;
+        }
+
         public void Start() {
             parkNow = GameObject.FindGameObjectWithTag("parkNow");
             parkNow.SetActive(true);
@@ -97,6 +104,12 @@ namespace Assets.Mega.Scripts {
 
 
         public void Update() {
+            currentTime += Time.deltaTime;
+            if (currentTime > GlobalParams.needTimeToSleep) {
+                currentTime = GlobalParams.needTimeToSleep;
+                ChangeState(ViewStates.one);
+            }
+
             if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega + 1000) {
                 if (!roofEnable) {
                     roofEnable = true;

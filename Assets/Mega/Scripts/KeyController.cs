@@ -32,6 +32,7 @@ namespace Assets.Mega.Scripts {
             float deltaMagnitudeDiff = 0;
 
             if(Input.GetAxis("Mouse ScrollWheel") > 0) {
+                MainLogic.inst.ResetTime();
                 pinchFlag = true;
                 if(Math.Abs(MegaCameraController.inst.disCamera.localPosition.z) < 0.0001) {
                     deltaMagnitudeDiff = -1f * speedZoomWheel;
@@ -43,7 +44,8 @@ namespace Assets.Mega.Scripts {
             }
 
             if(Input.GetAxis("Mouse ScrollWheel") < 0) {
-                
+                MainLogic.inst.ResetTime();
+
                 pinchFlag = true;
                 if(Math.Abs(MegaCameraController.inst.disCamera.localPosition.z) < 0.0001) {
                     deltaMagnitudeDiff = 1f * speedZoomWheel;
@@ -54,6 +56,7 @@ namespace Assets.Mega.Scripts {
             }
 
             if(Input.GetKey(KeyCode.Mouse0)) {
+                MainLogic.inst.ResetTime();
                 if (IsTouchUI(Input.mousePosition)) {
                     return;
                 }
@@ -89,6 +92,7 @@ namespace Assets.Mega.Scripts {
             }
 
             if(Input.touchCount == 1) {
+                MainLogic.inst.ResetTime();
                 if(IsTouchUI(Input.GetTouch(0).position)) {
                     return;
                 }

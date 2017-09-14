@@ -28,7 +28,7 @@ public class AllShops : MonoBehaviour {
 
         if (newShop.description == "")
 		{
-			shopTable.shopDescription.text = temporaryString;
+			//shopTable.shopDescription.text = temporaryString;
 			shopTable.icon.sprite = changesInfo.shopPreviews.FindPreview(newShop.name);
 		}
 		backer.all = true;
@@ -41,7 +41,7 @@ public class AllShops : MonoBehaviour {
 	// Use this for initialization
 void Start () {
 		//db.Add(new ChangesInfo.Shop("db.Add(new ChangesInfo.Shop("STRADIVARIUS", "",""));
-db.Add(new ChangesInfo.Shop("1C: Interes", "",""));
+db.Add(new ChangesInfo.Shop("1C Interes", "",""));
 db.Add(new ChangesInfo.Shop("5 karmaNov", "",""));
 db.Add(new ChangesInfo.Shop("Adidas Kids", "",""));
 db.Add(new ChangesInfo.Shop("Albione", "",""));

@@ -5,7 +5,8 @@ namespace Assets.Mega.Scripts {
         public static float deltaYpointMidlleInViewBlock = 0.6f;
         public static float deltaPerimetrInViewBlock = 0.15f;
         
-        public static Vector3 eulerAnglesForCameraInAllMega = new Vector3(24, 54, 0);
+        //public static Vector3 eulerAnglesForCameraInAllMega = new Vector3(24, 54, 0);
+        public static Vector3 eulerAnglesForCameraInAllMega = new Vector3(45, 45, 0);
 
         public static Vector3 eulerAnglesForCameraInShops = new Vector3(24, 54, 0);
         

@@ -19,6 +19,11 @@ public class AllCaps : MonoBehaviour {
         List.ForEach(x => x.gameObject.SetActive(false));
         TableController.inst.DisAllShops();
     }
+    
+    public void ActivateAll () {
+        List.ForEach(x => x.gameObject.SetActive(true));
+        //TableController.inst.DisAllShops();
+    }
 
     public void Activate (string name) {
         List.ForEach(x => {

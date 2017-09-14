@@ -64,14 +64,24 @@ public class ChangesInfo : MonoBehaviour
 			if (newShop.description == "")
 				shopTable.shopDescription.text = temporaryString;
 			shopTable.icon.sprite = shopPreviews.FindPreview(newShop.name);
-            TableController.inst.DisAllShops();
+			if (shopTable.icon.sprite.name != newShop.name)
+			{
+				Debug.Log("Not found preview "+newShop.name);
+			}
+			TableController.inst.DisAllShops();
+			bool found = false;
 		    for(int i = 0; i < allCaps.List.Count; i++) {
-		        if(allCaps.List[i].name == newShop.name) {
+		        if(allCaps.List[i].name == newShop.name)
+		        {
+			        found = true;
 		            allCaps.List[i].tableShop.EnableShop();
 		        }
-
 		    }
-        }
+			if (!found)
+			{
+				Debug.Log("Not found cap"+newShop.name);
+			}
+		}
 
 		//shopTable.icon
 		list.RollOut();

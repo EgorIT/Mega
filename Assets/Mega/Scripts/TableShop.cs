@@ -34,7 +34,7 @@ namespace Assets.Mega.Scripts {
         public void Start () {
             TableController.inst.listLittleShops.Add(this);
             
-            SetName("MOSCOW JEWELLERY FACTORY");
+            //SetName("MOSCOW JEWELLERY FACTORY");
         }
 
         public void ClickTable() {

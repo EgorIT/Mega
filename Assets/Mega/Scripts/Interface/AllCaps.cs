@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Mega.Scripts;
@@ -25,12 +26,20 @@ public class AllCaps : MonoBehaviour {
         //TableController.inst.DisAllShops();
     }
 
-    public void Activate (string name) {
+    public void Activate (string name)
+    {
+        bool found = false;
         List.ForEach(x => {
-            if (x.name == name) {
+            if (x.name == name)
+            {
+                found = true;
                 x.gameObject.SetActive(true);
                 //x.tableShop.EnableShop();
             }
         });
+        if (!found)
+        {
+            Debug.Log("Cap not found "+name);
+        }
     }
 }

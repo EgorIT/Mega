@@ -16,7 +16,7 @@ namespace Assets.Mega.Scripts {
         public static float timeToFly = 2f;
         public static float timeToShowIcons = 0.4f;
 
-        public static Vector3 scaleIconShop = new Vector3(0.05f, 0.05f, 0.05f);
+        public static Vector3 scaleIconShop = new Vector3(0.1f, 0.1f, 0.1f);
 
         public static float cameraXmaxPerspective = -60f;
         public static float cameraXMinPerspective = 60f;

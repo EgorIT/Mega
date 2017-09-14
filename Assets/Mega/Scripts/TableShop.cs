@@ -47,7 +47,8 @@ namespace Assets.Mega.Scripts {
             float width = textGen.GetPreferredWidth(var, generationSettings);
             float height = textGen.GetPreferredHeight(var, generationSettings);
             
-            rt.sizeDelta = new Vector2(width+35,30);
+            rt.sizeDelta = new Vector2(width/6,30);
+            //rt.sizeDelta = new Vector2(width+35,30);
             /*
             text1.
             if (var.Length>22)

@@ -67,16 +67,14 @@ namespace Assets.Mega.Scripts {
 
         public IEnumerator WaitAfterStartState() {
             yield return new WaitForSeconds(GlobalParams.timeToFly - 0.2f);
-            if (RoofProcessor.inst) {
-                RoofProcessor.inst.DoStandard();
-            }
+            MainLogic.inst.EnebleRoof();
             
         }
 
         public void EndState () {
-            if (RoofProcessor.inst) {
-                RoofProcessor.inst.DoTransparent();
-            }
+            //if (RoofProcessor.inst) {
+            //    RoofProcessor.inst.DoTransparent();
+            //}
             
         }
 

@@ -14,10 +14,10 @@ namespace Assets.Mega.Scripts {
     }
 
     public class MainLogic : MonoBehaviour {
+        public static MainLogic inst;
+
         public bool isTest;
 
-        public static MainLogic inst;
-        
         public List<SceneForFirstFaceLook> AllFirstFaceLookScenes = new List<SceneForFirstFaceLook>();
         private ViewStates viewCurrentStates = ViewStates.none;
         public List<iViewState> listViewStates = new List<iViewState>();
@@ -30,7 +30,7 @@ namespace Assets.Mega.Scripts {
         public List<GameObject> listToOnTEMP = new List<GameObject>();
 
         public bool iconFlag;
-        public bool roofEnable = true;
+        private bool roofEnable = true;
 
         public GameObject parkNow;
         public GameObject parkAfter;
@@ -59,20 +59,12 @@ namespace Assets.Mega.Scripts {
             if (interfaceMega) {
                 interfaceMega.SetActive(false);
             }
-            //SwapRoof(true);
-            /*if (isTest) {
-                var allToOff = GameObject.FindGameObjectsWithTag("TempOff");
-                for (int i = 0; i < allToOff.Length; i++) {
-                    allToOff[i].SetActive(false);
+
+            if (!isTest) {
+                for (int i = 0; i < listToOnTEMP.Count; i++) {
+                    listToOnTEMP[i].SetActive(true);
                 }
-            }*/
-            /*for (int i = 0; i < listToOnTEMP.Count; i++) {
-                if (listToOnTEMP[i] != null) {
-                    if (!isTest) {
-                        listToOnTEMP[i].SetActive(true);
-                    }
-                }
-            }*/
+            }
         }
 
         public void SetQuarter(int number) {
@@ -102,6 +94,27 @@ namespace Assets.Mega.Scripts {
             FloorController.inst.SetQuartal(number);
         }
 
+        public void DisRoof(float time) {
+            if (roofEnable) {
+                roofEnable = false;
+                StartCoroutine(IEnumDisRoof(time));
+            }
+            
+        }
+
+        public void EnebleRoof() {
+            if (!roofEnable) {
+                roofEnable = true;
+                RoofProcessor.inst.DoStandard();
+            }
+        }
+
+        public IEnumerator IEnumDisRoof(float time) {
+            yield return new WaitForSeconds(time);
+            if(RoofProcessor.inst) {
+                RoofProcessor.inst.DoTransparent();
+            }
+        }
 
         public void Update() {
             currentTime += Time.deltaTime;
@@ -110,25 +123,25 @@ namespace Assets.Mega.Scripts {
                 ChangeState(ViewStates.one);
             }
 
-            if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega + 1000) {
-                if (!roofEnable) {
-                    roofEnable = true;
-                    if (RoofProcessor.inst) {
-                        RoofProcessor.inst.DoStandard();
-                    }
-                    //TableController.inst.DisAllShops();
-                }
-
-            }
-            if(MegaCameraController.inst.GetCurrentDistans() > GlobalParams.distansOnAllMega + 1000 && MegaCameraController.inst.GetCurrentDistans() < -1001) {
-                if(roofEnable) {
-                    roofEnable = false;
-                    if (RoofProcessor.inst) {
-                        RoofProcessor.inst.DoTransparent();
-                    }
-                    //TableController.inst.ShowAllShops();
-                }
-            }
+            //if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega - 500) {
+            //    if (!roofEnable) {
+            //        roofEnable = true;
+            //        if (RoofProcessor.inst) {
+            //            RoofProcessor.inst.DoStandard();
+            //        }
+            //        //TableController.inst.DisAllShops();
+            //    }
+            //
+            //}
+            //if(MegaCameraController.inst.GetCurrentDistans() > GlobalParams.distansOnAllMega + 1000 && MegaCameraController.inst.GetCurrentDistans() < -1001) {
+            //    if(roofEnable) {
+            //        roofEnable = false;
+            //        if (RoofProcessor.inst) {
+            //            RoofProcessor.inst.DoTransparent();
+            //        }
+            //        //TableController.inst.ShowAllShops();
+            //    }
+            //}
 
 
         }

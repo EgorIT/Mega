@@ -32,6 +32,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void StartState () {
+            MainLogic.inst.EnebleRoof();
             TableController.inst.DisAllShops();
             MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);

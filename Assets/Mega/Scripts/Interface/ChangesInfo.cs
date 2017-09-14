@@ -65,9 +65,9 @@ public class ChangesInfo : MonoBehaviour
 				shopTable.shopDescription.text = temporaryString;
 			shopTable.icon.sprite = shopPreviews.FindPreview(newShop.name);
             TableController.inst.DisAllShops();
-		    for(int i = 0; i < allCaps.allCaps.Count; i++) {
-		        if(allCaps.allCaps[i].name == newShop.name) {
-		            allCaps.allCaps[i].tableShop.EnableShop();
+		    for(int i = 0; i < allCaps.List.Count; i++) {
+		        if(allCaps.List[i].name == newShop.name) {
+		            allCaps.List[i].tableShop.EnableShop();
 		        }
 
 		    }

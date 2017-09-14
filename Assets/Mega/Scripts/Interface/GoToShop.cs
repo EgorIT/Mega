@@ -10,9 +10,9 @@ public class GoToShop : MonoBehaviour {
     public Image image;
 
     public void PushButton () {
-        for (int i = 0; i < allCaps.allCaps.Count; i++) {
-            if (allCaps.allCaps[i].name == image.sprite.name) {
-                allCaps.allCaps[i].MoveCamera();
+        for (int i = 0; i < allCaps.List.Count; i++) {
+            if (allCaps.List[i].name == image.sprite.name) {
+                allCaps.List[i].MoveCamera();
             }
             
         }

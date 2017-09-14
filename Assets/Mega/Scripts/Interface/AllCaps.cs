@@ -6,19 +6,22 @@ using UnityEngine;
 
 public class AllCaps : MonoBehaviour {
 
-    public List<ShopCap> allCaps = new List<ShopCap>();
+    public List<ShopCap> List = new List<ShopCap>();
+    public static AllCaps allCaps;
 
-    void Start () {
-        allCaps = GameObject.FindObjectsOfType<ShopCap>().ToList();
+    void Start ()
+    {
+        allCaps = this;
+        List = GameObject.FindObjectsOfType<ShopCap>().ToList();
     }
 
     public void Refresh () {
-        allCaps.ForEach(x => x.gameObject.SetActive(false));
+        List.ForEach(x => x.gameObject.SetActive(false));
         TableController.inst.DisAllShops();
     }
 
     public void Activate (string name) {
-        allCaps.ForEach(x => {
+        List.ForEach(x => {
             if (x.name == name) {
                 x.gameObject.SetActive(true);
                 //x.tableShop.EnableShop();

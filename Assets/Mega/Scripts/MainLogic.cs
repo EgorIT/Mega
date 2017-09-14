@@ -121,6 +121,8 @@ namespace Assets.Mega.Scripts {
             if (currentTime > GlobalParams.needTimeToSleep) {
                 currentTime = GlobalParams.needTimeToSleep;
                 ChangeState(ViewStates.one);
+                Timeline.timeline.Sleep();
+                AllCaps.allCaps.Refresh();
             }
 
             //if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega - 500) {

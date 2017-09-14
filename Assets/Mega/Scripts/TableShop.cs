@@ -21,6 +21,7 @@ namespace Assets.Mega.Scripts {
         public Coroutine showCoro;
         public TextMesh text;
         public Text text1;
+        public RectTransform rt;
         public string shopName;
         public ShopCap shopCap;
 
@@ -32,6 +33,8 @@ namespace Assets.Mega.Scripts {
 
         public void Start () {
             TableController.inst.listLittleShops.Add(this);
+            
+            SetName("MOSCOW JEWELLERY FACTORY");
         }
 
         public void ClickTable() {
@@ -39,6 +42,22 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SetName(string var) {
+            TextGenerator textGen = new TextGenerator();
+            TextGenerationSettings generationSettings = text1.GetGenerationSettings(text1.rectTransform.rect.size); 
+            float width = textGen.GetPreferredWidth(var, generationSettings);
+            float height = textGen.GetPreferredHeight(var, generationSettings);
+            
+            rt.sizeDelta = new Vector2(width+35,30);
+            /*
+            text1.
+            if (var.Length>22)
+                rt.sizeDelta = new Vector2(526,30);
+            if (var.Length>20&& var.Length<22)
+                rt.sizeDelta = new Vector2(460,30);
+            if (var.Length>18&& var.Length<20)
+                rt.sizeDelta = new Vector2(386,30);
+            if (var.Length>18&& var.Length<20)
+                rt.sizeDelta = new Vector2(350,30);*/
             shopName = var;
             if(text != null) {
                 text.text = var;

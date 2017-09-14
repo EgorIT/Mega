@@ -51,7 +51,7 @@ namespace Assets.Mega.Scripts {
 
         public void StartState () {
             if (isHardMove) {
-                MegaCameraController.inst.SetNewPosCamera(FindPoint(), GlobalParams.eulerAnglesForCameraInShops,
+                MegaCameraController.inst.SetNewPosCamera(FindPoint(), new Vector3(0, GlobalParams.eulerAnglesForCameraInShops.y, 0),
                     GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.fast);
                 StartCoroutine(WaitAfterStartState());
             }

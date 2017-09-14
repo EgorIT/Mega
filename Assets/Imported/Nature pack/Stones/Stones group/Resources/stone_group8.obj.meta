@@ -3,7 +3,14 @@ guid: 54535470b5b9cfa47a71eb0205e8f3d1
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: stonegr6_LP2:stonegr6_LP2
+    400000: //RootNode
+    400002: stonegr6_LP2:stonegr6_LP2
+    2300000: stonegr6_LP2:stonegr6_LP2
+    3300000: stonegr6_LP2:stonegr6_LP2
     4300000: stonegr6_LP2:stonegr6_LP2
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

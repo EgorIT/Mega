@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="50cb2958-2763-4656-ad63-bbab7be90864" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/New.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/New.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.MegaGit/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.MegaGit/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllCaps.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllCaps.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ChangesInfo.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ChangesInfo.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/GoToShop.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/GoToShop.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Editor/ScenesEditor.cs" afterPath="$PROJECT_DIR$/Assets/Editor/ScenesEditor.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Materials/Roof/wall.mat.meta" afterPath="$PROJECT_DIR$/Assets/Materials/Roof/wall.mat.meta" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Timeline.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Timeline.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+              <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
               <folding>
                 <marker date="1505395525496" expanded="false" signature="6:166" ph="..." />
                 <marker date="1505395525496" expanded="true" signature="206:4640" ph="{...}" />
@@ -208,34 +204,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScenesEditor.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ScenesEditor.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Editor/ScenesEditor.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+            <state relative-caret-position="780">
+              <caret line="80" column="55" lean-forward="false" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
               <folding>
-                <marker date="1505338493340" expanded="false" signature="6:220" ph="..." />
-                <marker date="1505338493340" expanded="true" signature="264:5257" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="323:1980" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="758:1544" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="766:1010" ph="/* Debug.Log(caps.transform.GetChild(i).GetComponent&lt;ShopCap&gt;().name +&quot; &quot;+ caps.transform.GetChild(i).name); ... */" />
-                <marker date="1505338493340" expanded="true" signature="1096:1288" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="1255:1283" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="1300:1531" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="1375:1517" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="1547:1780" ph="/* capsList.ForEach(x =&gt; ... */" />
-                <marker date="1505338493340" expanded="true" signature="1783:1908" ph="/* capsList.ForEach(x =&gt; ... */" />
-                <marker date="1505338493340" expanded="true" signature="2038:4550" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="2497:2699" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="2582:2695" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="2637:2690" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="2807:3222" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="3269:4177" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="3414:4129" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="4251:4547" ph="/* foreach (string materialPath in materialPaths) ... */" />
-                <marker date="1505338493340" expanded="true" signature="4625:5255" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="5034:5252" ph="{...}" />
-                <marker date="1505338493340" expanded="true" signature="5119:5248" ph="{...}" />
+                <marker date="1505395978643" expanded="false" signature="6:220" ph="..." />
+                <marker date="1505395978643" expanded="true" signature="264:5256" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="323:1980" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="758:1544" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="766:1010" ph="/* Debug.Log(caps.transform.GetChild(i).GetComponent&lt;ShopCap&gt;().name +&quot; &quot;+ caps.transform.GetChild(i).name); ... */" />
+                <marker date="1505395978643" expanded="true" signature="1096:1288" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="1255:1283" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="1300:1531" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="1375:1517" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="1547:1780" ph="/* capsList.ForEach(x =&gt; ... */" />
+                <marker date="1505395978643" expanded="true" signature="1783:1908" ph="/* capsList.ForEach(x =&gt; ... */" />
+                <marker date="1505395978643" expanded="true" signature="2038:4549" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="2496:2698" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="2581:2694" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="2636:2689" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="2806:3221" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="3268:4176" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="3413:4128" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="4250:4546" ph="/* foreach (string materialPath in materialPaths) ... */" />
+                <marker date="1505395978643" expanded="true" signature="4624:5254" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="5033:5251" ph="{...}" />
+                <marker date="1505395978643" expanded="true" signature="5118:5247" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -394,7 +390,6 @@
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Colomn.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllShops.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Backer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Editor/ScenesEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ShopCap.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/GoToShop.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Video.cs" />
@@ -404,6 +399,7 @@
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllCaps.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/ScenesEditor.cs" />
       </list>
     </option>
   </component>
@@ -569,7 +565,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65718000" />
+    <option name="totallyTimeSpent" value="65961000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1058,37 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Editor/ScenesEditor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding>
-            <marker date="1505338493340" expanded="false" signature="6:220" ph="..." />
-            <marker date="1505338493340" expanded="true" signature="264:5257" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="323:1980" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="758:1544" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="766:1010" ph="/* Debug.Log(caps.transform.GetChild(i).GetComponent&lt;ShopCap&gt;().name +&quot; &quot;+ caps.transform.GetChild(i).name); ... */" />
-            <marker date="1505338493340" expanded="true" signature="1096:1288" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="1255:1283" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="1300:1531" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="1375:1517" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="1547:1780" ph="/* capsList.ForEach(x =&gt; ... */" />
-            <marker date="1505338493340" expanded="true" signature="1783:1908" ph="/* capsList.ForEach(x =&gt; ... */" />
-            <marker date="1505338493340" expanded="true" signature="2038:4550" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="2497:2699" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="2582:2695" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="2637:2690" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="2807:3222" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="3269:4177" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="3414:4129" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="4251:4547" ph="/* foreach (string materialPath in materialPaths) ... */" />
-            <marker date="1505338493340" expanded="true" signature="4625:5255" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="5034:5252" ph="{...}" />
-            <marker date="1505338493340" expanded="true" signature="5119:5248" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Backer.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1264,7 +1229,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
           <folding>
             <marker date="1505395525496" expanded="false" signature="6:166" ph="..." />
             <marker date="1505395525496" expanded="true" signature="206:4640" ph="{...}" />
@@ -1291,6 +1256,37 @@
             <marker date="1505395525496" expanded="true" signature="4311:4368" ph="{...}" />
             <marker date="1505395525496" expanded="true" signature="4498:4562" ph="{...}" />
             <marker date="1505395525496" expanded="true" signature="4591:4638" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Editor/ScenesEditor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="80" column="55" lean-forward="false" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
+          <folding>
+            <marker date="1505395978643" expanded="false" signature="6:220" ph="..." />
+            <marker date="1505395978643" expanded="true" signature="264:5256" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="323:1980" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="758:1544" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="766:1010" ph="/* Debug.Log(caps.transform.GetChild(i).GetComponent&lt;ShopCap&gt;().name +&quot; &quot;+ caps.transform.GetChild(i).name); ... */" />
+            <marker date="1505395978643" expanded="true" signature="1096:1288" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="1255:1283" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="1300:1531" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="1375:1517" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="1547:1780" ph="/* capsList.ForEach(x =&gt; ... */" />
+            <marker date="1505395978643" expanded="true" signature="1783:1908" ph="/* capsList.ForEach(x =&gt; ... */" />
+            <marker date="1505395978643" expanded="true" signature="2038:4549" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="2496:2698" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="2581:2694" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="2636:2689" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="2806:3221" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="3268:4176" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="3413:4128" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="4250:4546" ph="/* foreach (string materialPath in materialPaths) ... */" />
+            <marker date="1505395978643" expanded="true" signature="4624:5254" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="5033:5251" ph="{...}" />
+            <marker date="1505395978643" expanded="true" signature="5118:5247" ph="{...}" />
           </folding>
         </state>
       </provider>

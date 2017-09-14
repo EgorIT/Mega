@@ -9,7 +9,6 @@ public class Video : MonoBehaviour {
     public static Video inst;
     public MeshRenderer mr;
     public VideoPlayer vp;
-    private int num;
 
     public Coroutine fadeCoroutine;
 
@@ -18,24 +17,12 @@ public class Video : MonoBehaviour {
     public void Awake() {
         inst = this;
         startScale = transform.localScale;
-        Debug.Log(vp.frameCount);
-        /*vp.frame = 5;
-        vp.Play();
-        vp.Pause();*/
-    }
-
-    private void Update()
-    {
-        if (num>105)
-        {
-            num = 0;
-        }
-        vp.frame = num;
-        num++;
     }
 
     public void FadeOff() {
         //vp.Play();
+        vp.frame = 4;
+        vp.Pause();
         if (fadeCoroutine != null) {
             StopCoroutine(fadeCoroutine);
         }
@@ -44,6 +31,8 @@ public class Video : MonoBehaviour {
 
     public void FadeOn () {
         //vp.Play();
+        vp.frame = 4;
+        vp.Pause();
         if(fadeCoroutine != null) {
             StopCoroutine(fadeCoroutine);
         }

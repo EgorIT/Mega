@@ -10,7 +10,7 @@ public class ShopName : MonoBehaviour
 
 	public void Click()
 	{
-		Debug.Log(gameObject.GetComponent<Text>().text);
+		//Debug.Log(gameObject.GetComponent<Text>().text);
 		colomn.Click(gameObject.GetComponent<Text>().text);
 	}
 

@@ -55,7 +55,7 @@ public class ChangesInfo : MonoBehaviour
 
 	public void SetShop(string name)
 	{
-		Debug.Log("shop name to set is "+name);
+		//Debug.Log("shop name to set is "+name);
 		Shop newShop = db.Find(x => x.name == name);
 		if (newShop != null)
 		{

@@ -68,7 +68,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SetQuarter(int number) {
-            if (number <= 4) {
+            if (number <= 2) {
                 if (!parkNow.activeInHierarchy) {
                     parkNow.SetActive(true);
                 }

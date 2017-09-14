@@ -72,7 +72,8 @@ namespace Assets.Mega.Scripts {
 
         public void SetAngelsForIcons (float y) {
             for(int i = 0; i < listLittleShops.Count; i++) {
-                listLittleShops[i].iconShop.transform.eulerAngles = new Vector3(0, y, 0);
+                //listLittleShops[i].iconShop.transform.eulerAngles = new Vector3(0, y, 0);
+                listLittleShops[i].iconShop.transform.eulerAngles = new Vector3(45, y, 0);
             }
         }
 

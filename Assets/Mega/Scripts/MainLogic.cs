@@ -68,7 +68,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SetQuarter(int number) {
-            if (number <= 4) {
+            if (number <= 2) {
                 if (!parkNow.activeInHierarchy) {
                     parkNow.SetActive(true);
                 }
@@ -121,6 +121,8 @@ namespace Assets.Mega.Scripts {
             if (currentTime > GlobalParams.needTimeToSleep) {
                 currentTime = GlobalParams.needTimeToSleep;
                 ChangeState(ViewStates.one);
+                Timeline.timeline.Sleep();
+                AllCaps.allCaps.Refresh();
             }
 
             //if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega - 500) {

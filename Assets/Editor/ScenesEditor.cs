@@ -78,7 +78,7 @@ public class ScenesEditor : MonoBehaviour {
 	static void DoRoof()
 	{
 		List<string> materialPaths = new List<string>();
-		EditorSceneManager.OpenScene("Assets/Scenes/Roof.unity");
+		EditorSceneManager.OpenScene("Assets/Scenes/New.unity");
 		GameObject go = GameObject.FindWithTag("Roof");
 		List <Material> mt = new List<Material>();
 		int length = go.GetComponentsInChildren<MeshRenderer>().Length;

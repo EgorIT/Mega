@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Assets.Mega.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +11,7 @@ public class Timeline : MonoBehaviour {
     public RectTransform line;
     private int currentNumber = 0;
     public Table allShopsTable;
-
+    public static Timeline timeline;
 
     private RectTransform rt;
     private Vector3 outPosition = new Vector3(0, -75.5f, 0);
@@ -20,12 +21,20 @@ public class Timeline : MonoBehaviour {
     public Table shopTable;
     //private int previousNumber;
 
-    void Awake () {
+    void Awake ()
+    {
+        timeline = this;
         rt = gameObject.GetComponent<RectTransform>();
         rt.anchoredPosition = outPosition;
     }
 
+    public void Sleep()
+    {
+        changesInfo.SetInfo(0);
+    }
+
     void OnEnable () {
+        //changesInfo.SetInfo(0);
         RollIn();
     }
 

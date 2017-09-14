@@ -24,7 +24,7 @@ namespace Assets.Mega.Scripts {
 
         public void EndState () {
             imageOne.raycastTarget = false;
-            Video.inst.FadeOff();
+            Video1.inst.FadeOff();
         }
 
         public void CheckThis () {
@@ -35,7 +35,7 @@ namespace Assets.Mega.Scripts {
             TableController.inst.DisAllShops();
             MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
-            Video.inst.FadeOn();
+            Video1.inst.FadeOn();
             if (MainLogic.inst.interfaceMega) {
                 MainLogic.inst.interfaceMega.SetActive(false);
             }

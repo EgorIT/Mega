@@ -20,7 +20,9 @@ public class Video : MonoBehaviour {
     }
 
     public void FadeOff() {
-        vp.Play();
+        //vp.Play();
+        vp.frame = 4;
+        vp.Pause();
         if (fadeCoroutine != null) {
             StopCoroutine(fadeCoroutine);
         }
@@ -28,7 +30,9 @@ public class Video : MonoBehaviour {
     }
 
     public void FadeOn () {
-        vp.Play();
+        //vp.Play();
+        vp.frame = 4;
+        vp.Pause();
         if(fadeCoroutine != null) {
             StopCoroutine(fadeCoroutine);
         }

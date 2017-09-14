@@ -18,6 +18,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void StartState () {
+            MegaCameraController.inst.isFirstLookScene = false;
             MainLogic.inst.interfaceMega.SetActive(true);
             MegaCameraController.inst.SetNewPosCamera(MegaCameraController.inst.stateLookVector3AllMega, GlobalParams.eulerAnglesForCameraInAllMega, 
                 GlobalParams.fieldOfViewOnAllMega, MegaCameraController.inst.distansAllMega, TypeMoveCamera.slow);

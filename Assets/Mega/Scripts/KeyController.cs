@@ -9,10 +9,9 @@ namespace Assets.Mega.Scripts {
         private float speedZoom = 0.003f;//0.003f;
         private float speedZoomWheel = 5f;//0.003f;
 
-        //public bool isFirstLookScene;
+
 
         public void Start () {
-            //Debug.Log("KeyController LIVE!!!");
         }
 
         public Vector3 lastPosCur;
@@ -44,6 +43,7 @@ namespace Assets.Mega.Scripts {
             }
 
             if(Input.GetAxis("Mouse ScrollWheel") < 0) {
+                
                 pinchFlag = true;
                 if(Math.Abs(MegaCameraController.inst.disCamera.localPosition.z) < 0.0001) {
                     deltaMagnitudeDiff = 1f * speedZoomWheel;
@@ -54,6 +54,9 @@ namespace Assets.Mega.Scripts {
             }
 
             if(Input.GetKey(KeyCode.Mouse0)) {
+                if (IsTouchUI(Input.mousePosition)) {
+                    return;
+                }
                 if (stabilizationFlag) {
                     swipeFlag = true;
                     var v3 = Input.mousePosition - lastPosCur;
@@ -86,6 +89,9 @@ namespace Assets.Mega.Scripts {
             }
 
             if(Input.touchCount == 1) {
+                if(IsTouchUI(Input.GetTouch(0).position)) {
+                    return;
+                }
                 if(MegaCameraController.inst.isFirstLookScene) {
                     touch = Input.GetTouch(0);
                     //Debug.Log("x = " + touch.deltaPosition.x);
@@ -109,6 +115,9 @@ namespace Assets.Mega.Scripts {
             }
 
             if(Input.touchCount == 2) {
+                if(IsTouchUI(Input.GetTouch(1).position)) {
+                    return;
+                }
                 pinchFlag = true;
                 Touch touchZero = Input.GetTouch(0);
                 Touch touchOne = Input.GetTouch(1);
@@ -139,6 +148,22 @@ namespace Assets.Mega.Scripts {
                 // Debug.Log("x = " + touch.deltaPosition.x + " y=" + touch.deltaPosition.y);
                 MegaCameraController.inst.ZoomFromPinch(deltaMagnitudeDiff);
             }
+        }
+
+
+        public bool IsTouchUI(Vector3 v3) {
+            int screenW = Screen.width;
+            int screenH = Screen.height;
+
+            int timeLineW = (int)((2000f * screenW) / 3840f);
+            int timeLineH = (int)((560f * screenH) / 2160f);
+
+            if (v3.x < Screen.width*0.5f + timeLineW * 0.5f
+                && v3.x > Screen.width * 0.5f - timeLineW * 0.5f
+                && v3.y < timeLineH) {
+                return true;
+            }
+            return false;
         }
     }
 }

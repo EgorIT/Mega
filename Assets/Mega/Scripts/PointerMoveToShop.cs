@@ -22,6 +22,7 @@ namespace Assets.Mega.Scripts {
 
             for (int i = 0; i < meshs.Count; i++) {
                 meshs[i].enabled = false;
+                //meshs[i].material.color = Color.red;
             }
         }
 

@@ -32,6 +32,9 @@ namespace Assets.Mega.Scripts {
         public bool iconFlag;
         public bool roofEnable = true;
 
+        public GameObject parkNow;
+        public GameObject parkAfter;
+
         public void Awake() {
             inst = this;
         }
@@ -41,6 +44,10 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
+            parkNow = GameObject.FindGameObjectWithTag("parkNow");
+            parkNow.SetActive(true);
+            parkAfter = GameObject.FindGameObjectWithTag("parkAfter");
+            parkAfter.SetActive(false);
             interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
             if (interfaceMega) {
                 interfaceMega.SetActive(false);
@@ -62,6 +69,22 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SetQuarter(int number) {
+            if (number <= 4) {
+                if (!parkNow.activeInHierarchy) {
+                    parkNow.SetActive(true);
+                }
+                if(parkAfter.activeInHierarchy) {
+                    parkAfter.SetActive(false);
+                }
+            } else {
+                if(parkNow.activeInHierarchy) {
+                    parkNow.SetActive(false);
+                }
+                if(!parkAfter.activeInHierarchy) {
+                    parkAfter.SetActive(true);
+                }
+            }
+            ChangeState(ViewStates.allMega);
             //spriteRendererPlan.sprite = listPlans[number];
             currentNumberBlockShops = number;
             viewCurrentStates = ViewStates.none;
@@ -95,7 +118,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void ChangeState(ViewStates newState) {
-            if (viewCurrentStates == newState) {
+            if (viewCurrentStates == newState && newState != ViewStates.allMega) {
                 return;
             }
             //Debug.Log("newState = " + newState.ToString());

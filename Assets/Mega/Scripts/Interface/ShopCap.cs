@@ -21,9 +21,9 @@ public class ShopCap : MonoBehaviour {
     }
 
     public void OnDisable() {
-        if (tableShop) {
-            tableShop.EnableShop();
-        }
+        //if (tableShop) {
+        //    tableShop.EnableShop();
+        //}
         //Debug.Log("OnDisable " + gameObject.name);
     }
 

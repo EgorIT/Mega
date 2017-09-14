@@ -176,7 +176,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void GoOutFirstLook() {
-        TableController.inst.ShowAllShops();
+        //TableController.inst.ShowAllShops();
         PauseForUI();
         distansAllMega = GlobalParams.minDistancePesr - 100;
         stateLookVector3AllMega = posCamera.position;

@@ -53,8 +53,8 @@ namespace Assets.Mega.Scripts {
                  }*/
                 tableShop.transform.parent = allTable.transform;
                 tableShop.transform.localPosition = new Vector3(tableShop.transform.localPosition.x, 5.5f, tableShop.transform.localPosition.z);
-                //tableShop.transform.localScale = Vector3.zero;
-                tableShop.transform.localScale = GlobalParams.scaleIconShop;
+                tableShop.transform.localScale = Vector3.zero;
+                //tableShop.transform.localScale = GlobalParams.scaleIconShop;
                 tableShop.SetName(allShopCap[i].name);
                 tableShop.shopCap = allShopCap[i];
                 allShopCap[i].tableShop = tableShop;
@@ -92,11 +92,11 @@ namespace Assets.Mega.Scripts {
 
         }*/
 
-        public void ShowAllShops () {
+        /*public void ShowAllShops () {
             for(int i = 0; i < listLittleShops.Count; i++) {
                 listLittleShops[i].EnableShop();
             }
-        }
+        }*/
 
         public void DisAllShops () {
             for(int i = 0; i < listLittleShops.Count; i++) {

@@ -25,7 +25,8 @@ public class AllShops : MonoBehaviour {
 		ChangesInfo.Shop newShop = db.Find(x => x.name == name);
 		Debug.Log(name+" "+newShop+" "+newShop.name);
 		shopTable.shopName.text = newShop.name;
-		if (newShop.description == "")
+
+        if (newShop.description == "")
 		{
 			shopTable.shopDescription.text = temporaryString;
 			shopTable.icon.sprite = changesInfo.shopPreviews.FindPreview(newShop.name);

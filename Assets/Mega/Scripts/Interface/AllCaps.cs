@@ -21,7 +21,7 @@ public class AllCaps : MonoBehaviour {
         allCaps.ForEach(x => {
             if (x.name == name) {
                 x.gameObject.SetActive(true);
-                x.tableShop.EnableShop();
+                //x.tableShop.EnableShop();
             }
         });
     }

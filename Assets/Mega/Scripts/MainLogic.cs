@@ -84,6 +84,9 @@ namespace Assets.Mega.Scripts {
                     parkAfter.SetActive(true);
                 }
             }
+            //TableController.inst.DisAllShops();
+            MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
+            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
             ChangeState(ViewStates.allMega);
             //spriteRendererPlan.sprite = listPlans[number];
             currentNumberBlockShops = number;
@@ -100,7 +103,7 @@ namespace Assets.Mega.Scripts {
                     if (RoofProcessor.inst) {
                         RoofProcessor.inst.DoStandard();
                     }
-                    TableController.inst.DisAllShops();
+                    //TableController.inst.DisAllShops();
                 }
 
             }
@@ -110,7 +113,7 @@ namespace Assets.Mega.Scripts {
                     if (RoofProcessor.inst) {
                         RoofProcessor.inst.DoTransparent();
                     }
-                    TableController.inst.ShowAllShops();
+                    //TableController.inst.ShowAllShops();
                 }
             }
 

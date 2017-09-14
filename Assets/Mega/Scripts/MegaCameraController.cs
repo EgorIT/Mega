@@ -289,6 +289,11 @@ public class MegaCameraController : MonoBehaviour {
         var startFieldOfView = perspectiveCamera.fieldOfView;
         var startPerlocalEulerAngles = perspectiveCamera.transform.localEulerAngles;
         float time = GlobalParams.timeToFly;
+        if (GetCurrentDistans() > -5000) {
+            time = time * 0.5f;
+        }
+        
+        
         float currentTime = 0;
         while(currentTime < time) {
             var t = currentTime / time;
@@ -298,12 +303,12 @@ public class MegaCameraController : MonoBehaviour {
             float f;
             switch (typeMoveCamera) {
                 case TypeMoveCamera.fast:
-                    disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 0.3f)));
-                    f = Mathf.Lerp(startFieldOfView, finalFieldOfView, Mathf.Pow(t, 6f));
+                    disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 0.2f)));
+                    f = Mathf.Lerp(startFieldOfView, finalFieldOfView, Mathf.Pow(t, 4f));
                     perspectiveCamera.fieldOfView = f < 1 ? 1 : f;
                     break;
                 case TypeMoveCamera.slow:
-                    disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 6f)));
+                    disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 2f)));
                     f = Mathf.Lerp(startFieldOfView, finalFieldOfView, Mathf.Pow(t, 1f));
                     perspectiveCamera.fieldOfView = f < 1 ? 1 : f;
                     break;

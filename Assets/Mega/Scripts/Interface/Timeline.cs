@@ -66,6 +66,7 @@ public class Timeline : MonoBehaviour {
             changesInfo.SetInfo(number);
         
         allShopsTable.RollOut();
+        shopTable.RollOut();
         shopsList.RollIn();
         yield return null;
     }

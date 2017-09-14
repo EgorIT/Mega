@@ -5,10 +5,10 @@ using Assets.Mega.Scripts;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class Video : MonoBehaviour {
-    public static Video inst;
-    public MeshRenderer mr;
-    public VideoPlayer vp;
+public class Video1 : MonoBehaviour {
+    public static Video1 inst;
+    public SpriteRenderer mr;
+    //public VideoPlayer vp;
     private int num;
 
     public Coroutine fadeCoroutine;
@@ -18,7 +18,7 @@ public class Video : MonoBehaviour {
     public void Awake() {
         inst = this;
         startScale = transform.localScale;
-        Debug.Log(vp.frameCount);
+        //Debug.Log(vp.frameCount);
         /*vp.frame = 5;
         vp.Play();
         vp.Pause();*/
@@ -30,7 +30,7 @@ public class Video : MonoBehaviour {
         {
             num = 0;
         }
-        vp.frame = num;
+        //vp.frame = num;
         num++;
     }
 
@@ -64,7 +64,7 @@ public class Video : MonoBehaviour {
         //transform.localScale = startScale;
         mr.material.color = new Color(1, 1, 1, finalAlfa);
         if (Math.Abs(finalAlfa) < 0.001f) {
-            vp.Stop();
+            //vp.Stop();
         }
         yield return null;
     }

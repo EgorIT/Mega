@@ -8,8 +8,8 @@ namespace Assets.Mega.Scripts {
         //public static Vector3 eulerAnglesForCameraInAllMega = new Vector3(24, 54, 0);
         public static Vector3 eulerAnglesForCameraInAllMega = new Vector3(45, 45, 0);
 
-        public static Vector3 eulerAnglesForCameraInShops = new Vector3(24, 54, 0);
-        
+        public static Vector3 eulerAnglesForCameraInShops = new Vector3(45, 45, 0);
+
         public static Vector3 eulerAnglesForCameraInStateOne = new Vector3(3, 0, 0);
         
         public static float timeToBackFromBorder = 0.5f;

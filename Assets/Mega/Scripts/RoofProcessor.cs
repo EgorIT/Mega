@@ -9,7 +9,7 @@ using UnityEngine.Rendering;
 public class RoofProcessor : MonoBehaviour {
     public static RoofProcessor inst;
     private List<Material> materials = new List<Material>();
-
+    public GameObject glass;
     public void Awake() {
         inst = this;
     }
@@ -65,6 +65,8 @@ public class RoofProcessor : MonoBehaviour {
             //Color newColor = new Color(mColor.r,mColor.g, mColor.b,temp);
             material.SetColor("_Color", newColor);
         }
+        AllCaps.allCaps.Refresh();
+        glass.SetActive(false);
         yield return null;
     }
 
@@ -113,6 +115,7 @@ public class RoofProcessor : MonoBehaviour {
                 //material.renderQueue = 2000;
             }
         }
+        glass.SetActive(true);
         yield return null;
     }
 

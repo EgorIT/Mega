@@ -122,7 +122,7 @@ namespace Assets.Mega.Scripts {
                 currentTime = GlobalParams.needTimeToSleep;
                 ChangeState(ViewStates.one);
                 Timeline.timeline.Sleep();
-                AllCaps.allCaps.Refresh();
+                AllCaps.allCaps.ActivateAll();
             }
 
             //if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega - 500) {

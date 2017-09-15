@@ -308,8 +308,8 @@ public class MegaCameraController : MonoBehaviour {
                     perspectiveCamera.fieldOfView = f < 1 ? 1 : f;
                     break;
                 case TypeMoveCamera.slow:
-                    disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 2f)));
-                    f = Mathf.Lerp(startFieldOfView, finalFieldOfView, Mathf.Pow(t, 1f));
+                    disCamera.localPosition = new Vector3(0, 0, Mathf.Lerp(startDisCamera, finalDistans, Mathf.Pow(t, 4f)));
+                    f = Mathf.Lerp(startFieldOfView, finalFieldOfView, Mathf.Pow(t, 0.2f));
                     perspectiveCamera.fieldOfView = f < 1 ? 1 : f;
                     break;
                 case TypeMoveCamera.normal:

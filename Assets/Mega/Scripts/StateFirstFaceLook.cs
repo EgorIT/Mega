@@ -93,15 +93,18 @@ namespace Assets.Mega.Scripts {
             if(clickCoroutine != null) {
                 StopCoroutine(clickCoroutine);
             }
-            clickCoroutine = StartCoroutine(IEnumCheckSwipe(pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition,
-                1.638f, MegaCameraController.inst.currentEndAng));
+            var v3 = new Vector3(pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition.x,
+                GlobalParams.distansEye,
+                pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition.z);
+            clickCoroutine = StartCoroutine(IEnumCheckSwipe(v3, MegaCameraController.inst.currentEndAng));
         }
 
         public void MoveForThisShop (PointerMoveToShop pointerMoveToShop) {
             if(clickCoroutine != null) {
                 StopCoroutine(clickCoroutine);
             }
-            clickCoroutine = StartCoroutine(IEnumCheckSwipe(pointerMoveToShop.lookPoint.position, 0, pointerMoveToShop.lookPoint.eulerAngles));
+            clickCoroutine = StartCoroutine(IEnumCheckSwipe(pointerMoveToShop.lookPoint.position, 
+                pointerMoveToShop.lookPoint.eulerAngles));
         }
 
         public void StopClickCoroutine () {
@@ -110,9 +113,9 @@ namespace Assets.Mega.Scripts {
             }
         }
 
-        public IEnumerator IEnumCheckSwipe (Vector3 pointMove, float deltaY, Vector3 endAng) {
+        public IEnumerator IEnumCheckSwipe (Vector3 pointMove, Vector3 endAng) {
             yield return new WaitForSeconds(0.5f);
-            MegaCameraController.inst.SetNewPosCamera(pointMove + Vector3.up * deltaY, endAng,
+            MegaCameraController.inst.SetNewPosCamera(pointMove, endAng,
                 GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.normal);
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Mega.Scripts;
 using UnityEngine;
 
 public class InterfaceController : MonoBehaviour {
@@ -32,5 +33,9 @@ public class InterfaceController : MonoBehaviour {
 
     public void SetShop (string name) {
         changesInfo.SetShop(name);
+    }
+
+    public void GoToAllMega() {
+        MainLogic.inst.GoAllMega();
     }
 }

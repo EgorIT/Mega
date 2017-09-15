@@ -6,7 +6,7 @@ namespace Assets.Mega.Scripts {
     public class StateAllMega : MonoBehaviour, iViewState {
         public ViewStates viewStates;
         private TypeCameraOnState typeCameraOnState = TypeCameraOnState.perspective;
-
+        
         //public Transform StateLookTransform;
         
         public void Start () {

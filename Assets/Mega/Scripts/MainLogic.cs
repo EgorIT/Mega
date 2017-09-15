@@ -94,6 +94,10 @@ namespace Assets.Mega.Scripts {
             FloorController.inst.SetQuartal(number);
         }
 
+        public void GoAllMega() {
+            ChangeState(ViewStates.allMega);
+        }
+
         public void DisRoof(float time) {
             if (roofEnable) {
                 roofEnable = false;

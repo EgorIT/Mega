@@ -95,6 +95,8 @@ namespace Assets.Mega.Scripts {
         }
 
         public void GoAllMega() {
+            MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
+            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
             ChangeState(ViewStates.allMega);
         }
 

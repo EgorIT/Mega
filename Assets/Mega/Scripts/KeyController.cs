@@ -127,7 +127,7 @@ namespace Assets.Mega.Scripts {
                 if(IsTouchUI(Input.GetTouch(1).position)) {
                     return;
                 }
-                swipeFlag = false;
+                //swipeFlag = false;
                 pinchFlag = true;
                 Touch touchZero = Input.GetTouch(0);
                 Touch touchOne = Input.GetTouch(1);
@@ -155,7 +155,7 @@ namespace Assets.Mega.Scripts {
             }
 
             if(pinchFlag) {
-                Debug.Log("deltaMagnitudeDiff = " + deltaMagnitudeDiff);
+                //Debug.Log("deltaMagnitudeDiff = " + deltaMagnitudeDiff);
                 MegaCameraController.inst.ZoomFromPinch(deltaMagnitudeDiff);
             }
         }

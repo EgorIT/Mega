@@ -4,13 +4,12 @@ using UnityEngine;
 namespace Assets.Mega.Scripts {
     public class KeyController : MonoBehaviour {
         private float speedKey = 2;
-        private float speedTouch = 0.003f;//0.003f;
+        //private float speedTouch = 0.003f;//0.003f;
+        private float speedTouch = 0.0015f;//0.003f;
         private float speedSwipeMouse = -0.02f;//0.003f;
-        private float speedZoom = 0.06f;//0.003f;
+        //private float speedSwipeMouse = -0.004f;//0.003f;
+        private float speedZoom = 0.09f;//0.003f;
         private float speedZoomWheel = 5f;//0.003f;
-        //private int tapCount = 0;
-        //private float newTime;
-        //private float maxDubbleTapTime = 0.5f;
 
         public void Start () {
         }

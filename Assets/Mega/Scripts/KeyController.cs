@@ -170,17 +170,17 @@ namespace Assets.Mega.Scripts {
 
 
         public bool IsTouchUI(Vector3 v3) {
-            int screenW = Screen.width;
-            int screenH = Screen.height;
-
-            int timeLineW = (int)((2000f * screenW) / 3840f);
-            int timeLineH = (int)((560f * screenH) / 2160f);
-
-            if (v3.x < Screen.width*0.5f + timeLineW * 0.5f
-                && v3.x > Screen.width * 0.5f - timeLineW * 0.5f
-                && v3.y < timeLineH) {
-                return true;
-            }
+            //int screenW = Screen.width;
+            //int screenH = Screen.height;
+            //
+            //int timeLineW = (int)((2000f * screenW) / 3840f);
+            //int timeLineH = (int)((560f * screenH) / 2160f);
+            //
+            //if (v3.x < Screen.width*0.5f + timeLineW * 0.5f
+            //    && v3.x > Screen.width * 0.5f - timeLineW * 0.5f
+            //    && v3.y < timeLineH) {
+            //    return true;
+            //}
             return false;
         }
     }

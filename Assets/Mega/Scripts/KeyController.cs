@@ -98,8 +98,18 @@ namespace Assets.Mega.Scripts {
                     return;
                 }
                 if(MegaCameraController.inst.isFirstLookScene) {
-                   
+                    //if(touch.phase == TouchPhase.Ended) {
+                    //    tapCount += 1;
+                    //}
+                    //if(tapCount == 1) {
+                    //    newTime = Time.time + maxDubbleTapTime;
+                    //} else if(tapCount == 2 && Time.time <= newTime) {
+                    //    Debug.Log("Dubble tap");
+                    //    tapCount = 0;
+                    //}
                     touch = Input.GetTouch(0);
+                    //Debug.Log("x = " + touch.deltaPosition.x);
+                    //Debug.Log("y = " + touch.deltaPosition.y);
                     if(touch.deltaPosition.x > 0.001f || touch.deltaPosition.y > 0.001f) {
                         if(StateFirstFaceLook.inst) {
                             StateFirstFaceLook.inst.StopClickCoroutine();
@@ -110,11 +120,17 @@ namespace Assets.Mega.Scripts {
                     swipeFlag = true;
                 } else {
                     touch = Input.GetTouch(0);
+                    //Debug.Log("x = " + touch.deltaPosition.x);
+                    //Debug.Log("y = " + touch.deltaPosition.y);
                     x = -touch.deltaPosition.x * speedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
                     y = -touch.deltaPosition.y * speedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
                     swipeFlag = true;
                 }
             }
+
+            //if(Time.time > newTime) {
+            //    tapCount = 0;
+            //}
 
             if(Input.touchCount == 2) {
                 if(IsTouchUI(Input.GetTouch(1).position)) {
@@ -129,7 +145,7 @@ namespace Assets.Mega.Scripts {
                 float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
                 deltaMagnitudeDiff = (prevTouchDeltaMag - touchDeltaMag) * speedZoom;
                 deltaMagnitudeDiff *= (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-
+                Debug.Log("Dif = " + deltaMagnitudeDiff);
                 if(StateFirstFaceLook.inst) {
                     StateFirstFaceLook.inst.StopClickCoroutine();
                 }

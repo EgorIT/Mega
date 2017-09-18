@@ -6,7 +6,7 @@ namespace Assets.Mega.Scripts {
         private float speedKey = 2;
         private float speedTouch = 0.003f;//0.003f;
         private float speedSwipeMouse = -0.02f;//0.003f;
-        private float speedZoom = 0.003f;//0.003f;
+        private float speedZoom = 0.07f;//0.003f;
         private float speedZoomWheel = 5f;//0.003f;
         //private int tapCount = 0;
         //private float newTime;
@@ -145,7 +145,7 @@ namespace Assets.Mega.Scripts {
                 float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
                 deltaMagnitudeDiff = (prevTouchDeltaMag - touchDeltaMag) * speedZoom;
                 deltaMagnitudeDiff *= (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                Debug.Log("Dif = " + deltaMagnitudeDiff);
+                //Debug.Log("Dif = " + deltaMagnitudeDiff);
                 if(StateFirstFaceLook.inst) {
                     StateFirstFaceLook.inst.StopClickCoroutine();
                 }
@@ -163,24 +163,24 @@ namespace Assets.Mega.Scripts {
             }
 
             if(pinchFlag) {
-                // Debug.Log("x = " + touch.deltaPosition.x + " y=" + touch.deltaPosition.y);
+                Debug.Log("deltaMagnitudeDiff = " + deltaMagnitudeDiff);
                 MegaCameraController.inst.ZoomFromPinch(deltaMagnitudeDiff);
             }
         }
 
 
         public bool IsTouchUI(Vector3 v3) {
-            //int screenW = Screen.width;
-            //int screenH = Screen.height;
-            //
-            //int timeLineW = (int)((2000f * screenW) / 3840f);
-            //int timeLineH = (int)((560f * screenH) / 2160f);
-            //
-            //if (v3.x < Screen.width*0.5f + timeLineW * 0.5f
-            //    && v3.x > Screen.width * 0.5f - timeLineW * 0.5f
-            //    && v3.y < timeLineH) {
-            //    return true;
-            //}
+            int screenW = Screen.width;
+            int screenH = Screen.height;
+            
+            int timeLineW = (int)((2000f * screenW) / 3840f);
+            int timeLineH = (int)((560f * screenH) / 2160f);
+            
+            if (v3.x < Screen.width*0.5f + timeLineW * 0.5f
+                && v3.x > Screen.width * 0.5f - timeLineW * 0.5f
+                && v3.y < timeLineH) {
+                return true;
+            }
             return false;
         }
     }

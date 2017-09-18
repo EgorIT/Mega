@@ -8,8 +8,9 @@ namespace Assets.Mega.Scripts {
         private float speedSwipeMouse = -0.02f;//0.003f;
         private float speedZoom = 0.003f;//0.003f;
         private float speedZoomWheel = 5f;//0.003f;
-
-
+        //private int tapCount = 0;
+        //private float newTime;
+        //private float maxDubbleTapTime = 0.5f;
 
         public void Start () {
         }
@@ -97,23 +98,20 @@ namespace Assets.Mega.Scripts {
                     return;
                 }
                 if(MegaCameraController.inst.isFirstLookScene) {
+                   
                     touch = Input.GetTouch(0);
-                    //Debug.Log("x = " + touch.deltaPosition.x);
-                    //Debug.Log("y = " + touch.deltaPosition.y);
                     if(touch.deltaPosition.x > 0.001f || touch.deltaPosition.y > 0.001f) {
                         if(StateFirstFaceLook.inst) {
                             StateFirstFaceLook.inst.StopClickCoroutine();
                         }
                     }
                     x = -touch.deltaPosition.x * speedTouch;
-                    y = touch.deltaPosition.y * speedTouch;
+                    y = -touch.deltaPosition.y * speedTouch;
                     swipeFlag = true;
                 } else {
                     touch = Input.GetTouch(0);
-                    //Debug.Log("x = " + touch.deltaPosition.x);
-                    //Debug.Log("y = " + touch.deltaPosition.y);
-                    x = touch.deltaPosition.x * speedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                    y = touch.deltaPosition.y * speedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                    x = -touch.deltaPosition.x * speedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                    y = -touch.deltaPosition.y * speedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
                     swipeFlag = true;
                 }
             }

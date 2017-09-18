@@ -7,16 +7,32 @@ namespace Assets.Mega.Scripts {
     public class PointMoveOnFirstFaceScene : MonoBehaviour, IPointerDownHandler {
 
         public PointerEventData pointerEventData;
+        public int countTouch;
+        public float timeDeltaTouch;
 
         public void Start() {
+            countTouch = 0;
             AddThis();
         }
-
+       
         public void OnPointerDown (PointerEventData data) {
             pointerEventData = data;
-            StateFirstFaceLook.inst.MoveForThisFloorPoint(this);
+            countTouch++;
+            timeDeltaTouch = 0;
             //Debug.Log("OnPointerDown " + gameObject.name);
 
+        }
+
+        public void Update() {
+            if (countTouch == 2) {
+                StateFirstFaceLook.inst.MoveForThisFloorPoint(this);
+                countTouch = 0;
+            }
+            timeDeltaTouch += Time.deltaTime;
+            if (timeDeltaTouch > 0.5f) {
+                countTouch = 0;
+                timeDeltaTouch = 0.5f;
+            }
         }
 
         public void AddThis() {

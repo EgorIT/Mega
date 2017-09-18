@@ -25,7 +25,7 @@ namespace Assets.Mega.Scripts {
 
         public static float fieldOfViewOnStateOne = 1f;
         public static float fieldOfViewOnAllMega = 1f;
-        public static float fieldOfViewOnFirstLook = 60f;
+        public static float fieldOfViewOnFirstLook = 75;
 
         public static float distansOnStateOne = -8200;
         public static float distansOnAllMega = -8200;

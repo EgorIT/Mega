@@ -6,7 +6,7 @@ namespace Assets.Mega.Scripts {
         private float speedKey = 2;
         private float speedTouch = 0.003f;//0.003f;
         private float speedSwipeMouse = -0.02f;//0.003f;
-        private float speedZoom = 0.07f;//0.003f;
+        private float speedZoom = 0.06f;//0.003f;
         private float speedZoomWheel = 5f;//0.003f;
         //private int tapCount = 0;
         //private float newTime;
@@ -98,15 +98,6 @@ namespace Assets.Mega.Scripts {
                     return;
                 }
                 if(MegaCameraController.inst.isFirstLookScene) {
-                    //if(touch.phase == TouchPhase.Ended) {
-                    //    tapCount += 1;
-                    //}
-                    //if(tapCount == 1) {
-                    //    newTime = Time.time + maxDubbleTapTime;
-                    //} else if(tapCount == 2 && Time.time <= newTime) {
-                    //    Debug.Log("Dubble tap");
-                    //    tapCount = 0;
-                    //}
                     touch = Input.GetTouch(0);
                     //Debug.Log("x = " + touch.deltaPosition.x);
                     //Debug.Log("y = " + touch.deltaPosition.y);
@@ -136,6 +127,7 @@ namespace Assets.Mega.Scripts {
                 if(IsTouchUI(Input.GetTouch(1).position)) {
                     return;
                 }
+                swipeFlag = false;
                 pinchFlag = true;
                 Touch touchZero = Input.GetTouch(0);
                 Touch touchOne = Input.GetTouch(1);

@@ -35,6 +35,8 @@ namespace Assets.Mega.Scripts {
         public GameObject parkNow;
         public GameObject parkAfter;
 
+        public bool boolWindowMod;
+
         public void Awake() {
             inst = this;
         }
@@ -65,6 +67,15 @@ namespace Assets.Mega.Scripts {
                     listToOnTEMP[i].SetActive(true);
                 }
             }
+            if (boolWindowMod && Application.platform != RuntimePlatform.WindowsEditor) {
+                StartCoroutine(IEnumWaitWindowMod());
+            }
+            
+        }
+
+        public IEnumerator IEnumWaitWindowMod() {
+            yield return new WaitForSeconds(1);
+            WindowMod.StartFromController();
         }
 
         public void SetQuarter(int number) {

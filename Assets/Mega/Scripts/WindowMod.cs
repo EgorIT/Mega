@@ -25,8 +25,8 @@ public class WindowMod : MonoBehaviour {
     public static void StartFromController () {
         screenPosition.x = 0;
         screenPosition.y = 0;
-        screenPosition.width = 1920;
-        screenPosition.height = 1080;
+        screenPosition.width = 3840;
+        screenPosition.height = 2160;
         SetWindowLong(GetForegroundWindow(), GWL_STYLE, WS_BORDER);
         bool result = SetWindowPos(GetForegroundWindow(), 0, (int)screenPosition.x, (int)screenPosition.y, (int)screenPosition.width, (int)screenPosition.height, SWP_SHOWWINDOW);
     }

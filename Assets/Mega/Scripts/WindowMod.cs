@@ -23,6 +23,8 @@ public class WindowMod : MonoBehaviour {
     const int WS_BORDER = 1;
 
     public static void StartFromController () {
+        Debug.Log(Screen.width);
+        Debug.Log(Screen.height);
         screenPosition.x = 0;
         screenPosition.y = 0;
         screenPosition.width = 3840;

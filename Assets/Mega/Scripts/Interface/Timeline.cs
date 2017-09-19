@@ -19,6 +19,8 @@ public class Timeline : MonoBehaviour {
 
     public Table shopsList;
     public Table shopTable;
+
+    private bool flag=true;
     //private int previousNumber;
 
     void Awake ()
@@ -36,6 +38,13 @@ public class Timeline : MonoBehaviour {
     void OnEnable () {
         //changesInfo.SetInfo(0);
         RollIn();
+    }
+
+    public void SetQuarter(int num)
+    {
+        flag = false;
+        SwitchTimes(num);
+
     }
 
     public void SwitchTimes (int number) {
@@ -73,10 +82,14 @@ public class Timeline : MonoBehaviour {
         timeButtons[0].SetNormal();
         timeButtons[8].SetNormal();
             changesInfo.SetInfo(number);
-        
-        allShopsTable.RollOut();
-        shopTable.RollOut();
-        shopsList.RollIn();
+        if (flag)
+        {
+            allShopsTable.RollOut();
+            shopTable.RollOut();
+            shopsList.RollIn();
+            
+        }
+        flag = true;
         yield return null;
     }
 

@@ -33,6 +33,7 @@ public class ChangesInfo : MonoBehaviour
 	public class Shop
 	{
 		public string name;
+		public string addName;
 		public string description;
 		public string iconName;
 		public bool interactable = true;
@@ -48,6 +49,15 @@ public class ChangesInfo : MonoBehaviour
 		{
 			name = nm;
 			description = descr;
+			iconName = icn;
+			interactable = inter;
+		}
+		
+		public Shop(string nm, string addNm, string descr,  string icn, bool inter)
+		{
+			name = nm;
+			description = descr;
+			addName = addNm;
 			iconName = icn;
 			interactable = inter;
 		}
@@ -161,6 +171,26 @@ public class ChangesInfo : MonoBehaviour
 	}
 
 	public List<Term> terms;
+
+	public string GetTerm(string shop)
+	{
+		string toReturn="";
+		int i=0;
+		foreach (Term term in termsList)
+		{
+			foreach (string termShop in term.shops)
+			{
+				if (termShop.Contains(shop))
+				{
+					toReturn = term.termName;
+					Timeline.timeline.SetQuarter(i);
+					return term.termName;
+				}
+			}
+			i++;
+		}
+		return "";
+	}
 
 	void Start() {
 

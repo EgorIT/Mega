@@ -23,10 +23,11 @@ public class WindowMod : MonoBehaviour {
     const int WS_BORDER = 1;
 
     public static void StartFromController () {
+       
         screenPosition.x = 0;
         screenPosition.y = 0;
-        screenPosition.width = 3840;
-        screenPosition.height = 2160;
+        screenPosition.width = Screen.currentResolution.width;
+        screenPosition.height = Screen.currentResolution.height;
         SetWindowLong(GetForegroundWindow(), GWL_STYLE, WS_BORDER);
         bool result = SetWindowPos(GetForegroundWindow(), 0, (int)screenPosition.x, (int)screenPosition.y, (int)screenPosition.width, (int)screenPosition.height, SWP_SHOWWINDOW);
     }

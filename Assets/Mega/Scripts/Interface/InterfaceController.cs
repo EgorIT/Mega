@@ -20,6 +20,7 @@ public class InterfaceController : MonoBehaviour {
     }
 
     public void TimelineOn () {
+        Debug.Log("tlcall");
         timeline.RollIn();
     }
 

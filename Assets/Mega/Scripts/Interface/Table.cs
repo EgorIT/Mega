@@ -5,19 +5,27 @@ using UnityEngine;
 public class Table : MonoBehaviour {
     public float seconds;
     public TableData tableData;
+    //public bool toRoll = false;
     
-    private RectTransform rt;
+    public RectTransform rt;
     private Coroutine countdown;
     private Vector3 outPosition = new Vector3(0, -560, 0);
     private Vector3 inPosition = new Vector3(0, 0, 0);
 
     private bool roll = true;
     // Use this for initialization
-    void Start () {
+    void Awake () {
         rt = gameObject.GetComponent<RectTransform>();
         rt.anchoredPosition = outPosition;
     }
-
+/*
+    private void OnEnable()
+    {
+        Debug.Log("rolling");
+        if (toRoll)
+        RollIn();
+    }
+*/
     public void RollIn()
     {
         if (roll)
@@ -29,6 +37,7 @@ public class Table : MonoBehaviour {
 
     private IEnumerator Rolling (bool rollIn) {
         float time = 0;
+        Debug.Log(rt.name);
         Vector3 startPosition = rt.anchoredPosition;
 
         while(time < 0.3f) {
@@ -72,12 +81,12 @@ public class Table : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if(Input.GetKeyDown("a")) {
+        /*if(Input.GetKeyDown("a")) {
             RollIn();
         }
 
         if(Input.GetKeyDown("b")) {
             RollOut();
-        }
+        }*/
     }
 }

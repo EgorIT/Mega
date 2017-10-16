@@ -39,7 +39,7 @@ public class Timeline : MonoBehaviour {
     }
 
     public void SwitchTimes (int number) {
-        MainLogic.inst.SetQuarter(number);
+        //MainLogic.inst.SetQuarter(number);
         //Debug.Log(number);
         StartCoroutine(MoveLine(number));
         //StartCoroutine(SwitchTimesWithDelay(number));

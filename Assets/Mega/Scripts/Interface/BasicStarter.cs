@@ -6,9 +6,15 @@ public class BasicStarter : MonoBehaviour
 {
 
 	public Table table;
-	
-	private void OnEnable()
-	{
+
+    public void OnEnable() {
+	    Debug.Log("OnEnable");
 		table.RollIn();
 	}
+
+    public void OnDisable() {
+        Debug.Log("OnDisable");
+        table.RollOut();
+    }
+
 }

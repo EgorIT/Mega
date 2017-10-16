@@ -37,6 +37,7 @@ namespace Assets.Mega.Scripts {
             MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
             Video1.inst.FadeOn();
+
             if (MainLogic.inst.interfaceMega) {
                 MainLogic.inst.interfaceMega.SetActive(false);
             }

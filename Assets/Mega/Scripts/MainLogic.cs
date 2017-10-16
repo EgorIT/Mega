@@ -23,7 +23,9 @@ namespace Assets.Mega.Scripts {
         public List<iViewState> listViewStates = new List<iViewState>();
         public List<Sprite> listPlans;
 
+        [HideInInspector]
         public GameObject interfaceMega;
+
         public int currentNumberBlockShops;
 
         public List<Transform> borders = new List<Transform>();
@@ -32,13 +34,15 @@ namespace Assets.Mega.Scripts {
         public bool iconFlag;
         private bool roofEnable = true;
 
-        public GameObject parkNow;
-        public GameObject parkAfter;
+
+        private GameObject parkNow;
+        private GameObject parkAfter;
 
         public bool boolWindowMod;
 
-        public void Awake() {
+        public void Awake () {
             inst = this;
+            FindNeedObject();
         }
 
         public ViewStates GetViewCurrentStates () {
@@ -46,99 +50,105 @@ namespace Assets.Mega.Scripts {
         }
 
         public float currentTime;
-        
 
-        public void ResetTime() {
+
+        public void ResetTime () {
             MainLogic.inst.currentTime = 0;
         }
 
-        public void Start() {
+        public void FindNeedObject () {
             parkNow = GameObject.FindGameObjectWithTag("parkNow");
             parkNow.SetActive(true);
             parkAfter = GameObject.FindGameObjectWithTag("parkAfter");
-            parkAfter.SetActive(false);
-            Debug.Log(FindObjectOfType<InterfaceController>().name);
-            Debug.Log(FindObjectOfType<InterfaceController>().gameObject.name);
-            interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
-            if (interfaceMega) {
-                interfaceMega.SetActive(false);
+            if(parkAfter) {
+                parkAfter.SetActive(false);
             }
+            interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
+            interfaceMega.SetActive(false);
+        }
 
-            if (!isTest) {
-                for (int i = 0; i < listToOnTEMP.Count; i++) {
+        public void Start () {
+            if(!isTest) {
+                for(int i = 0; i < listToOnTEMP.Count; i++) {
                     listToOnTEMP[i].SetActive(true);
                 }
             }
             Debug.Log("w = " + Screen.currentResolution.width);
             Debug.Log("h = " + Screen.currentResolution.height);
-            if (boolWindowMod && Application.platform != RuntimePlatform.WindowsEditor) {
+            if(boolWindowMod && Application.platform != RuntimePlatform.WindowsEditor) {
                 StartCoroutine(IEnumWaitWindowMod());
             }
         }
 
-        public IEnumerator IEnumWaitWindowMod() {
+        public IEnumerator IEnumWaitWindowMod () {
             yield return new WaitForSeconds(1);
             WindowMod.StartFromController();
         }
 
-        public void SetQuarter(int number) {
-            if (number <= 2) {
-                if (!parkNow.activeInHierarchy) {
-                    parkNow.SetActive(true);
-                }
-                if(parkAfter.activeInHierarchy) {
-                    parkAfter.SetActive(false);
-                }
-            } else {
-                if(parkNow.activeInHierarchy) {
-                    parkNow.SetActive(false);
-                }
-                if(!parkAfter.activeInHierarchy) {
-                    parkAfter.SetActive(true);
-                }
-            }
-            //TableController.inst.DisAllShops();
-            MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
-            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
-            ChangeState(ViewStates.allMega);
-            //spriteRendererPlan.sprite = listPlans[number];
-            currentNumberBlockShops = number;
-            viewCurrentStates = ViewStates.none;
-            ChangeState(ViewStates.shops);
-            FloorController.inst.SetQuartal(number);
-        }
-
-        public void GoAllMega() {
-            MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
-            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
-            ChangeState(ViewStates.allMega);
-        }
-
-        public void DisRoof(float time) {
-            if (roofEnable) {
-                roofEnable = false;
-                StartCoroutine(IEnumDisRoof(time));
-            }
+        public void SwapParking (bool showNew) {
+            parkNow.SetActive(!showNew);
+            parkAfter.SetActive(showNew);
             
         }
 
-        public void EnebleRoof() {
-            if (!roofEnable) {
+        //public void SetQuarter(int number) {
+        //    if (number <= 2) {
+        //        if (!parkNow.activeInHierarchy) {
+        //            parkNow.SetActive(true);
+        //        }
+        //        if(parkAfter.activeInHierarchy) {
+        //            parkAfter.SetActive(false);
+        //        }
+        //    } else {
+        //        if(parkNow.activeInHierarchy) {
+        //            parkNow.SetActive(false);
+        //        }
+        //        if(!parkAfter.activeInHierarchy) {
+        //            parkAfter.SetActive(true);
+        //        }
+        //    }
+        //    //TableController.inst.DisAllShops();
+        //    MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
+        //    MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
+        //    ChangeState(ViewStates.allMega);
+        //    //spriteRendererPlan.sprite = listPlans[number];
+        //    currentNumberBlockShops = number;
+        //    viewCurrentStates = ViewStates.none;
+        //    ChangeState(ViewStates.shops);
+        //    FloorController.inst.SetQuartal(number);
+        //}
+
+        public void GoAllMega () {
+            MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
+            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
+            ChangeState(ViewStates.allMega);
+        }
+
+        public void DisRoof (float time) {
+            if(roofEnable) {
+                roofEnable = false;
+                StartCoroutine(IEnumDisRoof(time));
+            }
+
+        }
+
+        public void EnebleRoof () {
+            if(!roofEnable) {
                 roofEnable = true;
                 RoofProcessor.inst.DoStandard();
             }
         }
 
-        public IEnumerator IEnumDisRoof(float time) {
+        public IEnumerator IEnumDisRoof (float time) {
             yield return new WaitForSeconds(time);
             if(RoofProcessor.inst) {
                 RoofProcessor.inst.DoTransparent();
             }
         }
 
-        public void Update() {
+        public void Update () {
             currentTime += Time.deltaTime;
-            if (currentTime > GlobalParams.needTimeToSleep) {
+            if(currentTime > GlobalParams.needTimeToSleep) {
                 currentTime = GlobalParams.needTimeToSleep;
                 ChangeState(ViewStates.one);
                 Timeline.timeline.Sleep();
@@ -168,13 +178,13 @@ namespace Assets.Mega.Scripts {
 
         }
 
-        public void ChangeState(ViewStates newState) {
-            if (viewCurrentStates == newState && newState != ViewStates.allMega) {
+        public void ChangeState (ViewStates newState) {
+            if(viewCurrentStates == newState && newState != ViewStates.allMega) {
                 return;
             }
             //Debug.Log("newState = " + newState.ToString());
-            for (int i = 0; i < listViewStates.Count; i++) {
-                if (listViewStates[i].GetViewStates() == viewCurrentStates) {
+            for(int i = 0; i < listViewStates.Count; i++) {
+                if(listViewStates[i].GetViewStates() == viewCurrentStates) {
                     listViewStates[i].EndState();
                 }
                 if(listViewStates[i].GetViewStates() == newState) {
@@ -185,12 +195,12 @@ namespace Assets.Mega.Scripts {
             viewCurrentStates = newState;
         }
 
-        public void GoToSceneFirstLook(string nameShop) {
+        public void GoToSceneFirstLook (string nameShop) {
             string currentSceneName = string.Empty;
             Transform currentTransform = null;
-            for (int i = 0; i < AllFirstFaceLookScenes.Count; i++) {
-                for (int j = 0; j < AllFirstFaceLookScenes[i].allShopsName.Count; j++) {
-                    if (AllFirstFaceLookScenes[i].allShopsName[j] == nameShop) {
+            for(int i = 0; i < AllFirstFaceLookScenes.Count; i++) {
+                for(int j = 0; j < AllFirstFaceLookScenes[i].allShopsName.Count; j++) {
+                    if(AllFirstFaceLookScenes[i].allShopsName[j] == nameShop) {
                         currentSceneName = AllFirstFaceLookScenes[i].nameScene;
                         currentTransform = AllFirstFaceLookScenes[i].currentTransformShop[j];
                     }
@@ -217,12 +227,12 @@ namespace Assets.Mega.Scripts {
             TableController.inst.ShowAllShops();
         }*/
 
-        public void GoViewStateOne() {
-           
+        public void GoViewStateOne () {
+
         }
 
-        public void ShowLittleView() {
-            
+        public void ShowLittleView () {
+
         }
 
         /*public void SetPlan(int i) {

@@ -113,6 +113,7 @@ public class Timeline : MonoBehaviour {
     }
 
     public void RollIn () {
+        Debug.Log("tlcall22");
         StartCoroutine(Rolling(true));
     }
 

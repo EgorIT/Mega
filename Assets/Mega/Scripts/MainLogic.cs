@@ -57,6 +57,8 @@ namespace Assets.Mega.Scripts {
             parkNow.SetActive(true);
             parkAfter = GameObject.FindGameObjectWithTag("parkAfter");
             parkAfter.SetActive(false);
+            Debug.Log(FindObjectOfType<InterfaceController>().name);
+            Debug.Log(FindObjectOfType<InterfaceController>().gameObject.name);
             interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
             if (interfaceMega) {
                 interfaceMega.SetActive(false);

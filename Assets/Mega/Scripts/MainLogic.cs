@@ -73,8 +73,8 @@ namespace Assets.Mega.Scripts {
                     listToOnTEMP[i].SetActive(true);
                 }
             }
-            Debug.Log("w = " + Screen.currentResolution.width);
-            Debug.Log("h = " + Screen.currentResolution.height);
+            //Debug.Log("w = " + Screen.currentResolution.width);
+            //Debug.Log("h = " + Screen.currentResolution.height);
             if(boolWindowMod && Application.platform != RuntimePlatform.WindowsEditor) {
                 StartCoroutine(IEnumWaitWindowMod());
             }

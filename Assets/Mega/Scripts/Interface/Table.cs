@@ -37,7 +37,7 @@ public class Table : MonoBehaviour {
 
     public IEnumerator Rolling (bool rollIn) {
         float time = 0;
-        Debug.Log(rt.name);
+        //Debug.Log(rt.name);
         Vector3 startPosition = rt.anchoredPosition;
 
         while(time < 0.3f) {

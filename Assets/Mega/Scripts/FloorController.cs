@@ -12,37 +12,37 @@ namespace Assets.Mega.Scripts {
         public bool newFloor;
         public bool oldFloor;
 
-        public void Awake() {
+        public void Awake () {
             inst = this;
         }
 
-        public void SetNew() {
-            for (int i = 0; i < allFloor.Count; i++) {
+        public void SetNew () {
+            for(int i = 0; i < allFloor.Count; i++) {
                 allFloor[i].material = newFloorMaterial;
             }
         }
 
-        public void SetOld() {
+        public void SetOld () {
             for(int i = 0; i < allFloor.Count; i++) {
                 allFloor[i].material = oldFloorMaterial;
             }
         }
 
-        public void Start() {
+        public void Start () {
 
             var allMesh = FindObjectsOfType<MeshRenderer>();
 
-            for (int i = 0; i < allMesh.Length; i++) {
-                if (allMesh[i].materials[0].name == "Floor (Instance)") {
+            for(int i = 0; i < allMesh.Length; i++) {
+                if(allMesh[i].materials[0].name == "Floor (Instance)") {
                     allFloor.Add(allMesh[i]);
                     //allMesh[i].transform.parent = transform;
                 }
             }
         }
 
-        public void SetQuartal(int numberQuart) {
-            for (int i = 0; i < allFloorQuartal.Count; i++) {
-                if (allFloorQuartal[i] <= numberQuart) {
+        public void SetQuartal (bool isNewFloor) {
+            for(int i = 0; i < allFloorQuartal.Count; i++) {
+                if(isNewFloor) {
                     allFloor[i].material = newFloorMaterial;
                 } else {
                     allFloor[i].material = oldFloorMaterial;
@@ -50,8 +50,8 @@ namespace Assets.Mega.Scripts {
             }
         }
 
-        public void Update() {
-            if (newFloor) {
+        public void Update () {
+            if(newFloor) {
                 newFloor = false;
                 SetNew();
             }

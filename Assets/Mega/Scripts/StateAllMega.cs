@@ -20,6 +20,7 @@ namespace Assets.Mega.Scripts {
         public void StartState () {
             TableController.inst.HideAllTable();
             MainLogic.inst.DisRoof(3);
+            AllCaps.inst.HideAllCaps();
             MegaCameraController.inst.isFirstLookScene = false;
             MainLogic.inst.interfaceMega.SetActive(true);
             MegaCameraController.inst.SetNewPosCamera(MegaCameraController.inst.stateLookVector3AllMega, GlobalParams.eulerAnglesForCameraInAllMega, 

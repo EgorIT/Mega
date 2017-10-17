@@ -33,8 +33,9 @@ namespace Assets.Mega.Scripts {
 
         public void StartState () {
             MainLogic.inst.EnableRoof();
+            TableController.inst.ShowAllTable();
             //MainLogic.inst.DisRoof(0f);
-            //TableController.inst.DisAllShops();
+
             MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
             Video1.inst.FadeOn();

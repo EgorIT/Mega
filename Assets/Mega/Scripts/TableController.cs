@@ -85,7 +85,7 @@ namespace Assets.Mega.Scripts {
         public void Update() {
             if (showTable) {
                 showTable = false;
-                ShowAllShops();
+                ShowAllTable();
             }
             if(hideTable) {
                 hideTable = false;
@@ -106,11 +106,12 @@ namespace Assets.Mega.Scripts {
             }
         }*/
 
-        public void ShowAllShops () {
+        public void ShowAllTable () {
             for(int i = 0; i < listLittleShops.Count; i++) {
                 listLittleShops[i].EnableTable();
             }
         }
+
 
         public void HideAllTable () {
             for(int i = 0; i < listLittleShops.Count; i++) {

@@ -62,11 +62,9 @@ namespace Assets.Mega.Scripts {
 
         public void FindNeedObject () {
             parkNow = GameObject.FindGameObjectWithTag("parkNow");
-            parkNow.SetActive(true);
+            parkNow.SetActive(false);
             parkAfter = GameObject.FindGameObjectWithTag("parkAfter");
-            if(parkAfter) {
-                parkAfter.SetActive(false);
-            }
+            parkAfter.SetActive(true);
             interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
             interfaceMega.SetActive(false);
         }
@@ -140,14 +138,14 @@ namespace Assets.Mega.Scripts {
         public void EnableRoof () {
             if(!roofEnable) {
                 roofEnable = true;
-                TableController.inst.ShowAllShops();
+                //TableController.inst.ShowAllShops();
                 RoofProcessor.inst.DoStandard();
             }
         }
 
         public IEnumerator IEnumDisRoof (float time) {
             yield return new WaitForSeconds(time);
-            AllCaps.inst.HideAllCaps();
+           
             if(RoofProcessor.inst) {
                 RoofProcessor.inst.DoTransparent();
             }
@@ -163,11 +161,11 @@ namespace Assets.Mega.Scripts {
             }
             
 
-            if (MegaCameraController.inst.GetCurrentDistans() > -5000 && MegaCameraController.inst.GetCurrentDistans() < -10) {
+            if (MegaCameraController.inst.GetCurrentDistans() > -5000 && MegaCameraController.inst.GetCurrentDistans() < -100) {
                 if (!showTableAndCaps) {
                     showTableAndCaps = true;
                     if (TableController.inst) {
-                        TableController.inst.ShowAllShops();
+                        TableController.inst.ShowAllTable();
                     }
                     if(AllCaps.inst) {
                         AllCaps.inst.ShowAllCaps();

@@ -6,40 +6,67 @@ using Assets.Mega.Scripts;
 using UnityEngine;
 
 public class AllCaps : MonoBehaviour {
+    public static AllCaps inst;
 
-    public List<ShopCap> List = new List<ShopCap>();
+    public List<ShopCap> listShopCaps = new List<ShopCap>();
     public static AllCaps allCaps;
 
-    void Start ()
-    {
+    
+
+    public void Awake() {
+        inst = this;
+    }
+
+    public void Start () {
         allCaps = this;
-        List = GameObject.FindObjectsOfType<ShopCap>().ToList();
+        listShopCaps = GameObject.FindObjectsOfType<ShopCap>().ToList();
     }
 
     public void Refresh () {
-        List.ForEach(x => x.gameObject.SetActive(false));
-        TableController.inst.DisAllShops();
-    }
-    
-    public void ActivateAll () {
-        List.ForEach(x => x.gameObject.SetActive(true));
+        //listShopCaps.ForEach(x => x.gameObject.SetActive(false));
         //TableController.inst.DisAllShops();
     }
 
-    public void Activate (string name)
-    {
+    public void ActivateAll () {
+        listShopCaps.ForEach(x => x.gameObject.SetActive(true));
+        //TableController.inst.DisAllShops();
+    }
+
+    public void Update() {
+        if (TableController.inst.showCaps) {
+            TableController.inst.showCaps = false;
+            ShowAllCaps();
+        }
+        if(TableController.inst.hideCaps) {
+            TableController.inst.hideCaps = false;
+            HideAllCaps();
+        }
+    }
+
+    public void ShowAllCaps() {
+        for (int i = 0; i < listShopCaps.Count; i++) {
+            listShopCaps[i].meshRenderer.enabled = true;
+        }
+        
+    }
+
+    public void HideAllCaps() {
+        for(int i = 0; i < listShopCaps.Count; i++) {
+            listShopCaps[i].meshRenderer.enabled = false;
+        }
+    }
+
+    public void Activate (string name) {
         bool found = false;
-        List.ForEach(x => {
-            if (x.name == name)
-            {
+        listShopCaps.ForEach(x => {
+            if(x.name == name) {
                 found = true;
                 x.gameObject.SetActive(true);
                 //x.tableShop.EnableShop();
             }
         });
-        if (!found)
-        {
-            Debug.Log("Cap not found "+name);
+        if(!found) {
+            Debug.Log("Cap not found " + name);
         }
     }
 }

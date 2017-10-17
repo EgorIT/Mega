@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using Assets.Mega.Scripts;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -10,6 +11,8 @@ public class RoofProcessor : MonoBehaviour {
     public static RoofProcessor inst;
     private List<Material> materials = new List<Material>();
     public GameObject glass;
+    
+
     public void Awake() {
         inst = this;
     }
@@ -74,10 +77,18 @@ public class RoofProcessor : MonoBehaviour {
         StartCoroutine(NonTransparentCoroutine());
     }
 
+    public void Update() {
+        if (TableController.inst.showRoof) {
+            TableController.inst.showRoof = false;
+            DoStandard();
+        }
+        if(TableController.inst.hideRoof) {
+            TableController.inst.hideRoof = false;
+            DoTransparent();
+        }
+    }
 
     private IEnumerator NonTransparentCoroutine () {
-
-
         float time = 0;
         float time2 = .3f;
         while(time < time2) {
@@ -175,13 +186,4 @@ public class RoofProcessor : MonoBehaviour {
         }
     }
 
-    /*void Update () {
-        if(Input.GetKeyDown("p")) {
-            DoTransparent();
-        }
-
-        if(Input.GetKeyDown("o")) {
-            DoStandard();
-        }
-    }*/
 }

@@ -33,8 +33,6 @@ namespace Assets.Mega.Scripts {
 
         public void Start () {
             TableController.inst.listLittleShops.Add(this);
-            
-            //SetName("MOSCOW JEWELLERY FACTORY");
         }
 
         public void ClickTable() {
@@ -46,19 +44,7 @@ namespace Assets.Mega.Scripts {
             TextGenerationSettings generationSettings = text1.GetGenerationSettings(text1.rectTransform.rect.size); 
             float width = textGen.GetPreferredWidth(var, generationSettings);
             float height = textGen.GetPreferredHeight(var, generationSettings);
-            
             rt.sizeDelta = new Vector2(width/6,30);
-            //rt.sizeDelta = new Vector2(width+35,30);
-            /*
-            text1.
-            if (var.Length>22)
-                rt.sizeDelta = new Vector2(526,30);
-            if (var.Length>20&& var.Length<22)
-                rt.sizeDelta = new Vector2(460,30);
-            if (var.Length>18&& var.Length<20)
-                rt.sizeDelta = new Vector2(386,30);
-            if (var.Length>18&& var.Length<20)
-                rt.sizeDelta = new Vector2(350,30);*/
             shopName = var;
             if(text != null) {
                 text.text = var;
@@ -68,7 +54,7 @@ namespace Assets.Mega.Scripts {
             }
         }
 
-        public void DisableShop() {
+        public void DisableTable() {
             if (showCoro != null) {
                 StopCoroutine(showCoro);
                 showCoro = null;
@@ -76,10 +62,10 @@ namespace Assets.Mega.Scripts {
             showCoro = StartCoroutine(IEnumChangeScale(Vector3.zero));
         }
 
-        public void EnableShop () {
-            if(!shopCap.gameObject.activeInHierarchy) {
-                return;
-            }
+        public void EnableTable () {
+            //if(!shopCap.gameObject.activeInHierarchy) {
+            //    return;
+            //}
             if(showCoro != null) {
                 StopCoroutine(showCoro);
                 showCoro = null;
@@ -88,16 +74,12 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Update() {
-            var dv3 = transform.position - startPos;
-            testX = dv3.x;
-            testZ = dv3.z;
+            testX = transform.position.x;
+            testZ = transform.position.z;
         }
 
         public IEnumerator IEnumChangeScale (Vector3 endScale) {
-          
-
             var startScale = iconShop.transform.localScale;
-
             float time = GlobalParams.timeToShowIcons;
             float currentTime = 0;
             while(currentTime < time) {

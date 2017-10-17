@@ -166,7 +166,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void GoToFirstLook(bool isHardMove) {
-        TableController.inst.DisAllShops();
+        TableController.inst.HideAllTable();
         PauseForUI();
         StateFirstFaceLook.inst.isHardMove = isHardMove;
         MainLogic.inst.ChangeState(ViewStates.firstFaceLook);

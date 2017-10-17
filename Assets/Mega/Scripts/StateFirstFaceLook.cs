@@ -50,6 +50,8 @@ namespace Assets.Mega.Scripts {
         }
 
         public void StartState () {
+            TableController.inst.HideAllTable();
+            MainLogic.inst.showTableAndCaps = false;
             if (isHardMove) {
                 MegaCameraController.inst.SetNewPosCamera(FindPoint(), new Vector3(0, GlobalParams.eulerAnglesForCameraInShops.y, 0),
                     GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.fast);
@@ -67,7 +69,7 @@ namespace Assets.Mega.Scripts {
 
         public IEnumerator WaitAfterStartState() {
             yield return new WaitForSeconds(GlobalParams.timeToFly - 0.2f);
-            MainLogic.inst.EnebleRoof();
+            MainLogic.inst.EnableRoof();
             
         }
 

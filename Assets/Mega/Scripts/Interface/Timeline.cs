@@ -6,12 +6,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Timeline : MonoBehaviour {
+    public static Timeline inst;
+
     public List<TimeButton> timeButtons;
     public ChangesInfo changesInfo;
     public RectTransform line;
     private int currentNumber = 0;
     public Table allShopsTable;
-    public static Timeline timeline;
+
 
     private RectTransform rt;
     private Vector3 outPosition = new Vector3(0, -75.5f, 0);
@@ -21,15 +23,13 @@ public class Timeline : MonoBehaviour {
     public Table shopTable;
     //private int previousNumber;
 
-    void Awake ()
-    {
-        timeline = this;
+    void Awake () {
+        inst = this;
         rt = gameObject.GetComponent<RectTransform>();
         rt.anchoredPosition = outPosition;
     }
 
-    public void Sleep()
-    {
+    public void Sleep () {
         changesInfo.SetInfo(0);
     }
 
@@ -72,8 +72,8 @@ public class Timeline : MonoBehaviour {
 
         timeButtons[0].SetNormal();
         timeButtons[8].SetNormal();
-            changesInfo.SetInfo(number);
-        
+        changesInfo.SetInfo(number);
+
         allShopsTable.RollOut();
         shopTable.RollOut();
         shopsList.RollIn();

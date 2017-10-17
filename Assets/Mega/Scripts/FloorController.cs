@@ -51,15 +51,15 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Update () {
-            if(newFloor) {
-                newFloor = false;
-                SetNew();
-            }
-
-            if(oldFloor) {
-                oldFloor = false;
-                SetOld();
-            }
+            //if(newFloor) {
+            //    newFloor = false;
+            //    SetNew();
+            //}
+            //
+            //if(oldFloor) {
+            //    oldFloor = false;
+            //    SetOld();
+            //}
         }
 
 

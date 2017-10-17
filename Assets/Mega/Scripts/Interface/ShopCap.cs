@@ -16,6 +16,20 @@ public class ShopCap : MonoBehaviour {
     public TableShop tableShop;
     public PointerMoveToShop pointerMoveToShop;
 
+    public MeshRenderer meshRenderer;
+
+    public Transform pointTable;
+
+    public void Awake() {
+        var allTrans = gameObject.GetComponentsInChildren<Transform>();
+        for (int i = 0; i < allTrans.Length; i++) {
+            if (allTrans[i].gameObject.name == "PointTable") {
+                pointTable = allTrans[i];
+            }
+        }
+        
+    }
+
     public void MoveCamera() {
         tableShop.ClickTable();
     }
@@ -28,9 +42,11 @@ public class ShopCap : MonoBehaviour {
     }
 
     public void OnEnable() {
-        if (tableShop) {
-            tableShop.DisableShop();
-        }
+        meshRenderer = GetComponent<MeshRenderer>();
+        //gameObject.SetActive(false);
+        //if (tableShop) {
+        //    tableShop.DisableTable();
+        //}
         
         //Debug.Log("OnEnable " + gameObject.name);
     }

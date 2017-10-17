@@ -8,6 +8,14 @@ namespace Assets.Mega.Scripts {
         public List<TableShop> listLittleShops;
 
         //private bool swapRoof = true;
+        public bool showTable;
+        public bool hideTable;
+
+        public bool showRoof;
+        public bool hideRoof;
+
+        public bool showCaps;
+        public bool hideCaps;
 
         public TableShop prefabTableShop;
 
@@ -38,13 +46,10 @@ namespace Assets.Mega.Scripts {
                 midl = midl * (1f / mesh.mesh.vertices.Length);
                 tableShop.transform.localPosition = new Vector3(midl.x, 0, midl.z);
 
-                /*if(allShopCap[i].useFactor) {
-                    tableShop.transform.position =
-                        allShopCap[i].transform.position - new Vector3(midl.x, 0, midl.z) + Vector3.up * 2;
-                } else {
-                    tableShop.transform.position =
-                        allShopCap[i].transform.position + new Vector3(midl.x, 0, midl.z) + Vector3.up * 2;
-                }*/
+                if(allShopCap[i].pointTable) {
+                    tableShop.transform.position = new Vector3(allShopCap[i].pointTable.position.x, tableShop.transform.position.y, allShopCap[i].pointTable.position.z);
+                }
+
 
 
                 /* } else {
@@ -52,7 +57,7 @@ namespace Assets.Mega.Scripts {
                      tableShop.startPos = tableShop.transform.position;
                  }*/
                 tableShop.transform.parent = allTable.transform;
-                tableShop.transform.localPosition = new Vector3(tableShop.transform.localPosition.x, 10f, tableShop.transform.localPosition.z);
+                tableShop.transform.localPosition = new Vector3(tableShop.transform.localPosition.x, 5f, tableShop.transform.localPosition.z);
                 tableShop.transform.localScale = Vector3.zero;
                 //tableShop.transform.localScale = GlobalParams.scaleIconShop;
                 tableShop.SetName(allShopCap[i].name);
@@ -61,13 +66,13 @@ namespace Assets.Mega.Scripts {
                 allShopCap[i].Setup();
             }
 
-            StartCoroutine(WaitToDis());
+            //StartCoroutine(WaitToDis());
         }
 
-        public IEnumerator WaitToDis () {
-            yield return new WaitForSeconds(0.2f);
-            DisAllShops();
-        }
+        //public IEnumerator WaitToDis () {
+        //    yield return new WaitForSeconds(0.2f);
+        //    DisAllShops();
+        //}
 
 
         public void SetAngelsForIcons (float y) {
@@ -77,33 +82,40 @@ namespace Assets.Mega.Scripts {
             }
         }
 
+        public void Update() {
+            if (showTable) {
+                showTable = false;
+                ShowAllShops();
+            }
+            if(hideTable) {
+                hideTable = false;
+                HideAllTable();
+            }
+        }
+
         /*public void RoofToOff () {
             if(swapRoof) {
                 ShowAllShops();
                 swapRoof = false;
             }
-
         }
 
         public void RoofToOn () {
-            if(!swapRoof) {
-                
+            if(!swapRoof) {                
                 swapRoofswapRoof = true;
             }
-
         }*/
 
-        /*public void ShowAllShops () {
+        public void ShowAllShops () {
             for(int i = 0; i < listLittleShops.Count; i++) {
-                listLittleShops[i].EnableShop();
-            }
-        }*/
-
-        public void DisAllShops () {
-            for(int i = 0; i < listLittleShops.Count; i++) {
-                listLittleShops[i].DisableShop();
+                listLittleShops[i].EnableTable();
             }
         }
 
+        public void HideAllTable () {
+            for(int i = 0; i < listLittleShops.Count; i++) {
+                listLittleShops[i].DisableTable();
+            }
+        }
     }
 }

@@ -38,7 +38,11 @@ namespace Assets.Mega.Scripts {
         private GameObject parkNow;
         private GameObject parkAfter;
 
+
+
         public bool boolWindowMod;
+
+        public bool showTableAndCaps;
 
         public void Awake () {
             inst = this;
@@ -127,20 +131,23 @@ namespace Assets.Mega.Scripts {
         public void DisRoof (float time) {
             if(roofEnable) {
                 roofEnable = false;
+                
                 StartCoroutine(IEnumDisRoof(time));
             }
 
         }
 
-        public void EnebleRoof () {
+        public void EnableRoof () {
             if(!roofEnable) {
                 roofEnable = true;
+                TableController.inst.ShowAllShops();
                 RoofProcessor.inst.DoStandard();
             }
         }
 
         public IEnumerator IEnumDisRoof (float time) {
             yield return new WaitForSeconds(time);
+            AllCaps.inst.HideAllCaps();
             if(RoofProcessor.inst) {
                 RoofProcessor.inst.DoTransparent();
             }
@@ -151,29 +158,54 @@ namespace Assets.Mega.Scripts {
             if(currentTime > GlobalParams.needTimeToSleep) {
                 currentTime = GlobalParams.needTimeToSleep;
                 ChangeState(ViewStates.one);
-                Timeline.timeline.Sleep();
+                //Timeline.inst.Sleep();
                 AllCaps.allCaps.ActivateAll();
             }
+            
 
-            //if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega - 500) {
-            //    if (!roofEnable) {
-            //        roofEnable = true;
-            //        if (RoofProcessor.inst) {
-            //            RoofProcessor.inst.DoStandard();
-            //        }
-            //        //TableController.inst.DisAllShops();
-            //    }
-            //
-            //}
-            //if(MegaCameraController.inst.GetCurrentDistans() > GlobalParams.distansOnAllMega + 1000 && MegaCameraController.inst.GetCurrentDistans() < -1001) {
-            //    if(roofEnable) {
-            //        roofEnable = false;
-            //        if (RoofProcessor.inst) {
-            //            RoofProcessor.inst.DoTransparent();
-            //        }
-            //        //TableController.inst.ShowAllShops();
-            //    }
-            //}
+            if (MegaCameraController.inst.GetCurrentDistans() > -5000 && MegaCameraController.inst.GetCurrentDistans() < -10) {
+                if (!showTableAndCaps) {
+                    showTableAndCaps = true;
+                    if (TableController.inst) {
+                        TableController.inst.ShowAllShops();
+                    }
+                    if(AllCaps.inst) {
+                        AllCaps.inst.ShowAllCaps();
+                    }
+                }
+            }
+
+            if (MegaCameraController.inst.GetCurrentDistans() < -5000) {
+                if(showTableAndCaps) {
+                    showTableAndCaps = false;
+                    if(TableController.inst) {
+                        TableController.inst.HideAllTable();
+                    }
+                    if(AllCaps.inst) {
+                        AllCaps.inst.HideAllCaps();
+                    }
+                }
+            }
+
+                //if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega - 500) {
+                //    if (!roofEnable) {
+                //        roofEnable = true;
+                //        if (RoofProcessor.inst) {
+                //            RoofProcessor.inst.DoStandard();
+                //        }
+                //        //TableController.inst.DisAllShops();
+                //    }
+                //
+                //}
+                //if(MegaCameraController.inst.GetCurrentDistans() > GlobalParams.distansOnAllMega + 1000 && MegaCameraController.inst.GetCurrentDistans() < -1001) {
+                //    if(roofEnable) {
+                //        roofEnable = false;
+                //        if (RoofProcessor.inst) {
+                //            RoofProcessor.inst.DoTransparent();
+                //        }
+                //        //TableController.inst.ShowAllShops();
+                //    }
+                //}
 
 
         }

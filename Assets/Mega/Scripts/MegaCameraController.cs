@@ -102,12 +102,13 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void PauseForUI() {
+        
         StartCoroutine(IEnumPausaForUI());
     }
 
     public IEnumerator IEnumPausaForUI () {
         dontUseSwipeAndPinch = true;
-        yield return new WaitForSeconds(GlobalParams.timeToFly);
+        yield return new WaitForSeconds(GlobalParams.timeToFly * 0.5f);
         dontUseSwipeAndPinch = false;
     }
 

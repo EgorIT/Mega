@@ -12,6 +12,9 @@ namespace Assets.Mega.Scripts {
         public List<GameObject> allParentOldGoFloor;
         public List<GameObject> allGoNewFloor;
 
+        public Material newFloorMaterialNotAlfa;
+        public Material oldFloorMaterialNotAlfa;
+
         public List<int> allFloorQuartal;
         public Material newFloorMaterial;
         public Material oldFloorMaterial;
@@ -36,21 +39,21 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start () {
-            SetupToScale();
-            //SetupToAlfa();
+            //SetupToScale();
+            SetupToAlfa();
         }
 
         public void SetupToAlfa () {
             parentFloor = new GameObject();
             parentFloor.name = "parentFloor";
-            parentFloor.transform.position = Vector3.zero;
+            parentFloor.transform.position = Vector3.zero + new Vector3(0, 0.01f, 0);
             parentFloor.transform.localEulerAngles = Vector3.zero;
             parentFloor.transform.localScale = Vector3.one;
 
             var allMesh = FindObjectsOfType<MeshRenderer>();
             for(int i = 0; i < allMesh.Length; i++) {
                 if(allMesh[i].materials[0].name == "Floor (Instance)") {
-                    allMesh[i].material = oldFloorMaterial;
+                    allMesh[i].material = oldFloorMaterialNotAlfa;
                     var newGo = Instantiate(allMesh[i].gameObject);
                     var newMesh = newGo.GetComponent<MeshRenderer>();
                     newMesh.material = newFloorMaterial;
@@ -67,74 +70,42 @@ namespace Assets.Mega.Scripts {
             }
         }
 
-        public void SetupToScale () {
-            parentFloor = new GameObject();
-            parentFloor.name = "parentFloor";
-            parentFloor.transform.position = Vector3.zero + new Vector3(0, 0.05f, 0);
-            parentFloor.transform.localEulerAngles = Vector3.zero;
-            parentFloor.transform.localScale = Vector3.one;
-
-            var allMesh = FindObjectsOfType<MeshRenderer>();
-            for(int i = 0; i < allMesh.Length; i++) {
-                if(allMesh[i].materials[0].name == "Floor (Instance)") {
-                    var mesh = allMesh[i].gameObject.GetComponent<MeshFilter>();
-                    Vector3 midl = Vector3.zero;
-                    for(int j = 0; j < mesh.mesh.vertices.Length; j++) {
-                        midl += mesh.mesh.vertices[j];
-                    }
-                    midl = midl * (1f / mesh.mesh.vertices.Length);
-
-                    var newGo = Instantiate(allMesh[i].gameObject);
-                    newGo.GetComponent<MeshRenderer>().material = newFloorMaterial;
-                    newGo.transform.position = allMesh[i].gameObject.transform.position;
-                    var go = new GameObject();
-                    go.transform.position = new Vector3(midl.x, 0, -midl.y);
-                    go.transform.localScale = Vector3.one;
-                    go.name = allMesh[i].gameObject.name;
-                    go.transform.parent = parentFloor.transform;
-                    allMesh[i].gameObject.transform.parent = go.transform;
-                    allMesh[i].material = oldFloorMaterial;
-                    allParentOldGoFloor.Add(go);
-
-                    if(allMesh[i].gameObject.isStatic) {
-                        Debug.Log(allMesh[i].gameObject.name);
-                    }
-
-                    allOldMeshFloor.Add(allMesh[i]);
-                    allGoNewFloor.Add(newGo);
-                    newGo.SetActive(false);
-                    //allMesh[i].transform.parent = transform;
+        public IEnumerator IEnumChangeAlfa (bool isNewFloor) {
+            for(int i = 0; i < allNewMeshFloor.Count; i++) {
+                allNewMeshFloor[i].material = newFloorMaterial;
+                if(isNewFloor) {
+                    allNewMeshFloor[i].material.color = new Color(1, 1, 1, 0);
+                } else {
+                    allNewMeshFloor[i].material.color = new Color(1, 1, 1, 1);
+                    allOldMeshFloor[i].gameObject.SetActive(true);
                 }
             }
-        }
-
-
-        public IEnumerator IEnumChangeAlfa (bool isNewFloor) {
-            //allOldMeshFloor.Add(allMesh[i]);
-            //allNewMeshFloor.Add(newMesh);
-            float startOldFloor = allOldMeshFloor[0].material.color.a;
+            //float startOldFloor = allOldMeshFloor[0].material.color.a;
             float startNewFloor = allNewMeshFloor[0].material.color.a;
-
-            float finalOldFloor = isNewFloor ? 0 : 1;
+            //float finalOldFloor = isNewFloor ? 0 : 1;
             float finalNewFloor = isNewFloor ? 1 : 0;
-
-
-            float time = 0.5f;
+            float time = 1f;
             float currentTime = 0;
-
             while(currentTime < time) {
-                for(int i = 0; i < allOldMeshFloor.Count; i++) {
+                for(int i = 0; i < allNewMeshFloor.Count; i++) {
                     var t = currentTime / time;
-                    allOldMeshFloor[i].material.color = new Color(1, 1, 1, Mathf.Lerp(startOldFloor, finalOldFloor, t * t));
+                    //allOldMeshFloor[i].material.color = new Color(1, 1, 1, Mathf.Lerp(startOldFloor, finalOldFloor, t * t));
                     allNewMeshFloor[i].material.color = new Color(1, 1, 1, Mathf.Lerp(startNewFloor, finalNewFloor, t * t));
                 }
                 currentTime += Time.deltaTime;
                 yield return null;
             }
-            for(int i = 0; i < allOldMeshFloor.Count; i++) {
-                var t = currentTime / time;
-                allOldMeshFloor[i].material.color = new Color(1, 1, 1, finalOldFloor);
+            for(int i = 0; i < allNewMeshFloor.Count; i++) {
+                //allOldMeshFloor[i].material.color = new Color(1, 1, 1, finalOldFloor);
                 allNewMeshFloor[i].material.color = new Color(1, 1, 1, finalNewFloor);
+            }
+            for(int i = 0; i < allNewMeshFloor.Count; i++) {
+                if(isNewFloor) {
+                    allOldMeshFloor[i].gameObject.SetActive(false);
+                    allNewMeshFloor[i].material = newFloorMaterialNotAlfa;
+                } else {
+
+                }
             }
         }
 
@@ -177,22 +148,13 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SetQuartal (bool isNewFloor) {
-            //StartCoroutine(IEnumChangeAlfa(!isNewFloor));
+            StartCoroutine(IEnumChangeAlfa(!isNewFloor));
 
-            if(isNewFloor) {
-               StartCoroutine(IEnumChangeScale(1));
-            } else {
-                StartCoroutine(IEnumChangeScale(0));
-            }
-
-
-            //for(int i = 0; i < allFloorQuartal.Count; i++) {
-            //    if(isNewFloor) {
-            //        allFloor[i].material = newFloorMaterial;
-            //    } else {
-            //        allFloor[i].material = oldFloorMaterial;
-            //    }
-            //}
+            // if(isNewFloor) {
+            //    StartCoroutine(IEnumChangeScale(1));
+            // } else {
+            //     StartCoroutine(IEnumChangeScale(0));
+            // }
         }
 
         public void Update () {
@@ -206,6 +168,49 @@ namespace Assets.Mega.Scripts {
                 StartCoroutine(IEnumChangeScale(0));
             }
         }
+
+
+        //public void SetupToScale () {
+        //    parentFloor = new GameObject();
+        //    parentFloor.name = "parentFloor";
+        //    parentFloor.transform.position = Vector3.zero + new Vector3(0, 0.05f, 0);
+        //    parentFloor.transform.localEulerAngles = Vector3.zero;
+        //    parentFloor.transform.localScale = Vector3.one;
+        //
+        //    var allMesh = FindObjectsOfType<MeshRenderer>();
+        //    for(int i = 0; i < allMesh.Length; i++) {
+        //        if(allMesh[i].materials[0].name == "Floor (Instance)") {
+        //
+        //            var mesh = allMesh[i].gameObject.GetComponent<MeshFilter>();
+        //            Vector3 midl = Vector3.zero;
+        //            for(int j = 0; j < mesh.mesh.vertices.Length; j++) {
+        //                midl += mesh.mesh.vertices[j];
+        //            }
+        //            midl = midl * (1f / mesh.mesh.vertices.Length);
+        //
+        //            var newGo = Instantiate(allMesh[i].gameObject);
+        //            newGo.GetComponent<MeshRenderer>().material = newFloorMaterial;
+        //            newGo.transform.position = allMesh[i].gameObject.transform.position;
+        //            var go = new GameObject();
+        //            go.transform.position = new Vector3(midl.x, 0, -midl.y);
+        //            go.transform.localScale = Vector3.one;
+        //            go.name = allMesh[i].gameObject.name;
+        //            go.transform.parent = parentFloor.transform;
+        //            allMesh[i].gameObject.transform.parent = go.transform;
+        //            allMesh[i].material = oldFloorMaterial;
+        //            allParentOldGoFloor.Add(go);
+        //
+        //            if(allMesh[i].gameObject.isStatic) {
+        //                Debug.Log(allMesh[i].gameObject.name);
+        //            }
+        //
+        //            allOldMeshFloor.Add(allMesh[i]);
+        //            allGoNewFloor.Add(newGo);
+        //            newGo.SetActive(false);
+        //            //allMesh[i].transform.parent = transform;
+        //        }
+        //    }
+        //}
 
 
     }

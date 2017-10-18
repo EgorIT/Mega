@@ -139,7 +139,10 @@ namespace Assets.Mega.Scripts {
             if(!roofEnable) {
                 roofEnable = true;
                 //TableController.inst.ShowAllShops();
-                RoofProcessor.inst.DoStandard();
+                if (RoofProcessor.inst) {
+                    RoofProcessor.inst.DoStandard();
+                }
+                
             }
         }
 

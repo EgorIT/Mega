@@ -107,7 +107,7 @@ public class MegaCameraController : MonoBehaviour {
 
     public IEnumerator IEnumPausaForUI () {
         dontUseSwipeAndPinch = true;
-        yield return new WaitForSeconds(GlobalParams.timeToFly*1.5f);
+        yield return new WaitForSeconds(GlobalParams.timeToFly);
         dontUseSwipeAndPinch = false;
     }
 

@@ -36,8 +36,8 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start () {
-            //SetupToScale();
-            SetupToAlfa();
+            SetupToScale();
+            //SetupToAlfa();
         }
 
         public void SetupToAlfa () {
@@ -70,12 +70,11 @@ namespace Assets.Mega.Scripts {
         public void SetupToScale () {
             parentFloor = new GameObject();
             parentFloor.name = "parentFloor";
-            parentFloor.transform.position = Vector3.zero;
+            parentFloor.transform.position = Vector3.zero + new Vector3(0, 0.05f, 0);
             parentFloor.transform.localEulerAngles = Vector3.zero;
             parentFloor.transform.localScale = Vector3.one;
 
             var allMesh = FindObjectsOfType<MeshRenderer>();
-            Debug.Log(allMesh.Length);
             for(int i = 0; i < allMesh.Length; i++) {
                 if(allMesh[i].materials[0].name == "Floor (Instance)") {
                     var mesh = allMesh[i].gameObject.GetComponent<MeshFilter>();
@@ -146,7 +145,7 @@ namespace Assets.Mega.Scripts {
             for(int i = 0; i < allParentOldGoFloor.Count; i++) {
                 startScales.Add(allParentOldGoFloor[i].transform.localScale.x);
             }
-            float time = 0.5f;
+            float time = 5f;
             float currentTime = 0;
             for(int i = 0; i < allGoNewFloor.Count; i++) {
                 if(Math.Abs(finalScale - 1) < 0.01f) {
@@ -178,13 +177,13 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SetQuartal (bool isNewFloor) {
-            StartCoroutine(IEnumChangeAlfa(!isNewFloor));
+            //StartCoroutine(IEnumChangeAlfa(!isNewFloor));
 
-            //if(isNewFloor) {
-            //   StartCoroutine(IEnumChangeScale(1));
-            //} else {
-            //    StartCoroutine(IEnumChangeScale(0));
-            //}
+            if(isNewFloor) {
+               StartCoroutine(IEnumChangeScale(1));
+            } else {
+                StartCoroutine(IEnumChangeScale(0));
+            }
 
 
             //for(int i = 0; i < allFloorQuartal.Count; i++) {

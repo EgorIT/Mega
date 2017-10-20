@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50cb2958-2763-4656-ad63-bbab7be90864" name="Default" comment="" />
+    <list default="true" id="50cb2958-2763-4656-ad63-bbab7be90864" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/New.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/New.unity" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.MegaGit/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.MegaGit/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,34 +15,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainLogic.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3480">
-              <caret line="264" column="0" lean-forward="false" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
-              <folding>
-                <marker date="1508253095267" expanded="true" signature="6:127" ph="..." />
-                <marker date="1508253095267" expanded="true" signature="188:276" ph="{...}" />
-                <marker date="1508253095267" expanded="true" signature="321:9559" ph="{...}" />
-                <marker date="1508253095267" expanded="true" signature="9402:9412" ph="{...}" />
-                <marker date="1508253095267" expanded="true" signature="9422:9553" ph="/* public void SetPlan(int i) { ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FloorController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/FloorController.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-              <folding>
-                <marker date="1508253095253" expanded="false" signature="6:52" ph="..." />
-                <marker date="1508253095253" expanded="true" signature="84:1808" ph="{...}" />
-                <marker date="1508253095253" expanded="true" signature="135:1806" ph="{...}" />
-                <marker date="1508253095253" expanded="true" signature="1787:1788" ph="{...}" />
-                <marker date="1508253095253" expanded="true" signature="1787:1798" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,10 +56,10 @@
       <file leaf-file-name="Quiz.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Quiz.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1259">
+            <state relative-caret-position="1305">
               <caret line="91" column="11" lean-forward="false" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="11" />
               <folding>
-                <marker date="1508251634176" expanded="true" signature="6:114" ph="..." />
+                <marker date="1508251634176" expanded="false" signature="6:114" ph="..." />
                 <marker date="1508251634176" expanded="true" signature="149:2005" ph="{...}" />
                 <marker date="1508251634176" expanded="true" signature="186:609" ph="{...}" />
                 <marker date="1508251634176" expanded="true" signature="780:898" ph="{...}" />
@@ -91,19 +72,6 @@
                 <marker date="1508251634176" expanded="true" signature="1814:1872" ph="{...}" />
                 <marker date="1508251634176" expanded="true" signature="1927:2003" ph="{...}" />
                 <marker date="1508251634176" expanded="true" signature="1931:2000" ph="/* if (Input.GetKeyDown(&quot;m&quot;)) ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicStarter.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/BasicStarter.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-              <folding>
-                <marker date="1508235823490" expanded="false" signature="6:78" ph="..." />
-                <marker date="1508235823490" expanded="true" signature="121:325" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -127,7 +95,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Swaper.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Swaper.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -143,15 +111,91 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CupController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/CupController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1245">
+              <caret line="87" column="14" lean-forward="false" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AllShops.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllShops.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4171">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1505980968914" expanded="false" signature="6:119" ph="..." />
+                <marker date="1505980968914" expanded="true" signature="159:14089" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="697:1109" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="889:1031" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="1160:12642" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="4752:4863" ph="/* db.Add(new ChangesInfo.Shop(&quot;Marks&amp;Spencer&quot;, &quot;&quot;,&quot;&quot;)); ... */" />
+                <marker date="1505980968914" expanded="true" signature="5107:5209" ph="/* db.Add(new ChangesInfo.Shop(&quot;Mezzatore&quot;, &quot;&quot;,&quot;&quot;)); ... */" />
+                <marker date="1505980968914" expanded="true" signature="7155:7258" ph="/* db.Add(new ChangesInfo.Shop(&quot;SuperStep&quot;, &quot;&quot;,&quot;&quot;)); ... */" />
+                <marker date="1505980968914" expanded="true" signature="12080:12126" ph="/* db.Dist ... */" />
+                <marker date="1505980968914" expanded="true" signature="12128:12628" ph="/* ##region development ... */" />
+                <marker date="1505980968914" expanded="true" signature="12667:14025" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="12720:12793" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="12762:12789" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="12901:12928" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="13026:13730" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="13509:13725" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="13536:13632" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="13641:13711" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="13787:13889" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="13896:14022" ph="{...}" />
+                <marker date="1505980968914" expanded="true" signature="14080:14087" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColliderProcessor.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ColliderProcessor.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+              <folding>
+                <marker date="1508351202627" expanded="false" signature="6:78" ph="..." />
+                <marker date="1508351202627" expanded="true" signature="126:1232" ph="{...}" />
+                <marker date="1508351202627" expanded="true" signature="299:358" ph="{...}" />
+                <marker date="1508351202627" expanded="true" signature="361:600" ph="/* private void OnTriggerEnter(Collider other) ... */" />
+                <marker date="1508351202627" expanded="true" signature="645:941" ph="{...}" />
+                <marker date="1508351202627" expanded="true" signature="684:938" ph="{...}" />
+                <marker date="1508351202627" expanded="true" signature="744:934" ph="{...}" />
+                <marker date="1508351202627" expanded="true" signature="791:856" ph="{...}" />
+                <marker date="1508351202627" expanded="true" signature="865:929" ph="{...}" />
+                <marker date="1508351202627" expanded="true" signature="986:1031" ph="{...}" />
+                <marker date="1508351202627" expanded="true" signature="1034:1132" ph="/* private void OnTriggerStay(Collider other) ... */" />
+                <marker date="1508351202627" expanded="true" signature="1134:1169" ph="/* public IEnumerator Kick() ... */" />
+                <marker date="1508351202627" expanded="true" signature="1223:1230" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Timeline.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1710">
+            <state relative-caret-position="1635">
               <caret line="114" column="16" lean-forward="false" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
               <folding>
-                <marker date="1508253095266" expanded="true" signature="6:166" ph="..." />
+                <marker date="1508253095266" expanded="false" signature="6:166" ph="..." />
                 <marker date="1508253095266" expanded="true" signature="206:4648" ph="{...}" />
-                <marker date="1508253095266" expanded="true" signature="2287:2410" ph="{...}" />
+                <marker date="1508253095266" expanded="true" signature="679:805" ph="{...}" />
+                <marker date="1508253095266" expanded="true" signature="832:871" ph="{...}" />
+                <marker date="1508253095266" expanded="true" signature="894:953" ph="{...}" />
+                <marker date="1508253095266" expanded="true" signature="996:1175" ph="{...}" />
+                <marker date="1508253095266" expanded="true" signature="1006:1071" ph="/* MainLogic.inst.SetQuarter(number); ... */" />
+                <marker date="1508253095266" expanded="true" signature="1222:2410" ph="{...}" />
+                <marker date="1508253095266" expanded="true" signature="1395:1828" ph="{...}" />
+                <marker date="1508253095266" expanded="true" signature="1559:1619" ph="{...}" />
+                <marker date="1508253095266" expanded="true" signature="1692:1751" ph="{...}" />
+                <marker date="1508253095266" expanded="true" signature="2000:2052" ph="{...}" />
+                <marker date="1508253095266" expanded="true" signature="2125:2176" ph="{...}" />
                 <marker date="1508253095266" expanded="true" signature="2469:3725" ph="{...}" />
                 <marker date="1508253095266" expanded="true" signature="2506:2997" ph="{...}" />
                 <marker date="1508253095266" expanded="true" signature="2565:2987" ph="{...}" />
@@ -185,25 +229,6 @@
                 <marker date="1507890153635" expanded="true" signature="640:672" ph="{...}" />
                 <marker date="1507890153635" expanded="true" signature="712:754" ph="{...}" />
                 <marker date="1507890153635" expanded="true" signature="786:829" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TableShop.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/TableShop.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="72" column="48" lean-forward="false" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
-              <folding>
-                <marker date="1508253095281" expanded="false" signature="6:146" ph="..." />
-                <marker date="1508253095281" expanded="true" signature="178:2917" ph="{...}" />
-                <marker date="1508253095281" expanded="true" signature="184:289" ph="/* public enum AngelsLook { ... */" />
-                <marker date="1508253095281" expanded="true" signature="334:2915" ph="{...}" />
-                <marker date="1508253095281" expanded="true" signature="683:694" ph="{...}" />
-                <marker date="1508253095281" expanded="true" signature="725:795" ph="{...}" />
-                <marker date="1508253095281" expanded="true" signature="2370:2908" ph="{...}" />
-                <marker date="1508253095281" expanded="true" signature="2499:2844" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -249,52 +274,55 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllCaps.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Video1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Effects/AmbientOcclusion/Resources/AmbientOcclusion.cginc" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Effects/AntiAliasing/SMAA/Resources/SMAA.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/MTemp/Class5.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/TableShop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/AmbientOcclusionModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Effects/DepthOfField/DepthOfField.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Quiz.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/ColorGrading.cginc" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ShopTable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Editor/ScenesEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/GoToShop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Video.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ShopCap.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/GlobalParams.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Effects/DepthOfField/Resources/MedianFilter.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ColliderProcessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/StateOne.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ChangesInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ShopName.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/StateFirstFaceLook.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/MotionBlurComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/InterfaceController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/FXAA3.cginc" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Table.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Imported/RNKit/_Example/GlassUI/script/HexagonExample.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/FloorController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/ColorGradingComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ShopPreviews.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Effects/TonemappingColorGrading/Resources/TonemappingColorGrading.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllShops.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/ScreenSpaceReflection.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/TableController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/Unity3DRider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D0A5C709-6719-44EF-BC8A-16CA5E1C31C7/83/3f031b09/BlendMode.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/CupController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Effects/AntiAliasing/FXAA/Resources/FXAA3.cginc" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/BasicStarter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Colomn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/TimeButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/iViewState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/EyeAdaptationModelEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/RoofProcessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Backer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllCaps.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Video1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Effects/AntiAliasing/SMAA/Resources/SMAA.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/MTemp/Class5.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../ColliderLab/Assets/coll.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Effects/DepthOfField/DepthOfField.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/ScenesEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/GlobalParams.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Effects/DepthOfField/Resources/MedianFilter.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/StateOne.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/StateFirstFaceLook.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/FXAA3.cginc" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Imported/RNKit/_Example/GlassUI/script/HexagonExample.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/FloorController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/ScreenSpaceReflection.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/TableController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D0A5C709-6719-44EF-BC8A-16CA5E1C31C7/83/3f031b09/BlendMode.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/BasicStarter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/iViewState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mega/Scripts/RoofProcessor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -325,6 +353,9 @@
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Table.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Quiz.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs" />
+        <option value="$PROJECT_DIR$/../ColliderLab/Assets/coll.cs" />
+        <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ColliderProcessor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/CupController.cs" />
       </list>
     </option>
   </component>
@@ -492,11 +523,13 @@
       <workItem from="1507828082716" duration="2757000" />
       <workItem from="1507882584937" duration="2717000" />
       <workItem from="1508247174405" duration="5061000" />
+      <workItem from="1508326838691" duration="15349000" />
+      <workItem from="1508499096603" duration="167000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87785000" />
+    <option name="totallyTimeSpent" value="103301000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -519,7 +552,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13486141" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1369936" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -546,9 +579,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Editor/ScenesEditor.cs" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D0A5C709-6719-44EF-BC8A-16CA5E1C31C7/f3/73f9e99c/Renderer.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/RoofProcessor.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Table.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -736,8 +766,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllShops.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        <state relative-caret-position="-4171">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1505980968914" expanded="false" signature="6:119" ph="..." />
+            <marker date="1505980968914" expanded="true" signature="159:14089" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="697:1109" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="889:1031" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="1160:12642" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="4752:4863" ph="/* db.Add(new ChangesInfo.Shop(&quot;Marks&amp;Spencer&quot;, &quot;&quot;,&quot;&quot;)); ... */" />
+            <marker date="1505980968914" expanded="true" signature="5107:5209" ph="/* db.Add(new ChangesInfo.Shop(&quot;Mezzatore&quot;, &quot;&quot;,&quot;&quot;)); ... */" />
+            <marker date="1505980968914" expanded="true" signature="7155:7258" ph="/* db.Add(new ChangesInfo.Shop(&quot;SuperStep&quot;, &quot;&quot;,&quot;&quot;)); ... */" />
+            <marker date="1505980968914" expanded="true" signature="12080:12126" ph="/* db.Dist ... */" />
+            <marker date="1505980968914" expanded="true" signature="12128:12628" ph="/* ##region development ... */" />
+            <marker date="1505980968914" expanded="true" signature="12667:14025" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="12720:12793" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="12762:12789" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="12901:12928" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="13026:13730" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="13509:13725" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="13536:13632" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="13641:13711" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="13787:13889" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="13896:14022" ph="{...}" />
+            <marker date="1505980968914" expanded="true" signature="14080:14087" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -787,16 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
           <caret line="72" column="48" lean-forward="false" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
-          <folding>
-            <marker date="1508253095281" expanded="false" signature="6:146" ph="..." />
-            <marker date="1508253095281" expanded="true" signature="178:2917" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="184:289" ph="/* public enum AngelsLook { ... */" />
-            <marker date="1508253095281" expanded="true" signature="334:2915" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="683:694" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="725:795" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="2370:2908" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="2499:2844" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,7 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="38" column="44" lean-forward="false" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,57 +857,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/InterfaceController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding>
-            <marker date="1507890153635" expanded="false" signature="6:105" ph="..." />
-            <marker date="1507890153635" expanded="true" signature="156:831" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="364:395" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="425:457" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="489:552" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="585:620" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="640:672" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="712:754" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="786:829" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="114" column="16" lean-forward="false" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
-          <folding>
-            <marker date="1508253095266" expanded="true" signature="6:166" ph="..." />
-            <marker date="1508253095266" expanded="true" signature="206:4648" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="2287:2410" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="2469:3725" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="2506:2997" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="2565:2987" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="2639:2795" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="3061:3481" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="3135:3290" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="3753:3830" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="3878:4473" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="3985:4299" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="4099:4222" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="4319:4376" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="4506:4570" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="4599:4646" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/BasicStarter.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding>
-            <marker date="1508235823490" expanded="false" signature="6:78" ph="..." />
-            <marker date="1508235823490" expanded="true" signature="121:325" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -873,13 +868,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding>
-            <marker date="1508253095253" expanded="false" signature="6:52" ph="..." />
-            <marker date="1508253095253" expanded="true" signature="84:1808" ph="{...}" />
-            <marker date="1508253095253" expanded="true" signature="135:1806" ph="{...}" />
-            <marker date="1508253095253" expanded="true" signature="1787:1788" ph="{...}" />
-            <marker date="1508253095253" expanded="true" signature="1787:1798" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -887,13 +876,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3480">
           <caret line="264" column="0" lean-forward="false" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
-          <folding>
-            <marker date="1508253095267" expanded="true" signature="6:127" ph="..." />
-            <marker date="1508253095267" expanded="true" signature="188:276" ph="{...}" />
-            <marker date="1508253095267" expanded="true" signature="321:9559" ph="{...}" />
-            <marker date="1508253095267" expanded="true" signature="9402:9412" ph="{...}" />
-            <marker date="1508253095267" expanded="true" signature="9422:9553" ph="/* public void SetPlan(int i) { ... */" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -923,12 +905,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/InterfaceController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding>
+            <marker date="1507890153635" expanded="false" signature="6:105" ph="..." />
+            <marker date="1507890153635" expanded="true" signature="156:831" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="364:395" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="425:457" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="489:552" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="585:620" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="640:672" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="712:754" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="786:829" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="114" column="16" lean-forward="false" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
+          <folding>
+            <marker date="1508253095266" expanded="false" signature="6:166" ph="..." />
+            <marker date="1508253095266" expanded="true" signature="206:4648" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="679:805" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="832:871" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="894:953" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="996:1175" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="1006:1071" ph="/* MainLogic.inst.SetQuarter(number); ... */" />
+            <marker date="1508253095266" expanded="true" signature="1222:2410" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="1395:1828" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="1559:1619" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="1692:1751" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="2000:2052" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="2125:2176" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="2469:3725" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="2506:2997" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="2565:2987" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="2639:2795" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="3061:3481" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="3135:3290" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="3753:3830" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="3878:4473" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="3985:4299" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="4099:4222" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="4319:4376" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="4506:4570" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="4599:4646" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Quiz.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1259">
+        <state relative-caret-position="1305">
           <caret line="91" column="11" lean-forward="false" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="11" />
           <folding>
-            <marker date="1508251634176" expanded="true" signature="6:114" ph="..." />
+            <marker date="1508251634176" expanded="false" signature="6:114" ph="..." />
             <marker date="1508251634176" expanded="true" signature="149:2005" ph="{...}" />
             <marker date="1508251634176" expanded="true" signature="186:609" ph="{...}" />
             <marker date="1508251634176" expanded="true" signature="780:898" ph="{...}" />
@@ -942,6 +977,13 @@
             <marker date="1508251634176" expanded="true" signature="1927:2003" ph="{...}" />
             <marker date="1508251634176" expanded="true" signature="1931:2000" ph="/* if (Input.GetKeyDown(&quot;m&quot;)) ... */" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ColliderLab/Assets/coll.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -972,6 +1014,36 @@
             <marker date="1508251649642" expanded="true" signature="258:313" ph="{...}" />
             <marker date="1508251649642" expanded="true" signature="334:380" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ColliderProcessor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding>
+            <marker date="1508351202627" expanded="false" signature="6:78" ph="..." />
+            <marker date="1508351202627" expanded="true" signature="126:1232" ph="{...}" />
+            <marker date="1508351202627" expanded="true" signature="299:358" ph="{...}" />
+            <marker date="1508351202627" expanded="true" signature="361:600" ph="/* private void OnTriggerEnter(Collider other) ... */" />
+            <marker date="1508351202627" expanded="true" signature="645:941" ph="{...}" />
+            <marker date="1508351202627" expanded="true" signature="684:938" ph="{...}" />
+            <marker date="1508351202627" expanded="true" signature="744:934" ph="{...}" />
+            <marker date="1508351202627" expanded="true" signature="791:856" ph="{...}" />
+            <marker date="1508351202627" expanded="true" signature="865:929" ph="{...}" />
+            <marker date="1508351202627" expanded="true" signature="986:1031" ph="{...}" />
+            <marker date="1508351202627" expanded="true" signature="1034:1132" ph="/* private void OnTriggerStay(Collider other) ... */" />
+            <marker date="1508351202627" expanded="true" signature="1134:1169" ph="/* public IEnumerator Kick() ... */" />
+            <marker date="1508351202627" expanded="true" signature="1223:1230" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/CupController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="87" column="14" lean-forward="false" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

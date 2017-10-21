@@ -21,8 +21,6 @@ namespace Assets.Mega.Scripts {
         public GameObject parentFloor;
         public bool newFloor;
         public bool oldFloor;
-        
-
 
         public void Awake () {
             inst = this;

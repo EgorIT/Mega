@@ -96,6 +96,7 @@ namespace Assets.Mega.Scripts {
             if(!MegaCameraController.inst.isFirstLookScene) {
                 return;
             }
+
             if(clickCoroutine != null) {
                 StopCoroutine(clickCoroutine);
             }
@@ -113,6 +114,17 @@ namespace Assets.Mega.Scripts {
                 pointerMoveToShop.lookPoint.eulerAngles));
         }
 
+        public void MoveForThisArrowOnFloor (ArrowOnFloor arrowOnFloor) {
+            if(clickCoroutine != null) {
+                StopCoroutine(clickCoroutine);
+            }
+            var v3 = new Vector3(arrowOnFloor.pointerEventData.pointerCurrentRaycast.worldPosition.x,
+                GlobalParams.distansEye,
+                arrowOnFloor.pointerEventData.pointerCurrentRaycast.worldPosition.z);
+
+            clickCoroutine = StartCoroutine(IEnumCheckSwipe(v3, MegaCameraController.inst.currentEndAng));
+        }
+
         public void StopClickCoroutine () {
             if(clickCoroutine != null) {
                 StopCoroutine(clickCoroutine);
@@ -121,6 +133,8 @@ namespace Assets.Mega.Scripts {
 
         public IEnumerator IEnumCheckSwipe (Vector3 pointMove, Vector3 endAng) {
             yield return new WaitForSeconds(0.5f);
+            ArrowController.inst.AllArrowBack();
+            //Debug.Log(pointMove.y);
             MegaCameraController.inst.SetNewPosCamera(pointMove, endAng,
                 GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.normal);
         }

@@ -17,7 +17,7 @@ namespace Assets.Mega.Scripts {
 
         public void Start () {
 
-
+            
             meshs = GetComponentsInChildren<MeshRenderer>().ToList();
 
             for (int i = 0; i < meshs.Count; i++) {

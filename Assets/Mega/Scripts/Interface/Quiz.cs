@@ -24,7 +24,7 @@ public class Quiz : MonoBehaviour
 	public Text content;
 	private int curr = 0;
 	
-	private void OnEnable()
+	public void OnEnable()
 	{
 		b1.SetActive(true);
 		b2.SetActive(true);

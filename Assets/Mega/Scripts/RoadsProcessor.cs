@@ -9,21 +9,26 @@ public class RoadsProcessor : MonoBehaviour {
     private List<Color> colorsOld = new List<Color>();
     private List<Material> materialsNew = new List<Material>();
 	private List<Color> colorsNew = new List<Color>();
+
+	public GameObject goOld;
+	public GameObject goNew;
     //public GameObject glass;
 	
 	void Start () {
+		//goNew.SetActive(true);
+		//goOld.SetActive(true);
 		List<MeshRenderer> mrlOld = new List<MeshRenderer>();
 		List<MeshRenderer> mrlNew = new List<MeshRenderer>();
-		GameObject goOld = GameObject.FindWithTag("OldRoads");
-		GameObject goNew = GameObject.FindWithTag("NewRoads");
+		//GameObject goOld = GameObject.FindWithTag("parkNow");
+		//GameObject goNew = GameObject.FindWithTag("parkAfter");
 		mrlOld = goOld.GetComponentsInChildren<MeshRenderer>().ToList();
 		mrlNew = goNew.GetComponentsInChildren<MeshRenderer>().ToList();
 
+		
 		mrlOld.ForEach(x => {
 			x.materials.ToList().ForEach(y => {
 				materialsOld.Add(y);
 				colorsOld.Add(y.color);
-				//Debug.Log(y.name+" "+y.GetInstanceID());
 			});
 
 		});
@@ -32,16 +37,32 @@ public class RoadsProcessor : MonoBehaviour {
 			x.materials.ToList().ForEach(y => {
 				materialsNew.Add(y);
 				colorsNew.Add(y.color);
-				//Debug.Log(y.name+" "+y.GetInstanceID());
 			});
-
 		});
-
+		/*Debug.Log(materialsOld.Count);
+		Debug.Log(colorsOld.Count);
+		Debug.Log(materialsNew.Count);
+		Debug.Log(colorsNew.Count);*/
+		//goOld.SetActive(true);
 	}
-	
+
+	public void ToOldDo()
+	{
+		goNew.SetActive(true);
+		goOld.SetActive(true);
+		StartCoroutine(ToOld());
+	}
+
+	public void ToNewDo()
+	{
+		goNew.SetActive(true);
+		goOld.SetActive(true);
+		StartCoroutine(ToNew());
+	}
+
 	private IEnumerator ToNew () {
 		float time = 0;
-		float time2 = .3f;
+		float time2 = .5f;
 		while(time < time2) {
 			float temp = Mathf.Lerp(1, 0, time / time2);
 
@@ -73,14 +94,14 @@ public class RoadsProcessor : MonoBehaviour {
 		{
 			materialsNew[i].SetColor("_Color", colorsNew[i]);
 		}
-		
-		AllCaps.allCaps.Refresh();
+		goOld.SetActive(false);
+		//AllCaps.allCaps.Refresh();
 		yield return null;
 	}
 	
 	private IEnumerator ToOld () {
 		float time = 0;
-		float time2 = .3f;
+		float time2 = .5f;
 		while(time < time2) {
 			float temp = Mathf.Lerp(1, 0, time / time2);
 
@@ -112,13 +133,21 @@ public class RoadsProcessor : MonoBehaviour {
 		{
 			materialsOld[i].SetColor("_Color", colorsOld[i]);
 		}
-		
-		AllCaps.allCaps.Refresh();
+		goNew.SetActive(false);
+		//AllCaps.allCaps.Refresh();
 		yield return null;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKeyDown("b"))
+		{
+			ToNewDo();
+		}
+
+		if (Input.GetKeyDown("n"))
+		{
+			ToOldDo();
+		}
 	}
 }

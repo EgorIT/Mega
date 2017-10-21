@@ -20,7 +20,7 @@ namespace Assets.Mega.Scripts {
         public void LookBack() {
             transform.LookAt(MegaCameraController.inst.posCamera);
             transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
-            transform.localEulerAngles += new Vector3(0, 180, 0);
+            //transform.localEulerAngles += new Vector3(0, 180, 0);
         }
 
         public void CheckPosition () {

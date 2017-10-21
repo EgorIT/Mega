@@ -44,6 +44,9 @@ namespace Assets.Mega.Scripts {
 
         public bool showTableAndCaps;
 
+        public Video mainVideo;
+        public VideoLogo logo;
+
         public void Awake () {
             inst = this;
             FindNeedObject();
@@ -62,9 +65,9 @@ namespace Assets.Mega.Scripts {
 
         public void FindNeedObject () {
             parkNow = GameObject.FindGameObjectWithTag("parkNow");
-            parkNow.SetActive(false);
+            parkNow.SetActive(true);
             parkAfter = GameObject.FindGameObjectWithTag("parkAfter");
-            parkAfter.SetActive(true);
+            parkAfter.SetActive(false);
             interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
             interfaceMega.SetActive(false);
         }
@@ -88,8 +91,8 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SwapParking (bool showNew) {
-            parkNow.SetActive(!showNew);
-            parkAfter.SetActive(showNew);
+            parkNow.SetActive(showNew);
+            parkAfter.SetActive(!showNew);
             
         }
 
@@ -154,8 +157,16 @@ namespace Assets.Mega.Scripts {
             }
         }
 
+        public void GoVideo() {
+            StateOne.inst.isShowVideo = true;
+            ChangeState(ViewStates.one);
+        }
+
         public void Update () {
-            currentTime += Time.deltaTime;
+            if (viewCurrentStates != ViewStates.one) {
+                currentTime += Time.deltaTime;
+            }
+            
             if(currentTime > GlobalParams.needTimeToSleep) {
                 currentTime = GlobalParams.needTimeToSleep;
                 ChangeState(ViewStates.one);

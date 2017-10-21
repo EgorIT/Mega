@@ -32,6 +32,7 @@ namespace Assets.Mega.Scripts {
         public void ScanAllPoints() {
             var allPoints = rootStateLooksTransform.GetComponentsInChildren<Transform>();
             for (int i = 1; i < allPoints.Length; i++) {
+                allPoints[i].GetComponent<MeshRenderer>().enabled = false;
                 listStateLooksTransform.Add(allPoints[i]);
             }
         }

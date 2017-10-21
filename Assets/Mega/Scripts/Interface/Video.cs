@@ -17,10 +17,12 @@ public class Video : MonoBehaviour {
         startScale = transform.localScale;
     }
 
+    public void Start() {
+        vp.Stop();
+        mr.material.color = new Color(1, 1, 1, 0);
+    }
+
     public void FadeOff() {
-        //vp.Play();
-        vp.frame = 4;
-        vp.Pause();
         if (fadeCoroutine != null) {
             StopCoroutine(fadeCoroutine);
         }
@@ -28,9 +30,8 @@ public class Video : MonoBehaviour {
     }
 
     public void FadeOn () {
-        //vp.Play();
-        vp.frame = 4;
-        vp.Pause();
+        vp.frame = 1;
+        vp.Play();
         if(fadeCoroutine != null) {
             StopCoroutine(fadeCoroutine);
         }

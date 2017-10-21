@@ -15,7 +15,7 @@ public class Swaper : MonoBehaviour
 
 	private IEnumerator Delayer()
 	{
-		yield return new WaitForSeconds(5f);
+		yield return new WaitForSeconds(3f);
 		Swap();
 	}
 

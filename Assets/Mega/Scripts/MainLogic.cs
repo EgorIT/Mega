@@ -93,11 +93,11 @@ namespace Assets.Mega.Scripts {
         public void SwapParking (bool showNew) {
             if (showNew)
             {
-                RoadsProcessor.inst.ToOldDo();
+                RoadsProcessor.inst.ToNewDo();
             }
             else
             {
-                RoadsProcessor.inst.ToNewDo();
+                RoadsProcessor.inst.ToOldDo();
             }
             //parkNow.SetActive(showNew);
             //parkAfter.SetActive(!showNew);

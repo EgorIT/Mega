@@ -145,7 +145,7 @@ public class RoadsProcessor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown("b"))
+		/*if (Input.GetKeyDown("b"))
 		{
 			ToNewDo();
 		}
@@ -153,6 +153,6 @@ public class RoadsProcessor : MonoBehaviour {
 		if (Input.GetKeyDown("n"))
 		{
 			ToOldDo();
-		}
+		}*/
 	}
 }

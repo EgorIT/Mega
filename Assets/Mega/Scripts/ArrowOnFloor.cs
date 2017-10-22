@@ -20,24 +20,22 @@ namespace Assets.Mega.Scripts {
         public void LookBack() {
             transform.LookAt(MegaCameraController.inst.posCamera);
             transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
-            //transform.localEulerAngles += new Vector3(0, 180, 0);
+            transform.localEulerAngles += new Vector3(0, 270, 0);
         }
 
         public void CheckPosition () {
             var dist = (transform.position - MegaCameraController.inst.posCamera.position).sqrMagnitude;
-            if(dist < GlobalParams.arrowDistansSqrt && MainLogic.inst.GetViewCurrentStates() ==
+            if(dist < GlobalParams.arrowDistansSqrt && dist > GlobalParams.arrowMinDistansSqrt && MainLogic.inst.GetViewCurrentStates() ==
                ViewStates.firstFaceLook) {
                 LookBack();
                 if(!collider.enabled) {
                     StartCoroutine(IEnumChangeScale(Vector3.one));
                 }
-
             } else {
                 if(collider.enabled) {
                     StartCoroutine(IEnumChangeScale(Vector3.zero));
                 }
             }
-
         }
 
         public void OnPointerDown (PointerEventData data) {
@@ -45,7 +43,6 @@ namespace Assets.Mega.Scripts {
             if(MegaCameraController.inst.isFirstLookScene) {
                 StateFirstFaceLook.inst.MoveForThisArrowOnFloor(this);
             }
-            
         }
 
         public void Fly() {

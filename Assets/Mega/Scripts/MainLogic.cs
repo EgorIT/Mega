@@ -16,7 +16,7 @@ namespace Assets.Mega.Scripts {
     public class MainLogic : MonoBehaviour {
         public static MainLogic inst;
 
-        public bool isTest;
+        //public bool isTest;
 
         public List<SceneForFirstFaceLook> AllFirstFaceLookScenes = new List<SceneForFirstFaceLook>();
         private ViewStates viewCurrentStates = ViewStates.none;
@@ -40,7 +40,7 @@ namespace Assets.Mega.Scripts {
 
 
 
-        public bool boolWindowMod;
+       // public bool boolWindowMod;
 
         public bool showTableAndCaps;
 

@@ -73,14 +73,17 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start () {
-            if(!isTest) {
-                for(int i = 0; i < listToOnTEMP.Count; i++) {
-                    listToOnTEMP[i].SetActive(true);
-                }
-            }
+            //if(!isTest) {
+            //    for(int i = 0; i < listToOnTEMP.Count; i++) {
+            //        if (listToOnTEMP[i]) {
+            //            listToOnTEMP[i].SetActive(true);
+            //        }
+            //        
+            //    }
+            //}
             //Debug.Log("w = " + Screen.currentResolution.width);
             //Debug.Log("h = " + Screen.currentResolution.height);
-            if(boolWindowMod && Application.platform != RuntimePlatform.WindowsEditor) {
+            if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
                 StartCoroutine(IEnumWaitWindowMod());
             }
         }
@@ -91,12 +94,9 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SwapParking (bool showNew) {
-            if (showNew)
-            {
+            if(showNew) {
                 RoadsProcessor.inst.ToNewDo();
-            }
-            else
-            {
+            } else {
                 RoadsProcessor.inst.ToOldDo();
             }
             //parkNow.SetActive(showNew);
@@ -139,7 +139,7 @@ namespace Assets.Mega.Scripts {
         public void DisRoof (float time) {
             if(roofEnable) {
                 roofEnable = false;
-                
+
                 StartCoroutine(IEnumDisRoof(time));
             }
 
@@ -149,43 +149,43 @@ namespace Assets.Mega.Scripts {
             if(!roofEnable) {
                 roofEnable = true;
                 //TableController.inst.ShowAllShops();
-                if (RoofProcessor.inst) {
+                if(RoofProcessor.inst) {
                     RoofProcessor.inst.DoStandard();
                 }
-                
+
             }
         }
 
         public IEnumerator IEnumDisRoof (float time) {
             yield return new WaitForSeconds(time);
-           
+
             if(RoofProcessor.inst) {
                 RoofProcessor.inst.DoTransparent();
             }
         }
 
-        public void GoVideo() {
+        public void GoVideo () {
             StateOne.inst.isShowVideo = true;
             ChangeState(ViewStates.one);
         }
 
         public void Update () {
-            if (viewCurrentStates != ViewStates.one) {
+            if(viewCurrentStates != ViewStates.one) {
                 currentTime += Time.deltaTime;
             }
-            
+
             if(currentTime > GlobalParams.needTimeToSleep) {
                 currentTime = GlobalParams.needTimeToSleep;
                 ChangeState(ViewStates.one);
                 //Timeline.inst.Sleep();
                 AllCaps.allCaps.ActivateAll();
             }
-            
 
-            if (MegaCameraController.inst.GetCurrentDistans() > -5000 && MegaCameraController.inst.GetCurrentDistans() < -100) {
-                if (!showTableAndCaps) {
+
+            if(MegaCameraController.inst.GetCurrentDistans() > -5000 && MegaCameraController.inst.GetCurrentDistans() < -100) {
+                if(!showTableAndCaps) {
                     showTableAndCaps = true;
-                    if (TableController.inst) {
+                    if(TableController.inst) {
                         TableController.inst.ShowAllTable();
                     }
                     if(AllCaps.inst) {
@@ -194,7 +194,7 @@ namespace Assets.Mega.Scripts {
                 }
             }
 
-            if (MegaCameraController.inst.GetCurrentDistans() < -5000) {
+            if(MegaCameraController.inst.GetCurrentDistans() < -5000) {
                 if(showTableAndCaps) {
                     showTableAndCaps = false;
                     if(TableController.inst) {
@@ -206,25 +206,25 @@ namespace Assets.Mega.Scripts {
                 }
             }
 
-                //if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega - 500) {
-                //    if (!roofEnable) {
-                //        roofEnable = true;
-                //        if (RoofProcessor.inst) {
-                //            RoofProcessor.inst.DoStandard();
-                //        }
-                //        //TableController.inst.DisAllShops();
-                //    }
-                //
-                //}
-                //if(MegaCameraController.inst.GetCurrentDistans() > GlobalParams.distansOnAllMega + 1000 && MegaCameraController.inst.GetCurrentDistans() < -1001) {
-                //    if(roofEnable) {
-                //        roofEnable = false;
-                //        if (RoofProcessor.inst) {
-                //            RoofProcessor.inst.DoTransparent();
-                //        }
-                //        //TableController.inst.ShowAllShops();
-                //    }
-                //}
+            //if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega - 500) {
+            //    if (!roofEnable) {
+            //        roofEnable = true;
+            //        if (RoofProcessor.inst) {
+            //            RoofProcessor.inst.DoStandard();
+            //        }
+            //        //TableController.inst.DisAllShops();
+            //    }
+            //
+            //}
+            //if(MegaCameraController.inst.GetCurrentDistans() > GlobalParams.distansOnAllMega + 1000 && MegaCameraController.inst.GetCurrentDistans() < -1001) {
+            //    if(roofEnable) {
+            //        roofEnable = false;
+            //        if (RoofProcessor.inst) {
+            //            RoofProcessor.inst.DoTransparent();
+            //        }
+            //        //TableController.inst.ShowAllShops();
+            //    }
+            //}
 
 
         }

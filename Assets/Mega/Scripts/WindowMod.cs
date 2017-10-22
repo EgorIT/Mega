@@ -26,10 +26,10 @@ public class WindowMod : MonoBehaviour {
            Debug.Log("ChangeScreenResolution");
         screenPosition.x = 0;
         screenPosition.y = 0;
-        screenPosition.width = 3840;//Screen.currentResolution.width;
-        screenPosition.height = 2160;//Screen.currentResolution.height;
+        screenPosition.width = 1920;//3840 Screen.currentResolution.width;
+        screenPosition.height = 1080;//2160 Screen.currentResolution.height;
         SetWindowLong(GetForegroundWindow(), GWL_STYLE, WS_BORDER);
         bool result = SetWindowPos(GetForegroundWindow(), 0, (int)screenPosition.x, (int)screenPosition.y, (int)screenPosition.width, (int)screenPosition.height, SWP_SHOWWINDOW);
     }
-
+ 
 }

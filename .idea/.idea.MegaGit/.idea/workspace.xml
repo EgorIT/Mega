@@ -18,8 +18,8 @@
       <file leaf-file-name="RoofProcessor.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/RoofProcessor.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="17" column="5" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
               <folding>
                 <marker date="1508253095277" expanded="false" signature="6:218" ph="..." />
                 <marker date="1508253095277" expanded="true" signature="263:6671" ph="{...}" />
@@ -54,49 +54,114 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoadsProcessor.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RoadsProcessor.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/RoadsProcessor.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state relative-caret-position="764">
+              <caret line="155" column="11" lean-forward="false" selection-start-line="155" selection-start-column="11" selection-end-line="155" selection-end-column="11" />
               <folding>
-                <marker date="1508622968569" expanded="true" signature="6:97" ph="..." />
-                <marker date="1508622968569" expanded="true" signature="143:3744" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="516:1361" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="520:571" ph="/* goNew.SetActive(true); ... */" />
-                <marker date="1508622968569" expanded="true" signature="686:801" ph="/* GameObject goOld = GameObject.FindWithTag(&quot;parkNow&quot;); ... */" />
-                <marker date="1508622968569" expanded="true" signature="962:1067" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="1001:1060" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="1095:1199" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="1134:1193" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="1204:1331" ph="/* Debug.Log(materialsOld.Count); ... */" />
-                <marker date="1508622968569" expanded="true" signature="1385:1468" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="1492:1575" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="1607:2577" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="1670:2193" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="1767:1924" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="1973:2136" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="2240:2385" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="2435:2496" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="2610:3580" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="2673:3196" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="2770:2927" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="2976:3139" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="3243:3388" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="3438:3499" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="3635:3742" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="3665:3687" ph="{...}" />
-                <marker date="1508622968569" expanded="true" signature="3717:3739" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="6:124" ph="..." />
+                <marker date="1508632898623" expanded="true" signature="170:3868" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="550:569" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="587:1481" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="591:642" ph="/* goNew.SetActive(true); ... */" />
+                <marker date="1508632898623" expanded="true" signature="1082:1187" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="1121:1180" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="1215:1319" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="1254:1313" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="1324:1451" ph="/* Debug.Log(materialsOld.Count); ... */" />
+                <marker date="1508632898623" expanded="true" signature="1505:1588" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="1612:1695" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="1727:2697" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="1790:2313" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="1887:2044" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="2093:2256" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="2360:2505" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="2555:2616" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="2730:3700" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="2793:3316" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="2890:3047" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="3096:3259" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="3363:3508" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="3558:3619" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="3755:3866" ph="{...}" />
+                <marker date="1508632898623" expanded="true" signature="3759:3863" ph="/* if (Input.GetKeyDown(&quot;b&quot;)) ... */" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShopCap.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainLogic.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1575">
+              <caret line="102" column="44" lean-forward="false" selection-start-line="102" selection-start-column="44" selection-end-line="102" selection-end-column="44" />
+              <folding>
+                <marker date="1508632760626" expanded="false" signature="6:127" ph="..." />
+                <marker date="1508632760626" expanded="true" signature="159:10032" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="188:276" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="321:10030" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="1235:1301" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="1353:1402" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="1473:1528" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="1568:1918" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="1949:2423" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="1975:2123" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="2037:2109" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="2136:2256" ph="/* Debug.Log(&quot;w = &quot; + Screen.currentResolution.width); ... */" />
+                <marker date="1508632760626" expanded="true" signature="2344:2413" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="2474:2578" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="2627:2917" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="2653:2728" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="2745:2820" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="2833:2907" ph="/* parkNow.SetActive(showNew); ... */" />
+                <marker date="1508632760626" expanded="true" signature="2927:4072" ph="/* public void SetQuarter(int number) { ... */" />
+                <marker date="1508632760626" expanded="true" signature="4107:4340" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="4383:4543" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="4412:4532" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="4579:4854" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="4609:4844" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="4741:4813" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="4909:5086" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="5009:5076" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="5118:5216" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="5248:7569" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="5303:5365" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="5438:5646" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="5788:6151" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="5829:6137" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="5922:6006" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="6044:6119" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="6224:6585" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="6263:6571" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="6356:6440" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="6478:6553" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="6603:7557" ph="/* if (MegaCameraController.inst.GetCurrentDistans() &lt; GlobalParams.distansOnAllMega - 500) { ... */" />
+                <marker date="1508632760626" expanded="true" signature="7625:8218" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="7707:7746" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="7867:8165" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="7944:8013" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="8080:8151" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="8277:9024" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="8444:8841" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="8532:8827" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="8612:8809" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="9034:9380" ph="/* public IEnumerator IEnumGoToSceneFirstLook(string nameScene, Transform transform) { ... */" />
+                <marker date="1508632760626" expanded="true" signature="9390:9678" ph="/* public void GoToAllSeeTransform () { ... */" />
+                <marker date="1508632760626" expanded="true" signature="9688:9779" ph="/* public void GoMiddleView() { ... */" />
+                <marker date="1508632760626" expanded="true" signature="9819:9831" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="9871:9883" ph="{...}" />
+                <marker date="1508632760626" expanded="true" signature="9893:10024" ph="/* public void SetPlan(int i) { ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopCap.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ShopCap.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="28" />
+            <state relative-caret-position="659">
+              <caret line="60" column="25" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
               <folding>
                 <marker date="1508253095266" expanded="false" signature="6:105" ph="..." />
                 <marker date="1508253095266" expanded="true" signature="144:1555" ph="{...}" />
@@ -209,68 +274,47 @@
       <file leaf-file-name="Table.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Table.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+            <state relative-caret-position="1095">
+              <caret line="73" column="66" lean-forward="false" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
               <folding>
-                <marker date="1508235823491" expanded="false" signature="6:78" ph="..." />
-                <marker date="1508235823491" expanded="true" signature="115:2285" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="443:548" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="554:695" ph="/* private void OnEnable() ... */" />
-                <marker date="1508235823491" expanded="true" signature="723:828" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="742:822" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="875:1525" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="1012:1326" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="1126:1249" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="1346:1428" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="1554:1739" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="1574:1733" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="1647:1710" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="1770:1910" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="1970:2113" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="2134:2283" ph="{...}" />
-                <marker date="1508235823491" expanded="true" signature="2144:2277" ph="/* if(Input.GetKeyDown(&quot;a&quot;)) { ... */" />
+                <marker date="1508630112783" expanded="true" signature="6:78" ph="..." />
+                <marker date="1508630112783" expanded="true" signature="115:2289" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="443:548" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="554:695" ph="/* private void OnEnable() ... */" />
+                <marker date="1508630112783" expanded="true" signature="723:828" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="742:822" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="875:1525" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="1012:1326" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="1126:1249" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="1346:1428" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="1554:1739" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="1574:1733" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="1647:1710" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="1770:1914" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="1779:1908" ph="/* if(countdown != null) ... */" />
+                <marker date="1508630112783" expanded="true" signature="1974:2117" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="2138:2287" ph="{...}" />
+                <marker date="1508630112783" expanded="true" signature="2148:2281" ph="/* if(Input.GetKeyDown(&quot;a&quot;)) { ... */" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Quiz.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Quiz.cs">
+      <file leaf-file-name="InterfaceController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/InterfaceController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="75" column="25" lean-forward="false" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+            <state relative-caret-position="405">
+              <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
               <folding>
-                <marker date="1508616655405" expanded="false" signature="6:114" ph="..." />
-                <marker date="1508616655405" expanded="true" signature="149:2004" ph="{...}" />
-                <marker date="1508616655405" expanded="true" signature="186:609" ph="{...}" />
-                <marker date="1508616655405" expanded="true" signature="779:897" ph="{...}" />
-                <marker date="1508616655405" expanded="true" signature="930:1242" ph="{...}" />
-                <marker date="1508616655405" expanded="true" signature="972:1149" ph="{...}" />
-                <marker date="1508616655405" expanded="true" signature="1265:1303" ph="{...}" />
-                <marker date="1508616655405" expanded="true" signature="1338:1765" ph="{...}" />
-                <marker date="1508616655405" expanded="true" signature="1380:1558" ph="{...}" />
-                <marker date="1508616655405" expanded="true" signature="1660:1741" ph="{...}" />
-                <marker date="1508616655405" expanded="true" signature="1813:1871" ph="{...}" />
-                <marker date="1508616655405" expanded="true" signature="1926:2002" ph="{...}" />
-                <marker date="1508616655405" expanded="true" signature="1930:1999" ph="/* if (Input.GetKeyDown(&quot;m&quot;)) ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Backer.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Backer.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1505980968920" expanded="false" signature="6:78" ph="..." />
-                <marker date="1505980968920" expanded="true" signature="115:492" ph="{...}" />
-                <marker date="1505980968920" expanded="true" signature="234:372" ph="{...}" />
-                <marker date="1505980968920" expanded="true" signature="248:297" ph="{...}" />
-                <marker date="1505980968920" expanded="true" signature="304:369" ph="{...}" />
-                <marker date="1505980968920" expanded="true" signature="421:428" ph="{...}" />
-                <marker date="1505980968920" expanded="true" signature="483:490" ph="{...}" />
+                <marker date="1507890153635" expanded="true" signature="6:105" ph="..." />
+                <marker date="1507890153635" expanded="true" signature="156:831" ph="{...}" />
+                <marker date="1507890153635" expanded="true" signature="364:395" ph="{...}" />
+                <marker date="1507890153635" expanded="true" signature="425:457" ph="{...}" />
+                <marker date="1507890153635" expanded="true" signature="489:552" ph="{...}" />
+                <marker date="1507890153635" expanded="true" signature="585:620" ph="{...}" />
+                <marker date="1507890153635" expanded="true" signature="640:672" ph="{...}" />
+                <marker date="1507890153635" expanded="true" signature="712:754" ph="{...}" />
+                <marker date="1507890153635" expanded="true" signature="786:829" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -404,16 +448,16 @@
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/TableShop.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/TableController.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/GlobalParams.cs" />
-        <option value="$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/InterfaceController.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/BasicStarter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Table.cs" />
         <option value="$PROJECT_DIR$/../ColliderLab/Assets/coll.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ColliderProcessor.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/CupController.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Quiz.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Table.cs" />
+        <option value="$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/RoadsProcessor.cs" />
       </list>
     </option>
@@ -589,7 +633,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112958000" />
+    <option name="totallyTimeSpent" value="115322000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -601,7 +645,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -896,31 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3480">
-          <caret line="264" column="0" lean-forward="false" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/InterfaceController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding>
-            <marker date="1507890153635" expanded="false" signature="6:105" ph="..." />
-            <marker date="1507890153635" expanded="true" signature="156:831" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="364:395" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="425:457" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="489:552" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="585:620" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="640:672" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="712:754" ph="{...}" />
-            <marker date="1507890153635" expanded="true" signature="786:829" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1635">
@@ -1029,32 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Table.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding>
-            <marker date="1508235823491" expanded="false" signature="6:78" ph="..." />
-            <marker date="1508235823491" expanded="true" signature="115:2285" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="443:548" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="554:695" ph="/* private void OnEnable() ... */" />
-            <marker date="1508235823491" expanded="true" signature="723:828" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="742:822" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="875:1525" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="1012:1326" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="1126:1249" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="1346:1428" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="1554:1739" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="1574:1733" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="1647:1710" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="1770:1910" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="1970:2113" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="2134:2283" ph="{...}" />
-            <marker date="1508235823491" expanded="true" signature="2144:2277" ph="/* if(Input.GetKeyDown(&quot;a&quot;)) { ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/TableController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1111,10 +1104,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/TableShop.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+          <folding>
+            <marker date="1508253095281" expanded="false" signature="6:146" ph="..." />
+            <marker date="1508253095281" expanded="true" signature="178:2917" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="184:289" ph="/* public enum AngelsLook { ... */" />
+            <marker date="1508253095281" expanded="true" signature="334:2915" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="683:694" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="725:796" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="831:896" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="938:1519" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="1381:1429" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="1460:1509" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="1556:1762" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="1592:1681" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="1799:2118" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="1813:1900" ph="/* if(!shopCap.gameObject.activeInHierarchy) { ... */" />
+            <marker date="1508253095281" expanded="true" signature="1934:2023" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="2149:2244" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="2309:2908" ph="{...}" />
+            <marker date="1508253095281" expanded="true" signature="2499:2844" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ShopCap.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="60" column="25" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+          <folding>
+            <marker date="1508253095266" expanded="false" signature="6:105" ph="..." />
+            <marker date="1508253095266" expanded="true" signature="144:1555" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="451:720" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="575:705" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="638:695" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="751:790" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="820:957" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="830:951" ph="/* if (tableShop) { ... */" />
+            <marker date="1508253095266" expanded="true" signature="986:1225" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="1049:1219" ph="/* gameObject.SetActive(false); ... */" />
+            <marker date="1508253095266" expanded="true" signature="1252:1358" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="1272:1352" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="1384:1551" ph="{...}" />
+            <marker date="1508253095266" expanded="true" signature="1490:1544" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/InterfaceController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding>
+            <marker date="1507890153635" expanded="true" signature="6:105" ph="..." />
+            <marker date="1507890153635" expanded="true" signature="156:831" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="364:395" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="425:457" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="489:552" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="585:620" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="640:672" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="712:754" ph="{...}" />
+            <marker date="1507890153635" expanded="true" signature="786:829" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Table.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="73" column="66" lean-forward="false" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
+          <folding>
+            <marker date="1508630112783" expanded="true" signature="6:78" ph="..." />
+            <marker date="1508630112783" expanded="true" signature="115:2289" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="443:548" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="554:695" ph="/* private void OnEnable() ... */" />
+            <marker date="1508630112783" expanded="true" signature="723:828" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="742:822" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="875:1525" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="1012:1326" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="1126:1249" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="1346:1428" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="1554:1739" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="1574:1733" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="1647:1710" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="1770:1914" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="1779:1908" ph="/* if(countdown != null) ... */" />
+            <marker date="1508630112783" expanded="true" signature="1974:2117" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="2138:2287" ph="{...}" />
+            <marker date="1508630112783" expanded="true" signature="2148:2281" ph="/* if(Input.GetKeyDown(&quot;a&quot;)) { ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/RoofProcessor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="17" column="5" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
           <folding>
             <marker date="1508253095277" expanded="false" signature="6:218" ph="..." />
             <marker date="1508253095277" expanded="true" signature="263:6671" ph="{...}" />
@@ -1148,88 +1236,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1575">
+          <caret line="102" column="44" lean-forward="false" selection-start-line="102" selection-start-column="44" selection-end-line="102" selection-end-column="44" />
+          <folding>
+            <marker date="1508632760626" expanded="false" signature="6:127" ph="..." />
+            <marker date="1508632760626" expanded="true" signature="159:10032" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="188:276" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="321:10030" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="1235:1301" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="1353:1402" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="1473:1528" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="1568:1918" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="1949:2423" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="1975:2123" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="2037:2109" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="2136:2256" ph="/* Debug.Log(&quot;w = &quot; + Screen.currentResolution.width); ... */" />
+            <marker date="1508632760626" expanded="true" signature="2344:2413" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="2474:2578" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="2627:2917" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="2653:2728" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="2745:2820" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="2833:2907" ph="/* parkNow.SetActive(showNew); ... */" />
+            <marker date="1508632760626" expanded="true" signature="2927:4072" ph="/* public void SetQuarter(int number) { ... */" />
+            <marker date="1508632760626" expanded="true" signature="4107:4340" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="4383:4543" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="4412:4532" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="4579:4854" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="4609:4844" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="4741:4813" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="4909:5086" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="5009:5076" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="5118:5216" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="5248:7569" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="5303:5365" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="5438:5646" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="5788:6151" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="5829:6137" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="5922:6006" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="6044:6119" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="6224:6585" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="6263:6571" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="6356:6440" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="6478:6553" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="6603:7557" ph="/* if (MegaCameraController.inst.GetCurrentDistans() &lt; GlobalParams.distansOnAllMega - 500) { ... */" />
+            <marker date="1508632760626" expanded="true" signature="7625:8218" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="7707:7746" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="7867:8165" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="7944:8013" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="8080:8151" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="8277:9024" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="8444:8841" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="8532:8827" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="8612:8809" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="9034:9380" ph="/* public IEnumerator IEnumGoToSceneFirstLook(string nameScene, Transform transform) { ... */" />
+            <marker date="1508632760626" expanded="true" signature="9390:9678" ph="/* public void GoToAllSeeTransform () { ... */" />
+            <marker date="1508632760626" expanded="true" signature="9688:9779" ph="/* public void GoMiddleView() { ... */" />
+            <marker date="1508632760626" expanded="true" signature="9819:9831" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="9871:9883" ph="{...}" />
+            <marker date="1508632760626" expanded="true" signature="9893:10024" ph="/* public void SetPlan(int i) { ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/RoadsProcessor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="764">
+          <caret line="155" column="11" lean-forward="false" selection-start-line="155" selection-start-column="11" selection-end-line="155" selection-end-column="11" />
           <folding>
-            <marker date="1508622968569" expanded="true" signature="6:97" ph="..." />
-            <marker date="1508622968569" expanded="true" signature="143:3744" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="516:1361" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="520:571" ph="/* goNew.SetActive(true); ... */" />
-            <marker date="1508622968569" expanded="true" signature="686:801" ph="/* GameObject goOld = GameObject.FindWithTag(&quot;parkNow&quot;); ... */" />
-            <marker date="1508622968569" expanded="true" signature="962:1067" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="1001:1060" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="1095:1199" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="1134:1193" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="1204:1331" ph="/* Debug.Log(materialsOld.Count); ... */" />
-            <marker date="1508622968569" expanded="true" signature="1385:1468" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="1492:1575" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="1607:2577" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="1670:2193" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="1767:1924" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="1973:2136" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="2240:2385" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="2435:2496" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="2610:3580" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="2673:3196" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="2770:2927" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="2976:3139" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="3243:3388" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="3438:3499" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="3635:3742" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="3665:3687" ph="{...}" />
-            <marker date="1508622968569" expanded="true" signature="3717:3739" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/TableShop.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding>
-            <marker date="1508253095281" expanded="false" signature="6:146" ph="..." />
-            <marker date="1508253095281" expanded="true" signature="178:2917" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="184:289" ph="/* public enum AngelsLook { ... */" />
-            <marker date="1508253095281" expanded="true" signature="334:2915" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="683:694" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="725:796" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="831:896" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="938:1519" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="1381:1429" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="1460:1509" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="1556:1762" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="1592:1681" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="1799:2118" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="1813:1900" ph="/* if(!shopCap.gameObject.activeInHierarchy) { ... */" />
-            <marker date="1508253095281" expanded="true" signature="1934:2023" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="2149:2244" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="2309:2908" ph="{...}" />
-            <marker date="1508253095281" expanded="true" signature="2499:2844" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ShopCap.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="28" />
-          <folding>
-            <marker date="1508253095266" expanded="false" signature="6:105" ph="..." />
-            <marker date="1508253095266" expanded="true" signature="144:1555" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="451:720" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="575:705" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="638:695" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="751:790" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="820:957" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="830:951" ph="/* if (tableShop) { ... */" />
-            <marker date="1508253095266" expanded="true" signature="986:1225" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="1049:1219" ph="/* gameObject.SetActive(false); ... */" />
-            <marker date="1508253095266" expanded="true" signature="1252:1358" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="1272:1352" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="1384:1551" ph="{...}" />
-            <marker date="1508253095266" expanded="true" signature="1490:1544" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="6:124" ph="..." />
+            <marker date="1508632898623" expanded="true" signature="170:3868" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="550:569" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="587:1481" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="591:642" ph="/* goNew.SetActive(true); ... */" />
+            <marker date="1508632898623" expanded="true" signature="1082:1187" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="1121:1180" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="1215:1319" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="1254:1313" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="1324:1451" ph="/* Debug.Log(materialsOld.Count); ... */" />
+            <marker date="1508632898623" expanded="true" signature="1505:1588" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="1612:1695" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="1727:2697" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="1790:2313" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="1887:2044" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="2093:2256" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="2360:2505" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="2555:2616" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="2730:3700" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="2793:3316" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="2890:3047" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="3096:3259" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="3363:3508" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="3558:3619" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="3755:3866" ph="{...}" />
+            <marker date="1508632898623" expanded="true" signature="3759:3863" ph="/* if (Input.GetKeyDown(&quot;b&quot;)) ... */" />
           </folding>
         </state>
       </provider>

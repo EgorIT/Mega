@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Mega.Scripts;
 using UnityEngine;
 
 public class RoadsProcessor : MonoBehaviour {
-	public static RoofProcessor inst;
+	public static RoadsProcessor inst;
     private List<Material> materialsOld = new List<Material>();
     private List<Color> colorsOld = new List<Color>();
     private List<Material> materialsNew = new List<Material>();
@@ -14,13 +15,17 @@ public class RoadsProcessor : MonoBehaviour {
 	public GameObject goNew;
     //public GameObject glass;
 	
+	public void Awake() {
+		inst = this;
+	}
+	
 	void Start () {
 		//goNew.SetActive(true);
 		//goOld.SetActive(true);
 		List<MeshRenderer> mrlOld = new List<MeshRenderer>();
 		List<MeshRenderer> mrlNew = new List<MeshRenderer>();
-		//GameObject goOld = GameObject.FindWithTag("parkNow");
-		//GameObject goNew = GameObject.FindWithTag("parkAfter");
+		GameObject goOld = MainLogic.inst.parkNow;// GameObject.FindWithTag("parkNow");
+		GameObject goNew = MainLogic.inst.parkAfter;//GameObject.FindWithTag("parkAfter");
 		mrlOld = goOld.GetComponentsInChildren<MeshRenderer>().ToList();
 		mrlNew = goNew.GetComponentsInChildren<MeshRenderer>().ToList();
 
@@ -140,7 +145,7 @@ public class RoadsProcessor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown("b"))
+		/*if (Input.GetKeyDown("b"))
 		{
 			ToNewDo();
 		}
@@ -148,6 +153,6 @@ public class RoadsProcessor : MonoBehaviour {
 		if (Input.GetKeyDown("n"))
 		{
 			ToOldDo();
-		}
+		}*/
 	}
 }

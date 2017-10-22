@@ -69,9 +69,9 @@ public class Table : MonoBehaviour {
     }
 
     public void Countdown () {
-        if(countdown != null)
+       /* if(countdown != null)
             StopCoroutine(countdown);
-        countdown = StartCoroutine(CountdownCoroutine(seconds));
+        countdown = StartCoroutine(CountdownCoroutine(seconds));*/
     }
 
     public IEnumerator CountdownCoroutine (float seconds) {

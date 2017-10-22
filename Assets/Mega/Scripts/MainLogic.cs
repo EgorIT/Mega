@@ -35,8 +35,8 @@ namespace Assets.Mega.Scripts {
         private bool roofEnable = true;
 
 
-        private GameObject parkNow;
-        private GameObject parkAfter;
+        public GameObject parkNow;
+        public GameObject parkAfter;
 
 
 
@@ -91,9 +91,16 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SwapParking (bool showNew) {
-            parkNow.SetActive(showNew);
-            parkAfter.SetActive(!showNew);
-            
+            if (showNew)
+            {
+                RoadsProcessor.inst.ToOldDo();
+            }
+            else
+            {
+                RoadsProcessor.inst.ToNewDo();
+            }
+            //parkNow.SetActive(showNew);
+            //parkAfter.SetActive(!showNew);
         }
 
         //public void SetQuarter(int number) {

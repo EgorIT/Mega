@@ -92,8 +92,8 @@ namespace Assets.Mega.Scripts {
         }
 
         public IEnumerator IEnumWaitAfterStart() {
-            yield return new WaitForSeconds(2f);
-            Debug.Log("GO");
+            yield return new WaitForSeconds(1f);
+            //Debug.Log("GO");
             RoadsProcessor.inst.ToOldDo();
         }
 

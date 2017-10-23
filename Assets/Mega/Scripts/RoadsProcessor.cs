@@ -64,7 +64,7 @@ public class RoadsProcessor : MonoBehaviour {
     }
 
     private IEnumerator ToNew () {
-        Debug.Log("ToNew");
+        //Debug.Log("ToNew");
         float time = 0;
         float time2 = .5f;
         while(time < time2) {
@@ -104,7 +104,7 @@ public class RoadsProcessor : MonoBehaviour {
     }
 
     private IEnumerator ToOld () {
-        Debug.Log("ToOld");
+        //Debug.Log("ToOld");
         float time = 0;
         float time2 = .5f;
         while(time < time2) {

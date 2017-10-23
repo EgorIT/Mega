@@ -65,9 +65,9 @@ namespace Assets.Mega.Scripts {
 
         public void FindNeedObject () {
             parkNow = GameObject.FindGameObjectWithTag("parkNow");
-            parkNow.SetActive(true);
+            //parkNow.SetActive(true);
             parkAfter = GameObject.FindGameObjectWithTag("parkAfter");
-            parkAfter.SetActive(false);
+            //parkAfter.SetActive(false);
             interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
             interfaceMega.SetActive(false);
         }
@@ -87,14 +87,14 @@ namespace Assets.Mega.Scripts {
                 StartCoroutine(IEnumWaitWindowMod());
             }
             RoadsProcessor.inst.StartFromController();
-            RoadsProcessor.inst.ToOldDo();
+            RoadsProcessor.inst.ToNewDo();
             StartCoroutine(IEnumWaitAfterStart());
         }
 
         public IEnumerator IEnumWaitAfterStart() {
             yield return new WaitForSeconds(2f);
             Debug.Log("GO");
-            RoadsProcessor.inst.ToNewDo();
+            RoadsProcessor.inst.ToOldDo();
         }
 
         public IEnumerator IEnumWaitWindowMod () {
@@ -104,9 +104,9 @@ namespace Assets.Mega.Scripts {
 
         public void SwapParking (bool showNew) {
             if(showNew) {
-                RoadsProcessor.inst.ToNewDo();
-            } else {
                 RoadsProcessor.inst.ToOldDo();
+            } else {
+                RoadsProcessor.inst.ToNewDo();
             }
             //parkNow.SetActive(showNew);
             //parkAfter.SetActive(!showNew);

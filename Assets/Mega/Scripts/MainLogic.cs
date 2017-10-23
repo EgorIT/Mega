@@ -83,13 +83,22 @@ namespace Assets.Mega.Scripts {
             //}
             //Debug.Log("w = " + Screen.currentResolution.width);
             //Debug.Log("h = " + Screen.currentResolution.height);
-            //if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
-            //    StartCoroutine(IEnumWaitWindowMod());
-            //}
+            if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
+                StartCoroutine(IEnumWaitWindowMod());
+            }
+            RoadsProcessor.inst.StartFromController();
+            RoadsProcessor.inst.ToOldDo();
+            StartCoroutine(IEnumWaitAfterStart());
+        }
+
+        public IEnumerator IEnumWaitAfterStart() {
+            yield return new WaitForSeconds(2f);
+            Debug.Log("GO");
+            RoadsProcessor.inst.ToNewDo();
         }
 
         public IEnumerator IEnumWaitWindowMod () {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2f);
             WindowMod.StartFromController();
         }
 

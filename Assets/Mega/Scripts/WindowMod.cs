@@ -22,6 +22,7 @@ public class WindowMod : MonoBehaviour {
     const int GWL_STYLE = -16;
     const int WS_BORDER = 1;
 
+
     public static void StartFromController () {
            Debug.Log("ChangeScreenResolution");
         screenPosition.x = 0;

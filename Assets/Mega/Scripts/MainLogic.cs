@@ -83,13 +83,13 @@ namespace Assets.Mega.Scripts {
             //}
             //Debug.Log("w = " + Screen.currentResolution.width);
             //Debug.Log("h = " + Screen.currentResolution.height);
-            //if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
-            //    StartCoroutine(IEnumWaitWindowMod());
-            //}
+            if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
+                StartCoroutine(IEnumWaitWindowMod());
+            }
         }
 
         public IEnumerator IEnumWaitWindowMod () {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2f);
             WindowMod.StartFromController();
         }
 

@@ -9,12 +9,15 @@ public class Video : MonoBehaviour {
     public static Video inst;
     public MeshRenderer mr;
     public VideoPlayer vp;
+    public AudioSource ap;
     public Coroutine fadeCoroutine;
     public Vector3 startScale;
+    private int framerate;
 
     public void Awake() {
         inst = this;
         startScale = transform.localScale;
+        framerate = Application.targetFrameRate;
     }
 
     public void Start() {
@@ -27,15 +30,20 @@ public class Video : MonoBehaviour {
             StopCoroutine(fadeCoroutine);
         }
         fadeCoroutine = StartCoroutine(Fade(0));
+        ap.Stop();
+        //Application.targetFrameRate = framerate;
     }
 
     public void FadeOn () {
         vp.frame = 1;
+        ap.time = 0;
         vp.Play();
+        ap.Play();
         if(fadeCoroutine != null) {
             StopCoroutine(fadeCoroutine);
         }
         fadeCoroutine = StartCoroutine(Fade(1));
+        //Application.targetFrameRate = (int)GetComponent<UnityEngine.Video.VideoPlayer>().frameRate;
     }
 
     private IEnumerator Fade (float finalAlfa) {

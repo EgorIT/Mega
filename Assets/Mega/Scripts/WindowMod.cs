@@ -26,6 +26,9 @@ public class WindowMod : MonoBehaviour {
         if (Application.platform == RuntimePlatform.WindowsEditor) {
             canvas.SetActive(false);
         }
+        else {
+            canvas.SetActive(true);
+        }
     }
 
     public static void StartFromController () {

@@ -52,7 +52,7 @@ db.Add(new ChangesInfo.Shop("Benetton", "",""));
 db.Add(new ChangesInfo.Shop("Bershka", "",""));
 db.Add(new ChangesInfo.Shop("Betkhoven", "",""));
 db.Add(new ChangesInfo.Shop("BORK", "",""));
-db.Add(new ChangesInfo.Shop("BOBBI BROWN", "",""));
+//db.Add(new ChangesInfo.Shop("BOBBI BROWN", "",""));
 db.Add(new ChangesInfo.Shop("Calvin Klein Jeans", "",""));
 db.Add(new ChangesInfo.Shop("Calzedonia", "",""));
 db.Add(new ChangesInfo.Shop("CAMP DAVID", "",""));

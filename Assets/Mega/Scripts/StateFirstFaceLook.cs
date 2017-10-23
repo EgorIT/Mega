@@ -47,7 +47,7 @@ namespace Assets.Mega.Scripts {
                     index = i;
                 }
             }
-            return listStateLooksTransform[index].position;
+            return new Vector3(listStateLooksTransform[index].position.x, GlobalParams.distansEye, listStateLooksTransform[index].position.z);
         }
 
         public void StartState () {

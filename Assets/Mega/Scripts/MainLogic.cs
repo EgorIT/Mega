@@ -29,7 +29,7 @@ namespace Assets.Mega.Scripts {
         public int currentNumberBlockShops;
 
         public List<Transform> borders = new List<Transform>();
-        public List<GameObject> listToOnTEMP = new List<GameObject>();
+        //public List<GameObject> listToOnTEMP = new List<GameObject>();
 
         public bool iconFlag;
         private bool roofEnable = true;
@@ -38,7 +38,7 @@ namespace Assets.Mega.Scripts {
         public GameObject parkNow;
         public GameObject parkAfter;
 
-
+        public GameObject probes;
 
        // public bool boolWindowMod;
 
@@ -85,6 +85,10 @@ namespace Assets.Mega.Scripts {
             //Debug.Log("h = " + Screen.currentResolution.height);
             if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
                 StartCoroutine(IEnumWaitWindowMod());
+                if (probes) {
+                    probes.SetActive(true);
+                }
+                
             }
             RoadsProcessor.inst.StartFromController();
             RoadsProcessor.inst.ToNewDo();

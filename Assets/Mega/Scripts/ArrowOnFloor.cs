@@ -8,13 +8,14 @@ namespace Assets.Mega.Scripts {
     public class ArrowOnFloor : MonoBehaviour, IPointerDownHandler {
         public PointerEventData pointerEventData;
         public Collider collider;
-        public MeshRenderer meshRenderer;
+        public Transform childTransform;
         public string[] arrayCollName = new string[3];
 
 
         public void Start() {
             ArrowController.inst.AddArrow(this);
             collider = GetComponent<BoxCollider>();
+            childTransform = GetComponentsInChildren<Transform>()[1];
         }
 
         public void LookBack() {
@@ -53,21 +54,21 @@ namespace Assets.Mega.Scripts {
         public IEnumerator IEnumChangeScale(Vector3 endScale) {
             if(endScale == Vector3.one) {
                 collider.enabled = true;
-                meshRenderer.enabled = true;
+                //meshRenderer.enabled = true;
             }
-            var startScale = meshRenderer.gameObject.transform.localScale;
+            var startScale = childTransform.localScale;
             float time = GlobalParams.timeToFly * 0.3f;
             float currentTime = 0;
             while(currentTime < time) {
                 var t = currentTime / time;
-                meshRenderer.gameObject.transform.localScale = Vector3.Slerp(startScale, endScale, t);
+                childTransform.localScale = Vector3.Slerp(startScale, endScale, t);
                 currentTime += Time.deltaTime;
                 yield return null;
             }
-            meshRenderer.gameObject.transform.localScale = endScale;
+            childTransform.localScale = endScale;
             if(endScale == Vector3.zero) {
                 collider.enabled = false;
-                meshRenderer.enabled = false;
+                //meshRenderer.enabled = false;
             }
             yield return null;
         }

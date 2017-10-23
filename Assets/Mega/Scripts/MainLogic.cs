@@ -86,6 +86,15 @@ namespace Assets.Mega.Scripts {
             if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
                 StartCoroutine(IEnumWaitWindowMod());
             }
+            RoadsProcessor.inst.StartFromController();
+            RoadsProcessor.inst.ToOldDo();
+            StartCoroutine(IEnumWaitAfterStart());
+        }
+
+        public IEnumerator IEnumWaitAfterStart() {
+            yield return new WaitForSeconds(2f);
+            Debug.Log("GO");
+            RoadsProcessor.inst.ToNewDo();
         }
 
         public IEnumerator IEnumWaitWindowMod () {

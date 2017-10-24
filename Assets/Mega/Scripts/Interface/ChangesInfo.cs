@@ -21,7 +21,7 @@ public class ChangesInfo : MonoBehaviour {
     public ShopPreviews shopPreviews;
 
     private bool hidden = true;
-    private string temporaryString = "В данном периоде реконструкции на Вашем объекте будут произведены технические работы. К первому числу указанного квартала Вам необходимо освободить объект";
+    private string temporaryString = "";//"В данном периоде реконструкции на Вашем объекте будут произведены технические работы. К первому числу указанного квартала Вам необходимо освободить объект";
     public class Term {
         public string termName;
 
@@ -56,6 +56,10 @@ public class ChangesInfo : MonoBehaviour {
             shopTable.shopName.text = newShop.name;
             if(newShop.description == "")
                 shopTable.shopDescription.text = temporaryString;
+            else
+            {
+                shopTable.shopDescription.text = newShop.description;
+            }
             shopTable.icon.sprite = shopPreviews.FindPreview(newShop.name);
             if(shopTable.icon.sprite.name != newShop.name) {
                 Debug.Log("Not found preview " + newShop.name);
@@ -82,7 +86,7 @@ public class ChangesInfo : MonoBehaviour {
         db.Add(new Shop("STRADIVARIUS", "", ""));
         db.Add(new Shop("BANANA REPUBLIC", "", ""));
         db.Add(new Shop("LACOSTE", "", ""));
-        db.Add(new Shop("IMAGINARIUM", "", ""));
+        db.Add(new Shop("IMAGINARIUM", "Скоро здесь откроется новый модный магазин. Готовим новые коллекции для Вас!", ""));
         db.Add(new Shop("X.O.", "", ""));
         db.Add(new Shop("MCNEAL", "", ""));
         db.Add(new Shop("CHRISTIAN BERG", "", ""));

@@ -31,6 +31,11 @@ public class AllShops : MonoBehaviour {
 			//shopTable.shopDescription.text = temporaryString;
 			shopTable.icon.sprite = changesInfo.shopPreviews.FindPreview(newShop.name);
 		}
+        else
+        {
+	        shopTable.shopDescription.text = newShop.description;
+        }
+		shopTable.icon.sprite = changesInfo.shopPreviews.FindPreview(newShop.name);
 		backer.all = true;
 		//shopTable.icon
 		list.RollOut();
@@ -209,7 +214,7 @@ db.Add(new ChangesInfo.Shop("X.O.", "",""));
 db.Add(new ChangesInfo.Shop("PEPE JEANS", "",""));
 db.Add(new ChangesInfo.Shop("HUNKERMOLLER", "",""));
 db.Add(new ChangesInfo.Shop("TOMMY HILFIGER", "",""));
-db.Add(new ChangesInfo.Shop("IMAGINARIUM", "",""));
+db.Add(new ChangesInfo.Shop("IMAGINARIUM", "Скоро здесь откроется новый модный магазин. Готовим новые коллекции для Вас!",""));
 db.Add(new ChangesInfo.Shop("QUICKSILVER", "",""));
 db.Add(new ChangesInfo.Shop("IQTOY", "",""));
 db.Add(new ChangesInfo.Shop("CORSO COMO", "",""));

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WindowMod : MonoBehaviour {
     public static Rect screenPosition;
-    public GameObject canvas;
+    //public GameObject canvas;
     [DllImport("user32.dll")]
     static extern IntPtr SetWindowLong (IntPtr hwnd, int _nIndex, int dwNewLong);
     [DllImport("user32.dll")]
@@ -23,16 +23,16 @@ public class WindowMod : MonoBehaviour {
     const int WS_BORDER = 1;
 
     public void Start() {
-        if (Application.platform == RuntimePlatform.WindowsEditor) {
-            canvas.SetActive(false);
-        }
-        else {
-            canvas.SetActive(true);
-        }
+        //if (Application.platform == RuntimePlatform.WindowsEditor) {
+        //    canvas.SetActive(false);
+        //}
+        //else {
+        //    canvas.SetActive(true);
+        //}
     }
 
     public static void StartFromController () {
-           Debug.Log("ChangeScreenResolution");
+        Debug.Log("ChangeScreenResolution");
         screenPosition.x = 0;
         screenPosition.y = 0;
         screenPosition.width = 3840;//3840 Screen.currentResolution.width; 1920
@@ -61,7 +61,7 @@ public class WindowMod : MonoBehaviour {
         screenPosition.height = y;//2160 Screen.currentResolution.height; 1080
         SetWindowLong(GetForegroundWindow(), GWL_STYLE, WS_BORDER);
         bool result = SetWindowPos(GetForegroundWindow(), 0, (int)screenPosition.x, (int)screenPosition.y, (int)screenPosition.width, (int)screenPosition.height, SWP_SHOWWINDOW);
-        canvas.SetActive(false);
+        //canvas.SetActive(false);
     }
  
 }

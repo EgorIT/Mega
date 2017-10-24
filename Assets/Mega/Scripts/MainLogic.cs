@@ -84,10 +84,7 @@ namespace Assets.Mega.Scripts {
             //Debug.Log("w = " + Screen.currentResolution.width);
             //Debug.Log("h = " + Screen.currentResolution.height);
             if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
-                //StartCoroutine(IEnumWaitWindowMod());
-                if (probes) {
-                    //probes.SetActive(true);
-                }
+                StartCoroutine(IEnumWaitWindowMod());
             }
             RoadsProcessor.inst.StartFromController();
             RoadsProcessor.inst.ToNewDo();

@@ -167,6 +167,9 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void GoToFirstLook(bool isHardMove) {
+        if (!isHardMove && MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook) {
+            StartCoroutine(FadeHardMove());
+        }
         TableController.inst.HideAllTable();
         PauseForUI();
         StateFirstFaceLook.inst.isHardMove = isHardMove;
@@ -174,6 +177,31 @@ public class MegaCameraController : MonoBehaviour {
         isFirstLookScene = true;
         StartCoroutine(WaitToOff());
         //MainLogic.inst.SwapRoof(true);
+    }
+
+    public IEnumerator FadeHardMove() {
+        float time = GlobalParams.timeToFly * 0.5f;
+        float currentTime = 0;
+        float endAlfa = 1;
+        float startAlfa = 0;
+
+        while (currentTime < time) {
+            var t = currentTime / time;
+            ButonAdds.inst.fadeImage.color = new Color(1,1,1,Mathf.Lerp(startAlfa, endAlfa, Mathf.Pow(t, 0.3f)));
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+        ButonAdds.inst.fadeImage.color = new Color(1, 1, 1, endAlfa);
+
+        currentTime = 0;
+        while(currentTime < time) {
+            var t = currentTime / time;
+            ButonAdds.inst.fadeImage.color = new Color(1, 1, 1, Mathf.Lerp(endAlfa, startAlfa, t * t));
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+        ButonAdds.inst.fadeImage.color = new Color(1, 1, 1, startAlfa);
+
     }
 
     public void GoOutFirstLook() {

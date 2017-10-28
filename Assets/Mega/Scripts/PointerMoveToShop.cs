@@ -45,7 +45,9 @@ namespace Assets.Mega.Scripts {
 
         public void GoToThisShop() {
             //if(!MegaCameraController.inst.isFirstLookScene) {
+            
                 StateFirstFaceLook.inst.hardMovePointerMoveToShop = this;
+            
                 MegaCameraController.inst.GoToFirstLook(false);
                 //Debug.Log("OnPointerDown " + gameObject.name);
             //}

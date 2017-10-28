@@ -32,7 +32,7 @@ namespace Assets.Mega.Scripts {
         public static float distansOnFirstLook = 0f;
 
         public static float minDistancePesr = -1000f;
-        public static float maxDistancePesr = -15000f;
+        public static float maxDistancePesr = -26000f;
 
         public static float needTimeToSleep = 220f;
 

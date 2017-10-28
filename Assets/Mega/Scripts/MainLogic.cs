@@ -145,6 +145,12 @@ namespace Assets.Mega.Scripts {
             ChangeState(ViewStates.allMega);
         }
 
+        public void GoAllRoads() {
+            MegaCameraController.inst.distansAllMega = GlobalParams.maxDistancePesr;
+            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(-37f, 0, -220f);
+            ChangeState(ViewStates.allMega);
+        }
+
         public void DisRoof (float time) {
             if(roofEnable) {
                 roofEnable = false;
@@ -291,13 +297,13 @@ namespace Assets.Mega.Scripts {
             ChangeState(ViewStates.one);
         }
 
-        public void GoViewAllMega () {
-            ChangeState(ViewStates.allMega);
-        }
-
-        public void ShowLittleView () {
-
-        }
+        ///public void GoViewAllMega () {
+        ///    ChangeState(ViewStates.allMega);
+        ///}
+        ///
+        ///public void ShowLittleView () {
+        ///
+        ///}
 
         /*public void SetPlan(int i) {
             spriteRendererPlan.sprite = listPlans[i];

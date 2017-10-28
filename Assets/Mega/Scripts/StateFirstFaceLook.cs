@@ -51,7 +51,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void StartState () {
-            Debug.Log("go StartState");
+            //Debug.Log("go StartState");
             
            
             if (isHardMove) {

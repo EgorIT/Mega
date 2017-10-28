@@ -30,14 +30,11 @@ public class RoofProcessor : MonoBehaviour {
 
     private IEnumerator TransparentCoroutine () {
         foreach(Material material in materials) {
-            //Debug.Log(material.GetFloat("_Mode"));
             if(material.GetFloat("_Mode") == 0f) {
                 material.SetFloat("_Mode", 2f);
                 Switcher(material, BlendMode.Fade);
-                //material.renderQueue = 3000;
             }
         }
-
         float time = 0;
         float time2 = .3f;
         while(time < time2) {
@@ -46,26 +43,14 @@ public class RoofProcessor : MonoBehaviour {
             foreach(Material material in materials) {
                 Color mColor = material.color;
                 Color newColor = new Color(mColor.r, mColor.g, mColor.b, temp);
-                //Color newColor = new Color(mColor.r,mColor.g, mColor.b,temp);
                 material.SetColor("_Color", newColor);
-                //material.EnableKeyword();
             }
-            /*for (int i = 0; i <= line.anchoredPosition.x/180; i++)
-			{
-				timeButtons[i].SetPressed();
-			}
-			for (int i = (int)line.anchoredPosition.x/180; i < 9; i++)
-			{
-				timeButtons[i].SetNormal();
-			}*/
             time += Time.deltaTime;
             yield return null;
         }
-
         foreach(Material material in materials) {
             Color mColor = material.color;
             Color newColor = new Color(mColor.r, mColor.g, mColor.b, 0);
-            //Color newColor = new Color(mColor.r,mColor.g, mColor.b,temp);
             material.SetColor("_Color", newColor);
         }
         AllCaps.allCaps.Refresh();

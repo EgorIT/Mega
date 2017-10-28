@@ -210,6 +210,7 @@ public class MegaCameraController : MonoBehaviour {
         distansAllMega = GlobalParams.minDistancePesr - 100;
         stateLookVector3AllMega = posCamera.position;
         MainLogic.inst.ChangeState(ViewStates.allMega);
+        MainLogic.inst.DisRoof(3);
         isFirstLookScene = false;
     }
 

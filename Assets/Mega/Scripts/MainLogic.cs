@@ -65,9 +65,7 @@ namespace Assets.Mega.Scripts {
 
         public void FindNeedObject () {
             parkNow = GameObject.FindGameObjectWithTag("parkNow");
-            //parkNow.SetActive(true);
             parkAfter = GameObject.FindGameObjectWithTag("parkAfter");
-            //parkAfter.SetActive(false);
             interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
             interfaceMega.SetActive(false);
         }
@@ -143,31 +141,30 @@ namespace Assets.Mega.Scripts {
             MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
             ChangeState(ViewStates.allMega);
+            MainLogic.inst.DisRoof(3);
         }
 
         public void GoAllRoads() {
             MegaCameraController.inst.distansAllMega = GlobalParams.maxDistancePesr;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(-37f, 0, -220f);
             ChangeState(ViewStates.allMega);
+            EnableRoof();
+
         }
 
         public void DisRoof (float time) {
             if(roofEnable) {
                 roofEnable = false;
-
                 StartCoroutine(IEnumDisRoof(time));
             }
-
         }
 
         public void EnableRoof () {
             if(!roofEnable) {
                 roofEnable = true;
-                //TableController.inst.ShowAllShops();
                 if(RoofProcessor.inst) {
                     RoofProcessor.inst.DoStandard();
                 }
-
             }
         }
 

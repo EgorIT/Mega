@@ -20,6 +20,7 @@ namespace Assets.Mega.Scripts {
         public void OnPointerDown (PointerEventData data) {
             //Debug.Log(gameObject.name);
             MainLogic.inst.ChangeState(ViewStates.allMega);
+            MainLogic.inst.DisRoof(3);
         }
 
         public void Start () {

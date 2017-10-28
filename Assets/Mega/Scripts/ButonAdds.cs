@@ -10,6 +10,7 @@ namespace Assets.Mega.Scripts {
         public Button backFromAllShops;
         public Button goRoads;
         public Button goFloors;
+        public Button backFromRoads;
         public Image fadeImage;
 
         public void Awake() {
@@ -23,6 +24,7 @@ namespace Assets.Mega.Scripts {
             backFromAllShops.onClick.AddListener(() => { MainLogic.inst.GoAllMega(); });
             goRoads.onClick.AddListener(() => { MainLogic.inst.GoAllRoads(); });
             goFloors.onClick.AddListener(() => { MainLogic.inst.GoAllMega(); });
+            backFromRoads.onClick.AddListener(() => { MainLogic.inst.DisRoof(3); });
         }
 
 

@@ -36,7 +36,7 @@ namespace Assets.Mega.Scripts {
 
         public static float needTimeToSleep = 220f;
 
-        public static float distansEye = 1.4f;
+        public static float distansEye = 1f;
 
         public static float arrowDistansSqrt = 100f;
         public static float arrowMinDistansSqrt = 10f;

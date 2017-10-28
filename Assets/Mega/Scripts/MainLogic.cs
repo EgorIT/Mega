@@ -145,6 +145,12 @@ namespace Assets.Mega.Scripts {
             ChangeState(ViewStates.allMega);
         }
 
+        public void GoAllRoads() {
+            MegaCameraController.inst.distansAllMega = GlobalParams.maxDistancePesr;
+            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(-37f, 0, -220f);
+            ChangeState(ViewStates.allMega);
+        }
+
         public void DisRoof (float time) {
             if(roofEnable) {
                 roofEnable = false;
@@ -183,7 +189,7 @@ namespace Assets.Mega.Scripts {
                 currentTime += Time.deltaTime;
             }
 
-            if(currentTime > GlobalParams.needTimeToSleep) {
+            if(currentTime > GlobalParams.needTimeToSleep && GetViewCurrentStates() != ViewStates.one) {
                 currentTime = GlobalParams.needTimeToSleep;
                 ChangeState(ViewStates.one);
                 //Timeline.inst.Sleep();
@@ -239,9 +245,9 @@ namespace Assets.Mega.Scripts {
         }
 
         public void ChangeState (ViewStates newState) {
-            if(viewCurrentStates == newState && newState != ViewStates.allMega) {
-                return;
-            }
+            //if(viewCurrentStates == newState && newState != ViewStates.allMega) {
+            //    return;
+            //}
             //Debug.Log("newState = " + newState.ToString());
             for(int i = 0; i < listViewStates.Count; i++) {
                 if(listViewStates[i].GetViewStates() == viewCurrentStates) {
@@ -288,12 +294,16 @@ namespace Assets.Mega.Scripts {
         }*/
 
         public void GoViewStateOne () {
-
+            ChangeState(ViewStates.one);
         }
 
-        public void ShowLittleView () {
-
-        }
+        ///public void GoViewAllMega () {
+        ///    ChangeState(ViewStates.allMega);
+        ///}
+        ///
+        ///public void ShowLittleView () {
+        ///
+        ///}
 
         /*public void SetPlan(int i) {
             spriteRendererPlan.sprite = listPlans[i];

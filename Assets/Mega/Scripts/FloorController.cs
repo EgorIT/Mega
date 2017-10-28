@@ -6,37 +6,40 @@ using UnityEngine;
 namespace Assets.Mega.Scripts {
     public class FloorController : MonoBehaviour {
         public static FloorController inst;
-        public List<MeshRenderer> allOldMeshFloor;
-        public List<MeshRenderer> allNewMeshFloor;
 
-        public List<GameObject> allParentOldGoFloor;
-        public List<GameObject> allGoNewFloor;
+        //public List<MeshRenderer> allOldMeshFloor;
+        public List<MeshRenderer> allMeshFloor;
+
+        //public List<GameObject> allParentOldGoFloor;
+        //public List<GameObject> allGoNewFloor;
 
         public Material newFloorMaterialNotAlfa;
         public Material oldFloorMaterialNotAlfa;
-
-        public List<int> allFloorQuartal;
         public Material newFloorMaterial;
         public Material oldFloorMaterial;
-        public GameObject parentFloor;
+
+        //public GameObject parentFloor;
         public bool newFloor;
         public bool oldFloor;
+
+        public bool currentFloorIsNew;
+
 
         public void Awake () {
             inst = this;
         }
 
-        public void SetNew () {
-            for(int i = 0; i < allOldMeshFloor.Count; i++) {
-                allOldMeshFloor[i].material = newFloorMaterial;
-            }
-        }
-
-        public void SetOld () {
-            for(int i = 0; i < allOldMeshFloor.Count; i++) {
-                allOldMeshFloor[i].material = oldFloorMaterial;
-            }
-        }
+        //public void SetNew () {
+        //    for(int i = 0; i < allOldMeshFloor.Count; i++) {
+        //        allOldMeshFloor[i].material = newFloorMaterial;
+        //    }
+        //}
+        //
+        //public void SetOld () {
+        //    for(int i = 0; i < allOldMeshFloor.Count; i++) {
+        //        allOldMeshFloor[i].material = oldFloorMaterial;
+        //    }
+        //}
 
         public void Start () {
             //SetupToScale();
@@ -44,108 +47,140 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SetupToAlfa () {
-            parentFloor = new GameObject();
-            parentFloor.name = "parentFloor";
-            parentFloor.transform.position = Vector3.zero + new Vector3(0, 0.01f, 0);
-            parentFloor.transform.localEulerAngles = Vector3.zero;
-            parentFloor.transform.localScale = Vector3.one;
+            //parentFloor = new GameObject();
+            //parentFloor.name = "parentFloor";
+            //parentFloor.transform.position = Vector3.zero + new Vector3(0, 0.01f, 0);
+            //parentFloor.transform.localEulerAngles = Vector3.zero;
+            //parentFloor.transform.localScale = Vector3.one;
 
             var allMesh = FindObjectsOfType<MeshRenderer>();
             for(int i = 0; i < allMesh.Length; i++) {
                 if(allMesh[i].materials[0].name == "Floor (Instance)") {
                     allMesh[i].material = oldFloorMaterialNotAlfa;
-                    var newGo = Instantiate(allMesh[i].gameObject);
-                    var newMesh = newGo.GetComponent<MeshRenderer>();
-                    newMesh.material = newFloorMaterial;
-                    newGo.transform.position = allMesh[i].gameObject.transform.position;
-
-                    allMesh[i].material.color = Color.white;
-                    newMesh.material.color = new Color(1, 1, 1, 0);
-
-                    allOldMeshFloor.Add(allMesh[i]);
-                    allNewMeshFloor.Add(newMesh);
-
-                    newGo.transform.parent = parentFloor.transform;
+                    allMeshFloor.Add(allMesh[i]);
+                    //var newGo = Instantiate(allMesh[i].gameObject);
+                    //var newMesh = newGo.GetComponent<MeshRenderer>();
+                    //newMesh.material = newFloorMaterial;
+                    //newGo.transform.position = allMesh[i].gameObject.transform.position;
+                    //
+                    //allMesh[i].material.color = Color.white;
+                    //newMesh.material.color = new Color(1, 1, 1, 0);
+                    //
+                    //allOldMeshFloor.Add(allMesh[i]);
+                    //allNewMeshFloor.Add(newMesh);
+                    //
+                    //newGo.transform.parent = parentFloor.transform;
                 }
             }
         }
 
         public IEnumerator IEnumChangeAlfa (bool isNewFloor) {
-            for(int i = 0; i < allNewMeshFloor.Count; i++) {
-                allNewMeshFloor[i].material = newFloorMaterial;
+            if (currentFloorIsNew == isNewFloor) {
+                yield break;
+            }
+            currentFloorIsNew = isNewFloor;
+
+            for(int i = 0; i < allMeshFloor.Count; i++) {
+                
                 if(isNewFloor) {
-                    allNewMeshFloor[i].material.color = new Color(1, 1, 1, 0);
+                    allMeshFloor[i].material = oldFloorMaterial;
+                    allMeshFloor[i].material.color = new Color(1, 1, 1, 1);
                 } else {
-                    allNewMeshFloor[i].material.color = new Color(1, 1, 1, 1);
-                    allOldMeshFloor[i].gameObject.SetActive(true);
+                    allMeshFloor[i].material = newFloorMaterial;
+                    allMeshFloor[i].material.color = new Color(1, 1, 1, 1);
                 }
             }
-            //float startOldFloor = allOldMeshFloor[0].material.color.a;
-            float startNewFloor = allNewMeshFloor[0].material.color.a;
-            //float finalOldFloor = isNewFloor ? 0 : 1;
-            float finalNewFloor = isNewFloor ? 1 : 0;
-            float time = 1f;
+            float startAlfaFloor = allMeshFloor[0].material.color.a;
+            float finalAlfaFloor = 0;
+            float time = GlobalParams.timeFloorSwap * 0.5f;
             float currentTime = 0;
             while(currentTime < time) {
-                for(int i = 0; i < allNewMeshFloor.Count; i++) {
+                for(int i = 0; i < allMeshFloor.Count; i++) {
                     var t = currentTime / time;
-                    //allOldMeshFloor[i].material.color = new Color(1, 1, 1, Mathf.Lerp(startOldFloor, finalOldFloor, t * t));
-                    allNewMeshFloor[i].material.color = new Color(1, 1, 1, Mathf.Lerp(startNewFloor, finalNewFloor, t * t));
+                    allMeshFloor[i].material.color = new Color(1, 1, 1, Mathf.Lerp(startAlfaFloor, finalAlfaFloor, Mathf.Pow(t, 4f)));
                 }
                 currentTime += Time.deltaTime;
                 yield return null;
             }
-            for(int i = 0; i < allNewMeshFloor.Count; i++) {
-                //allOldMeshFloor[i].material.color = new Color(1, 1, 1, finalOldFloor);
-                allNewMeshFloor[i].material.color = new Color(1, 1, 1, finalNewFloor);
+            for(int i = 0; i < allMeshFloor.Count; i++) {
+                allMeshFloor[i].material.color = new Color(1, 1, 1, 0);
             }
-            for(int i = 0; i < allNewMeshFloor.Count; i++) {
+
+
+
+            for(int i = 0; i < allMeshFloor.Count; i++) {
                 if(isNewFloor) {
-                    allOldMeshFloor[i].gameObject.SetActive(false);
-                    allNewMeshFloor[i].material = newFloorMaterialNotAlfa;
+                    allMeshFloor[i].material = newFloorMaterial;
+                    allMeshFloor[i].material.color = new Color(1, 1, 1, 0);
                 } else {
-
+                    allMeshFloor[i].material = oldFloorMaterial;
+                    allMeshFloor[i].material.color = new Color(1, 1, 1, 0);
                 }
             }
-        }
-
-
-        public IEnumerator IEnumChangeScale (float finalScale) {
-
-            List<float> startScales = new List<float>();
-            for(int i = 0; i < allParentOldGoFloor.Count; i++) {
-                startScales.Add(allParentOldGoFloor[i].transform.localScale.x);
-            }
-            float time = 5f;
-            float currentTime = 0;
-            for(int i = 0; i < allGoNewFloor.Count; i++) {
-                if(Math.Abs(finalScale - 1) < 0.01f) {
-                } else {
-                    allGoNewFloor[i].SetActive(true);
-                }
-            }
-
+            startAlfaFloor = 0;
+            finalAlfaFloor = 1;
+            time = time = GlobalParams.timeFloorSwap * 0.5f;
+            currentTime = 0;
             while(currentTime < time) {
-                for(int i = 0; i < allParentOldGoFloor.Count; i++) {
+                for(int i = 0; i < allMeshFloor.Count; i++) {
                     var t = currentTime / time;
-                    allParentOldGoFloor[i].transform.localScale = Vector3.Slerp(Vector3.one * startScales[i],
-                        Vector3.one * finalScale, t * t * t);
+                    allMeshFloor[i].material.color = new Color(1, 1, 1, Mathf.Lerp(startAlfaFloor, finalAlfaFloor, Mathf.Pow(t, 0.25f)));
                 }
                 currentTime += Time.deltaTime;
                 yield return null;
             }
-            for(int i = 0; i < allParentOldGoFloor.Count; i++) {
-                allParentOldGoFloor[i].transform.localScale = Vector3.one * finalScale;
+            for(int i = 0; i < allMeshFloor.Count; i++) {
+                allMeshFloor[i].material.color = new Color(1, 1, 1, 1);
             }
-
-            for(int i = 0; i < allGoNewFloor.Count; i++) {
-                if(Math.Abs(finalScale - 1) < 0.01f) {
-                    allGoNewFloor[i].SetActive(false);
+            for(int i = 0; i < allMeshFloor.Count; i++) {
+                if(isNewFloor) {
+                    allMeshFloor[i].material = newFloorMaterialNotAlfa;
+                    allMeshFloor[i].material.color = new Color(1, 1, 1, 1);
                 } else {
+                    allMeshFloor[i].material = oldFloorMaterialNotAlfa;
+                    allMeshFloor[i].material.color = new Color(1, 1, 1, 1);
                 }
             }
 
         }
+
+
+        //public IEnumerator IEnumChangeScale (float finalScale) {
+        //
+        //    List<float> startScales = new List<float>();
+        //    for(int i = 0; i < allParentOldGoFloor.Count; i++) {
+        //        startScales.Add(allParentOldGoFloor[i].transform.localScale.x);
+        //    }
+        //    float time = 5f;
+        //    float currentTime = 0;
+        //    for(int i = 0; i < allGoNewFloor.Count; i++) {
+        //        if(Math.Abs(finalScale - 1) < 0.01f) {
+        //        } else {
+        //            allGoNewFloor[i].SetActive(true);
+        //        }
+        //    }
+        //
+        //    while(currentTime < time) {
+        //        for(int i = 0; i < allParentOldGoFloor.Count; i++) {
+        //            var t = currentTime / time;
+        //            allParentOldGoFloor[i].transform.localScale = Vector3.Slerp(Vector3.one * startScales[i],
+        //                Vector3.one * finalScale, t * t * t);
+        //        }
+        //        currentTime += Time.deltaTime;
+        //        yield return null;
+        //    }
+        //    for(int i = 0; i < allParentOldGoFloor.Count; i++) {
+        //        allParentOldGoFloor[i].transform.localScale = Vector3.one * finalScale;
+        //    }
+        //
+        //    for(int i = 0; i < allGoNewFloor.Count; i++) {
+        //        if(Math.Abs(finalScale - 1) < 0.01f) {
+        //            allGoNewFloor[i].SetActive(false);
+        //        } else {
+        //        }
+        //    }
+        //
+        //}
 
         public void SetQuartal (bool isNewFloor) {
             StartCoroutine(IEnumChangeAlfa(!isNewFloor));
@@ -158,15 +193,15 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Update () {
-            if(newFloor) {
-                newFloor = false;
-                StartCoroutine(IEnumChangeScale(1));
-            }
-
-            if(oldFloor) {
-                oldFloor = false;
-                StartCoroutine(IEnumChangeScale(0));
-            }
+            //if(newFloor) {
+            //    newFloor = false;
+            //    StartCoroutine(IEnumChangeScale(1));
+            //}
+            //
+            //if(oldFloor) {
+            //    oldFloor = false;
+            //    StartCoroutine(IEnumChangeScale(0));
+            //}
         }
 
 

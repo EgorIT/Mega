@@ -48,6 +48,79 @@ ModelImporter:
     100080: polySurface274
     100082: //RootNode
     100084: Windows
+    100086: ChristianBerg
+    100088: Green2
+    100090: Hunkemoller
+    100092: Imaginarium
+    100094: m1
+    100096: m10
+    100098: m11
+    100100: m12
+    100102: m13
+    100104: m14
+    100106: m15
+    100108: m16
+    100110: m17
+    100112: m18
+    100114: m19
+    100116: m2
+    100118: m20
+    100120: m21
+    100122: m22
+    100124: m23
+    100126: m24
+    100128: m25
+    100130: m26
+    100132: m27
+    100134: m28
+    100136: m29
+    100138: m3
+    100140: m30
+    100142: m31
+    100144: m4
+    100146: m5
+    100148: m6
+    100150: m7
+    100152: m8
+    100154: m9
+    100156: McNeal
+    100158: Object001
+    100160: Object002
+    100162: Object003
+    100164: Object004
+    100166: Object005
+    100168: Object006
+    100170: Object007
+    100172: Object008
+    100174: Object009
+    100176: Object010
+    100178: Object011
+    100180: Object012
+    100182: Object013
+    100184: Object014
+    100186: Object015
+    100188: Object016
+    100190: Object017
+    100192: Object018
+    100194: Object019
+    100196: Object020
+    100198: Object021
+    100200: Object022
+    100202: Object023
+    100204: Object024
+    100206: Object025
+    100208: Object026
+    100210: Object027
+    100212: Object028
+    100214: Object029
+    100216: Object030
+    100218: Object031
+    100220: Object032
+    100222: Pepe_Jeans
+    100224: Qucksilver
+    100226: Road1
+    100228: TommyHilfiger
+    100230: XO
     400000: CINEMA_4D_Editor
     400002: Logos_2
     400004: Plane
@@ -91,6 +164,79 @@ ModelImporter:
     400080: polySurface274
     400082: //RootNode
     400084: Windows
+    400086: ChristianBerg
+    400088: Green2
+    400090: Hunkemoller
+    400092: Imaginarium
+    400094: m1
+    400096: m10
+    400098: m11
+    400100: m12
+    400102: m13
+    400104: m14
+    400106: m15
+    400108: m16
+    400110: m17
+    400112: m18
+    400114: m19
+    400116: m2
+    400118: m20
+    400120: m21
+    400122: m22
+    400124: m23
+    400126: m24
+    400128: m25
+    400130: m26
+    400132: m27
+    400134: m28
+    400136: m29
+    400138: m3
+    400140: m30
+    400142: m31
+    400144: m4
+    400146: m5
+    400148: m6
+    400150: m7
+    400152: m8
+    400154: m9
+    400156: McNeal
+    400158: Object001
+    400160: Object002
+    400162: Object003
+    400164: Object004
+    400166: Object005
+    400168: Object006
+    400170: Object007
+    400172: Object008
+    400174: Object009
+    400176: Object010
+    400178: Object011
+    400180: Object012
+    400182: Object013
+    400184: Object014
+    400186: Object015
+    400188: Object016
+    400190: Object017
+    400192: Object018
+    400194: Object019
+    400196: Object020
+    400198: Object021
+    400200: Object022
+    400202: Object023
+    400204: Object024
+    400206: Object025
+    400208: Object026
+    400210: Object027
+    400212: Object028
+    400214: Object029
+    400216: Object030
+    400218: Object031
+    400220: Object032
+    400222: Pepe_Jeans
+    400224: Qucksilver
+    400226: Road1
+    400228: TommyHilfiger
+    400230: XO
     2300000: Plane
     2300002: Plane_1
     2300004: Plane_10
@@ -131,6 +277,40 @@ ModelImporter:
     2300074: polySurface273
     2300076: polySurface274
     2300078: Windows
+    2300080: Green2
+    2300082: Object001
+    2300084: Object002
+    2300086: Object003
+    2300088: Object004
+    2300090: Object005
+    2300092: Object006
+    2300094: Object007
+    2300096: Object008
+    2300098: Object009
+    2300100: Object010
+    2300102: Object011
+    2300104: Object012
+    2300106: Object013
+    2300108: Object014
+    2300110: Object015
+    2300112: Object016
+    2300114: Object017
+    2300116: Object018
+    2300118: Object019
+    2300120: Object020
+    2300122: Object021
+    2300124: Object022
+    2300126: Object023
+    2300128: Object024
+    2300130: Object025
+    2300132: Object026
+    2300134: Object027
+    2300136: Object028
+    2300138: Object029
+    2300140: Object030
+    2300142: Object031
+    2300144: Object032
+    2300146: Road1
     3300000: Plane
     3300002: Plane_1
     3300004: Plane_10
@@ -171,6 +351,40 @@ ModelImporter:
     3300074: polySurface273
     3300076: polySurface274
     3300078: Windows
+    3300080: Green2
+    3300082: Object001
+    3300084: Object002
+    3300086: Object003
+    3300088: Object004
+    3300090: Object005
+    3300092: Object006
+    3300094: Object007
+    3300096: Object008
+    3300098: Object009
+    3300100: Object010
+    3300102: Object011
+    3300104: Object012
+    3300106: Object013
+    3300108: Object014
+    3300110: Object015
+    3300112: Object016
+    3300114: Object017
+    3300116: Object018
+    3300118: Object019
+    3300120: Object020
+    3300122: Object021
+    3300124: Object022
+    3300126: Object023
+    3300128: Object024
+    3300130: Object025
+    3300132: Object026
+    3300134: Object027
+    3300136: Object028
+    3300138: Object029
+    3300140: Object030
+    3300142: Object031
+    3300144: Object032
+    3300146: Road1
     4300000: Windows
     4300002: Plane_33
     4300004: Plane_32
@@ -211,6 +425,41 @@ ModelImporter:
     4300074: polySurface177
     4300076: polySurface273
     4300078: polySurface274
+    4300080: Green2
+    4300082: Road1
+    4300084: Object001
+    4300086: Object002
+    4300088: Object003
+    4300090: Object004
+    4300092: Object005
+    4300094: Object006
+    4300096: Object007
+    4300098: Object008
+    4300100: Object009
+    4300102: Object010
+    4300104: Object011
+    4300106: Object012
+    4300108: Object013
+    4300110: Object014
+    4300112: Object015
+    4300114: Object016
+    4300116: Object017
+    4300118: Object018
+    4300120: Object019
+    4300122: Object020
+    4300124: Object021
+    4300126: Object022
+    4300128: Object023
+    4300130: Object024
+    4300132: Object025
+    4300134: Object026
+    4300136: Object027
+    4300138: Object028
+    4300140: Object029
+    4300142: Object030
+    4300144: Object031
+    4300146: Object032
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1

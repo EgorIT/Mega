@@ -45,6 +45,8 @@ ModelImporter:
     100074: TommyHilfiger
     100076: //RootNode
     100078: XO
+    100080: Green2
+    100082: Road1
     400000: ChristianBerg
     400002: geom_02_01
     400004: geom_02_02
@@ -85,6 +87,8 @@ ModelImporter:
     400074: TommyHilfiger
     400076: //RootNode
     400078: XO
+    400080: Green2
+    400082: Road1
     2300000: geom_02_01
     2300002: geom_02_02
     2300004: geom_02_03
@@ -116,6 +120,8 @@ ModelImporter:
     2300056: geom_02_29
     2300058: geom_02_30
     2300060: geom_02_31
+    2300062: Green2
+    2300064: Road1
     3300000: geom_02_01
     3300002: geom_02_02
     3300004: geom_02_03
@@ -147,6 +153,8 @@ ModelImporter:
     3300056: geom_02_29
     3300058: geom_02_30
     3300060: geom_02_31
+    3300062: Green2
+    3300064: Road1
     4300000: geom_02_01
     4300002: geom_02_02
     4300004: geom_02_03
@@ -178,6 +186,9 @@ ModelImporter:
     4300056: geom_02_29
     4300058: geom_02_30
     4300060: geom_02_31
+    4300062: Green2
+    4300064: Road1
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1

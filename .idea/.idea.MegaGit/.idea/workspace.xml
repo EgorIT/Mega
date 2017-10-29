@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50cb2958-2763-4656-ad63-bbab7be90864" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllShops.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllShops.cs" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Materials/New Parking.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scenes/test.meta" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/WindowMod.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/WindowMod.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AllShops.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AllShops.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllShops.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+            <state relative-caret-position="318">
+              <caret line="90" column="32" lean-forward="false" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
               <folding>
                 <marker date="1509278011387" expanded="false" signature="6:119" ph="..." />
                 <marker date="1509278011387" expanded="true" signature="159:14410" ph="{...}" />
@@ -90,6 +92,41 @@
                 <marker date="1509278011387" expanded="true" signature="14108:14210" ph="{...}" />
                 <marker date="1509278011387" expanded="true" signature="14217:14343" ph="{...}" />
                 <marker date="1509278011387" expanded="true" signature="14401:14408" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GlobalParams.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/GlobalParams.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding>
+                <marker date="1509207134904" expanded="true" signature="50:2265" ph="{...}" />
+                <marker date="1509207134904" expanded="true" signature="82:2263" ph="{...}" />
+                <marker date="1509207134904" expanded="true" signature="1697:2257" ph="/* public static float ortoMinSize = 5f; ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WindowMod.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/WindowMod.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+              <folding>
+                <marker date="1509288826436" expanded="false" signature="6:70" ph="..." />
+                <marker date="1509288826436" expanded="true" signature="111:2552" ph="{...}" />
+                <marker date="1509288826436" expanded="true" signature="525:693" ph="/* not used rigth now ... */" />
+                <marker date="1509288826436" expanded="true" signature="820:1016" ph="{...}" />
+                <marker date="1509288826436" expanded="true" signature="830:1010" ph="/* if (Application.platform == RuntimePlatform.WindowsEditor) { ... */" />
+                <marker date="1509288826436" expanded="true" signature="1064:1751" ph="{...}" />
+                <marker date="1509288826436" expanded="true" signature="1784:1820" ph="{...}" />
+                <marker date="1509288826436" expanded="true" signature="1854:1890" ph="{...}" />
+                <marker date="1509288826436" expanded="true" signature="1923:1958" ph="{...}" />
+                <marker date="1509288826436" expanded="true" signature="1998:2548" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -190,35 +227,6 @@
                 <marker date="1508675726781" expanded="true" signature="297:424" ph="{...}" />
                 <marker date="1508675726781" expanded="true" signature="315:362" ph="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KBDStarter.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/KBDStarter.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-              <folding>
-                <marker date="1508675726817" expanded="true" signature="6:78" ph="..." />
-                <marker date="1508675726817" expanded="true" signature="120:716" ph="{...}" />
-                <marker date="1508675726817" expanded="true" signature="258:386" ph="{...}" />
-                <marker date="1508675726817" expanded="true" signature="410:557" ph="{...}" />
-                <marker date="1508675726817" expanded="true" signature="446:493" ph="{...}" />
-                <marker date="1508675726817" expanded="true" signature="496:554" ph="/* if (Input.GetKeyDown(&quot;a&quot;)) ... */" />
-                <marker date="1508675726817" expanded="true" signature="587:635" ph="{...}" />
-                <marker date="1508675726817" expanded="true" signature="666:714" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VirtualKeyboard.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/VirtualKeyboard.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -351,6 +359,7 @@
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/ArrowOnFloor.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ChangesInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllShops.cs" />
+        <option value="$PROJECT_DIR$/Assets/Mega/Scripts/WindowMod.cs" />
       </list>
     </option>
   </component>
@@ -403,6 +412,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="SearchEverywhereHistoryKey" value="Win&#9;FILE&#9;file://D:/workspace/unity/MegaGit/Assets/Mega/Scripts/WindowMod.cs&#10;Glo&#9;FILE&#9;file://D:/workspace/unity/MegaGit/Assets/Mega/Scripts/GlobalParams.cs" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -529,7 +539,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132996000" />
+    <option name="totallyTimeSpent" value="135093000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -541,7 +551,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -721,13 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/GlobalParams.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="44" lean-forward="false" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/Unity3DRider.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -851,13 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/WindowMod.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -1012,8 +1008,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/AllShops.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+        <state relative-caret-position="318">
+          <caret line="90" column="32" lean-forward="false" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
           <folding>
             <marker date="1509278011387" expanded="false" signature="6:119" ph="..." />
             <marker date="1509278011387" expanded="true" signature="159:14410" ph="{...}" />
@@ -1046,6 +1042,37 @@
             <marker date="1509278011387" expanded="true" signature="14108:14210" ph="{...}" />
             <marker date="1509278011387" expanded="true" signature="14217:14343" ph="{...}" />
             <marker date="1509278011387" expanded="true" signature="14401:14408" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/GlobalParams.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <marker date="1509207134904" expanded="true" signature="50:2265" ph="{...}" />
+            <marker date="1509207134904" expanded="true" signature="82:2263" ph="{...}" />
+            <marker date="1509207134904" expanded="true" signature="1697:2257" ph="/* public static float ortoMinSize = 5f; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/WindowMod.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding>
+            <marker date="1509288826436" expanded="false" signature="6:70" ph="..." />
+            <marker date="1509288826436" expanded="true" signature="111:2552" ph="{...}" />
+            <marker date="1509288826436" expanded="true" signature="525:693" ph="/* not used rigth now ... */" />
+            <marker date="1509288826436" expanded="true" signature="820:1016" ph="{...}" />
+            <marker date="1509288826436" expanded="true" signature="830:1010" ph="/* if (Application.platform == RuntimePlatform.WindowsEditor) { ... */" />
+            <marker date="1509288826436" expanded="true" signature="1064:1751" ph="{...}" />
+            <marker date="1509288826436" expanded="true" signature="1784:1820" ph="{...}" />
+            <marker date="1509288826436" expanded="true" signature="1854:1890" ph="{...}" />
+            <marker date="1509288826436" expanded="true" signature="1923:1958" ph="{...}" />
+            <marker date="1509288826436" expanded="true" signature="1998:2548" ph="{...}" />
           </folding>
         </state>
       </provider>

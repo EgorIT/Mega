@@ -24,7 +24,7 @@ namespace Assets.Mega.Scripts {
             backFromAllShops.onClick.AddListener(() => { MainLogic.inst.GoAllMega(); });
             goRoads.onClick.AddListener(() => { MainLogic.inst.GoAllRoads(); });
             goFloors.onClick.AddListener(() => { MainLogic.inst.GoAllMega(); });
-            backFromRoads.onClick.AddListener(() => { MainLogic.inst.DisRoof(3); });
+            backFromRoads.onClick.AddListener(() => { MainLogic.inst.GoAllMega(); MainLogic.inst.DisRoof(3); });
         }
 
 

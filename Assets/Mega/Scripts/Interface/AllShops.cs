@@ -29,6 +29,7 @@ public class AllShops : MonoBehaviour {
         if (newShop.description == "")
 		{
 			//shopTable.shopDescription.text = temporaryString;
+			shopTable.shopDescription.text = "";
 			shopTable.icon.sprite = changesInfo.shopPreviews.FindPreview(newShop.name);
 		}
         else

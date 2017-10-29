@@ -146,6 +146,16 @@ ModelImporter:
     100276: m8
     100278: m9
     100280: //RootNode
+    100282: ChristianBerg
+    100284: Green2
+    100286: Hunkemoller
+    100288: Imaginarium
+    100290: McNeal
+    100292: Pepe_Jeans
+    100294: Qucksilver
+    100296: Road1
+    100298: TommyHilfiger
+    100300: XO
     400000: geom_01_01
     400002: geom_01_02
     400004: geom_01_03
@@ -287,6 +297,16 @@ ModelImporter:
     400276: m8
     400278: m9
     400280: //RootNode
+    400282: ChristianBerg
+    400284: Green2
+    400286: Hunkemoller
+    400288: Imaginarium
+    400290: McNeal
+    400292: Pepe_Jeans
+    400294: Qucksilver
+    400296: Road1
+    400298: TommyHilfiger
+    400300: XO
     2300000: geom_01_01
     2300002: geom_01_02
     2300004: geom_01_03
@@ -396,6 +416,8 @@ ModelImporter:
     2300212: geom_01_97
     2300214: geom_01_98
     2300216: geom_01_99
+    2300218: Green2
+    2300220: Road1
     3300000: geom_01_01
     3300002: geom_01_02
     3300004: geom_01_03
@@ -505,6 +527,8 @@ ModelImporter:
     3300212: geom_01_97
     3300214: geom_01_98
     3300216: geom_01_99
+    3300218: Green2
+    3300220: Road1
     4300000: geom_01_01
     4300002: geom_01_02
     4300004: geom_01_03
@@ -614,6 +638,9 @@ ModelImporter:
     4300212: geom_01_107
     4300214: geom_01_108
     4300216: geom_01_109
+    4300218: Green2
+    4300220: Road1
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1

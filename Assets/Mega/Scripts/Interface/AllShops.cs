@@ -114,6 +114,7 @@ db.Add(new ChangesInfo.Shop("Lensmaster", "",""));
 db.Add(new ChangesInfo.Shop("Levi's", "",""));
 db.Add(new ChangesInfo.Shop("L'Occitane", "",""));
 db.Add(new ChangesInfo.Shop("LUSIO", "",""));
+db.Add(new ChangesInfo.Shop("LUSH", "",""));
 db.Add(new ChangesInfo.Shop("MAC", "",""));
 db.Add(new ChangesInfo.Shop("Marella", "",""));
 //db.Add(new ChangesInfo.Shop("Marks&Spencer", "",""));

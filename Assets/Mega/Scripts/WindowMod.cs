@@ -33,8 +33,8 @@ public class WindowMod : MonoBehaviour {
 
     public static void StartFromController () {
         Debug.Log("ChangeScreenResolution");
-        screenPosition.x = 0;
-        screenPosition.y = 0;
+        //screenPosition.x = 0;
+        //screenPosition.y = 0;
         screenPosition.width = 1920;//3840 Screen.currentResolution.width; 1920
         //screenPosition.width = 3840;//3840 Screen.currentResolution.width; 1920
         screenPosition.height = 1080;//2160 Screen.currentResolution.height; 1080

@@ -15,6 +15,13 @@ public class RoadsProcessor : MonoBehaviour {
     public GameObject goNew;
     //public GameObject glass;
 
+    private enum BlendMode {
+        Opaque,
+        Cutout,
+        Fade,
+        Transparent
+    }
+    
     public void Awake () {
         inst = this;
     }
@@ -64,6 +71,25 @@ public class RoadsProcessor : MonoBehaviour {
     }
 
     private IEnumerator ToNew () {
+        
+        foreach(Material material in materialsOld) {
+            if (material.shader.name=="Standard")
+            if(material.GetFloat("_Mode") == 0f) {
+                material.SetFloat("_Mode", 2f);
+                Switcher(material, BlendMode.Fade);
+                //material.renderQueue = 2000;
+            }
+        }
+        
+        foreach(Material material in materialsNew) {
+            if (material.shader.name=="Standard")
+                if(material.GetFloat("_Mode") == 0f) {
+                    material.SetFloat("_Mode", 2f);
+                    Switcher(material, BlendMode.Fade);
+                    //material.renderQueue = 2000;
+                }
+        }
+        
         //Debug.Log("ToNew");
         float time = 0;
         float time2 = .5f;
@@ -97,6 +123,16 @@ public class RoadsProcessor : MonoBehaviour {
             materialsNew[i].SetColor("_Color", colorsNew[i]);
             //materialsNew[i].SetColor("_Color", new Color(materialsNew[i].color.r,materialsNew[i].color.g,materialsNew[i].color.b,1));
         }
+        
+        foreach(Material material in materialsNew) {
+            if (material.shader.name=="Standard")
+                if(material.GetFloat("_Mode") == 2f) {
+                    material.SetFloat("_Mode", 0f);
+                    Switcher(material, BlendMode.Opaque);
+                    //material.renderQueue = 2000;
+                }
+        }
+        
         goNew.SetActive(false);
         //goOld.SetActive(false);
         //AllCaps.allCaps.Refresh();
@@ -104,6 +140,24 @@ public class RoadsProcessor : MonoBehaviour {
     }
 
     private IEnumerator ToOld () {
+        foreach(Material material in materialsOld) {
+            if (material.shader.name=="Standard")
+                if(material.GetFloat("_Mode") == 0f) {
+                    material.SetFloat("_Mode", 2f);
+                    Switcher(material, BlendMode.Fade);
+                    //material.renderQueue = 2000;
+                }
+        }
+        
+        foreach(Material material in materialsNew) {
+            if (material.shader.name=="Standard")
+                if(material.GetFloat("_Mode") == 0f) {
+                    material.SetFloat("_Mode", 2f);
+                    Switcher(material, BlendMode.Fade);
+                    //material.renderQueue = 2000;
+                }
+        }
+        
         //Debug.Log("ToOld");
         float time = 0;
         float time2 = .5f;
@@ -136,10 +190,61 @@ public class RoadsProcessor : MonoBehaviour {
         for(int i = 0; i < materialsOld.Count; i++) {
             materialsOld[i].SetColor("_Color", colorsOld[i]);
         }
+        
+        foreach(Material material in materialsOld) {
+            if (material.shader.name=="Standard")
+                if(material.GetFloat("_Mode") == 2f) {
+                    material.SetFloat("_Mode", 0f);
+                    Switcher(material, BlendMode.Opaque);
+                    //material.renderQueue = 2000;
+                }
+        }
+        
         goOld.SetActive(false);
         //goNew.SetActive(false);
         //AllCaps.allCaps.Refresh();
         yield return null;
+    }
+    
+     private void Switcher (Material material, BlendMode blendMode) {
+        switch(blendMode) {
+            case BlendMode.Opaque:
+                material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+                material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+                material.SetInt("_ZWrite", 1);
+                material.DisableKeyword("_ALPHATEST_ON");
+                material.DisableKeyword("_ALPHABLEND_ON");
+                material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.renderQueue = -1;
+                break;
+            case BlendMode.Cutout:
+                material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+                material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+                material.SetInt("_ZWrite", 1);
+                material.EnableKeyword("_ALPHATEST_ON");
+                material.DisableKeyword("_ALPHABLEND_ON");
+                material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.renderQueue = 2450;
+                break;
+            case BlendMode.Fade:
+                material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+                material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                material.SetInt("_ZWrite", 0);
+                material.DisableKeyword("_ALPHATEST_ON");
+                material.EnableKeyword("_ALPHABLEND_ON");
+                material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.renderQueue = 3000;
+                break;
+            case BlendMode.Transparent:
+                material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+                material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                material.SetInt("_ZWrite", 0);
+                material.DisableKeyword("_ALPHATEST_ON");
+                material.DisableKeyword("_ALPHABLEND_ON");
+                material.EnableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.renderQueue = 3000;
+                break;
+        }
     }
 
     public void Update () {

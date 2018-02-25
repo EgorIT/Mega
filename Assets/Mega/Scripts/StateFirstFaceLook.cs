@@ -52,14 +52,11 @@ namespace Assets.Mega.Scripts {
 
         public void StartState () {
             //Debug.Log("go StartState");
-            
-           
             if (isHardMove) {
                 MegaCameraController.inst.SetNewPosCamera(FindPoint(), new Vector3(0, GlobalParams.eulerAnglesForCameraInShops.y, 0),
                     GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.fast);
                 StartCoroutine(WaitAfterStartState());
-            }
-            else {
+            } else {
                 MegaCameraController.inst.SetNewPosCamera(hardMovePointerMoveToShop.lookPoint.position, 
                     hardMovePointerMoveToShop.lookPoint.eulerAngles,
                     GlobalParams.fieldOfViewOnFirstLook, 

@@ -18,7 +18,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
-            parkingBeforTogle.onValueChanged.AddListener(BaseEventData => { MainLogic.inst.SwapParking(parkingBeforTogle.isOn); });
+            // parkingBeforTogle.onValueChanged.AddListener(BaseEventData => { MainLogic.inst.SwapParking(parkingBeforTogle.isOn); });
             floorBeforTogle.onValueChanged.AddListener(BaseEventData => { FloorController.inst.SetQuartal(floorBeforTogle.isOn); });
             secondLineButton.onClick.AddListener(() => { MainLogic.inst.GoVideo(); });
             backFromAllShops.onClick.AddListener(() => { MainLogic.inst.GoAllMega(); });

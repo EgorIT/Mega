@@ -16,8 +16,6 @@ namespace Assets.Mega.Scripts {
     public class MainLogic : MonoBehaviour {
         public static MainLogic inst;
 
-        //public bool isTest;
-
         public List<SceneForFirstFaceLook> AllFirstFaceLookScenes = new List<SceneForFirstFaceLook>();
         private ViewStates viewCurrentStates = ViewStates.none;
         public List<iViewState> listViewStates = new List<iViewState>();
@@ -29,23 +27,21 @@ namespace Assets.Mega.Scripts {
         public int currentNumberBlockShops;
 
         public List<Transform> borders = new List<Transform>();
-        //public List<GameObject> listToOnTEMP = new List<GameObject>();
 
         public bool iconFlag;
         private bool roofEnable = true;
-
 
         public GameObject parkNow;
         public GameObject parkAfter;
 
         public GameObject probes;
 
-       // public bool boolWindowMod;
-
         public bool showTableAndCaps;
 
         public Video mainVideo;
         public VideoLogo logo;
+
+      
 
         public void Awake () {
             inst = this;
@@ -60,7 +56,7 @@ namespace Assets.Mega.Scripts {
 
 
         public void ResetTime () {
-            MainLogic.inst.currentTime = 0;
+            currentTime = 0;
         }
 
         public void FindNeedObject () {
@@ -71,34 +67,27 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start () {
-            //if(!isTest) {
-            //    for(int i = 0; i < listToOnTEMP.Count; i++) {
-            //        if (listToOnTEMP[i]) {
-            //            listToOnTEMP[i].SetActive(true);
-            //        }
-            //        
-            //    }
-            //}
             //Debug.Log("w = " + Screen.currentResolution.width);
             //Debug.Log("h = " + Screen.currentResolution.height);
-            if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
-                StartCoroutine(IEnumWaitWindowMod());
-            }
+            //if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
+            //    StartCoroutine(IEnumWaitWindowMod());
+            //}
             RoadsProcessor.inst.StartFromController();
-            RoadsProcessor.inst.ToNewDo();
+            RoadsProcessor.inst.ToOldDo();
+            
+            //RoadsProcessor.inst.ToNewDo();
             StartCoroutine(IEnumWaitAfterStart());
         }
 
         public IEnumerator IEnumWaitAfterStart() {
             yield return new WaitForSeconds(1f);
-            //Debug.Log("GO");
-            RoadsProcessor.inst.ToOldDo();
+            RoadsProcessor.inst.ToNewDo();
         }
 
-        public IEnumerator IEnumWaitWindowMod () {
-            yield return new WaitForSeconds(2f);
-            WindowMod.StartFromController();
-        }
+        //public IEnumerator IEnumWaitWindowMod () {
+        //    yield return new WaitForSeconds(2f);
+        //    WindowMod.StartFromController();
+        //}
 
         public void SwapParking (bool showNew) {
             if(showNew) {
@@ -106,50 +95,26 @@ namespace Assets.Mega.Scripts {
             } else {
                 RoadsProcessor.inst.ToNewDo();
             }
-            //parkNow.SetActive(showNew);
-            //parkAfter.SetActive(!showNew);
         }
-
-        //public void SetQuarter(int number) {
-        //    if (number <= 2) {
-        //        if (!parkNow.activeInHierarchy) {
-        //            parkNow.SetActive(true);
-        //        }
-        //        if(parkAfter.activeInHierarchy) {
-        //            parkAfter.SetActive(false);
-        //        }
-        //    } else {
-        //        if(parkNow.activeInHierarchy) {
-        //            parkNow.SetActive(false);
-        //        }
-        //        if(!parkAfter.activeInHierarchy) {
-        //            parkAfter.SetActive(true);
-        //        }
-        //    }
-        //    //TableController.inst.DisAllShops();
-        //    MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
-        //    MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
-        //    ChangeState(ViewStates.allMega);
-        //    //spriteRendererPlan.sprite = listPlans[number];
-        //    currentNumberBlockShops = number;
-        //    viewCurrentStates = ViewStates.none;
-        //    ChangeState(ViewStates.shops);
-        //    FloorController.inst.SetQuartal(number);
-        //}
 
         public void GoAllMega () {
             MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
             ChangeState(ViewStates.allMega);
-            MainLogic.inst.DisRoof(3);
+            if(TableController.inst) {
+                TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
+            }
+            DisRoof(3);
         }
 
         public void GoAllRoads() {
             MegaCameraController.inst.distansAllMega = GlobalParams.maxDistancePesr;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(-37f, 0, -220f);
             ChangeState(ViewStates.allMega);
+            if(TableController.inst) {
+                TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
+            }
             EnableRoof();
-
         }
 
         public void DisRoof (float time) {
@@ -185,7 +150,7 @@ namespace Assets.Mega.Scripts {
             if(viewCurrentStates != ViewStates.one) {
                 currentTime += Time.deltaTime;
             }
-
+            
             if(currentTime > GlobalParams.needTimeToSleep && GetViewCurrentStates() != ViewStates.one) {
                 currentTime = GlobalParams.needTimeToSleep;
                 ChangeState(ViewStates.one);
@@ -194,7 +159,7 @@ namespace Assets.Mega.Scripts {
             }
 
 
-            if(MegaCameraController.inst.GetCurrentDistans() > -5000 && MegaCameraController.inst.GetCurrentDistans() < -100) {
+            if(MegaCameraController.inst.GetCurrentDistans() >= GlobalParams.maxDistancePesr && MegaCameraController.inst.GetCurrentDistans() < -100) {
                 if(!showTableAndCaps) {
                     showTableAndCaps = true;
                     if(TableController.inst) {
@@ -206,17 +171,17 @@ namespace Assets.Mega.Scripts {
                 }
             }
 
-            if(MegaCameraController.inst.GetCurrentDistans() < -5000) {
-                if(showTableAndCaps) {
-                    showTableAndCaps = false;
-                    if(TableController.inst) {
-                        TableController.inst.HideAllTable();
-                    }
-                    if(AllCaps.inst) {
-                        AllCaps.inst.HideAllCaps();
-                    }
-                }
-            }
+            //if(MegaCameraController.inst.GetCurrentDistans() < -5000) {
+            //    if(showTableAndCaps) {
+            //        showTableAndCaps = false;
+            //        if(TableController.inst) {
+            //            TableController.inst.HideAllTable();
+            //        }
+            //        if(AllCaps.inst) {
+            //            AllCaps.inst.HideAllCaps();
+            //        }
+            //    }
+            //}
 
             //if (MegaCameraController.inst.GetCurrentDistans() < GlobalParams.distansOnAllMega - 500) {
             //    if (!roofEnable) {

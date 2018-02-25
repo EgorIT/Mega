@@ -33,12 +33,12 @@ public class AllCaps : MonoBehaviour {
     }
 
     public void Update() {
-        if (TableController.inst.showCaps) {
-            TableController.inst.showCaps = false;
+        if (TableController.inst.showCapsTest) {
+            TableController.inst.showCapsTest = false;
             ShowAllCaps();
         }
-        if(TableController.inst.hideCaps) {
-            TableController.inst.hideCaps = false;
+        if(TableController.inst.hideCapsTest) {
+            TableController.inst.hideCapsTest = false;
             HideAllCaps();
         }
     }

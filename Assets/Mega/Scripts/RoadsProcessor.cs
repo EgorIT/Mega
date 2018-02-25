@@ -29,12 +29,20 @@ public class RoadsProcessor : MonoBehaviour {
     public void StartFromController () {
         GameObject goOld = MainLogic.inst.parkNow;// GameObject.FindWithTag("parkNow");
         GameObject goNew = MainLogic.inst.parkAfter;//GameObject.FindWithTag("parkAfter");
-        goNew.SetActive(true);
-        goOld.SetActive(true);
+        if (goNew) {
+            goNew.SetActive(true);
+        } else {
+          return;  
+        }
+        if (goOld) {
+            goOld.SetActive(true);
+        }
+        
         List<MeshRenderer> mrlOld = new List<MeshRenderer>();
         List<MeshRenderer> mrlNew = new List<MeshRenderer>();
         mrlOld = goOld.GetComponentsInChildren<MeshRenderer>().ToList();
         mrlNew = goNew.GetComponentsInChildren<MeshRenderer>().ToList();
+       
 
 
         mrlOld.ForEach(x => {

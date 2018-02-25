@@ -11,7 +11,7 @@ public class ShopCap : MonoBehaviour {
 
     public bool useFactor;
 
-    public bool test;
+    //public bool test;
 
     public TableShop tableShop;
     public PointerMoveToShop pointerMoveToShop;
@@ -27,7 +27,6 @@ public class ShopCap : MonoBehaviour {
                 pointTable = allTrans[i];
             }
         }
-        
     }
 
     public void MoveCamera() {
@@ -42,7 +41,10 @@ public class ShopCap : MonoBehaviour {
     }
 
     public void OnEnable() {
-        meshRenderer = GetComponent<MeshRenderer>();
+        if (meshRenderer == null) {
+            meshRenderer = GetComponent<MeshRenderer>();
+        }
+        
         //gameObject.SetActive(false);
         //if (tableShop) {
         //    tableShop.DisableTable();
@@ -52,10 +54,10 @@ public class ShopCap : MonoBehaviour {
     }
 
     public void Update() {
-        if (test) {
-            test = false;
-            pointerMoveToShop.test = true;
-        }
+        //if (test) {
+        //    test = false;
+        //    pointerMoveToShop.test = true;
+        //}
     }
 
     public void Setup() {

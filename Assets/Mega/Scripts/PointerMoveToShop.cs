@@ -7,19 +7,16 @@ using UnityEngine.EventSystems;
 namespace Assets.Mega.Scripts {
     public class PointerMoveToShop : MonoBehaviour, IPointerDownHandler {
 
-        public PointerEventData pointerEventData;
+        //public PointerEventData pointerEventData;
         public Transform lookPoint;
         public List<MeshRenderer> meshs;
-        public bool test;
+        //public bool test;
         public ShopCap shopCap;
         public bool dontUseAng;
 
 
         public void Start () {
-
-            
             meshs = GetComponentsInChildren<MeshRenderer>().ToList();
-
             for (int i = 0; i < meshs.Count; i++) {
                 meshs[i].enabled = false;
                 //meshs[i].material.color = Color.red;
@@ -33,11 +30,10 @@ namespace Assets.Mega.Scripts {
                 lookPoint.LookAt(shopCap.tableShop.transform);
                 lookPoint.eulerAngles = new Vector3(0, lookPoint.eulerAngles.y, 0);
             }
-            
         }
 
         public void OnPointerDown (PointerEventData data) {
-            pointerEventData = data;
+            //pointerEventData = data;
             if (MegaCameraController.inst.isFirstLookScene) {
                 StateFirstFaceLook.inst.MoveForThisShop(this);
             }
@@ -45,9 +41,7 @@ namespace Assets.Mega.Scripts {
 
         public void GoToThisShop() {
             //if(!MegaCameraController.inst.isFirstLookScene) {
-            
                 StateFirstFaceLook.inst.hardMovePointerMoveToShop = this;
-            
                 MegaCameraController.inst.GoToFirstLook(false);
                 //Debug.Log("OnPointerDown " + gameObject.name);
             //}
@@ -65,16 +59,16 @@ namespace Assets.Mega.Scripts {
 
 
         public void Update() {
-            if (test) {
-                test = false;
-                if(MegaCameraController.inst.isFirstLookScene) {
-                    StateFirstFaceLook.inst.MoveForThisShop(this);
-                } else {
-                    StateFirstFaceLook.inst.hardMovePointerMoveToShop = this;
-                    MegaCameraController.inst.GoToFirstLook(false);
-                    Debug.Log("OnPointerDown " + gameObject.name);
-                }
-            }
+            //if (test) {
+            //    test = false;
+            //    if(MegaCameraController.inst.isFirstLookScene) {
+            //        StateFirstFaceLook.inst.MoveForThisShop(this);
+            //    } else {
+            //        StateFirstFaceLook.inst.hardMovePointerMoveToShop = this;
+            //        MegaCameraController.inst.GoToFirstLook(false);
+            //        Debug.Log("OnPointerDown " + gameObject.name);
+            //    }
+            //}
         }
 
         public void AddThis () {

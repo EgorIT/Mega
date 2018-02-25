@@ -73,10 +73,10 @@ namespace Assets.Mega.Scripts {
             showCoro = StartCoroutine(IEnumChangeScale(GlobalParams.scaleIconShop));
         }
 
-        public void Update() {
-            testX = transform.position.x;
-            testZ = transform.position.z;
-        }
+        //public void Update() {
+        //    testX = transform.position.x;
+        //    testZ = transform.position.z;
+        //}
 
         public IEnumerator IEnumChangeScale (Vector3 endScale) {
             var startScale = iconShop.transform.localScale;

@@ -14,8 +14,8 @@ namespace Assets.Mega.Scripts {
         public bool showRoof;
         public bool hideRoof;
 
-        public bool showCaps;
-        public bool hideCaps;
+        public bool showCapsTest;
+        public bool hideCapsTest;
 
         public TableShop prefabTableShop;
 
@@ -65,7 +65,7 @@ namespace Assets.Mega.Scripts {
                 allShopCap[i].tableShop = tableShop;
                 allShopCap[i].Setup();
             }
-
+            SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
             //StartCoroutine(WaitToDis());
         }
 

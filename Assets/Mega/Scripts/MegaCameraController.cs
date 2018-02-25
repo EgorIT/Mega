@@ -28,6 +28,7 @@ public class MegaCameraController : MonoBehaviour {
     public Transform disCamera;
     //public List<Camera> listCamerasOrto;
     public Camera perspectiveCamera;
+    public Camera ortoRayCastCamera;
 
     private TypeCameraOnState currentTypeCameraOnState = TypeCameraOnState.perspective;
 
@@ -50,7 +51,10 @@ public class MegaCameraController : MonoBehaviour {
     public void Start () {
         currentDistans = GlobalParams.distansOnStateOne;
         currentEndAng = new Vector3(angelXCamera.eulerAngles.x, angelYCamera.eulerAngles.y, 0);
-
+        CorrectOrtoCamerForRayCast();
+        if(TableController.inst) {
+            TableController.inst.SetAngelsForIcons(angelYCamera.localEulerAngles.y);
+        }
     }
 
     public void MoveFromSwipe (float dX, float dY) {
@@ -70,6 +74,29 @@ public class MegaCameraController : MonoBehaviour {
                     break;
                 case ViewStates.firstFaceLook:
                     MoveInPersp(dX, dY);
+                    break;
+                case ViewStates.none:
+                    break;
+            }
+        }
+    }
+
+    public void RotateFromPinch (float dY) {
+        if(dontUseSwipeAndPinch) {
+            return;
+        }
+        if(isFirstLookScene) {
+           // MoveInPersp(dX, dY);
+
+        } else {
+            switch(MainLogic.inst.GetViewCurrentStates()) {
+                case ViewStates.one:
+                    break;
+                case ViewStates.allMega:
+                case ViewStates.shops:
+                    RotateCamera(dY);
+                    break;
+                case ViewStates.firstFaceLook:
                     break;
                 case ViewStates.none:
                     break;
@@ -101,8 +128,14 @@ public class MegaCameraController : MonoBehaviour {
         }
     }
 
+    public void RotateCamera (float dY) {
+        angelYCamera.Rotate(new Vector3(0, dY, 0));
+        if(TableController.inst) {
+            TableController.inst.SetAngelsForIcons(angelYCamera.localEulerAngles.y);
+        }
+    }
+
     public void PauseForUI() {
-        
         StartCoroutine(IEnumPausaForUI());
     }
 
@@ -116,6 +149,13 @@ public class MegaCameraController : MonoBehaviour {
         disCamera.localPosition += new Vector3(0, 0, dZoom);
         CheckPerSize();
         currentDistans = disCamera.localPosition.z;
+        CorrectOrtoCamerForRayCast();
+    }
+
+    public void CorrectOrtoCamerForRayCast() {
+        var t = GetCurrentDistans() / (GlobalParams.maxDistancePesr - GlobalParams.minDistancePesr);
+        var newOrtoSize = Mathf.Lerp(6, 220, t);
+        ortoRayCastCamera.orthographicSize = newOrtoSize;
     }
 
     public void CheckPerSize () {
@@ -174,7 +214,7 @@ public class MegaCameraController : MonoBehaviour {
         PauseForUI();
         StateFirstFaceLook.inst.isHardMove = isHardMove;
         MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
-        isFirstLookScene = true;
+        
         StartCoroutine(WaitToOff());
         //MainLogic.inst.SwapRoof(true);
     }
@@ -216,6 +256,8 @@ public class MegaCameraController : MonoBehaviour {
 
     public IEnumerator WaitToOff() {
         yield return new WaitForSeconds(GlobalParams.timeToFly - 0.2f);
+        yield return new WaitForSeconds(1f);
+        isFirstLookScene = true;
     }
 
     public void CheckPozitionCamera () {

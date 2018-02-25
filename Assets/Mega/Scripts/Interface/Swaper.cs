@@ -2,26 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Swaper : MonoBehaviour
-{
+public class Swaper : MonoBehaviour {
 
-	public Table target;
-	public Table current;
+    public Table target;
+    public Table current;
 
-	public void DelayedSwap()
-	{
-		StartCoroutine(Delayer());
-	}
+    public void DelayedSwap () {
+        StartCoroutine(Delayer());
+    }
 
-	private IEnumerator Delayer()
-	{
-		yield return new WaitForSeconds(3f);
-		Swap();
-	}
+    private IEnumerator Delayer () {
+        yield return new WaitForSeconds(3f);
+        Swap();
+    }
 
-	public void Swap()
-	{
-		current.RollOut();
-		target.RollIn();
-	}
+    public void Swap () {
+        current.RollOut();
+        target.RollIn();
+    }
 }

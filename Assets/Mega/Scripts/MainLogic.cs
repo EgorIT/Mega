@@ -56,12 +56,18 @@ namespace Assets.Mega.Scripts {
 
         [ContextMenu("GoFirstLook")]
         public void GoFirstLook() {//ot pervogo lica
+            if (MegaCameraController.inst.isFirstLookScene) {
+                return;
+            }
             StateFirstFaceLook.inst.pointerEventData = null;
             KeyController.inst.SwapZoom();
         }
 
         [ContextMenu("GoAllLook")]
         public void GoAllLook () {//vsy mega
+            if(!MegaCameraController.inst.isFirstLookScene) {
+                return;
+            }
             KeyController.inst.SwapZoom();
         }
 

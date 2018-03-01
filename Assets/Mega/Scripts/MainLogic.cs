@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -54,8 +55,8 @@ namespace Assets.Mega.Scripts {
 
         public float currentTime;
 
-        public Toggle firstView;
-        public Toggle fullscreen;
+        public Image firstView;
+        public Image fullscreen;
         public Toggle moveCamera;
         public Toggle rotateCamera;
         
@@ -73,6 +74,7 @@ namespace Assets.Mega.Scripts {
             if(!MegaCameraController.inst.isFirstLookScene) {
                 return;
             }
+           
             KeyController.inst.SwapZoom();
         }
 

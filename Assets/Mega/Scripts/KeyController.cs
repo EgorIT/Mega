@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Assets.Mega.Scripts {
@@ -77,16 +78,17 @@ namespace Assets.Mega.Scripts {
         //    btnSetZoom.gameObject.SetActive(var);
         //}
 
-        public void SwapZoom() {
-           
+        public void SwapZoom () {
+
             if(MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() > -100 && MegaCameraController.inst.isFirstLookScene) {
+                MainLogic.inst.firstView.color = Color.white;
+                MainLogic.inst.fullscreen.color = new Color(200,200,200,255)/255;
                 Debug.Log("GoOutFirstLook");
-                //SetActivButton(true);
                 MegaCameraController.inst.GoOutFirstLook();
             }
             if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() < -5000 && !MegaCameraController.inst.isFirstLookScene) {
-                //SetActivButton(false);
-                //btnSetZoom.gameObject.SetActive(true);
+                MainLogic.inst.firstView.color = new Color(200, 200, 200, 255) / 255;
+                MainLogic.inst.fullscreen.color = Color.white;
                 Debug.Log("GoToNearestShop");
                 StateFirstFaceLook.inst.GoToNearestShop();
             }
@@ -113,6 +115,10 @@ namespace Assets.Mega.Scripts {
             }
 
             if ((Input.touchSupported && Input.touchCount > 0) || (!Input.touchSupported  && Input.GetKey(KeyCode.Mouse0))) {
+                if ((Input.touchSupported && IsTouchUI(Input.GetTouch(0).position)) ||
+                    (!Input.touchSupported && IsTouchUI(Input.mousePosition))) {
+                    return;
+                }
                 if(doubleClick == 0) {
                     doubleClick++;
                 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Assets.Mega.Scripts {
     public enum ViewStates {
@@ -41,8 +42,7 @@ namespace Assets.Mega.Scripts {
         public Video mainVideo;
         public VideoLogo logo;
 
-      
-
+        
         public void Awake () {
             inst = this;
             FindNeedObject();
@@ -54,6 +54,11 @@ namespace Assets.Mega.Scripts {
 
         public float currentTime;
 
+        public Toggle firstView;
+        public Toggle fullscreen;
+        public Toggle moveCamera;
+        public Toggle rotateCamera;
+        
         [ContextMenu("GoFirstLook")]
         public void GoFirstLook() {//ot pervogo lica
             if (MegaCameraController.inst.isFirstLookScene) {

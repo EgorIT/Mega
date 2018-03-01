@@ -20,6 +20,10 @@ namespace Assets.Mega.Scripts {
         public bool isHardMove;
         public PointerMoveToShop hardMovePointerMoveToShop;
 
+        //public int countTouch;
+        //public float timeDeltaTouch;
+        public PointerEventData pointerEventData;
+
         public void Awake() {
             inst = this;
         }
@@ -27,6 +31,61 @@ namespace Assets.Mega.Scripts {
         public void Start () {
             ScanAllPoints();
             MainLogic.inst.listViewStates.Add(this);
+        }
+
+        //public void Update () {
+        //    if(countTouch == 2) {
+        //        //StateFirstFaceLook.inst.MoveForThisFloorPoint(this);
+        //
+        //        if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && !MegaCameraController.inst.isFirstLookScene) {
+        //            Debug.Log("Move Down");
+        //            GoToNearestShop();
+        //        } else {
+        //
+        //        }
+        //        countTouch = 0;
+        //    }
+        //    timeDeltaTouch += Time.deltaTime;
+        //    if(timeDeltaTouch > GlobalParams.timeToDoubleClick) {
+        //        countTouch = 0;
+        //        timeDeltaTouch = GlobalParams.timeToDoubleClick;
+        //    }
+        //}
+
+        public void GoToNearestShop () {
+            Ray ray = new Ray();
+            if(pointerEventData == null) {
+                Debug.Log("pointerEventData null");
+                ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(new Vector2(Screen.width * 0.5f, Screen.height * 0.5f));
+            } else {
+                ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(pointerEventData.position);
+            }
+            
+            pointerEventData = null;
+            RaycastHit hit;
+            Vector3 pos = Vector3.zero;
+            if(Physics.Raycast(ray, out hit)) {
+                pos = hit.point;
+            }
+
+            float dis = float.MaxValue;
+            int index = 0;
+
+            for(int i = 0; i < AllCaps.inst.listShopCaps.Count; i++) {
+                if(AllCaps.inst.listShopCaps[i].pointerMoveToShop != null) {
+                    var newDis = (AllCaps.inst.listShopCaps[i].pointerMoveToShop.lookPoint.position - pos).sqrMagnitude;
+                    //Debug.Log(newDis + " " + i);
+                    if(newDis < dis) {
+                        dis = newDis;
+                        index = i;
+                    }
+                } else {
+                    //Debug.Log(" null " + AllCaps.inst.listShopCaps[i].name);
+                }
+            }
+
+            StateFirstFaceLook.inst.hardMovePointerMoveToShop = AllCaps.inst.listShopCaps[index].pointerMoveToShop;
+            MegaCameraController.inst.GoToFirstLook(false);
         }
 
         public void ScanAllPoints() {
@@ -89,19 +148,19 @@ namespace Assets.Mega.Scripts {
             return typeCameraOnState;
         }
 
-        public void MoveForThisFloorPoint (PointMoveOnFirstFaceScene pointMoveOnFirstFaceScene) {
-            if(!MegaCameraController.inst.isFirstLookScene) {
-                return;
-            }
-
-            if(clickCoroutine != null) {
-                StopCoroutine(clickCoroutine);
-            }
-            var v3 = new Vector3(pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition.x,
-                GlobalParams.distansEye,
-                pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition.z);
-            clickCoroutine = StartCoroutine(IEnumCheckSwipe(v3, MegaCameraController.inst.currentEndAng));
-        }
+        //public void MoveForThisFloorPoint (PointMoveOnFirstFaceScene pointMoveOnFirstFaceScene) {
+        //    if(!MegaCameraController.inst.isFirstLookScene) {
+        //        return;
+        //    }
+        //
+        //    if(clickCoroutine != null) {
+        //        StopCoroutine(clickCoroutine);
+        //    }
+        //    var v3 = new Vector3(pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition.x,
+        //        GlobalParams.distansEye,
+        //        pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition.z);
+        //    clickCoroutine = StartCoroutine(IEnumCheckSwipe(v3, MegaCameraController.inst.currentEndAng));
+        //}
 
         public void MoveForThisShop (PointerMoveToShop pointerMoveToShop) {
             if(clickCoroutine != null) {

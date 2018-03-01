@@ -211,6 +211,7 @@ namespace Assets.Mega.Scripts {
             //    return;
             //}
             //Debug.Log("newState = " + newState.ToString());
+            MegaCameraController.inst.PauseForUi();
             for(int i = 0; i < listViewStates.Count; i++) {
                 if(listViewStates[i].GetViewStates() == viewCurrentStates) {
                     listViewStates[i].EndState();

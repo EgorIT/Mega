@@ -40,8 +40,9 @@ namespace Assets.Mega.Scripts {
         }
 
         public void OnPointerDown (PointerEventData data) {
-            pointerEventData = data;
+            
             if(MegaCameraController.inst.isFirstLookScene) {
+                pointerEventData = data;
                 StateFirstFaceLook.inst.MoveForThisArrowOnFloor(this);
             }
         }

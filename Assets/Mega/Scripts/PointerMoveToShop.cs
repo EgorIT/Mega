@@ -34,9 +34,9 @@ namespace Assets.Mega.Scripts {
 
         public void OnPointerDown (PointerEventData data) {
             //pointerEventData = data;
-            if (MegaCameraController.inst.isFirstLookScene) {
-                StateFirstFaceLook.inst.MoveForThisShop(this);
-            }
+            //if (MegaCameraController.inst.isFirstLookScene) {
+            //    StateFirstFaceLook.inst.MoveForThisShop(this);
+            //}
         }
 
         public void GoToThisShop() {

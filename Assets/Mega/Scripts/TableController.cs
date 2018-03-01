@@ -19,13 +19,14 @@ namespace Assets.Mega.Scripts {
 
         public TableShop prefabTableShop;
 
+        public Transform underlineTran;
+
         public void Awake () {
             inst = this;
         }
 
         public void Start () {
-            var allTable = new GameObject();
-            allTable.name = "allTable";
+            var allTable = new GameObject {name = "allTable"};
             allTable.transform.position = Vector3.zero;
             allTable.transform.eulerAngles = Vector3.zero;
             allTable.transform.localScale = Vector3.one;
@@ -34,14 +35,11 @@ namespace Assets.Mega.Scripts {
             for(int i = 0; i < allShopCap.Length; i++) {
                 var tableShop = Instantiate(prefabTableShop);
                 tableShop.gameObject.SetActive(true);
-               // tableShop.transform.parent = allTable.transform;
                 tableShop.transform.parent = allShopCap[i].transform;
-
-
                 var mesh = allShopCap[i].GetComponent<MeshFilter>();
-                Vector3 midl = Vector3.zero;
-                for(int j = 0; j < mesh.mesh.vertices.Length; j++) {
-                    midl += mesh.mesh.vertices[j];
+                var midl = Vector3.zero;
+                foreach (Vector3 t in mesh.mesh.vertices) {
+                    midl += t;
                 }
                 midl = midl * (1f / mesh.mesh.vertices.Length);
                 tableShop.transform.localPosition = new Vector3(midl.x, 0, midl.z);
@@ -49,36 +47,20 @@ namespace Assets.Mega.Scripts {
                 if(allShopCap[i].pointTable) {
                     tableShop.transform.position = new Vector3(allShopCap[i].pointTable.position.x, tableShop.transform.position.y, allShopCap[i].pointTable.position.z);
                 }
-
-
-
-                /* } else {
-                     tableShop.transform.position = allShopCap[i].transform.position + Vector3.up * 2;
-                     tableShop.startPos = tableShop.transform.position;
-                 }*/
                 tableShop.transform.parent = allTable.transform;
                 tableShop.transform.localPosition = new Vector3(tableShop.transform.localPosition.x, 5f, tableShop.transform.localPosition.z);
                 tableShop.transform.localScale = Vector3.zero;
-                //tableShop.transform.localScale = GlobalParams.scaleIconShop;
                 tableShop.SetName(allShopCap[i].name);
                 tableShop.shopCap = allShopCap[i];
                 allShopCap[i].tableShop = tableShop;
                 allShopCap[i].Setup();
             }
             SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
-            //StartCoroutine(WaitToDis());
         }
 
-        //public IEnumerator WaitToDis () {
-        //    yield return new WaitForSeconds(0.2f);
-        //    DisAllShops();
-        //}
-
-
         public void SetAngelsForIcons (float y) {
-            for(int i = 0; i < listLittleShops.Count; i++) {
-                //listLittleShops[i].iconShop.transform.eulerAngles = new Vector3(0, y, 0);
-                listLittleShops[i].iconShop.transform.eulerAngles = new Vector3(45, y, 0);
+            foreach (var t in listLittleShops) {
+                t.iconShop.transform.eulerAngles = new Vector3(45, y, 0);
             }
         }
 
@@ -90,6 +72,18 @@ namespace Assets.Mega.Scripts {
             if(hideTable) {
                 hideTable = false;
                 HideAllTable();
+            }
+        }
+
+        public void ShowAllTable () {
+            for(int i = 0; i < listLittleShops.Count; i++) {
+                listLittleShops[i].EnableTable();
+            }
+        }
+
+        public void HideAllTable () {
+            for(int i = 0; i < listLittleShops.Count; i++) {
+                listLittleShops[i].DisableTable();
             }
         }
 
@@ -105,18 +99,5 @@ namespace Assets.Mega.Scripts {
                 swapRoofswapRoof = true;
             }
         }*/
-
-        public void ShowAllTable () {
-            for(int i = 0; i < listLittleShops.Count; i++) {
-                listLittleShops[i].EnableTable();
-            }
-        }
-
-
-        public void HideAllTable () {
-            for(int i = 0; i < listLittleShops.Count; i++) {
-                listLittleShops[i].DisableTable();
-            }
-        }
     }
 }

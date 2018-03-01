@@ -37,7 +37,7 @@ public class MegaCameraController : MonoBehaviour {
     public Vector3 currentEndAng;
     public float currentDistans;
     public float currentFieldOfView;
-    public bool dontUseSwipeAndPinch;
+    private bool _dontUseUi;
 
     public bool isFirstLookScene;
 
@@ -57,8 +57,12 @@ public class MegaCameraController : MonoBehaviour {
         }
     }
 
+    public bool GetDontUseUi() {
+        return _dontUseUi;
+    }
+
     public void MoveFromSwipe (float dX, float dY) {
-        if(dontUseSwipeAndPinch) {
+        if(_dontUseUi) {
             return;
         }
         if(isFirstLookScene) {
@@ -82,7 +86,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void RotateFromPinch (float dY) {
-        if(dontUseSwipeAndPinch) {
+        if(_dontUseUi) {
             return;
         }
         if(isFirstLookScene) {
@@ -105,7 +109,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void ZoomFromPinch (float dZoom) {
-        if(dontUseSwipeAndPinch) {
+        if(_dontUseUi) {
             return;
         }
         if(isFirstLookScene) {
@@ -135,14 +139,14 @@ public class MegaCameraController : MonoBehaviour {
         }
     }
 
-    public void PauseForUI() {
-        StartCoroutine(IEnumPausaForUI());
+    public void PauseForUi() {
+        StartCoroutine(IEnumPausaForUi());
     }
 
-    public IEnumerator IEnumPausaForUI () {
-        dontUseSwipeAndPinch = true;
+    private IEnumerator IEnumPausaForUi () {
+        _dontUseUi = true;
         yield return new WaitForSeconds(GlobalParams.timeToFly * 0.5f);
-        dontUseSwipeAndPinch = false;
+        _dontUseUi = false;
     }
 
     public void ZoomInPer (float dZoom) {
@@ -211,7 +215,7 @@ public class MegaCameraController : MonoBehaviour {
             StartCoroutine(FadeHardMove());
         }
         TableController.inst.HideAllTable();
-        PauseForUI();
+        PauseForUi();
         StateFirstFaceLook.inst.isHardMove = isHardMove;
         MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
         
@@ -246,8 +250,8 @@ public class MegaCameraController : MonoBehaviour {
 
     public void GoOutFirstLook() {
         //TableController.inst.ShowAllShops();
-        PauseForUI();
-        distansAllMega = GlobalParams.minDistancePesr - 100;
+        PauseForUi();
+        distansAllMega = GlobalParams.distansOnAllMega;//GlobalParams.minDistancePesr - 100;
         stateLookVector3AllMega = posCamera.position;
         MainLogic.inst.ChangeState(ViewStates.allMega);
         MainLogic.inst.DisRoof(3);

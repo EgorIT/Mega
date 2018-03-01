@@ -25,9 +25,9 @@ namespace Assets.Mega.Scripts {
         public float oldRotateVar;
         public float deltaY;
 
-        public Button btnSet360;
-        public Button btnSetPanoram;
-        public Button btnSetZoom;
+        //public Button btnSet360;
+        //public Button btnSetPanoram;
+        //public Button btnSetZoom;
 
         public bool isPanoram = true;
 
@@ -38,9 +38,9 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
-            btnSet360.onClick.AddListener(Set360);
-            btnSetPanoram.onClick.AddListener(SetPanoram);
-            btnSetZoom.onClick.AddListener(SetZoom);
+            //btnSet360.onClick.AddListener(Set360);
+            //btnSetPanoram.onClick.AddListener(SetPanoram);
+            //btnSetZoom.onClick.AddListener(SetZoom);
             SetPanoram();
         }
 
@@ -56,8 +56,8 @@ namespace Assets.Mega.Scripts {
                 return;
             }
             isPanoram = true;
-            btnSetPanoram.image.color = Color.blue;
-            btnSet360.image.color = Color.white;
+            //btnSetPanoram.image.color = Color.blue;
+            //btnSet360.image.color = Color.white;
         }
         
         public void Set360 () {
@@ -65,26 +65,26 @@ namespace Assets.Mega.Scripts {
                 return;
             }
             isPanoram = false;
-            btnSetPanoram.image.color = Color.white;
-            btnSet360.image.color = Color.blue;
+            //btnSetPanoram.image.color = Color.white;
+            //btnSet360.image.color = Color.blue;
         }
 
-        public void SetActivButton(bool var) {
-            btnSet360.gameObject.SetActive(var);
-            btnSetPanoram.gameObject.SetActive(var);
-            btnSetZoom.gameObject.SetActive(var);
-        }
+        //public void SetActivButton(bool var) {
+        //    btnSet360.gameObject.SetActive(var);
+        //    btnSetPanoram.gameObject.SetActive(var);
+        //    btnSetZoom.gameObject.SetActive(var);
+        //}
 
         public void SwapZoom() {
            
             if(MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() > -100 && MegaCameraController.inst.isFirstLookScene) {
                 Debug.Log("GoOutFirstLook");
-                SetActivButton(true);
+                //SetActivButton(true);
                 MegaCameraController.inst.GoOutFirstLook();
             }
             if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() < -5000 && !MegaCameraController.inst.isFirstLookScene) {
-                SetActivButton(false);
-                btnSetZoom.gameObject.SetActive(true);
+                //SetActivButton(false);
+                //btnSetZoom.gameObject.SetActive(true);
                 Debug.Log("GoToNearestShop");
                 StateFirstFaceLook.inst.GoToNearestShop();
             }
@@ -107,7 +107,9 @@ namespace Assets.Mega.Scripts {
 
             if(doubleClick == 2) {
                 //Debug.Log("cccc");
-                StateFirstFaceLook.inst.pointerEventData = null;
+                //if (MegaCameraController.inst.isFirstLookScene) {
+                //    StateFirstFaceLook.inst.pointerEventData = null;
+                //}
                 SwapZoom();
                 ResetClick();
             }

@@ -54,6 +54,26 @@ namespace Assets.Mega.Scripts {
 
         public float currentTime;
 
+        [ContextMenu("GoFirstLook")]
+        public void GoFirstLook() {//ot pervogo lica
+            StateFirstFaceLook.inst.pointerEventData = null;
+            KeyController.inst.SwapZoom();
+        }
+
+        [ContextMenu("GoAllLook")]
+        public void GoAllLook () {//vsy mega
+            KeyController.inst.SwapZoom();
+        }
+
+        [ContextMenu("Set360")]
+        public void Set360 () {//360 
+            KeyController.inst.Set360();
+        }
+
+        [ContextMenu("SetPanorama")]
+        public void SetPanorama() {//panorama 
+            KeyController.inst.SetPanoram();
+        }
 
         public void ResetTime () {
             currentTime = 0;

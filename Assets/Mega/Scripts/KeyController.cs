@@ -106,10 +106,6 @@ namespace Assets.Mega.Scripts {
             }
 
             if(doubleClick == 2) {
-                //Debug.Log("cccc");
-                //if (MegaCameraController.inst.isFirstLookScene) {
-                //    StateFirstFaceLook.inst.pointerEventData = null;
-                //}
                 SwapZoom();
                 ResetClick();
             }

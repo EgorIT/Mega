@@ -33,6 +33,8 @@ namespace Assets.Mega.Scripts {
 
         public bool clickOnMap;
 
+      
+
         public void Awake() {
             inst = this;
         }

@@ -42,6 +42,7 @@ namespace Assets.Mega.Scripts {
         public void OnPointerDown (PointerEventData data) {
             
             if(MegaCameraController.inst.isFirstLookScene) {
+                Debug.Log("Go arrow " + gameObject.name);
                 pointerEventData = data;
                 StateFirstFaceLook.inst.MoveForThisArrowOnFloor(this);
             }

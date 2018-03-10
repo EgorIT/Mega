@@ -105,16 +105,16 @@ namespace Assets.Mega.Scripts {
             //if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
             //    StartCoroutine(IEnumWaitWindowMod());
             //}
+
+
             RoadsProcessor.inst.StartFromController();
-            RoadsProcessor.inst.ToOldDo();
-            
-            //RoadsProcessor.inst.ToNewDo();
             StartCoroutine(IEnumWaitAfterStart());
         }
 
         public IEnumerator IEnumWaitAfterStart() {
-            yield return new WaitForSeconds(1f);
             RoadsProcessor.inst.ToNewDo();
+            yield return new WaitForSeconds(1f);
+            RoadsProcessor.inst.ToOldDo();
         }
 
         //public IEnumerator IEnumWaitWindowMod () {
@@ -174,6 +174,7 @@ namespace Assets.Mega.Scripts {
             }
         }
 
+        [ContextMenu("GoVideo")]
         public void GoVideo () {
             StateOne.inst.isShowVideo = true;
             ChangeState(ViewStates.one);

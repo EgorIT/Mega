@@ -6,70 +6,44 @@ using UnityEngine;
 namespace Assets.Mega.Scripts {
     public class FloorController : MonoBehaviour {
         public static FloorController inst;
-
         //public List<MeshRenderer> allOldMeshFloor;
         public List<MeshRenderer> allMeshFloor;
-
-        //public List<GameObject> allParentOldGoFloor;
+        //public List<GameObject> allParentOldGoFloo;
         //public List<GameObject> allGoNewFloor;
-
         public Material newFloorMaterialNotAlfa;
         public Material oldFloorMaterialNotAlfa;
         public Material newFloorMaterial;
         public Material oldFloorMaterial;
-
         //public GameObject parentFloor;
         public bool newFloor;
         public bool oldFloor;
-
         public bool currentFloorIsNew;
-
-
+        
         public void Awake () {
             inst = this;
         }
-
-        //public void SetNew () {
-        //    for(int i = 0; i < allOldMeshFloor.Count; i++) {
-        //        allOldMeshFloor[i].material = newFloorMaterial;
-        //    }
-        //}
-        //
-        //public void SetOld () {
-        //    for(int i = 0; i < allOldMeshFloor.Count; i++) {
-        //        allOldMeshFloor[i].material = oldFloorMaterial;
-        //    }
-        //}
-
+        
         public void Start () {
-            //SetupToScale();
             SetupToAlfa();
+            SetNewFloor();
+        }
+
+        [ContextMenu("SetNewFloor")]
+        public void SetNewFloor () {
+            StartCoroutine(IEnumChangeAlfa(true));
+        }
+
+        [ContextMenu("SetOldFloor")]
+        public void SetOldFloor () {
+            StartCoroutine(IEnumChangeAlfa(false));
         }
 
         public void SetupToAlfa () {
-            //parentFloor = new GameObject();
-            //parentFloor.name = "parentFloor";
-            //parentFloor.transform.position = Vector3.zero + new Vector3(0, 0.01f, 0);
-            //parentFloor.transform.localEulerAngles = Vector3.zero;
-            //parentFloor.transform.localScale = Vector3.one;
-
             var allMesh = FindObjectsOfType<MeshRenderer>();
             for(int i = 0; i < allMesh.Length; i++) {
                 if(allMesh[i].materials[0].name == "Floor (Instance)") {
                     allMesh[i].material = oldFloorMaterialNotAlfa;
                     allMeshFloor.Add(allMesh[i]);
-                    //var newGo = Instantiate(allMesh[i].gameObject);
-                    //var newMesh = newGo.GetComponent<MeshRenderer>();
-                    //newMesh.material = newFloorMaterial;
-                    //newGo.transform.position = allMesh[i].gameObject.transform.position;
-                    //
-                    //allMesh[i].material.color = Color.white;
-                    //newMesh.material.color = new Color(1, 1, 1, 0);
-                    //
-                    //allOldMeshFloor.Add(allMesh[i]);
-                    //allNewMeshFloor.Add(newMesh);
-                    //
-                    //newGo.transform.parent = parentFloor.transform;
                 }
             }
         }
@@ -105,8 +79,6 @@ namespace Assets.Mega.Scripts {
             for(int i = 0; i < allMeshFloor.Count; i++) {
                 allMeshFloor[i].material.color = new Color(1, 1, 1, 0);
             }
-
-
 
             for(int i = 0; i < allMeshFloor.Count; i++) {
                 if(isNewFloor) {
@@ -181,29 +153,17 @@ namespace Assets.Mega.Scripts {
         //    }
         //
         //}
+      
 
-        public void SetQuartal (bool isNewFloor) {
-            StartCoroutine(IEnumChangeAlfa(!isNewFloor));
-
-            // if(isNewFloor) {
-            //    StartCoroutine(IEnumChangeScale(1));
-            // } else {
-            //     StartCoroutine(IEnumChangeScale(0));
-            // }
-        }
-
-        public void Update () {
-            //if(newFloor) {
-            //    newFloor = false;
-            //    StartCoroutine(IEnumChangeScale(1));
-            //}
-            //
-            //if(oldFloor) {
-            //    oldFloor = false;
-            //    StartCoroutine(IEnumChangeScale(0));
-            //}
-        }
-
+        //public void SetFloor (bool isNewFloor) {
+        //    StartCoroutine(IEnumChangeAlfa(!isNewFloor));
+        //
+        //    // if(isNewFloor) {
+        //    //    StartCoroutine(IEnumChangeScale(1));
+        //    // } else {
+        //    //     StartCoroutine(IEnumChangeScale(0));
+        //    // }
+        //}
 
         //public void SetupToScale () {
         //    parentFloor = new GameObject();
@@ -244,6 +204,18 @@ namespace Assets.Mega.Scripts {
         //            newGo.SetActive(false);
         //            //allMesh[i].transform.parent = transform;
         //        }
+        //    }
+        //}
+
+        //public void SetNew () {
+        //    for(int i = 0; i < allOldMeshFloor.Count; i++) {
+        //        allOldMeshFloor[i].material = newFloorMaterial;
+        //    }
+        //}
+        //
+        //public void SetOld () {
+        //    for(int i = 0; i < allOldMeshFloor.Count; i++) {
+        //        allOldMeshFloor[i].material = oldFloorMaterial;
         //    }
         //}
 

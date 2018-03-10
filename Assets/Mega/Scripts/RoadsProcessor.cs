@@ -21,7 +21,7 @@ public class RoadsProcessor : MonoBehaviour {
         Fade,
         Transparent
     }
-    
+
     public void Awake () {
         inst = this;
     }
@@ -29,20 +29,20 @@ public class RoadsProcessor : MonoBehaviour {
     public void StartFromController () {
         GameObject goOld = MainLogic.inst.parkNow;// GameObject.FindWithTag("parkNow");
         GameObject goNew = MainLogic.inst.parkAfter;//GameObject.FindWithTag("parkAfter");
-        if (goNew) {
+        if(goNew) {
             goNew.SetActive(true);
         } else {
-          return;  
+            return;
         }
-        if (goOld) {
+        if(goOld) {
             goOld.SetActive(true);
         }
-        
+
         List<MeshRenderer> mrlOld = new List<MeshRenderer>();
         List<MeshRenderer> mrlNew = new List<MeshRenderer>();
         mrlOld = goOld.GetComponentsInChildren<MeshRenderer>().ToList();
         mrlNew = goNew.GetComponentsInChildren<MeshRenderer>().ToList();
-       
+
 
 
         mrlOld.ForEach(x => {
@@ -64,6 +64,7 @@ public class RoadsProcessor : MonoBehaviour {
         //Debug.Log(materialsNew.Count);
         //Debug.Log(colorsNew.Count);
         //goOld.SetActive(true);
+
     }
 
     public void ToOldDo () {
@@ -79,25 +80,24 @@ public class RoadsProcessor : MonoBehaviour {
     }
 
     private IEnumerator ToNew () {
-        
         foreach(Material material in materialsOld) {
-            if (material.shader.name=="Standard")
-            if(material.GetFloat("_Mode") == 0f) {
-                material.SetFloat("_Mode", 2f);
-                Switcher(material, BlendMode.Fade);
-                //material.renderQueue = 2000;
-            }
-        }
-        
-        foreach(Material material in materialsNew) {
-            if (material.shader.name=="Standard")
+            if(material.shader.name == "Standard")
                 if(material.GetFloat("_Mode") == 0f) {
                     material.SetFloat("_Mode", 2f);
                     Switcher(material, BlendMode.Fade);
                     //material.renderQueue = 2000;
                 }
         }
-        
+
+        foreach(Material material in materialsNew) {
+            if(material.shader.name == "Standard")
+                if(material.GetFloat("_Mode") == 0f) {
+                    material.SetFloat("_Mode", 2f);
+                    Switcher(material, BlendMode.Fade);
+                    //material.renderQueue = 2000;
+                }
+        }
+
         //Debug.Log("ToNew");
         float time = 0;
         float time2 = .5f;
@@ -108,7 +108,6 @@ public class RoadsProcessor : MonoBehaviour {
                 Color mColor = material.color;
                 Color newColor = new Color(mColor.r, mColor.g, mColor.b, temp);
                 material.SetColor("_Color", newColor);
-
             }
 
             for(int i = 0; i < materialsNew.Count; i++) {
@@ -131,16 +130,17 @@ public class RoadsProcessor : MonoBehaviour {
             materialsNew[i].SetColor("_Color", colorsNew[i]);
             //materialsNew[i].SetColor("_Color", new Color(materialsNew[i].color.r,materialsNew[i].color.g,materialsNew[i].color.b,1));
         }
-        
+
         foreach(Material material in materialsNew) {
-            if (material.shader.name=="Standard")
+            if(material.shader.name == "Standard") {
                 if(material.GetFloat("_Mode") == 2f) {
                     material.SetFloat("_Mode", 0f);
                     Switcher(material, BlendMode.Opaque);
                     //material.renderQueue = 2000;
                 }
+            }
         }
-        
+
         goNew.SetActive(false);
         //goOld.SetActive(false);
         //AllCaps.allCaps.Refresh();
@@ -149,23 +149,23 @@ public class RoadsProcessor : MonoBehaviour {
 
     private IEnumerator ToOld () {
         foreach(Material material in materialsOld) {
-            if (material.shader.name=="Standard")
+            if(material.shader.name == "Standard")
                 if(material.GetFloat("_Mode") == 0f) {
                     material.SetFloat("_Mode", 2f);
                     Switcher(material, BlendMode.Fade);
                     //material.renderQueue = 2000;
                 }
         }
-        
+
         foreach(Material material in materialsNew) {
-            if (material.shader.name=="Standard")
+            if(material.shader.name == "Standard")
                 if(material.GetFloat("_Mode") == 0f) {
                     material.SetFloat("_Mode", 2f);
                     Switcher(material, BlendMode.Fade);
                     //material.renderQueue = 2000;
                 }
         }
-        
+
         //Debug.Log("ToOld");
         float time = 0;
         float time2 = .5f;
@@ -198,23 +198,23 @@ public class RoadsProcessor : MonoBehaviour {
         for(int i = 0; i < materialsOld.Count; i++) {
             materialsOld[i].SetColor("_Color", colorsOld[i]);
         }
-        
+
         foreach(Material material in materialsOld) {
-            if (material.shader.name=="Standard")
+            if(material.shader.name == "Standard")
                 if(material.GetFloat("_Mode") == 2f) {
                     material.SetFloat("_Mode", 0f);
                     Switcher(material, BlendMode.Opaque);
                     //material.renderQueue = 2000;
                 }
         }
-        
+
         goOld.SetActive(false);
         //goNew.SetActive(false);
         //AllCaps.allCaps.Refresh();
         yield return null;
     }
-    
-     private void Switcher (Material material, BlendMode blendMode) {
+
+    private void Switcher (Material material, BlendMode blendMode) {
         switch(blendMode) {
             case BlendMode.Opaque:
                 material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);

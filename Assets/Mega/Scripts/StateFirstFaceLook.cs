@@ -24,6 +24,8 @@ namespace Assets.Mega.Scripts {
         //public float timeDeltaTouch;
         public PointerEventData pointerEventData;
 
+        public List<GameObject> roadList;
+
         public void Awake() {
             inst = this;
         }
@@ -123,6 +125,7 @@ namespace Assets.Mega.Scripts {
                     TypeMoveCamera.fast);
                 StartCoroutine(WaitAfterStartState());
             }
+            SetActivRoad(false);
         }
 
         public IEnumerator WaitAfterStartState() {
@@ -134,11 +137,19 @@ namespace Assets.Mega.Scripts {
 
         public void EndState () {
             MainLogic.inst.showTableAndCaps = false;
+            SetActivRoad(true);
             //if (RoofProcessor.inst) {
             //    RoofProcessor.inst.DoTransparent();
             //}
 
         }
+
+        public void SetActivRoad(bool var) {
+            for (int i = 0; i < roadList.Count; i++) {
+                roadList[i].SetActive(var);
+            }
+        }
+
 
         public ViewStates GetViewStates () {
             return viewStates;

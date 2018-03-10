@@ -26,6 +26,16 @@ ModelImporter:
     100036: Stolbi_MeshPart0
     100038: Stolbi_MeshPart1
     100040: Stolbi_MeshPart2
+    100042: Gotta_light.001
+    100044: Gotta_light_2.001
+    100046: Parking.001
+    100048: Parking_2.001
+    100050: Parking_3.001
+    100052: Parking_4.001
+    100054: Stolbi.001
+    100056: Stolbi.001_MeshPart0
+    100058: Stolbi.001_MeshPart1
+    100060: Stolbi.001_MeshPart2
     400000: CINEMA_4D_Editor
     400002: Enter
     400004: Enter_2
@@ -47,6 +57,16 @@ ModelImporter:
     400036: Stolbi_MeshPart0
     400038: Stolbi_MeshPart1
     400040: Stolbi_MeshPart2
+    400042: Gotta_light.001
+    400044: Gotta_light_2.001
+    400046: Parking.001
+    400048: Parking_2.001
+    400050: Parking_3.001
+    400052: Parking_4.001
+    400054: Stolbi.001
+    400056: Stolbi.001_MeshPart0
+    400058: Stolbi.001_MeshPart1
+    400060: Stolbi.001_MeshPart2
     2300000: Enter
     2300002: Enter_2
     2300004: Enter_3
@@ -65,6 +85,15 @@ ModelImporter:
     2300030: Stolbi_MeshPart0
     2300032: Stolbi_MeshPart1
     2300034: Stolbi_MeshPart2
+    2300036: Gotta_light.001
+    2300038: Gotta_light_2.001
+    2300040: Parking.001
+    2300042: Parking_2.001
+    2300044: Parking_3.001
+    2300046: Parking_4.001
+    2300048: Stolbi.001_MeshPart0
+    2300050: Stolbi.001_MeshPart1
+    2300052: Stolbi.001_MeshPart2
     3300000: Enter
     3300002: Enter_2
     3300004: Enter_3
@@ -83,6 +112,15 @@ ModelImporter:
     3300030: Stolbi_MeshPart0
     3300032: Stolbi_MeshPart1
     3300034: Stolbi_MeshPart2
+    3300036: Gotta_light.001
+    3300038: Gotta_light_2.001
+    3300040: Parking.001
+    3300042: Parking_2.001
+    3300044: Parking_3.001
+    3300046: Parking_4.001
+    3300048: Stolbi.001_MeshPart0
+    3300050: Stolbi.001_MeshPart1
+    3300052: Stolbi.001_MeshPart2
     4300000: Extrude_1
     4300002: Gotta_light_MeshPart0
     4300004: Gotta_light_2
@@ -101,6 +139,15 @@ ModelImporter:
     4300030: Enter
     4300032: Enter_2
     4300034: Enter_3
+    4300036: Parking_4.001
+    4300038: Parking_3.001
+    4300040: Parking_2.001
+    4300042: Parking.001_MeshPart0
+    4300044: Stolbi.001_MeshPart0
+    4300046: Stolbi.001_MeshPart1
+    4300048: Stolbi.001_MeshPart2
+    4300050: Gotta_light_2.001
+    4300052: Gotta_light.001_MeshPart0
     7400000: Take 001
     9500000: //RootNode
   materials:

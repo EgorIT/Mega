@@ -40,12 +40,17 @@ namespace Assets.Mega.Scripts {
         }
 
         public void OnPointerDown (PointerEventData data) {
-            
+            Debug.Log("CLICK " + gameObject.name);
             if(MegaCameraController.inst.isFirstLookScene) {
                 Debug.Log("Go arrow " + gameObject.name);
                 pointerEventData = data;
-                StateFirstFaceLook.inst.MoveForThisArrowOnFloor(this);
+                GoThisArrow();
             }
+        }
+
+        [ContextMenu("GoThisArrow")]
+        public void GoThisArrow() {
+            StateFirstFaceLook.inst.MoveForThisArrowOnFloor(this);
         }
 
         public void Fly() {

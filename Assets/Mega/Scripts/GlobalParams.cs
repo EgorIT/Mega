@@ -46,7 +46,7 @@ namespace Assets.Mega.Scripts {
         public static float speedRotateCamera = 1f;
 
 
-        public static float timeToDoubleClick = 0.5f;
+        public static float timeToDoubleClick = 0.2f;
         //public static float ortoMinSize = 5f;
         //public static float ortoMaxSize = 150f;
 

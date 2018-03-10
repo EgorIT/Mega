@@ -45,14 +45,20 @@ public class AllCaps : MonoBehaviour {
 
     public void ShowAllCaps() {
         for (int i = 0; i < listShopCaps.Count; i++) {
-            listShopCaps[i].meshRenderer.enabled = true;
+
+            if (listShopCaps[i].enabled && listShopCaps[i].meshRenderer) {
+                listShopCaps[i].meshRenderer.enabled = true;
+            }
+            
         }
         
     }
 
     public void HideAllCaps() {
         for(int i = 0; i < listShopCaps.Count; i++) {
-            listShopCaps[i].meshRenderer.enabled = false;
+            if (listShopCaps[i].enabled && listShopCaps[i].meshRenderer) {
+                listShopCaps[i].meshRenderer.enabled = false;
+            }
         }
     }
 

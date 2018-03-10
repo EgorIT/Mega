@@ -1,0 +1,3 @@
+﻿<list>
+<info>	<widht>1920</widht>	<height>1080</height>	</info>
+</list>

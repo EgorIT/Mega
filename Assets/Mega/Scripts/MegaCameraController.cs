@@ -220,6 +220,7 @@ public class MegaCameraController : MonoBehaviour {
         MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
         
         StartCoroutine(WaitToOff());
+        ortoRayCastCamera.gameObject.SetActive(false);
         //MainLogic.inst.SwapRoof(true);
     }
 
@@ -256,6 +257,7 @@ public class MegaCameraController : MonoBehaviour {
         MainLogic.inst.ChangeState(ViewStates.allMega);
         MainLogic.inst.DisRoof(3);
         isFirstLookScene = false;
+        ortoRayCastCamera.gameObject.SetActive(true);
     }
 
     public IEnumerator WaitToOff() {

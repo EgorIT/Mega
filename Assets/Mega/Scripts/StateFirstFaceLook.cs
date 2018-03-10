@@ -181,9 +181,9 @@ namespace Assets.Mega.Scripts {
 
         public void MoveForThisArrowOnFloor (ArrowOnFloor arrowOnFloor) {
             StopClickCoroutine();
-             var v3 = new Vector3(arrowOnFloor.pointerEventData.pointerCurrentRaycast.worldPosition.x,
+             var v3 = new Vector3(/*arrowOnFloor.pointerEventData.pointerCurrentRaycast.worldPosition.x*/arrowOnFloor.transform.position.x,
                 GlobalParams.distansEye,
-                arrowOnFloor.pointerEventData.pointerCurrentRaycast.worldPosition.z);
+                /*arrowOnFloor.pointerEventData.pointerCurrentRaycast.worldPosition.z*/arrowOnFloor.transform.position.z);
 
             clickCoroutine = StartCoroutine(IEnumCheckSwipe(v3, MegaCameraController.inst.currentEndAng));
         }

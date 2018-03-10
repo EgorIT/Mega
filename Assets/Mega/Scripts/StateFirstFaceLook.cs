@@ -173,19 +173,15 @@ namespace Assets.Mega.Scripts {
         //    clickCoroutine = StartCoroutine(IEnumCheckSwipe(v3, MegaCameraController.inst.currentEndAng));
         //}
 
-        public void MoveForThisShop (PointerMoveToShop pointerMoveToShop) {
-            if(clickCoroutine != null) {
-                StopCoroutine(clickCoroutine);
-            }
-            clickCoroutine = StartCoroutine(IEnumCheckSwipe(pointerMoveToShop.lookPoint.position, 
-                pointerMoveToShop.lookPoint.eulerAngles));
-        }
+        //public void MoveForThisShop (PointerMoveToShop pointerMoveToShop) {
+        //    StopClickCoroutine();
+        //    clickCoroutine = StartCoroutine(IEnumCheckSwipe(pointerMoveToShop.lookPoint.position, 
+        //        pointerMoveToShop.lookPoint.eulerAngles));
+        //}
 
         public void MoveForThisArrowOnFloor (ArrowOnFloor arrowOnFloor) {
-            if(clickCoroutine != null) {
-                StopCoroutine(clickCoroutine);
-            }
-            var v3 = new Vector3(arrowOnFloor.pointerEventData.pointerCurrentRaycast.worldPosition.x,
+            StopClickCoroutine();
+             var v3 = new Vector3(arrowOnFloor.pointerEventData.pointerCurrentRaycast.worldPosition.x,
                 GlobalParams.distansEye,
                 arrowOnFloor.pointerEventData.pointerCurrentRaycast.worldPosition.z);
 
@@ -196,6 +192,7 @@ namespace Assets.Mega.Scripts {
             if(clickCoroutine != null) {
                 StopCoroutine(clickCoroutine);
             }
+            clickCoroutine = null;
         }
 
         public IEnumerator IEnumCheckSwipe (Vector3 pointMove, Vector3 endAng) {

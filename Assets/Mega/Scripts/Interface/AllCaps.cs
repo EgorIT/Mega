@@ -9,7 +9,7 @@ public class AllCaps : MonoBehaviour {
     public static AllCaps inst;
 
     public List<ShopCap> listShopCaps = new List<ShopCap>();
-    public static AllCaps allCaps;
+    //public static AllCaps allCaps;
 
     
 
@@ -18,8 +18,14 @@ public class AllCaps : MonoBehaviour {
     }
 
     public void Start () {
-        allCaps = this;
+        //allCaps = this;
         listShopCaps = GameObject.FindObjectsOfType<ShopCap>().ToList();
+        for (int i = 0; i < listShopCaps.Count; i++) {
+            if (listShopCaps[i].dontUse) {
+                listShopCaps.RemoveAt(i);
+                break;
+            }
+        }
     }
 
     public void Refresh () {

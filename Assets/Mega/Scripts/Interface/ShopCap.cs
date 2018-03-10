@@ -6,6 +6,8 @@ using UnityEngine;
 public class ShopCap : MonoBehaviour {
     public string name;
 
+    public bool dontUse;
+
     public float deltaX;
     public float deltaZ;
 

@@ -53,7 +53,7 @@ public class RoofProcessor : MonoBehaviour {
             Color newColor = new Color(mColor.r, mColor.g, mColor.b, 0);
             material.SetColor("_Color", newColor);
         }
-        AllCaps.allCaps.Refresh();
+        AllCaps.inst.Refresh();
         glass.SetActive(false);
         yield return null;
     }

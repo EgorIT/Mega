@@ -33,6 +33,9 @@ namespace Assets.Mega.Scripts {
 
             var allShopCap = FindObjectsOfType<ShopCap>();
             for(int i = 0; i < allShopCap.Length; i++) {
+                if (allShopCap[i].dontUse) {
+                    continue;
+                }
                 var tableShop = Instantiate(prefabTableShop);
                 tableShop.gameObject.SetActive(true);
                 tableShop.transform.parent = allShopCap[i].transform;

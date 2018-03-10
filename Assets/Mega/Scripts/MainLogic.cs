@@ -189,7 +189,7 @@ namespace Assets.Mega.Scripts {
                 currentTime = GlobalParams.needTimeToSleep;
                 ChangeState(ViewStates.one);
                 //Timeline.inst.Sleep();
-                AllCaps.allCaps.ActivateAll();
+                AllCaps.inst.ActivateAll();
             }
 
 

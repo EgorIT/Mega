@@ -57,8 +57,8 @@ namespace Assets.Mega.Scripts {
 
         public Image firstView;
         public Image fullscreen;
-        public Toggle moveCamera;
-        public Toggle rotateCamera;
+        //public Toggle moveCamera;
+        //public Toggle rotateCamera;
         
         [ContextMenu("GoFirstLook")]
         public void GoFirstLook() {//ot pervogo lica

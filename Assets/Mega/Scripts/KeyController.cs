@@ -6,7 +6,11 @@ using UnityEngine.UI;
 namespace Assets.Mega.Scripts {
     public class KeyController : MonoBehaviour {
         public static KeyController inst;
-        public float speedTouch = 0.0015f;//0.003f;
+
+        public float speedTouchPanoram = 0.0015f;//0.003f;
+        public float speedTouchFirstLook = 0.0015f;//0.003f;
+        public float speedTouchRotate = 0.0015f;//0.003f;
+
         public float speedSwipeMousePanoram = -0.02f;
         public float speedSwipeMouseFirstLook = -0.02f;
         public float speedSwipeMouseRotate = -0.02f;
@@ -220,15 +224,22 @@ namespace Assets.Mega.Scripts {
                             StateFirstFaceLook.inst.StopClickCoroutine();
                         }
                     }
-                    x = -touch.deltaPosition.x * speedTouch;
-                    y = -touch.deltaPosition.y * speedTouch;
+                    x = -touch.deltaPosition.x * speedTouchFirstLook;
+                    y = -touch.deltaPosition.y * speedTouchFirstLook;
                     swipeFlag = true;
                 } else {
                     touch = Input.GetTouch(0);
-                    x = -touch.deltaPosition.x * speedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                    y = -touch.deltaPosition.y * speedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                    if (isPanoram) {
+                        x = -touch.deltaPosition.x * speedTouchPanoram * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                        y = -touch.deltaPosition.y * speedTouchPanoram * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                    } else {
+                        x = -touch.deltaPosition.x * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                        y = -touch.deltaPosition.y * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                    }
+                    
                     swipeFlag = true;
                 }
+                
             }
 
             if(swipeFlag) {

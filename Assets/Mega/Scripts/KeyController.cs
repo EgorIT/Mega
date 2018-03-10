@@ -7,7 +7,9 @@ namespace Assets.Mega.Scripts {
     public class KeyController : MonoBehaviour {
         public static KeyController inst;
         public float speedTouch = 0.0015f;//0.003f;
-        public float speedSwipeMouse = -0.02f;//0.003f;
+        public float speedSwipeMousePanoram = -0.02f;
+        public float speedSwipeMouseFirstLook = -0.02f;
+        public float speedSwipeMouseRotate = -0.02f;
         //private float speedZoom = 0.09f;//0.003f;
         //private float speedZoomWheel = 5f;//0.003f;
 
@@ -176,7 +178,16 @@ namespace Assets.Mega.Scripts {
                             StateFirstFaceLook.inst.StopClickCoroutine();
                         }
                     }
-                    touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouse, Time.deltaTime * v3.y * speedSwipeMouse);
+                    if(isPanoram || MegaCameraController.inst.isFirstLookScene) {
+                        if (isPanoram) {
+                            touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMousePanoram, Time.deltaTime * v3.y * speedSwipeMousePanoram);
+                        } else if(MegaCameraController.inst.isFirstLookScene) {
+                            touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouseFirstLook, Time.deltaTime * v3.y * speedSwipeMouseFirstLook);
+                        }
+                    } else {
+                        touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouseRotate, Time.deltaTime * v3.y * speedSwipeMouseRotate);
+                    }
+                    
                 }
                 stabilizationFlag = true;
                 lastPosCur = Input.mousePosition;

@@ -13,7 +13,7 @@ namespace Assets.Mega.Scripts {
         public static Vector3 eulerAnglesForCameraInStateOne = new Vector3(3, 0, 0);
         
         public static float timeToBackFromBorder = 0.5f;
-        public static float timeToFly = 4f;
+        public static float timeToFly = 3.5f;
         public static float timeToShowIcons = 0.4f;
 
         public static Vector3 scaleIconShop = new Vector3(0.03f, 0.03f, 0.03f);
@@ -46,7 +46,7 @@ namespace Assets.Mega.Scripts {
         public static float speedRotateCamera = 1f;
 
 
-        public static float timeToDoubleClick = 0.2f;
+        public static float timeToDoubleClick = 0.4f;
         //public static float ortoMinSize = 5f;
         //public static float ortoMaxSize = 150f;
 

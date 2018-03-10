@@ -196,7 +196,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public IEnumerator IEnumCheckSwipe (Vector3 pointMove, Vector3 endAng) {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
             ArrowController.inst.AllArrowBack();
             //Debug.Log(pointMove.y);
             MegaCameraController.inst.SetNewPosCamera(pointMove, endAng,

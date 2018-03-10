@@ -57,8 +57,8 @@ namespace Assets.Mega.Scripts {
 
         public Image firstView;
         public Image fullscreen;
-        //public Toggle moveCamera;
-        //public Toggle rotateCamera;
+        public Image moveCamera;
+        public Image rotateCamera;
         
         [ContextMenu("GoFirstLook")]
         public void GoFirstLook() {//ot pervogo lica
@@ -80,11 +80,15 @@ namespace Assets.Mega.Scripts {
 
         [ContextMenu("Set360")]
         public void Set360 () {//360 
+            moveCamera.color = Color.white;
+            rotateCamera.color = Color.gray;
             KeyController.inst.Set360();
         }
 
         [ContextMenu("SetPanorama")]
         public void SetPanorama() {//panorama 
+            rotateCamera.color = Color.white;
+            moveCamera.color = Color.gray;
             KeyController.inst.SetPanoram();
         }
 
@@ -109,6 +113,7 @@ namespace Assets.Mega.Scripts {
 
             RoadsProcessor.inst.StartFromController();
             StartCoroutine(IEnumWaitAfterStart());
+            SetPanorama();
         }
 
         public IEnumerator IEnumWaitAfterStart() {

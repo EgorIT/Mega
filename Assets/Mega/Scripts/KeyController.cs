@@ -322,7 +322,7 @@ namespace Assets.Mega.Scripts {
             int screenH = Screen.height;
             
             int timeLineW = (int)((2000f * screenW) / 3840f);
-            int timeLineH = (int)((560f * screenH) / 2160f);
+            int timeLineH = (int)((660f * screenH) / 2160f);
             
             if (v3.x < Screen.width*0.5f + timeLineW * 0.5f + 300
                 && v3.x > Screen.width * 0.5f - timeLineW * 0.5f

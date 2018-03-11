@@ -18,10 +18,10 @@ namespace Assets.Mega.Scripts {
     public class MainLogic : MonoBehaviour {
         public static MainLogic inst;
 
-        public List<SceneForFirstFaceLook> AllFirstFaceLookScenes = new List<SceneForFirstFaceLook>();
+        //public List<SceneForFirstFaceLook> AllFirstFaceLookScenes = new List<SceneForFirstFaceLook>();
         private ViewStates viewCurrentStates = ViewStates.none;
         public List<iViewState> listViewStates = new List<iViewState>();
-        public List<Sprite> listPlans;
+        //public List<Sprite> listPlans;
 
         [HideInInspector]
         public GameObject interfaceMega;
@@ -55,13 +55,17 @@ namespace Assets.Mega.Scripts {
 
         public float currentTime;
 
-        public Image firstView;
-        public Image zoomCamera;
-        public Image moveCamera;
-        public Image rotateCamera;
-        
-        [ContextMenu("GoFirstLook")]
-        public void GoFirstLook() {//ot pervogo lica
+        [ContextMenu("SetAllLook")]
+        public void SetAllLook () {//ot pervogo lica
+            if(!MegaCameraController.inst.isFirstLookScene) {
+                return;
+            }
+            StateFirstFaceLook.inst.pointerEventData = null;
+            KeyController.inst.SwapZoom();
+        }
+
+        [ContextMenu("SetFirstLook")]
+        public void SetFirstLook() {//ot pervogo lica
             if (MegaCameraController.inst.isFirstLookScene) {
                 return;
             }
@@ -69,26 +73,21 @@ namespace Assets.Mega.Scripts {
             KeyController.inst.SwapZoom();
         }
 
-        [ContextMenu("GoAllLook")]
-        public void GoAllLook () {//vsy mega
-            if(!MegaCameraController.inst.isFirstLookScene) {
-                return;
-            }
-           
-            KeyController.inst.SwapZoom();
+        [ContextMenu("SetZoom")]
+        public void SetZoom () {//vsy mega
+            ButonAdds.inst.SetActivCurrentUpButton(ButonAdds.inst.zoomCameraImage);
+            KeyController.inst.SetZoom();
         }
 
-        [ContextMenu("Set360")]
-        public void Set360 () {//360 
-            moveCamera.color = Color.white;
-            rotateCamera.color = Color.gray;
+        [ContextMenu("SetRotate")]
+        public void SetRotate () {//360 
+            ButonAdds.inst.SetActivCurrentUpButton(ButonAdds.inst.rotateCameraImage);
             KeyController.inst.SetRotate();
         }
 
-        [ContextMenu("SetPanorama")]
-        public void SetPanorama() {//panorama 
-            rotateCamera.color = Color.white;
-            moveCamera.color = Color.gray;
+        [ContextMenu("SetMoveAllMega")]
+        public void SetMoveAllMega () {//panorama 
+            ButonAdds.inst.SetActivCurrentUpButton(ButonAdds.inst.moveCameraImage);
             KeyController.inst.SetPanoram();
         }
 
@@ -113,7 +112,7 @@ namespace Assets.Mega.Scripts {
 
             RoadsProcessor.inst.StartFromController();
             StartCoroutine(IEnumWaitAfterStart());
-            SetPanorama();
+            SetMoveAllMega();
         }
 
         public IEnumerator IEnumWaitAfterStart() {

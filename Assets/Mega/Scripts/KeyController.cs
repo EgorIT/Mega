@@ -21,7 +21,9 @@ namespace Assets.Mega.Scripts {
         public float speedSwipeMousePanoram = -0.02f;
         public float speedSwipeMouseFirstLook = -0.02f;
         public float speedSwipeMouseRotate = -0.02f;
-        //private float speedZoom = 0.09f;//0.003f;
+
+        public float speedSwipeMouseZoom = 0.09f;//0.003f;
+
         //private float speedZoomWheel = 5f;//0.003f;
 
         public Vector3 lastPosCur;
@@ -74,16 +76,15 @@ namespace Assets.Mega.Scripts {
         public void SwapZoom () {
 
             if(MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() > -100 && MegaCameraController.inst.isFirstLookScene) {
-                MainLogic.inst.firstView.color = Color.white;
-                MainLogic.inst.zoomCamera.color = new Color(200,200,200,255)/255;
                 Debug.Log("GoOutFirstLook");
+                ButonAdds.inst.ShowUpButton();
+               
                 MegaCameraController.inst.GoOutFirstLook();
             }
             if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() < -5000 && !MegaCameraController.inst.isFirstLookScene) {
-                MainLogic.inst.firstView.color = new Color(200, 200, 200, 255) / 255;
-                MainLogic.inst.zoomCamera.color = Color.white;
                 Debug.Log("GoToNearestShop");
-                StateFirstFaceLook.inst.GoToNearestShop();
+                ButonAdds.inst.HideUpButton();
+                StateFirstFaceLook.inst.GoToNearestArrow();
             }
         }
 
@@ -187,6 +188,7 @@ namespace Assets.Mega.Scripts {
                                 touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouseRotate, Time.deltaTime * v3.y * speedSwipeMouseRotate);
                                 break;
                             case AllMegaState.zoom:
+                                touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouseRotate, Time.deltaTime * v3.y * speedSwipeMouseRotate);
                                 break;
                             default:
                                 throw new ArgumentOutOfRangeException();
@@ -244,6 +246,9 @@ namespace Assets.Mega.Scripts {
 
                             break;
                         case AllMegaState.zoom:
+                            x = -touch.deltaPosition.x * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            y = -touch.deltaPosition.y * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+
                             break;
                         default:
                             throw new ArgumentOutOfRangeException();
@@ -269,6 +274,10 @@ namespace Assets.Mega.Scripts {
                             MegaCameraController.inst.RotateFromPinch(Time.deltaTime * GlobalParams.speedRotateCamera * x);
                             break;
                         case AllMegaState.zoom:
+                            deltaMagnitudeDiff = y * speedSwipeMouseZoom;
+                            //deltaMagnitudeDiff *= (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            Debug.Log(deltaMagnitudeDiff);
+                            MegaCameraController.inst.ZoomFromPinch(deltaMagnitudeDiff);
                             break;
                         default:
                             throw new ArgumentOutOfRangeException();

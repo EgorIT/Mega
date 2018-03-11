@@ -150,8 +150,9 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void ZoomInPer (float dZoom) {
-        disCamera.localPosition += new Vector3(0, 0, dZoom);
-        CheckPerSize();
+        if (CheckPerSize()) {
+            disCamera.localPosition += new Vector3(0, 0, dZoom);
+        }
         currentDistans = disCamera.localPosition.z;
         CorrectOrtoCamerForRayCast();
     }
@@ -162,13 +163,17 @@ public class MegaCameraController : MonoBehaviour {
         ortoRayCastCamera.orthographicSize = newOrtoSize;
     }
 
-    public void CheckPerSize () {
+    public bool CheckPerSize () {
         if(GetCurrentDistans() < GlobalParams.maxDistancePesr) {
             disCamera.localPosition = new Vector3(0, 0, GlobalParams.maxDistancePesr);
+            return false;
         }
         if(GetCurrentDistans() > GlobalParams.minDistancePesr) {
-            GoToFirstLook(true);
+            disCamera.localPosition = new Vector3(0, 0, GlobalParams.minDistancePesr);
+            return false;
+            //GoToFirstLook(true);
         }
+        return true;
     }
 
     public float GetCurrentDistans() {

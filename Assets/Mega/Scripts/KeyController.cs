@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 namespace Assets.Mega.Scripts {
     public class KeyController : MonoBehaviour {
+
+        public enum AllMegaState {
+            panorama,
+            rotate,
+            zoom
+        }
+
         public static KeyController inst;
 
         public float speedTouchPanoram = 0.0015f;//0.003f;
@@ -29,11 +36,7 @@ namespace Assets.Mega.Scripts {
         public float oldRotateVar;
         public float deltaY;
 
-        //public Button btnSet360;
-        //public Button btnSetPanoram;
-        //public Button btnSetZoom;
-
-        public bool isPanoram = true;
+        public AllMegaState currentAllMegaState = AllMegaState.panorama;
 
         public bool clickOnMap;
 
@@ -44,9 +47,6 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
-            //btnSet360.onClick.AddListener(Set360);
-            //btnSetPanoram.onClick.AddListener(SetPanoram);
-            //btnSetZoom.onClick.AddListener(SetZoom);
             SetPanoram();
         }
 
@@ -54,44 +54,34 @@ namespace Assets.Mega.Scripts {
             if(MegaCameraController.inst.GetDontUseUi()) {
                 return;
             }
-            SwapZoom();
+            currentAllMegaState = AllMegaState.zoom;
         }
 
         public void SetPanoram() {
             if (MegaCameraController.inst.GetDontUseUi()) {
                 return;
             }
-            isPanoram = true;
-            //btnSetPanoram.image.color = Color.blue;
-            //btnSet360.image.color = Color.white;
+            currentAllMegaState = AllMegaState.panorama;
         }
         
-        public void Set360 () {
+        public void SetRotate () {
             if(MegaCameraController.inst.GetDontUseUi()) {
                 return;
             }
-            isPanoram = false;
-            //btnSetPanoram.image.color = Color.white;
-            //btnSet360.image.color = Color.blue;
+            currentAllMegaState = AllMegaState.rotate;
         }
-
-        //public void SetActivButton(bool var) {
-        //    btnSet360.gameObject.SetActive(var);
-        //    btnSetPanoram.gameObject.SetActive(var);
-        //    btnSetZoom.gameObject.SetActive(var);
-        //}
 
         public void SwapZoom () {
 
             if(MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() > -100 && MegaCameraController.inst.isFirstLookScene) {
                 MainLogic.inst.firstView.color = Color.white;
-                MainLogic.inst.fullscreen.color = new Color(200,200,200,255)/255;
+                MainLogic.inst.zoomCamera.color = new Color(200,200,200,255)/255;
                 Debug.Log("GoOutFirstLook");
                 MegaCameraController.inst.GoOutFirstLook();
             }
             if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() < -5000 && !MegaCameraController.inst.isFirstLookScene) {
                 MainLogic.inst.firstView.color = new Color(200, 200, 200, 255) / 255;
-                MainLogic.inst.fullscreen.color = Color.white;
+                MainLogic.inst.zoomCamera.color = Color.white;
                 Debug.Log("GoToNearestShop");
                 StateFirstFaceLook.inst.GoToNearestShop();
             }
@@ -182,16 +172,28 @@ namespace Assets.Mega.Scripts {
                             StateFirstFaceLook.inst.StopClickCoroutine();
                         }
                     }
-                    if(isPanoram || MegaCameraController.inst.isFirstLookScene) {
-                        if (isPanoram) {
-                            touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMousePanoram, Time.deltaTime * v3.y * speedSwipeMousePanoram);
-                        } else if(MegaCameraController.inst.isFirstLookScene) {
-                            touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouseFirstLook, Time.deltaTime * v3.y * speedSwipeMouseFirstLook);
-                        }
+
+
+
+                    if(MegaCameraController.inst.isFirstLookScene) {
+                        touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouseFirstLook, Time.deltaTime * v3.y * speedSwipeMouseFirstLook);
+
                     } else {
-                        touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouseRotate, Time.deltaTime * v3.y * speedSwipeMouseRotate);
+                        switch(currentAllMegaState) {
+                            case AllMegaState.panorama:
+                                touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMousePanoram, Time.deltaTime * v3.y * speedSwipeMousePanoram);
+                                break;
+                            case AllMegaState.rotate:
+                                touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouseRotate, Time.deltaTime * v3.y * speedSwipeMouseRotate);
+                                break;
+                            case AllMegaState.zoom:
+                                break;
+                            default:
+                                throw new ArgumentOutOfRangeException();
+                        }
+
                     }
-                    
+
                 }
                 stabilizationFlag = true;
                 lastPosCur = Input.mousePosition;
@@ -229,12 +231,22 @@ namespace Assets.Mega.Scripts {
                     swipeFlag = true;
                 } else {
                     touch = Input.GetTouch(0);
-                    if (isPanoram) {
-                        x = -touch.deltaPosition.x * speedTouchPanoram * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                        y = -touch.deltaPosition.y * speedTouchPanoram * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                    } else {
-                        x = -touch.deltaPosition.x * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                        y = -touch.deltaPosition.y * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+
+                    switch (currentAllMegaState) {
+                        case AllMegaState.panorama:
+                            x = -touch.deltaPosition.x * speedTouchPanoram * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            y = -touch.deltaPosition.y * speedTouchPanoram * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+
+                            break;
+                        case AllMegaState.rotate:
+                            x = -touch.deltaPosition.x * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            y = -touch.deltaPosition.y * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+
+                            break;
+                        case AllMegaState.zoom:
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
                     }
                     
                     swipeFlag = true;
@@ -244,10 +256,24 @@ namespace Assets.Mega.Scripts {
 
             if(swipeFlag) {
                 // Debug.Log("x = " + touch.deltaPosition.x + " y=" + touch.deltaPosition.y);
-                if (isPanoram || MegaCameraController.inst.isFirstLookScene) {
+
+                if (MegaCameraController.inst.isFirstLookScene) {
                     MegaCameraController.inst.MoveFromSwipe(x, y);
                 } else {
-                    MegaCameraController.inst.RotateFromPinch(Time.deltaTime * GlobalParams.speedRotateCamera * x);
+
+                    switch(currentAllMegaState) {
+                        case AllMegaState.panorama:
+                            MegaCameraController.inst.MoveFromSwipe(x, y);
+                            break;
+                        case AllMegaState.rotate:
+                            MegaCameraController.inst.RotateFromPinch(Time.deltaTime * GlobalParams.speedRotateCamera * x);
+                            break;
+                        case AllMegaState.zoom:
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                   
                 }
                
 

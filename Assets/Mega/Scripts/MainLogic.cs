@@ -56,7 +56,7 @@ namespace Assets.Mega.Scripts {
         public float currentTime;
 
         public Image firstView;
-        public Image fullscreen;
+        public Image zoomCamera;
         public Image moveCamera;
         public Image rotateCamera;
         
@@ -82,7 +82,7 @@ namespace Assets.Mega.Scripts {
         public void Set360 () {//360 
             moveCamera.color = Color.white;
             rotateCamera.color = Color.gray;
-            KeyController.inst.Set360();
+            KeyController.inst.SetRotate();
         }
 
         [ContextMenu("SetPanorama")]
@@ -263,21 +263,21 @@ namespace Assets.Mega.Scripts {
             viewCurrentStates = newState;
         }
 
-        public void GoToSceneFirstLook (string nameShop) {
-            string currentSceneName = string.Empty;
-            Transform currentTransform = null;
-            for(int i = 0; i < AllFirstFaceLookScenes.Count; i++) {
-                for(int j = 0; j < AllFirstFaceLookScenes[i].allShopsName.Count; j++) {
-                    if(AllFirstFaceLookScenes[i].allShopsName[j] == nameShop) {
-                        currentSceneName = AllFirstFaceLookScenes[i].nameScene;
-                        currentTransform = AllFirstFaceLookScenes[i].currentTransformShop[j];
-                    }
-                }
-            }
-            Debug.Log(currentSceneName);
-            Debug.Log(currentTransform);
-            //StartCoroutine(IEnumGoToSceneFirstLook(currentSceneName, currentTransform));
-        }
+        //public void GoToSceneFirstLook (string nameShop) {
+        //    string currentSceneName = string.Empty;
+        //    Transform currentTransform = null;
+        //    for(int i = 0; i < AllFirstFaceLookScenes.Count; i++) {
+        //        for(int j = 0; j < AllFirstFaceLookScenes[i].allShopsName.Count; j++) {
+        //            if(AllFirstFaceLookScenes[i].allShopsName[j] == nameShop) {
+        //                currentSceneName = AllFirstFaceLookScenes[i].nameScene;
+        //                currentTransform = AllFirstFaceLookScenes[i].currentTransformShop[j];
+        //            }
+        //        }
+        //    }
+        //    Debug.Log(currentSceneName);
+        //    Debug.Log(currentTransform);
+        //    //StartCoroutine(IEnumGoToSceneFirstLook(currentSceneName, currentTransform));
+        //}
 
         /*public IEnumerator IEnumGoToSceneFirstLook(string nameScene, Transform transform) {
             MegaCameraController.inst.SetNewPosCamera(transform.position, GlobalParams.eulerAnglesForCameraInAllMega, 5, TypeCameraOnState.orto);

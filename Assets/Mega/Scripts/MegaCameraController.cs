@@ -113,9 +113,9 @@ public class MegaCameraController : MonoBehaviour {
             return;
         }
         if(isFirstLookScene) {
-            if (dZoom > 0) {
-                GoOutFirstLook();
-            }
+            //if (dZoom > 0) {
+            //    GoOutFirstLook();
+            //}
         } else {
             switch(MainLogic.inst.GetViewCurrentStates()) {
                 case ViewStates.one:

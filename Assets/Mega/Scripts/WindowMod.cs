@@ -43,7 +43,7 @@ public class WindowMod : MonoBehaviour {
         yield return new WaitForSeconds(2f);
         if(!File.Exists(pathInfo)) {
             Debug.LogError("Path error " + pathInfo);
-            SetSize(800, 600);
+            SetSize(3850, 2160);
             yield break;
         }
         var pathInfoGlobalStr = File.ReadAllText(pathInfo);

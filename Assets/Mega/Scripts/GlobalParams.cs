@@ -48,7 +48,7 @@ namespace Assets.Mega.Scripts {
 
         public static float timeToDoubleClick = 0.4f;
 
-
+        public static bool full = true;
 
         //public static float ortoMinSize = 5f;
         //public static float ortoMaxSize = 150f;

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Mega.Scripts;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -139,10 +140,13 @@ public class DragablePanel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             if(rollIn) {
                 rectTransform.anchoredPosition = normalPosition;
                 upperPanelRectTransform.anchoredPosition = normalPosition;
+                GlobalParams.full = true;
+
                 //Countdown();
             } else {
                 rectTransform.anchoredPosition = hiddenPosition;
                 upperPanelRectTransform.anchoredPosition = hiddenPosition;
+                GlobalParams.full = false;
             }
             yield return null;
     }

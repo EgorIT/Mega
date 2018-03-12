@@ -152,9 +152,10 @@ public class MegaCameraController : MonoBehaviour {
     public void ZoomInPer (float dZoom) {
         if (CheckPerSize()) {
             disCamera.localPosition += new Vector3(0, 0, dZoom);
+            currentDistans = disCamera.localPosition.z;
+            CorrectOrtoCamerForRayCast();
         }
-        currentDistans = disCamera.localPosition.z;
-        CorrectOrtoCamerForRayCast();
+       
     }
 
     public void CorrectOrtoCamerForRayCast() {

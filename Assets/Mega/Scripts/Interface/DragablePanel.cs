@@ -56,7 +56,7 @@ public class DragablePanel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData data)
     {
-        Debug.Log(startedHeight+" "+data.position.y+" "+(startedHeight - data.position.y));
+        //Debug.Log(startedHeight+" "+data.position.y+" "+(startedHeight - data.position.y));
         rectTransform.anchoredPosition =
             startedPosition- new Vector2(0, startedHeight - data.position.y);
         upperPanelRectTransform.anchoredPosition = 
@@ -73,7 +73,7 @@ public class DragablePanel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             rectTransform.anchoredPosition = hiddenPosition;
             upperPanelRectTransform.anchoredPosition = hiddenPosition;
         }
-        Debug.Log(data.position);
+        //Debug.Log(data.position);
         //if (m_DraggingIcon != null)
             //SetDraggedPosition(data);
     }
@@ -141,13 +141,14 @@ public class DragablePanel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 rectTransform.anchoredPosition = normalPosition;
                 upperPanelRectTransform.anchoredPosition = normalPosition;
                 GlobalParams.full = true;
-
+                Debug.Log("true");
                 //Countdown();
             } else {
                 rectTransform.anchoredPosition = hiddenPosition;
                 upperPanelRectTransform.anchoredPosition = hiddenPosition;
                 GlobalParams.full = false;
-            }
+                Debug.Log("false");
+        }
             yield return null;
     }
 

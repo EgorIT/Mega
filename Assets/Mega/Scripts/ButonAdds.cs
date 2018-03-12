@@ -14,6 +14,8 @@ namespace Assets.Mega.Scripts {
         public Button backFromRoads;
         public Image fadeImage;
 
+        public Button kids;
+
         public Button firstViewButton;
         public Button zoomCameraButton;
         public Button moveCameraButton;
@@ -36,7 +38,7 @@ namespace Assets.Mega.Scripts {
             goRoads.onClick.AddListener(() => { MainLogic.inst.GoAllRoads(); });
             goFloors.onClick.AddListener(() => { MainLogic.inst.GoAllMega(); });
             backFromRoads.onClick.AddListener(() => { MainLogic.inst.GoAllMega(); MainLogic.inst.DisRoof(3); });
-
+            kids.onClick.AddListener(() => { MainLogic.inst.GoKids(); });
 
 
             firstViewButton.onClick.AddListener(() => { MainLogic.inst.SetFirstLook(); });

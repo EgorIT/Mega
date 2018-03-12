@@ -277,7 +277,7 @@ namespace Assets.Mega.Scripts {
 
                     switch(currentAllMegaState) {
                         case AllMegaState.move:
-                            Debug.Log("MOVE");
+                            //Debug.Log("MOVE");
                             MegaCameraController.inst.MoveFromSwipe(x, y);
                             break;
                         case AllMegaState.rotate:

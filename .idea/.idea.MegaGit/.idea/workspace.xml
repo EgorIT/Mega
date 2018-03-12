@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50cb2958-2763-4656-ad63-bbab7be90864" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/GlobalParams.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/GlobalParams.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/DragablePanel.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/DragablePanel.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DragablePanel.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DragablePanel.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/DragablePanel.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="579">
@@ -63,6 +62,22 @@
                 <marker date="1520816841685" expanded="true" signature="4687:4916" ph="{...}" />
                 <marker date="1520816841685" expanded="true" signature="5233:5579" ph="{...}" />
                 <marker date="1520816841685" expanded="true" signature="5455:5552" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Swaper.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+              <folding>
+                <marker date="1520817908059" expanded="true" signature="6:78" ph="..." />
+                <marker date="1520817908059" expanded="true" signature="116:533" ph="{...}" />
+                <marker date="1520817908059" expanded="true" signature="235:277" ph="{...}" />
+                <marker date="1520817908059" expanded="true" signature="314:382" ph="{...}" />
+                <marker date="1520817908059" expanded="true" signature="408:531" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -262,21 +277,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Colomn.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Colomn.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-              <folding>
-                <marker date="1508675726781" expanded="false" signature="6:100" ph="..." />
-                <marker date="1508675726781" expanded="true" signature="138:426" ph="{...}" />
-                <marker date="1508675726781" expanded="true" signature="297:424" ph="{...}" />
-                <marker date="1508675726781" expanded="true" signature="315:362" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -398,7 +398,6 @@
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ColliderProcessor.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/CupController.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Quiz.cs" />
-        <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Table.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Video.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/ArrowOnFloor.cs" />
@@ -411,6 +410,7 @@
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A7B213EE-4E11-43F1-AD95-705E2D5696C8/0b/b4076603/Image.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/GlobalParams.cs" />
         <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/DragablePanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs" />
       </list>
     </option>
   </component>
@@ -589,12 +589,12 @@
       <workItem from="1509302131606" duration="5165000" />
       <workItem from="1509359211490" duration="2589000" />
       <workItem from="1520440321949" duration="572000" />
-      <workItem from="1520785134852" duration="8917000" />
+      <workItem from="1520785134852" duration="9599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153057000" />
+    <option name="totallyTimeSpent" value="153739000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -806,13 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="75" column="25" lean-forward="false" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1156,6 +1149,20 @@
             <marker date="1520816841685" expanded="true" signature="4687:4916" ph="{...}" />
             <marker date="1520816841685" expanded="true" signature="5233:5579" ph="{...}" />
             <marker date="1520816841685" expanded="true" signature="5455:5552" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Swaper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <marker date="1520817908059" expanded="true" signature="6:78" ph="..." />
+            <marker date="1520817908059" expanded="true" signature="116:533" ph="{...}" />
+            <marker date="1520817908059" expanded="true" signature="235:277" ph="{...}" />
+            <marker date="1520817908059" expanded="true" signature="314:382" ph="{...}" />
+            <marker date="1520817908059" expanded="true" signature="408:531" ph="{...}" />
           </folding>
         </state>
       </provider>

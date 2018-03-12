@@ -33,6 +33,7 @@ namespace Assets.Mega.Scripts {
 
         public static float minDistancePesr = -1000f;
         public static float maxDistancePesr = -26000f;
+        public static float kidsDistancePesr = -4500f;
 
         public static float needTimeToSleep = 220f;
 

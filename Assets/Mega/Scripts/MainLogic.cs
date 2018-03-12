@@ -90,7 +90,7 @@ namespace Assets.Mega.Scripts {
         [ContextMenu("SetMoveAllMega")]
         public void SetMoveAllMega () {//panorama 
             ButonAdds.inst.SetActivCurrentUpButton(ButonAdds.inst.moveCameraImage);
-            KeyController.inst.SetPanoram();
+            KeyController.inst.SetMoveAllMega();
         }
 
         public void ResetTime () {
@@ -148,6 +148,17 @@ namespace Assets.Mega.Scripts {
             isRoadLook = false;
         }
 
+        [ContextMenu("GoKids")]
+        public void GoKids () {
+            MegaCameraController.inst.distansAllMega = GlobalParams.kidsDistancePesr;
+            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(140f, 0, -55f);
+            ChangeState(ViewStates.allMega);
+            if(TableController.inst) {
+                TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
+            }
+        }
+
+
         public void GoAllRoads() {
             MegaCameraController.inst.distansAllMega = GlobalParams.maxDistancePesr;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(-37f, 0, -220f);
@@ -156,7 +167,9 @@ namespace Assets.Mega.Scripts {
                 TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
             }
             EnableRoof();
+            SetMoveAllMega();
             ButonAdds.inst.HideUpButton();
+
             isRoadLook = true;
         }
 

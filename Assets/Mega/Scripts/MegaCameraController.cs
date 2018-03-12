@@ -163,11 +163,11 @@ public class MegaCameraController : MonoBehaviour {
 
     public bool CheckPerSize (float delta) {
         if(GetCurrentDistans() - delta < GlobalParams.maxDistancePesr) {
-            //disCamera.localPosition = new Vector3(0, 0, GlobalParams.maxDistancePesr + 100);
+            disCamera.localPosition = new Vector3(0, 0, GlobalParams.maxDistancePesr + 100);
             return false;
         }
         if(GetCurrentDistans() + delta > GlobalParams.minDistancePesr) {
-            //disCamera.localPosition = new Vector3(0, 0, GlobalParams.minDistancePesr - 100);
+            disCamera.localPosition = new Vector3(0, 0, GlobalParams.minDistancePesr - 100);
             return false;
             //GoToFirstLook(true);
         }

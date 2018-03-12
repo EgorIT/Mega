@@ -7,7 +7,7 @@ namespace Assets.Mega.Scripts {
     public class KeyController : MonoBehaviour {
 
         public enum AllMegaState {
-            panorama,
+            move,
             rotate,
             zoom
         }
@@ -38,7 +38,7 @@ namespace Assets.Mega.Scripts {
         public float oldRotateVar;
         public float deltaY;
 
-        public AllMegaState currentAllMegaState = AllMegaState.panorama;
+        public AllMegaState currentAllMegaState = AllMegaState.move;
 
         public bool clickOnMap;
 
@@ -49,27 +49,27 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start() {
-            SetPanoram();
+            SetMoveAllMega();
         }
 
         public void SetZoom () {
-            if(MegaCameraController.inst.GetDontUseUi()) {
-                return;
-            }
+            //if(MegaCameraController.inst.GetDontUseUi()) {
+            //    return;
+            //}
             currentAllMegaState = AllMegaState.zoom;
         }
 
-        public void SetPanoram() {
-            if (MegaCameraController.inst.GetDontUseUi()) {
-                return;
-            }
-            currentAllMegaState = AllMegaState.panorama;
+        public void SetMoveAllMega() {
+            //if (MegaCameraController.inst.GetDontUseUi()) {
+            //    return;
+            //}
+            currentAllMegaState = AllMegaState.move;
         }
         
         public void SetRotate () {
-            if(MegaCameraController.inst.GetDontUseUi()) {
-                return;
-            }
+            //if(MegaCameraController.inst.GetDontUseUi()) {
+            //    return;
+            //}
             currentAllMegaState = AllMegaState.rotate;
         }
 
@@ -187,7 +187,7 @@ namespace Assets.Mega.Scripts {
 
                     } else {
                         switch(currentAllMegaState) {
-                            case AllMegaState.panorama:
+                            case AllMegaState.move:
                                 touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * panoramSpeedSwipeMouse, Time.deltaTime * v3.y * panoramSpeedSwipeMouse);
                                 break;
                             case AllMegaState.rotate:
@@ -241,7 +241,7 @@ namespace Assets.Mega.Scripts {
                     touch = Input.GetTouch(0);
 
                     switch (currentAllMegaState) {
-                        case AllMegaState.panorama:
+                        case AllMegaState.move:
                             x = -touch.deltaPosition.x * panoramSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
                             y = -touch.deltaPosition.y * panoramSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
 
@@ -266,9 +266,9 @@ namespace Assets.Mega.Scripts {
             }
 
             if(swipeFlag) {
-                if(MainLogic.inst.isRoadLook) {
-                    return;
-                }
+                //if(MainLogic.inst.isRoadLook) {
+                //    return;
+                //}
                 // Debug.Log("x = " + touch.deltaPosition.x + " y=" + touch.deltaPosition.y);
 
                 if (MegaCameraController.inst.isFirstLookScene) {
@@ -276,7 +276,8 @@ namespace Assets.Mega.Scripts {
                 } else {
 
                     switch(currentAllMegaState) {
-                        case AllMegaState.panorama:
+                        case AllMegaState.move:
+                            Debug.Log("MOVE");
                             MegaCameraController.inst.MoveFromSwipe(x, y);
                             break;
                         case AllMegaState.rotate:
@@ -371,13 +372,14 @@ namespace Assets.Mega.Scripts {
         }
 
 
+
         public bool IsTouchUI(Vector3 v3) {
             //return !clickOnMap;
             int screenW = Screen.width;
             int screenH = Screen.height;
             
             int timeLineW = (int)((2000f * screenW) / 3840f);
-            int timeLineH = (int)((660f * screenH) / 2160f);
+            int timeLineH = (int)((GlobalParams.full ? 660f : 330f * screenH) / 2160f);
             
             if (v3.x < Screen.width*0.5f + timeLineW * 0.5f + 300
                 && v3.x > Screen.width * 0.5f - timeLineW * 0.5f

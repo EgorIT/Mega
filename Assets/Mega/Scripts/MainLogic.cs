@@ -10,7 +10,7 @@ namespace Assets.Mega.Scripts {
     public enum ViewStates {
         one,
         allMega,
-        shops,
+        //shops,
         firstFaceLook,
         none
     }
@@ -43,7 +43,8 @@ namespace Assets.Mega.Scripts {
         public Video mainVideo;
         public VideoLogo logo;
 
-        
+        public bool isRoadLook;
+
         public void Awake () {
             inst = this;
             FindNeedObject();
@@ -83,6 +84,7 @@ namespace Assets.Mega.Scripts {
         public void SetRotate () {//360 
             ButonAdds.inst.SetActivCurrentUpButton(ButonAdds.inst.rotateCameraImage);
             KeyController.inst.SetRotate();
+            GoAllMega();
         }
 
         [ContextMenu("SetMoveAllMega")]
@@ -142,6 +144,8 @@ namespace Assets.Mega.Scripts {
                 TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
             }
             DisRoof(3);
+            ButonAdds.inst.ShowUpButton();
+            isRoadLook = false;
         }
 
         public void GoAllRoads() {
@@ -152,6 +156,8 @@ namespace Assets.Mega.Scripts {
                 TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
             }
             EnableRoof();
+            ButonAdds.inst.HideUpButton();
+            isRoadLook = true;
         }
 
         public void DisRoof (float time) {

@@ -35,34 +35,34 @@ namespace Assets.Mega.Scripts {
             MainLogic.inst.listViewStates.Add(this);
         }
 
-        public void GoToNearestArrow () {
-            Ray ray = new Ray();
-            if(pointerEventData == null) {
-                Debug.Log("pointerEventData null");
-                ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(new Vector2(Screen.width * 0.5f, Screen.height * 0.5f));
-            } else {
-                ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(pointerEventData.position);
-            }
-            pointerEventData = null;
-            RaycastHit hit;
-            Vector3 pos = Vector3.zero;
-            if(Physics.Raycast(ray, out hit)) {
-                pos = hit.point;
-            }
-            float dis = float.MaxValue;
-            int index = 0;
-            for(int i = 0; i < ArrowController.inst.listArrowOnFloor.Count; i++) {
-
-                var newDis = (ArrowController.inst.listArrowOnFloor[i].gameObject.transform.position - pos).sqrMagnitude;
-                //Debug.Log(newDis + " " + i);
-                if(newDis < dis) {
-                    dis = newDis;
-                    index = i;
-                }
-            }
-            hardMovePointerMoveToShop = AllCaps.inst.listShopCaps[index].pointerMoveToShop;
-            MegaCameraController.inst.GoToFirstLook(false);
-        }
+        //public void GoToNearestArrow () {
+        //    Ray ray = new Ray();
+        //    if(pointerEventData == null) {
+        //        Debug.Log("pointerEventData null");
+        //        ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(new Vector2(Screen.width * 0.5f, Screen.height * 0.5f));
+        //    } else {
+        //        ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(pointerEventData.position);
+        //    }
+        //    pointerEventData = null;
+        //    RaycastHit hit;
+        //    Vector3 pos = Vector3.zero;
+        //    if(Physics.Raycast(ray, out hit)) {
+        //        pos = hit.point;
+        //    }
+        //    float dis = float.MaxValue;
+        //    int index = 0;
+        //    for(int i = 0; i < ArrowController.inst.listArrowOnFloor.Count; i++) {
+        //
+        //        var newDis = (ArrowController.inst.listArrowOnFloor[i].gameObject.transform.position - pos).sqrMagnitude;
+        //        //Debug.Log(newDis + " " + i);
+        //        if(newDis < dis) {
+        //            dis = newDis;
+        //            index = i;
+        //        }
+        //    }
+        //    hardMovePointerMoveToShop = ArrowController.inst.listArrowOnFloor[index].gameObject.transform.position;
+        //    MegaCameraController.inst.GoToFirstLook(false);
+        //}
 
         public void ScanAllPoints () {
             var allPoints = rootStateLooksTransform.GetComponentsInChildren<Transform>();
@@ -159,6 +159,42 @@ namespace Assets.Mega.Scripts {
                 GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.normal);
         }
 
+        public void GoToNearestShop () {
+            Ray ray = new Ray();
+            if(pointerEventData == null) {
+                Debug.Log("pointerEventData null");
+                ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(new Vector2(Screen.width * 0.5f, Screen.height * 0.5f));
+            } else {
+                ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(pointerEventData.position);
+            }
+        
+            pointerEventData = null;
+            RaycastHit hit;
+            Vector3 pos = Vector3.zero;
+            if(Physics.Raycast(ray, out hit)) {
+                pos = hit.point;
+            }
+        
+            float dis = float.MaxValue;
+            int index = 0;
+        
+            for(int i = 0; i < AllCaps.inst.listShopCaps.Count; i++) {
+                if(AllCaps.inst.listShopCaps[i].pointerMoveToShop != null) {
+                    var newDis = (AllCaps.inst.listShopCaps[i].pointerMoveToShop.lookPoint.position - pos).sqrMagnitude;
+                    //Debug.Log(newDis + " " + i);
+                    if(newDis < dis) {
+                        dis = newDis;
+                        index = i;
+                    }
+                } else {
+                    //Debug.Log(" null " + AllCaps.inst.listShopCaps[i].name);
+                }
+            }
+        
+            StateFirstFaceLook.inst.hardMovePointerMoveToShop = AllCaps.inst.listShopCaps[index].pointerMoveToShop;
+            MegaCameraController.inst.GoToFirstLook(false);
+        }
+
         //public void MoveForThisFloorPoint (PointMoveOnFirstFaceScene pointMoveOnFirstFaceScene) {
         //    if(!MegaCameraController.inst.isFirstLookScene) {
         //        return;
@@ -199,40 +235,6 @@ namespace Assets.Mega.Scripts {
         //    }
         //}
 
-        //public void GoToNearestShop () {
-        //    Ray ray = new Ray();
-        //    if(pointerEventData == null) {
-        //        Debug.Log("pointerEventData null");
-        //        ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(new Vector2(Screen.width * 0.5f, Screen.height * 0.5f));
-        //    } else {
-        //        ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(pointerEventData.position);
-        //    }
-        //
-        //    pointerEventData = null;
-        //    RaycastHit hit;
-        //    Vector3 pos = Vector3.zero;
-        //    if(Physics.Raycast(ray, out hit)) {
-        //        pos = hit.point;
-        //    }
-        //
-        //    float dis = float.MaxValue;
-        //    int index = 0;
-        //
-        //    for(int i = 0; i < AllCaps.inst.listShopCaps.Count; i++) {
-        //        if(AllCaps.inst.listShopCaps[i].pointerMoveToShop != null) {
-        //            var newDis = (AllCaps.inst.listShopCaps[i].pointerMoveToShop.lookPoint.position - pos).sqrMagnitude;
-        //            //Debug.Log(newDis + " " + i);
-        //            if(newDis < dis) {
-        //                dis = newDis;
-        //                index = i;
-        //            }
-        //        } else {
-        //            //Debug.Log(" null " + AllCaps.inst.listShopCaps[i].name);
-        //        }
-        //    }
-        //
-        //    StateFirstFaceLook.inst.hardMovePointerMoveToShop = AllCaps.inst.listShopCaps[index].pointerMoveToShop;
-        //    MegaCameraController.inst.GoToFirstLook(false);
-        //}
+
     }
 }

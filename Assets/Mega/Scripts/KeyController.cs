@@ -14,15 +14,15 @@ namespace Assets.Mega.Scripts {
 
         public static KeyController inst;
 
-        public float speedTouchPanoram = 0.0015f;//0.003f;
-        public float speedTouchFirstLook = 0.0015f;//0.003f;
-        public float speedTouchRotate = 0.0015f;//0.003f;
+        public float panoramSpeedTouch = 0.0018f;//0.0018f;
+        public float FirstLookSpeedTouch = 0.0017f;//0.0017f;
+        public float rotateSpeedTouch = -0.06f;//0.06f;
 
-        public float speedSwipeMousePanoram = -0.02f;
-        public float speedSwipeMouseFirstLook = -0.02f;
-        public float speedSwipeMouseRotate = -0.02f;
+        public float panoramSpeedSwipeMouse = -0.0018f;
+        public float firstLookSpeedSwipeMouse = -0.007f;
+        public float rotateSpeedSwipeMouse = -0.06f;
 
-        public float speedSwipeMouseZoom = 0.09f;//0.003f;
+        public float zoomSpeedSwipeMouse = 15f;//15f;
 
         //private float speedZoomWheel = 5f;//0.003f;
 
@@ -74,6 +74,9 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SwapZoom () {
+            if (MainLogic.inst.isRoadLook) {
+                return;
+            }
 
             if(MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() > -100 && MegaCameraController.inst.isFirstLookScene) {
                 Debug.Log("GoOutFirstLook");
@@ -84,7 +87,7 @@ namespace Assets.Mega.Scripts {
             if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() < -5000 && !MegaCameraController.inst.isFirstLookScene) {
                 Debug.Log("GoToNearestShop");
                 ButonAdds.inst.HideUpButton();
-                StateFirstFaceLook.inst.GoToNearestArrow();
+                StateFirstFaceLook.inst.GoToNearestShop();
             }
         }
 
@@ -106,6 +109,9 @@ namespace Assets.Mega.Scripts {
             if(doubleClick == 2) {
                 SwapZoom();
                 ResetClick();
+                if(StateFirstFaceLook.inst) {
+                    StateFirstFaceLook.inst.StopClickCoroutine();
+                }
             }
 
             if ((Input.touchSupported && Input.touchCount > 0) || (!Input.touchSupported  && Input.GetKey(KeyCode.Mouse0))) {
@@ -177,18 +183,18 @@ namespace Assets.Mega.Scripts {
 
 
                     if(MegaCameraController.inst.isFirstLookScene) {
-                        touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouseFirstLook, Time.deltaTime * v3.y * speedSwipeMouseFirstLook);
+                        touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * firstLookSpeedSwipeMouse, Time.deltaTime * v3.y * firstLookSpeedSwipeMouse);
 
                     } else {
                         switch(currentAllMegaState) {
                             case AllMegaState.panorama:
-                                touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMousePanoram, Time.deltaTime * v3.y * speedSwipeMousePanoram);
+                                touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * panoramSpeedSwipeMouse, Time.deltaTime * v3.y * panoramSpeedSwipeMouse);
                                 break;
                             case AllMegaState.rotate:
-                                touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouseRotate, Time.deltaTime * v3.y * speedSwipeMouseRotate);
+                                touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * rotateSpeedSwipeMouse, Time.deltaTime * v3.y * rotateSpeedSwipeMouse);
                                 break;
                             case AllMegaState.zoom:
-                                touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * speedSwipeMouseRotate, Time.deltaTime * v3.y * speedSwipeMouseRotate);
+                                touch.deltaPosition = new Vector2(Time.deltaTime * v3.x * rotateSpeedSwipeMouse, Time.deltaTime * v3.y * rotateSpeedSwipeMouse);
                                 break;
                             default:
                                 throw new ArgumentOutOfRangeException();
@@ -228,26 +234,26 @@ namespace Assets.Mega.Scripts {
                             StateFirstFaceLook.inst.StopClickCoroutine();
                         }
                     }
-                    x = -touch.deltaPosition.x * speedTouchFirstLook;
-                    y = -touch.deltaPosition.y * speedTouchFirstLook;
+                    x = -touch.deltaPosition.x * FirstLookSpeedTouch;
+                    y = -touch.deltaPosition.y * FirstLookSpeedTouch;
                     swipeFlag = true;
                 } else {
                     touch = Input.GetTouch(0);
 
                     switch (currentAllMegaState) {
                         case AllMegaState.panorama:
-                            x = -touch.deltaPosition.x * speedTouchPanoram * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                            y = -touch.deltaPosition.y * speedTouchPanoram * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            x = -touch.deltaPosition.x * panoramSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            y = -touch.deltaPosition.y * panoramSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
 
                             break;
                         case AllMegaState.rotate:
-                            x = -touch.deltaPosition.x * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                            y = -touch.deltaPosition.y * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            x = -touch.deltaPosition.x * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            y = -touch.deltaPosition.y * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
 
                             break;
                         case AllMegaState.zoom:
-                            x = -touch.deltaPosition.x * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                            y = -touch.deltaPosition.y * speedTouchRotate * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            x = -touch.deltaPosition.x * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            y = -touch.deltaPosition.y * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
 
                             break;
                         default:
@@ -260,6 +266,9 @@ namespace Assets.Mega.Scripts {
             }
 
             if(swipeFlag) {
+                if(MainLogic.inst.isRoadLook) {
+                    return;
+                }
                 // Debug.Log("x = " + touch.deltaPosition.x + " y=" + touch.deltaPosition.y);
 
                 if (MegaCameraController.inst.isFirstLookScene) {
@@ -274,9 +283,9 @@ namespace Assets.Mega.Scripts {
                             MegaCameraController.inst.RotateFromPinch(Time.deltaTime * GlobalParams.speedRotateCamera * x);
                             break;
                         case AllMegaState.zoom:
-                            deltaMagnitudeDiff = y * speedSwipeMouseZoom;
+                            deltaMagnitudeDiff = y * zoomSpeedSwipeMouse;
                             //deltaMagnitudeDiff *= (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                            Debug.Log(deltaMagnitudeDiff);
+                            //Debug.Log(deltaMagnitudeDiff);
                             MegaCameraController.inst.ZoomFromPinch(deltaMagnitudeDiff);
                             break;
                         default:

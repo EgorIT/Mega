@@ -73,7 +73,6 @@ public class MegaCameraController : MonoBehaviour {
                 case ViewStates.one:
                     break;
                 case ViewStates.allMega:
-                case ViewStates.shops:
                     MoveInAllMega(-dX, -dY);
                     break;
                 case ViewStates.firstFaceLook:
@@ -97,7 +96,6 @@ public class MegaCameraController : MonoBehaviour {
                 case ViewStates.one:
                     break;
                 case ViewStates.allMega:
-                case ViewStates.shops:
                     RotateCamera(dY);
                     break;
                 case ViewStates.firstFaceLook:
@@ -121,7 +119,6 @@ public class MegaCameraController : MonoBehaviour {
                 case ViewStates.one:
                     break;
                 case ViewStates.allMega:
-                case ViewStates.shops:
                     ZoomInPer(dZoom);
                     break;
                 case ViewStates.firstFaceLook:
@@ -150,7 +147,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void ZoomInPer (float dZoom) {
-        if (CheckPerSize()) {
+        if (CheckPerSize(dZoom)) {
             disCamera.localPosition += new Vector3(0, 0, dZoom);
             currentDistans = disCamera.localPosition.z;
             CorrectOrtoCamerForRayCast();
@@ -164,13 +161,13 @@ public class MegaCameraController : MonoBehaviour {
         ortoRayCastCamera.orthographicSize = newOrtoSize;
     }
 
-    public bool CheckPerSize () {
-        if(GetCurrentDistans() < GlobalParams.maxDistancePesr) {
-            disCamera.localPosition = new Vector3(0, 0, GlobalParams.maxDistancePesr);
+    public bool CheckPerSize (float delta) {
+        if(GetCurrentDistans() - delta < GlobalParams.maxDistancePesr) {
+            //disCamera.localPosition = new Vector3(0, 0, GlobalParams.maxDistancePesr + 100);
             return false;
         }
-        if(GetCurrentDistans() > GlobalParams.minDistancePesr) {
-            disCamera.localPosition = new Vector3(0, 0, GlobalParams.minDistancePesr);
+        if(GetCurrentDistans() + delta > GlobalParams.minDistancePesr) {
+            //disCamera.localPosition = new Vector3(0, 0, GlobalParams.minDistancePesr - 100);
             return false;
             //GoToFirstLook(true);
         }

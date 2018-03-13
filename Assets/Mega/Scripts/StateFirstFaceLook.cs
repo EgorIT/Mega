@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Mega.Scripts.Interface;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -86,6 +87,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void StartState () {
+            Debug.Log("StartState StateFirstFaceLook");
             //Debug.Log("go StartState");
             if(isHardMove) {
                 MegaCameraController.inst.SetNewPosCamera(FindPoint(), new Vector3(0, GlobalParams.eulerAnglesForCameraInShops.y, 0),
@@ -100,6 +102,7 @@ namespace Assets.Mega.Scripts {
                 StartCoroutine(WaitAfterStartState());
             }
             SetActivRoad(false);
+            KidsArrowController.inst.HideArrow();
         }
 
         public IEnumerator WaitAfterStartState () {
@@ -110,8 +113,11 @@ namespace Assets.Mega.Scripts {
         }
 
         public void EndState () {
+            Debug.Log("EndState StateFirstFaceLook");
             MainLogic.inst.showTableAndCaps = false;
             SetActivRoad(true);
+            MegaCameraController.inst.isFirstLookScene = false;
+            //InterfaceController.inst.ShowBasic();
             //if (RoofProcessor.inst) {
             //    RoofProcessor.inst.DoTransparent();
             //}

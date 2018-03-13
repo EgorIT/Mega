@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Mega.Scripts.Interface;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -14,14 +15,15 @@ namespace Assets.Mega.Scripts {
         }
         
         public void EndState () {
-
+            Debug.Log("EndState StateAllMega");
         }
 
         public void StartState () {
-            //TableController.inst.HideAllTable();
-            //AllCaps.inst.HideAllCaps();
+            Debug.Log("StartState StateAllMega");
+            KidsArrowController.inst.HideArrow();
+            ButonAdds.inst.ShowUpButton();
             MegaCameraController.inst.isFirstLookScene = false;
-            MainLogic.inst.interfaceMega.SetActive(true);
+            //InterfaceController.inst.ShowBasic();
             MegaCameraController.inst.SetNewPosCamera(MegaCameraController.inst.stateLookVector3AllMega, GlobalParams.eulerAnglesForCameraInAllMega, 
                 GlobalParams.fieldOfViewOnAllMega, MegaCameraController.inst.distansAllMega, TypeMoveCamera.slow);
         }

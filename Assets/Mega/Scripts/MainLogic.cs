@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Mega.Scripts.Interface;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -23,8 +24,8 @@ namespace Assets.Mega.Scripts {
         public List<iViewState> listViewStates = new List<iViewState>();
         //public List<Sprite> listPlans;
 
-        [HideInInspector]
-        public GameObject interfaceMega;
+        ///[HideInInspector]
+        ///public GameObject interfaceMega;
 
         public int currentNumberBlockShops;
 
@@ -100,18 +101,11 @@ namespace Assets.Mega.Scripts {
         public void FindNeedObject () {
             parkNow = GameObject.FindGameObjectWithTag("parkNow");
             parkAfter = GameObject.FindGameObjectWithTag("parkAfter");
-            interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
-            interfaceMega.SetActive(false);
+            //interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
+            //interfaceMega.SetActive(false);
         }
 
         public void Start () {
-            //Debug.Log("w = " + Screen.currentResolution.width);
-            //Debug.Log("h = " + Screen.currentResolution.height);
-            //if(/*boolWindowMod && */Application.platform != RuntimePlatform.WindowsEditor) {
-            //    StartCoroutine(IEnumWaitWindowMod());
-            //}
-
-
             RoadsProcessor.inst.StartFromController();
             StartCoroutine(IEnumWaitAfterStart());
             SetMoveAllMega();
@@ -122,11 +116,6 @@ namespace Assets.Mega.Scripts {
             yield return new WaitForSeconds(1f);
             RoadsProcessor.inst.ToOldDo();
         }
-
-        //public IEnumerator IEnumWaitWindowMod () {
-        //    yield return new WaitForSeconds(2f);
-        //    WindowMod.StartFromController();
-        //}
 
         public void SwapParking (bool showNew) {
             if(showNew) {
@@ -146,6 +135,7 @@ namespace Assets.Mega.Scripts {
             DisRoof(3);
             ButonAdds.inst.ShowUpButton();
             isRoadLook = false;
+            KidsArrowController.inst.HideArrow();
         }
 
         [ContextMenu("GoKids")]
@@ -156,6 +146,8 @@ namespace Assets.Mega.Scripts {
             if(TableController.inst) {
                 TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
             }
+            KidsArrowController.inst.ShowArrow();
+            //InterfaceController.inst.HardHideBasic();
         }
 
 
@@ -273,6 +265,9 @@ namespace Assets.Mega.Scripts {
                 if(listViewStates[i].GetViewStates() == viewCurrentStates) {
                     listViewStates[i].EndState();
                 }
+            }
+
+            for(int i = 0; i < listViewStates.Count; i++) {
                 if(listViewStates[i].GetViewStates() == newState) {
                     listViewStates[i].StartState();
                 }

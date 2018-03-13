@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Mega.Scripts.Interface;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -30,15 +31,17 @@ namespace Assets.Mega.Scripts {
 
 
         public void EndState () {
+            Debug.Log("EndState StateOne");
             imageOne.raycastTarget = false;
             if (isShowVideo) {
                 Video.inst.FadeOff();
+
                 isShowVideo = false;
             } else {
                 VideoLogo.inst.FadeOff();
             }
-            
-            
+
+            InterfaceController.inst.ShowBasic();
         }
 
         public void CheckThis () {
@@ -46,9 +49,17 @@ namespace Assets.Mega.Scripts {
         }
 
         public void StartState () {
+            Debug.Log("StartState StateOne");
             MainLogic.inst.EnableRoof();
             TableController.inst.ShowAllTable();
             //MainLogic.inst.DisRoof(0f);
+
+            KidsArrowController.inst.HideArrow();
+
+            MegaCameraController.inst.isFirstLookScene = false;
+
+            ButonAdds.inst.HideUpButton();
+            MainLogic.inst.isRoadLook = false;
 
             MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
@@ -59,14 +70,12 @@ namespace Assets.Mega.Scripts {
             if (isShowVideo && Video.inst) {
                 Video.inst.FadeOn();
             }
-
-            if (MainLogic.inst.interfaceMega) {
-                MainLogic.inst.interfaceMega.SetActive(false);
-            }
             
             imageOne.raycastTarget = true;
             MegaCameraController.inst.SetNewPosCamera(new Vector3(12f, 0, -70f), GlobalParams.eulerAnglesForCameraInAllMega, 
                 GlobalParams.fieldOfViewOnStateOne, GlobalParams.distansOnStateOne, TypeMoveCamera.slow);
+
+            InterfaceController.inst.HardHideAllTable();
         }
 
         public ViewStates GetViewStates () {

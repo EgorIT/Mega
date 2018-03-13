@@ -20,7 +20,9 @@ public class Swaper : MonoBehaviour {
     public void Swap () {
         current.RollOut();
         target.RollIn();
-        if (rt)
-        rt.anchoredPosition = new Vector2(0,0);
+        if (rt) {
+            rt.anchoredPosition = new Vector2(0, 0);
+        }
+      
     }
 }

@@ -34,7 +34,7 @@ namespace Assets.Mega.Scripts {
                 }
             } else {
                 if(collider.enabled) {
-                    StartCoroutine(IEnumChangeScale(Vector3.one)); //salt
+                    StartCoroutine(IEnumChangeScale(Vector3.zero)); //salt
                 }
             }
         }

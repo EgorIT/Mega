@@ -77,14 +77,14 @@ namespace Assets.Mega.Scripts {
             if (MainLogic.inst.isRoadLook) {
                 return;
             }
-
+            //Debug.Log(MainLogic.inst.GetViewCurrentStates() + " " + MegaCameraController.inst.GetCurrentDistans() + " " +  MegaCameraController.inst.isFirstLookScene);
             if(MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() > -100 && MegaCameraController.inst.isFirstLookScene) {
                 Debug.Log("GoOutFirstLook");
                 ButonAdds.inst.ShowUpButton();
                
                 MegaCameraController.inst.GoOutFirstLook();
             }
-            if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() < -5000 && !MegaCameraController.inst.isFirstLookScene) {
+            if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() < -4000 && !MegaCameraController.inst.isFirstLookScene) {
                 Debug.Log("GoToNearestShop");
                 ButonAdds.inst.HideUpButton();
                 StateFirstFaceLook.inst.GoToNearestShop();
@@ -162,10 +162,10 @@ namespace Assets.Mega.Scripts {
 
            
 
-            if(Input.GetKey(KeyCode.Mouse0)) {
+            if(Input.GetKey(KeyCode.Mouse0) ) {
                 MainLogic.inst.ResetTime();
 
-                if (IsTouchUI(Input.mousePosition)) {
+                if (IsTouchUI(Input.mousePosition) || InterfaceController.inst.isDrag) {
                     return;
                 }
                
@@ -223,7 +223,7 @@ namespace Assets.Mega.Scripts {
 
             if(Input.touchSupported && Input.touchCount == 1) {
                 MainLogic.inst.ResetTime();
-                if(IsTouchUI(Input.GetTouch(0).position)) {
+                if(IsTouchUI(Input.GetTouch(0).position) || InterfaceController.inst.isDrag) {
                     return;
                 }
                 if(MegaCameraController.inst.isFirstLookScene) {

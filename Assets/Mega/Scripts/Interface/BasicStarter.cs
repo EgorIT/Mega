@@ -9,12 +9,12 @@ public class BasicStarter : MonoBehaviour
 
     public void OnEnable() {
 	    //Debug.Log("OnEnable");
-		table.RollIn();
+		//table.RollIn();
 	}
 
     public void OnDisable() {
         //Debug.Log("OnDisable");
-        table.RollOut();
+        //table.RollOut();
     }
 
 }

@@ -1,70 +1,72 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Table : MonoBehaviour {
-    public float seconds;
+    //public float seconds;
     public TableData tableData;
-    //public bool toRoll = false;
 
     public RectTransform rt;
     private Coroutine countdown;
     private Vector3 outPosition = new Vector3(0, -560, 0);
     private Vector3 inPosition = new Vector3(0, 0, 0);
 
-    private bool roll = true;
+    private bool canStartRoll = true;
+
+    public bool isButtonRect;
 
     public void Awake () {
         rt = gameObject.GetComponent<RectTransform>();
-        rt.anchoredPosition = outPosition;
     }
 
-    /*
-        private void OnEnable()
-        {
-            Debug.Log("rolling");
-            if (toRoll)
-            RollIn();
+    public void Start() {
+        if (!isButtonRect) {
+            rt.anchoredPosition = outPosition;
+            InterfaceController.inst.upperPanelRectTransform.anchoredPosition = outPosition;
         }
-    */
+       
+    }
 
     public void RollIn () {
-        if(roll) {
-            roll = false;
+        if(canStartRoll) {
+            canStartRoll = false;
             StartCoroutine(Rolling(true));
         }
     }
 
-    public IEnumerator Rolling (bool rollIn) {
+    private IEnumerator Rolling (bool rollIn) {
         float time = 0;
         //Debug.Log(rt.name);
-        Vector3 startPosition = rt.anchoredPosition;
+        //Vector3 startPosition = rt.anchoredPosition;
 
         while(time < 0.3f) {
-            if(rollIn)
+            if (rollIn) {
                 rt.anchoredPosition = Vector3.Lerp(outPosition, inPosition, time / 0.3f);
-            else {
+                InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition;
+            } else {
                 rt.anchoredPosition = Vector3.Lerp(inPosition, outPosition, time / 0.3f);
+                
             }
             time += Time.deltaTime;
             yield return null;
         }
         if(rollIn) {
             rt.anchoredPosition = inPosition;
+            InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition;
             Countdown();
         } else {
             rt.anchoredPosition = outPosition;
+            
         }
+      
         yield return null;
     }
 
     public void RollOut () {
-        if(!roll) {
-            roll = true;
+        if(!canStartRoll) {
+            canStartRoll = true;
             if (gameObject.activeInHierarchy) {
                 StartCoroutine(Rolling(false));
             }
-            
         }
     }
 
@@ -79,6 +81,12 @@ public class Table : MonoBehaviour {
         yield return new WaitForSeconds(seconds);
         RollOut();
         yield return null;
+    }
+
+    public void HardHide() {
+        StopAllCoroutines();
+        rt.anchoredPosition = outPosition;
+        canStartRoll = true;
     }
 
     void Update () {

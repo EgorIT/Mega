@@ -103,6 +103,7 @@ namespace Assets.Mega.Scripts {
             }
             SetActivRoad(false);
             KidsArrowController.inst.HideArrow();
+            StockArrowController.inst.HideArrow();
         }
 
         public IEnumerator WaitAfterStartState () {

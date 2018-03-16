@@ -55,6 +55,7 @@ namespace Assets.Mega.Scripts {
             //MainLogic.inst.DisRoof(0f);
 
             KidsArrowController.inst.HideArrow();
+            StockArrowController.inst.HideArrow();
 
             MegaCameraController.inst.isFirstLookScene = false;
 

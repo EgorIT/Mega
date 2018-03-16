@@ -136,6 +136,19 @@ namespace Assets.Mega.Scripts {
             ButonAdds.inst.ShowUpButton();
             isRoadLook = false;
             KidsArrowController.inst.HideArrow();
+            StockArrowController.inst.HideArrow();
+        }
+
+        [ContextMenu("GoStock")]
+        public void GoStock () {
+            MegaCameraController.inst.distansAllMega = GlobalParams.stockDistancePesr;
+            MegaCameraController.inst.stateLookVector3AllMega = new Vector3(83f, 0, -45f);
+            ChangeState(ViewStates.allMega);
+            if(TableController.inst) {
+                TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
+            }
+            StockArrowController.inst.ShowArrow();
+            //InterfaceController.inst.HardHideBasic();
         }
 
         [ContextMenu("GoKids")]

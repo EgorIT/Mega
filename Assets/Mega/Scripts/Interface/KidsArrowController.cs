@@ -26,7 +26,7 @@ namespace Assets.Mega.Scripts.Interface {
             coroJump = StartCoroutine(IEnumGoJump());
         }
 
-        public void StopCoroJump() {
+        private void StopCoroJump() {
             if (coroJump != null) {
                 StopCoroutine(coroJump);
             }
@@ -38,7 +38,7 @@ namespace Assets.Mega.Scripts.Interface {
             kidsArrowTransform.gameObject.SetActive(var);
         }
 
-        public IEnumerator IEnumGoJump() {
+        private IEnumerator IEnumGoJump() {
             SetActivKidsArrow(true);
             StartCoroutine(IEnumRotateY(kidsArrowTransform, 55));
             while (true) {

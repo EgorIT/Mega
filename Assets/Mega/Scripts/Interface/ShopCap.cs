@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Assets.Mega.Scripts;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ShopCap : MonoBehaviour {
+public class ShopCap : MonoBehaviour, IPointerClickHandler{
     public string name;
 
     public bool dontUse;
@@ -71,4 +72,7 @@ public class ShopCap : MonoBehaviour {
     }
 
 
+    public void OnPointerClick(PointerEventData eventData) {
+        Debug.Log(name);
+    }
 }

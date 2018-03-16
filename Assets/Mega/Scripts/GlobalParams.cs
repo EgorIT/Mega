@@ -34,6 +34,7 @@ namespace Assets.Mega.Scripts {
         public static float minDistancePesr = -1000f;
         public static float maxDistancePesr = -26000f;
         public static float kidsDistancePesr = -4500f;
+        public static float stockDistancePesr = -1800f;
 
         public static float needTimeToSleep = 220f;//220
 
@@ -47,7 +48,7 @@ namespace Assets.Mega.Scripts {
         public static float speedRotateCamera = 1f;
 
 
-        public static float timeToDoubleClick = 0.8f;
+        public static float timeToDoubleClick = 0.4f;
 
         public static bool full = true;
 

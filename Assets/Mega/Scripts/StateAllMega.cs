@@ -21,6 +21,7 @@ namespace Assets.Mega.Scripts {
         public void StartState () {
             Debug.Log("StartState StateAllMega");
             KidsArrowController.inst.HideArrow();
+            StockArrowController.inst.HideArrow();
             ButonAdds.inst.ShowUpButton();
             MegaCameraController.inst.isFirstLookScene = false;
             //InterfaceController.inst.ShowBasic();

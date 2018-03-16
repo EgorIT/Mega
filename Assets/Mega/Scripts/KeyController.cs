@@ -84,7 +84,7 @@ namespace Assets.Mega.Scripts {
                
                 MegaCameraController.inst.GoOutFirstLook();
             }
-            if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() < -4000 && !MegaCameraController.inst.isFirstLookScene) {
+            if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() < -1000 && !MegaCameraController.inst.isFirstLookScene) {
                 Debug.Log("GoToNearestShop");
                 ButonAdds.inst.HideUpButton();
                 StateFirstFaceLook.inst.GoToNearestShop();

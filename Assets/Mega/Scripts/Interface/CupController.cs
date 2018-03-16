@@ -7,9 +7,11 @@ using UnityEngine.UI;
 public class CupController : MonoBehaviour {
 
     public Image[] cups;
+    public Image[] sprites;
     public RectTransform content;
     public int? buffered;
     public BoxCollider bufferedCollider;
+    public RectTransform fullscreen;
 
     private void OnEnable () {
         buffered = null;
@@ -18,6 +20,27 @@ public class CupController : MonoBehaviour {
             cups[i].rectTransform.sizeDelta = new Vector2(218, 218);
             cups[i].rectTransform.anchoredPosition = new Vector2(i * (238), -181);
         }
+    }
+
+    public void ScaleFullscreen(int i)
+    {
+        fullscreen.gameObject.SetActive(true);
+        fullscreen.GetComponent<Image>().sprite = sprites[i].sprite;
+        StartCoroutine(ScaleUpFullscreen());
+    }
+
+    private IEnumerator ScaleUpFullscreen()
+    {
+        fullscreen.localScale = Vector2.zero;
+        float time = 0.2f;
+        while(time > 0) {
+            //content.sizeDelta = new Vector2(2028-minus, 362);
+            fullscreen.localScale = Vector2.Lerp(Vector2.one, Vector2.zero, time / .5f);
+            time -= Time.deltaTime;
+            yield return null;
+        }
+        fullscreen.localScale = Vector2.one;
+        yield return null;
     }
 
     public void Scale (int i) {

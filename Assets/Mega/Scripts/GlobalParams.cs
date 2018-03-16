@@ -23,6 +23,8 @@ namespace Assets.Mega.Scripts {
 
         public static float factorPerspStabilization = 100f;
 
+
+
         public static float fieldOfViewOnStateOne = 1f;
         public static float fieldOfViewOnAllMega = 1f;
         public static float fieldOfViewOnFirstLook = 95f;

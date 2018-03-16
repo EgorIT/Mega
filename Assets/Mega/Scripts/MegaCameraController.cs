@@ -43,7 +43,8 @@ public class MegaCameraController : MonoBehaviour {
 
     public float distansAllMega;
     public Vector3 stateLookVector3AllMega;
-
+    public int i1;
+    public int i2;
     public void Awake () {
         inst = this;
     }
@@ -157,7 +158,7 @@ public class MegaCameraController : MonoBehaviour {
 
     public void CorrectOrtoCamerForRayCast() {
         var t = GetCurrentDistans() / (GlobalParams.maxDistancePesr - GlobalParams.minDistancePesr);
-        var newOrtoSize = Mathf.Lerp(6, 220, t);
+        var newOrtoSize = Mathf.Lerp(i1, i2, t);
         ortoRayCastCamera.orthographicSize = newOrtoSize;
     }
 
@@ -409,6 +410,8 @@ public class MegaCameraController : MonoBehaviour {
 
 
             currentTime += Time.deltaTime;
+            currentDistans = disCamera.localPosition.z;
+            CorrectOrtoCamerForRayCast();
             yield return null;
         }
         perspectiveCamera.transform.localEulerAngles = Vector3.zero;
@@ -422,6 +425,7 @@ public class MegaCameraController : MonoBehaviour {
         }
 
         disCamera.localPosition = new Vector3(0, 0, finalDistans);
+        currentDistans = finalDistans;
         yield return null;
         currentTypeCameraOnState = TypeCameraOnState.perspective;
         moveCamera = null;

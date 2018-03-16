@@ -114,7 +114,7 @@ namespace Assets.Mega.Scripts {
         public IEnumerator IEnumWaitAfterStart() {
             RoadsProcessor.inst.ToNewDo();
             yield return new WaitForSeconds(1f);
-            RoadsProcessor.inst.ToOldDo();
+            //RoadsProcessor.inst.ToOldDo();
         }
 
         public void SwapParking (bool showNew) {

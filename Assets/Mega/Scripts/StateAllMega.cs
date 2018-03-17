@@ -27,6 +27,7 @@ namespace Assets.Mega.Scripts {
             //InterfaceController.inst.ShowBasic();
             MegaCameraController.inst.SetNewPosCamera(MegaCameraController.inst.stateLookVector3AllMega, GlobalParams.eulerAnglesForCameraInAllMega, 
                 GlobalParams.fieldOfViewOnAllMega, MegaCameraController.inst.distansAllMega, TypeMoveCamera.slow);
+            MegaCameraController.inst.ortoRayCastCamera.gameObject.SetActive(true);
         }
 
         public ViewStates GetViewStates () {

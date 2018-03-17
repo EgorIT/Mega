@@ -43,8 +43,9 @@ public class MegaCameraController : MonoBehaviour {
 
     public float distansAllMega;
     public Vector3 stateLookVector3AllMega;
-    public int i1;
-    public int i2;
+    private int i1 = 6;
+    private int i2 = 220;
+
     public void Awake () {
         inst = this;
     }

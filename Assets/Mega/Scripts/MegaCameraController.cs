@@ -215,19 +215,19 @@ public class MegaCameraController : MonoBehaviour {
             currentFieldOfView, GetCurrentDistans(), TypeMoveCamera.normal));
     }
 
-    public void GoToFirstLook(bool isHardMove) {
-        if (!isHardMove && MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook) {
-            StartCoroutine(FadeHardMove());
-        }
-        TableController.inst.HideAllTable();
-        PauseForUi();
-        StateFirstFaceLook.inst.isHardMove = isHardMove;
-        MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
-        
-        StartCoroutine(WaitToOff());
-        ortoRayCastCamera.gameObject.SetActive(false);
-        //MainLogic.inst.SwapRoof(true);
-    }
+    //public void GoToFirstLook(bool isHardMove) {
+    //    if (!isHardMove && MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook) {
+    //        StartCoroutine(FadeHardMove());
+    //    }
+    //    TableController.inst.HideAllTable();
+    //    PauseForUi();
+    //    StateFirstFaceLook.inst.isHardMove = isHardMove;
+    //    MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
+    //    
+    //    StartCoroutine(WaitToOff());
+    //    ortoRayCastCamera.gameObject.SetActive(false);
+    //    //MainLogic.inst.SwapRoof(true);
+    //}
 
     public IEnumerator FadeHardMove() {
         float time = GlobalParams.timeToFly * 0.5f;
@@ -260,7 +260,7 @@ public class MegaCameraController : MonoBehaviour {
         distansAllMega = GlobalParams.distansOnAllMega;//GlobalParams.minDistancePesr - 100;
         stateLookVector3AllMega = posCamera.position;
         MainLogic.inst.ChangeState(ViewStates.allMega);
-        MainLogic.inst.DisRoof(3);
+        MainLogic.inst.HideRoof(3);
         isFirstLookScene = false;
         ortoRayCastCamera.gameObject.SetActive(true);
     }

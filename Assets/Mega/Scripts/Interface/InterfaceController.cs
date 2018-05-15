@@ -72,7 +72,7 @@ public class InterfaceController : MonoBehaviour {
         changesInfo.SetShop(name);
     }
 
-    public void GoToAllMega() {
-        MainLogic.inst.GoAllMega();
-    }
+    //public void GoToAllMega() {
+    //    MainLogic.inst.GoAllMega();
+    //}
 }

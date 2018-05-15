@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class RoadsProcessor : MonoBehaviour {
     public static RoadsProcessor inst;
+
     private List<Material> materialsOld = new List<Material>();
     private List<Color> colorsOld = new List<Color>();
     private List<Material> materialsNew = new List<Material>();
     private List<Color> colorsNew = new List<Color>();
 
-    public GameObject goOld;
+    //public GameObject goOld;
     public GameObject goNew;
     //public GameObject glass;
 
@@ -28,7 +29,7 @@ public class RoadsProcessor : MonoBehaviour {
 
     public void StartFromController () {
         GameObject goOld = MainLogic.inst.parkNow;// GameObject.FindWithTag("parkNow");
-        GameObject goNew = MainLogic.inst.parkAfter;//GameObject.FindWithTag("parkAfter");
+        //GameObject goNew = MainLogic.inst.parkAfter;//GameObject.FindWithTag("parkAfter");
         if(goNew) {
             goNew.SetActive(true);
         } else {
@@ -67,15 +68,15 @@ public class RoadsProcessor : MonoBehaviour {
 
     }
 
-    public void ToOldDo () {
-        goNew.SetActive(true);
-        goOld.SetActive(true);
-        StartCoroutine(ToOld());
-    }
+    //public void ToOldDo () {
+    //    goNew.SetActive(true);
+    //    //goOld.SetActive(true);
+    //    StartCoroutine(ToOld());
+    //}
 
     public void ToNewDo () {
         goNew.SetActive(true);
-        goOld.SetActive(true);
+        //goOld.SetActive(true);
         StartCoroutine(ToNew());
     }
 
@@ -208,7 +209,7 @@ public class RoadsProcessor : MonoBehaviour {
                 }
         }
 
-        goOld.SetActive(false);
+        //goOld.SetActive(false);
         //goNew.SetActive(false);
         //AllCaps.allCaps.Refresh();
         yield return null;
@@ -260,8 +261,8 @@ public class RoadsProcessor : MonoBehaviour {
             ToNewDo();
         }
 
-        if(Input.GetKeyDown("n")) {
-            ToOldDo();
-        }
+        //if(Input.GetKeyDown("n")) {
+        //    ToOldDo();
+        //}
     }
 }

@@ -21,12 +21,24 @@ namespace Assets.Mega.Scripts {
         public void OnPointerDown (PointerEventData data) {
             //Debug.Log(gameObject.name);
             MainLogic.inst.ChangeState(ViewStates.allMega);
-            MainLogic.inst.DisRoof(3);
+            MainLogic.inst.HideRoof(3);
         }
 
         public void Start () {
             MainLogic.inst.listViewStates.Add(this);
-            MainLogic.inst.ChangeState(viewStates);
+            //MainLogic.inst.ChangeState(viewStates);
+            //EndState();
+
+            imageOne.raycastTarget = false;
+            if(isShowVideo) {
+                VideoController.inst.FadeOff(0);
+                isShowVideo = false;
+            } else {
+                LogoController.inst.FadeOff(0);
+            }
+
+            InterfaceController.inst.ShowBasic();
+
         }
 
 
@@ -34,11 +46,10 @@ namespace Assets.Mega.Scripts {
             Debug.Log("EndState StateOne");
             imageOne.raycastTarget = false;
             if (isShowVideo) {
-                Video.inst.FadeOff();
-
+                VideoController.inst.FadeOff(1);
                 isShowVideo = false;
             } else {
-                VideoLogo.inst.FadeOff();
+                LogoController.inst.FadeOff(1);
             }
 
             InterfaceController.inst.ShowBasic();
@@ -50,9 +61,8 @@ namespace Assets.Mega.Scripts {
 
         public void StartState () {
             Debug.Log("StartState StateOne");
-            MainLogic.inst.EnableRoof();
+            MainLogic.inst.ShowRoof();
             TableController.inst.ShowAllTable();
-            //MainLogic.inst.DisRoof(0f);
 
             KidsArrowController.inst.HideArrow();
             StockArrowController.inst.HideArrow();
@@ -64,12 +74,12 @@ namespace Assets.Mega.Scripts {
 
             MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
-            if (!isShowVideo && VideoLogo.inst) {
-                VideoLogo.inst.FadeOn();
+            if (!isShowVideo && LogoController.inst) {
+                LogoController.inst.FadeOn(1);
             }
 
-            if (isShowVideo && Video.inst) {
-                Video.inst.FadeOn();
+            if (isShowVideo && VideoController.inst) {
+                VideoController.inst.FadeOn(1);
             }
             
             imageOne.raycastTarget = true;

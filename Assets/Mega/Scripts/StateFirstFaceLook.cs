@@ -110,7 +110,7 @@ namespace Assets.Mega.Scripts {
             yield return new WaitForSeconds(GlobalParams.timeToFly - 1.8f);
             TableController.inst.HideAllTable();
             AllCaps.inst.HideAllCaps();
-            MainLogic.inst.EnableRoof();
+            MainLogic.inst.ShowRoof();
         }
 
         public void EndState () {
@@ -166,82 +166,40 @@ namespace Assets.Mega.Scripts {
                 GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.normal);
         }
 
-        public void GoToNearestShop () {
-            Ray ray = new Ray();
-            if(pointerEventData == null) {
-                Debug.Log("pointerEventData null");
-                ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(new Vector2(Screen.width * 0.5f, Screen.height * 0.5f));
-            } else {
-                ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(pointerEventData.position);
-            }
-        
-            pointerEventData = null;
-            RaycastHit hit;
-            Vector3 pos = Vector3.zero;
-            if(Physics.Raycast(ray, out hit)) {
-                pos = hit.point;
-            }
-        
-            float dis = float.MaxValue;
-            int index = 0;
-        
-            for(int i = 0; i < AllCaps.inst.listShopCaps.Count; i++) {
-                if(AllCaps.inst.listShopCaps[i].pointerMoveToShop != null) {
-                    var newDis = (AllCaps.inst.listShopCaps[i].pointerMoveToShop.lookPoint.position - pos).sqrMagnitude;
-                    //Debug.Log(newDis + " " + i);
-                    if(newDis < dis) {
-                        dis = newDis;
-                        index = i;
-                    }
-                } else {
-                    //Debug.Log(" null " + AllCaps.inst.listShopCaps[i].name);
-                }
-            }
-        
-            StateFirstFaceLook.inst.hardMovePointerMoveToShop = AllCaps.inst.listShopCaps[index].pointerMoveToShop;
-            MegaCameraController.inst.GoToFirstLook(false);
-        }
-
-        //public void MoveForThisFloorPoint (PointMoveOnFirstFaceScene pointMoveOnFirstFaceScene) {
-        //    if(!MegaCameraController.inst.isFirstLookScene) {
-        //        return;
+        //public void GoToNearestShop () {
+        //    Ray ray = new Ray();
+        //    if(pointerEventData == null) {
+        //        Debug.Log("pointerEventData null");
+        //        ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(new Vector2(Screen.width * 0.5f, Screen.height * 0.5f));
+        //    } else {
+        //        ray = MegaCameraController.inst.ortoRayCastCamera.ScreenPointToRay(pointerEventData.position);
         //    }
         //
-        //    if(clickCoroutine != null) {
-        //        StopCoroutine(clickCoroutine);
+        //    pointerEventData = null;
+        //    RaycastHit hit;
+        //    Vector3 pos = Vector3.zero;
+        //    if(Physics.Raycast(ray, out hit)) {
+        //        pos = hit.point;
         //    }
-        //    var v3 = new Vector3(pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition.x,
-        //        GlobalParams.distansEye,
-        //        pointMoveOnFirstFaceScene.pointerEventData.pointerCurrentRaycast.worldPosition.z);
-        //    clickCoroutine = StartCoroutine(IEnumCheckSwipe(v3, MegaCameraController.inst.currentEndAng));
-        //}
-
-        //public void MoveForThisShop (PointerMoveToShop pointerMoveToShop) {
-        //    StopClickCoroutine();
-        //    clickCoroutine = StartCoroutine(IEnumCheckSwipe(pointerMoveToShop.lookPoint.position, 
-        //        pointerMoveToShop.lookPoint.eulerAngles));
-        //}
-
-
-        //public void Update () {
-        //    if(countTouch == 2) {
-        //        //StateFirstFaceLook.inst.MoveForThisFloorPoint(this);
         //
-        //        if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && !MegaCameraController.inst.isFirstLookScene) {
-        //            Debug.Log("Move Down");
-        //            GoToNearestShop();
+        //    float dis = float.MaxValue;
+        //    int index = 0;
+        //
+        //    for(int i = 0; i < AllCaps.inst.listShopCaps.Count; i++) {
+        //        if(AllCaps.inst.listShopCaps[i].pointerMoveToShop != null) {
+        //            var newDis = (AllCaps.inst.listShopCaps[i].pointerMoveToShop.lookPoint.position - pos).sqrMagnitude;
+        //            //Debug.Log(newDis + " " + i);
+        //            if(newDis < dis) {
+        //                dis = newDis;
+        //                index = i;
+        //            }
         //        } else {
-        //
+        //            //Debug.Log(" null " + AllCaps.inst.listShopCaps[i].name);
         //        }
-        //        countTouch = 0;
         //    }
-        //    timeDeltaTouch += Time.deltaTime;
-        //    if(timeDeltaTouch > GlobalParams.timeToDoubleClick) {
-        //        countTouch = 0;
-        //        timeDeltaTouch = GlobalParams.timeToDoubleClick;
-        //    }
+        //
+        //    StateFirstFaceLook.inst.hardMovePointerMoveToShop = AllCaps.inst.listShopCaps[index].pointerMoveToShop;
+        //    MegaCameraController.inst.GoToFirstLook(false);
         //}
-
-
     }
 }

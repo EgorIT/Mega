@@ -24,8 +24,6 @@ namespace Assets.Mega.Scripts {
 
         public float zoomSpeedSwipeMouse = 15f;//15f;
 
-        //private float speedZoomWheel = 5f;//0.003f;
-
         public Vector3 lastPosCur;
         public Vector3 currentPosCur;
 
@@ -42,8 +40,6 @@ namespace Assets.Mega.Scripts {
 
         public bool clickOnMap;
 
-      
-
         public void Awake() {
             inst = this;
         }
@@ -53,43 +49,34 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SetZoom () {
-            //if(MegaCameraController.inst.GetDontUseUi()) {
-            //    return;
-            //}
             currentAllMegaState = AllMegaState.zoom;
         }
 
         public void SetMoveAllMega() {
-            //if (MegaCameraController.inst.GetDontUseUi()) {
-            //    return;
-            //}
             currentAllMegaState = AllMegaState.move;
         }
         
         public void SetRotate () {
-            //if(MegaCameraController.inst.GetDontUseUi()) {
-            //    return;
-            //}
             currentAllMegaState = AllMegaState.rotate;
         }
 
-        public void SwapZoom () {
-            if (MainLogic.inst.isRoadLook) {
-                return;
-            }
-            //Debug.Log(MainLogic.inst.GetViewCurrentStates() + " " + MegaCameraController.inst.GetCurrentDistans() + " " +  MegaCameraController.inst.isFirstLookScene);
-            if(MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() > -100 && MegaCameraController.inst.isFirstLookScene) {
-                Debug.Log("GoOutFirstLook");
-                ButonAdds.inst.ShowUpButton();
-               
-                MegaCameraController.inst.GoOutFirstLook();
-            }
-            if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() < -1000 && !MegaCameraController.inst.isFirstLookScene) {
-                Debug.Log("GoToNearestShop");
-                ButonAdds.inst.HideUpButton();
-                StateFirstFaceLook.inst.GoToNearestShop();
-            }
-        }
+        //public void SwapFirstLookAndAllMega () {
+        //    if (MainLogic.inst.isRoadLook) {
+        //        return;
+        //    }
+        //    //Debug.Log(MainLogic.inst.GetViewCurrentStates() + " " + MegaCameraController.inst.GetCurrentDistans() + " " +  MegaCameraController.inst.isFirstLookScene);
+        //    if(MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() > -100 && MegaCameraController.inst.isFirstLookScene) {
+        //        Debug.Log("GoOutFirstLook");
+        //        ButonAdds.inst.ShowUpButton();
+        //       
+        //        MegaCameraController.inst.GoOutFirstLook();
+        //    }
+        //    if(MainLogic.inst.GetViewCurrentStates() != ViewStates.firstFaceLook && MegaCameraController.inst.GetCurrentDistans() < -1000 && !MegaCameraController.inst.isFirstLookScene) {
+        //        Debug.Log("GoToNearestShop");
+        //        ButonAdds.inst.HideUpButton();
+        //        StateFirstFaceLook.inst.GoToNearestShop();
+        //    }
+        //}
 
         public void ResetClick() {
             //Debug.Log("reset");
@@ -106,13 +93,13 @@ namespace Assets.Mega.Scripts {
                 }
             }
 
-            if(doubleClick == 2) {
-                SwapZoom();
-                ResetClick();
-                if(StateFirstFaceLook.inst) {
-                    StateFirstFaceLook.inst.StopClickCoroutine();
-                }
-            }
+            //if(doubleClick == 2) {
+            //    SwapFirstLookAndAllMega();
+            //    ResetClick();
+            //    if(StateFirstFaceLook.inst) {
+            //        StateFirstFaceLook.inst.StopClickCoroutine();
+            //    }
+            //}
 
             if ((Input.touchSupported && Input.touchCount > 0) || (!Input.touchSupported  && Input.GetKey(KeyCode.Mouse0))) {
                 if ((Input.touchSupported && IsTouchUI(Input.GetTouch(0).position)) ||

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Mega.Scripts.Interface;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Mega.Scripts {
@@ -17,7 +18,7 @@ namespace Assets.Mega.Scripts {
 
         public Button kids;
 
-        public Button firstViewButton;
+        //public Button firstViewButton;
         public Button zoomCameraButton;
         public Button moveCameraButton;
         public Button rotateCameraButton;
@@ -32,17 +33,24 @@ namespace Assets.Mega.Scripts {
         }
 
         public void Start () {
-            parkingBeforTogle.onValueChanged.AddListener(BaseEventData => { MainLogic.inst.SwapParking(parkingBeforTogle.isOn); });
+            //parkingBeforTogle.onValueChanged.AddListener(BaseEventData => { MainLogic.inst.SwapParking(parkingBeforTogle.isOn); });
             //floorBeforTogle.onValueChanged.AddListener(BaseEventData => { FloorController.inst.SetFloor(floorBeforTogle.isOn); });
-            secondLineButton.onClick.AddListener(() => { MainLogic.inst.GoVideo(); });
-            backFromAllShops.onClick.AddListener(() => { MainLogic.inst.GoAllMega(); });
-            goRoads.onClick.AddListener(() => { MainLogic.inst.GoAllRoads(); });
-            goFloors.onClick.AddListener(() => { MainLogic.inst.GoAllMega(); });
-            backFromRoads.onClick.AddListener(() => { MainLogic.inst.GoAllMega(); MainLogic.inst.DisRoof(3); });
+            secondLineButton.onClick.AddListener(() => { MainLogic.inst.GoVideo2(); });
+            backFromAllShops.onClick.AddListener(() => { MainLogic.inst.GoAllMega(false); });
+            goRoads.onClick.AddListener(() => { MainLogic.inst.GoAllRoads();  });
+
+            backFromRoads.onClick.AddListener(() => {
+                MainLogic.inst.GoAllMega(false);
+                MainLogic.inst.SetActivZoneParking(false);
+                ParkingArrowsController.inst.SetActivArrow(false);
+            });
+
+            goFloors.onClick.AddListener(() => { MainLogic.inst.GoAllMega(false);  });
+           
             kids.onClick.AddListener(() => { MainLogic.inst.GoKids(); });
             stockButton.onClick.AddListener(() => { MainLogic.inst.GoStock(); });
 
-            firstViewButton.onClick.AddListener(() => { MainLogic.inst.SetFirstLook(); });
+            //firstViewButton.onClick.AddListener(() => { MainLogic.inst.SetFirstLook(); });
             zoomCameraButton.onClick.AddListener(() => { MainLogic.inst.SetZoom(); });
             moveCameraButton.onClick.AddListener(() => { MainLogic.inst.SetMoveAllMega(); });
             rotateCameraButton.onClick.AddListener(() => { MainLogic.inst.SetRotate(); });
@@ -67,7 +75,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public void SetActivButtons (bool var) {
-            firstViewButton.gameObject.SetActive(var);
+            //firstViewButton.gameObject.SetActive(var);
             zoomCameraButton.gameObject.SetActive(var);
             moveCameraButton.gameObject.SetActive(var);
             rotateCameraButton.gameObject.SetActive(var);

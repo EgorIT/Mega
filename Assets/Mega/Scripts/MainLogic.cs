@@ -27,6 +27,9 @@ namespace Assets.Mega.Scripts {
         ///[HideInInspector]
         ///public GameObject interfaceMega;
 
+        public GameObject zoneView;
+        public GameObject zoneClick;
+
         public int currentNumberBlockShops;
 
         public List<Transform> borders = new List<Transform>();
@@ -35,16 +38,15 @@ namespace Assets.Mega.Scripts {
         private bool roofEnable = true;
 
         public GameObject parkNow;
-        public GameObject parkAfter;
+        //public GameObject parkAfter;
 
         public GameObject probes;
 
         public bool showTableAndCaps;
 
-        public Video mainVideo;
-        public VideoLogo logo;
-
         public bool isRoadLook;
+
+        public Action<int> actionSelectZone;
 
         public void Awake () {
             inst = this;
@@ -63,17 +65,17 @@ namespace Assets.Mega.Scripts {
                 return;
             }
             StateFirstFaceLook.inst.pointerEventData = null;
-            KeyController.inst.SwapZoom();
+            //KeyController.inst.SwapFirstLookAndAllMega();
         }
 
-        [ContextMenu("SetFirstLook")]
-        public void SetFirstLook() {//ot pervogo lica
-            if (MegaCameraController.inst.isFirstLookScene) {
-                return;
-            }
-            StateFirstFaceLook.inst.pointerEventData = null;
-            KeyController.inst.SwapZoom();
-        }
+        //[ContextMenu("SetFirstLook")]
+        //public void SetFirstLook() {//ot pervogo lica
+        //    if (MegaCameraController.inst.isFirstLookScene) {
+        //        return;
+        //    }
+        //    StateFirstFaceLook.inst.pointerEventData = null;
+        //    //KeyController.inst.SwapFirstLookAndAllMega();
+        //}
 
         [ContextMenu("SetZoom")]
         public void SetZoom () {//vsy mega
@@ -85,7 +87,7 @@ namespace Assets.Mega.Scripts {
         public void SetRotate () {//360 
             ButonAdds.inst.SetActivCurrentUpButton(ButonAdds.inst.rotateCameraImage);
             KeyController.inst.SetRotate();
-            GoAllMega();
+            GoAllMega(false);
         }
 
         [ContextMenu("SetMoveAllMega")]
@@ -100,39 +102,53 @@ namespace Assets.Mega.Scripts {
 
         public void FindNeedObject () {
             parkNow = GameObject.FindGameObjectWithTag("parkNow");
-            parkAfter = GameObject.FindGameObjectWithTag("parkAfter");
+            //parkAfter = GameObject.FindGameObjectWithTag("parkAfter");
             //interfaceMega = FindObjectOfType<InterfaceController>().gameObject;
             //interfaceMega.SetActive(false);
         }
 
         public void Start () {
             RoadsProcessor.inst.StartFromController();
-            StartCoroutine(IEnumWaitAfterStart());
+            //StartCoroutine(IEnumWaitAfterStart());
             SetMoveAllMega();
+            GoAllMega(true);
+            SetActivZoneParking(false);
+
+            actionSelectZone += CallbackSelectZone;
         }
 
-        public IEnumerator IEnumWaitAfterStart() {
-            RoadsProcessor.inst.ToNewDo();
-            yield return new WaitForSeconds(1f);
-            //RoadsProcessor.inst.ToOldDo();
+        public void CallbackSelectZone(int var) {
+            //Debug.Log(var);
         }
 
-        public void SwapParking (bool showNew) {
-            if(showNew) {
-                RoadsProcessor.inst.ToOldDo();
-            } else {
-                RoadsProcessor.inst.ToNewDo();
-            }
-        }
+        //public IEnumerator IEnumWaitAfterStart() {
+        //    RoadsProcessor.inst.ToNewDo();
+        //    yield return new WaitForSeconds(1f);
+        //    //RoadsProcessor.inst.ToOldDo();
+        //}
 
-        public void GoAllMega () {
+        //public void SwapParking (bool showNew) {
+        //    if(showNew) {
+        //        RoadsProcessor.inst.ToOldDo();
+        //    } else {
+        //        RoadsProcessor.inst.ToNewDo();
+        //    }
+        //}
+
+        [ContextMenu("GoAllMega")]
+        public void GoAllMega (bool showRoof) {
             MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
             ChangeState(ViewStates.allMega);
-            if(TableController.inst) {
+            //if(TableController.inst) {
                 TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
+            //}
+            if (showRoof) {
+                ShowRoof();
+            } else {
+                HideRoof(3);
             }
-            DisRoof(3);
+       
             ButonAdds.inst.ShowUpButton();
             isRoadLook = false;
             KidsArrowController.inst.HideArrow();
@@ -171,21 +187,28 @@ namespace Assets.Mega.Scripts {
             if(TableController.inst) {
                 TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
             }
-            EnableRoof();
+            SetActivZoneParking(true);
+            ParkingArrowsController.inst.SetActivArrow(true);
+            ShowRoof();
             SetMoveAllMega();
             ButonAdds.inst.HideUpButton();
 
             isRoadLook = true;
         }
 
-        public void DisRoof (float time) {
+        public void SetActivZoneParking(bool var) {
+            zoneView.SetActive(var);
+            zoneClick.SetActive(var);
+        }
+
+        public void HideRoof (float time) {
             if(roofEnable) {
                 roofEnable = false;
                 StartCoroutine(IEnumDisRoof(time));
             }
         }
 
-        public void EnableRoof () {
+        public void ShowRoof () {
             if(!roofEnable) {
                 roofEnable = true;
                 if(RoofProcessor.inst) {
@@ -202,9 +225,17 @@ namespace Assets.Mega.Scripts {
             }
         }
 
-        [ContextMenu("GoVideo")]
-        public void GoVideo () {
+        [ContextMenu("GoVideo1")]
+        public void GoVideo1 () {
             StateOne.inst.isShowVideo = true;
+            VideoController.inst.SetSourse(VideoController.TypeVideo.changePlate);
+            ChangeState(ViewStates.one);
+        }
+
+        [ContextMenu("GoVideo2")]
+        public void GoVideo2 () {
+            StateOne.inst.isShowVideo = true;
+            VideoController.inst.SetSourse(VideoController.TypeVideo.toBigMega);
             ChangeState(ViewStates.one);
         }
 
@@ -215,9 +246,10 @@ namespace Assets.Mega.Scripts {
             
             if(currentTime > GlobalParams.needTimeToSleep && GetViewCurrentStates() != ViewStates.one) {
                 currentTime = GlobalParams.needTimeToSleep;
-                ChangeState(ViewStates.one);
+                //ChangeState(ViewStates.one);
                 //Timeline.inst.Sleep();
-                AllCaps.inst.ActivateAll();
+                //AllCaps.inst.ActivateAll();
+                GoAllMega(true);
             }
 
 

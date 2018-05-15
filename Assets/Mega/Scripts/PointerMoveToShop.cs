@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 namespace Assets.Mega.Scripts {
     public class PointerMoveToShop : MonoBehaviour, IPointerDownHandler {
-
         //public PointerEventData pointerEventData;
         public Transform lookPoint;
         public List<MeshRenderer> meshs;
@@ -17,13 +16,13 @@ namespace Assets.Mega.Scripts {
 
         public void Start () {
             meshs = GetComponentsInChildren<MeshRenderer>().ToList();
-            for (int i = 0; i < meshs.Count; i++) {
+            for(int i = 0; i < meshs.Count; i++) {
                 meshs[i].enabled = false;
                 //meshs[i].material.color = Color.red;
             }
         }
 
-        public void Setup() {
+        public void Setup () {
             shopCap = transform.parent.GetComponent<ShopCap>();
             lookPoint.position = new Vector3(lookPoint.position.x, GlobalParams.distansEye, lookPoint.position.z);
             if(!dontUseAng) {
@@ -33,19 +32,21 @@ namespace Assets.Mega.Scripts {
         }
 
         public void OnPointerDown (PointerEventData data) {
-            //pointerEventData = data;
-            //if (MegaCameraController.inst.isFirstLookScene) {
-            //    StateFirstFaceLook.inst.MoveForThisShop(this);
-            //}
         }
 
-        public void GoToThisShop() {
-            //if(!MegaCameraController.inst.isFirstLookScene) {
-                StateFirstFaceLook.inst.hardMovePointerMoveToShop = this;
-                MegaCameraController.inst.GoToFirstLook(false);
-                //Debug.Log("OnPointerDown " + gameObject.name);
-            //}
+        //public void GoToThisShop () {
+        //    StateFirstFaceLook.inst.hardMovePointerMoveToShop = this;
+        //    MegaCameraController.inst.GoToFirstLook(false);
+        //}
+
+        public void AddThis () {
+            //MoveFirstFaceController.inst.listPointMoveOnFirstFaceScene.Add(this);
         }
+
+        public void SetThis () {
+
+        }
+
 
         /*public void GoToFirstLook () {
             TableController.inst.DisAllShops();
@@ -56,27 +57,5 @@ namespace Assets.Mega.Scripts {
             StartCoroutine(WaitToOff());
             //MainLogic.inst.SwapRoof(true);
         }*/
-
-
-        public void Update() {
-            //if (test) {
-            //    test = false;
-            //    if(MegaCameraController.inst.isFirstLookScene) {
-            //        StateFirstFaceLook.inst.MoveForThisShop(this);
-            //    } else {
-            //        StateFirstFaceLook.inst.hardMovePointerMoveToShop = this;
-            //        MegaCameraController.inst.GoToFirstLook(false);
-            //        Debug.Log("OnPointerDown " + gameObject.name);
-            //    }
-            //}
-        }
-
-        public void AddThis () {
-            //MoveFirstFaceController.inst.listPointMoveOnFirstFaceScene.Add(this);
-        }
-
-        public void SetThis () {
-
-        }
     }
 }

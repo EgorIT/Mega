@@ -12,15 +12,15 @@ public class SideSwaper : MonoBehaviour
 	private Vector2 outPosition= new Vector2(-600f, -1140);
 	private bool letSwipe = true;
 	private bool readyToRoll = true;
-	private int bufferBlink;
+	private int bufferBlink=-1;
 	public Text text;
 
 	private string[] terms = new[]
 	{
-		"С 14-го мая 2018г. до 1-го августа 2018г. этот участок дороги будет перекрыт из-за ремонтных работ",
-		"С 1-го июля 2018г. до 30-го июля 2018г. этот участок дороги будет перекрыт из-за ремонтных работ",
+		"С 9-го апреля 2018г. до 10-го июня 2018г. этот участок дороги будет перекрыт из-за ремонтных работ",
 		"С 1-го июня 2018г. до 12-го августа 2018г. этот участок дороги будет перекрыт из-за ремонтных работ",
-		"С 9-го апреля 2018г. до 10-го июня 2018г. этот участок дороги будет перекрыт из-за ремонтных работ"
+		"С 1-го июля 2018г. до 30-го июля 2018г. этот участок дороги будет перекрыт из-за ремонтных работ",
+		"С 14-го мая 2018г. до 1-го августа 2018г. этот участок дороги будет перекрыт из-за ремонтных работ"
 	};
 	
 	
@@ -37,6 +37,7 @@ public class SideSwaper : MonoBehaviour
 
 	public void Process(int value)
 	{
+		Debug.Log(value);
 		if (letSwipe)
 		{
 			if (bufferBlink != value - 20)
@@ -74,13 +75,13 @@ public class SideSwaper : MonoBehaviour
 
 	public void RollIn()
 	{
-		//Debug.Log(bufferBlink);
 		text.text = terms[bufferBlink];
 		StartCoroutine(Rolling(true));
 	}
 	
 	public void RollOut()
 	{
+		if (readyToRoll==false)
 		StartCoroutine(Rolling(false));
 	}
 
@@ -121,6 +122,7 @@ public class SideSwaper : MonoBehaviour
 		}
       	yield return null;
 
+		text.text = terms[bufferBlink];
 		rollIn = true;
 		time = 0;
 		//Debug.Log(rt.name);

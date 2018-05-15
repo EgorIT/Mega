@@ -2,39 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50cb2958-2763-4656-ad63-bbab7be90864" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Mega/Video/testPlayer/a1.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Mega/Video/testPlayer/a2.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Mega/Video/testPlayer/v1.avi" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Mega/Video/testPlayer/v2.avi" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ParkingArrowsController.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/ParkingArrowsController.cs.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/VideoController.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Mega/Video/testPlayer/a1.wav.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Mega/Video/testPlayer/a2.wav.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Mega/Video/testPlayer/v1.avi.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Mega/Video/testPlayer/v2.avi.meta" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Timeline.cs.orig.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Video.cs" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Materials/VideoMaterial.mat" afterPath="$PROJECT_DIR$/Assets/Mega/Materials/VideoMaterial.mat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Prefabs/MainUI.prefab" afterPath="$PROJECT_DIR$/Assets/Mega/Prefabs/MainUI.prefab" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Prefabs/NewFixObject.prefab" afterPath="$PROJECT_DIR$/Assets/Mega/Prefabs/NewFixObject.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Prefabs/Interface.prefab" afterPath="$PROJECT_DIR$/Assets/Mega/Prefabs/Interface.prefab" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/New.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/New.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/ButonAdds.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/ButonAdds.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/ClickPlane.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/ClickPlane.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/InterfaceController.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/InterfaceController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Textures/GUI/Materials/Flag_razgruzka.mat" afterPath="$PROJECT_DIR$/Assets/Textures/GUI/Materials/Flag_razgruzka.mat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/SideSwaper.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/SideSwaper.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/KeyController.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/KeyController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/MainLogic.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/MegaCameraController.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/MegaCameraController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/PointerMoveToShop.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/PointerMoveToShop.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/RoadsProcessor.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/RoadsProcessor.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/StateFirstFaceLook.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/StateFirstFaceLook.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/StateOne.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/StateOne.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/TableShop.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/TableShop.cs" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Assets/Flag/obj.meta" afterPath="$PROJECT_DIR$/Assets/Mega/Video/testPlayer.meta" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/Video.cs.meta" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/VideoController.cs.meta" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/VideoLogo.cs" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/LogoController.cs" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/VideoLogo.cs.meta" afterPath="$PROJECT_DIR$/Assets/Mega/Scripts/Interface/LogoController.cs.meta" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -119,42 +90,42 @@
       <file leaf-file-name="SideSwaper.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/SideSwaper.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+            <state relative-caret-position="-1741">
+              <caret line="22" column="108" lean-forward="false" selection-start-line="22" selection-start-column="108" selection-end-line="22" selection-end-column="108" />
               <folding>
-                <marker date="1526404145093" expanded="true" signature="6:127" ph="..." />
-                <marker date="1526404145093" expanded="true" signature="168:4356" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="456:874" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="927:1014" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1041:1093" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1126:1314" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1145:1311" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1183:1307" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1239:1266" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1275:1302" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1368:1533" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1372:1530" ph="/* if (Input.GetKeyDown(&quot;a&quot;)) ... */" />
-                <marker date="1526404145093" expanded="true" signature="1556:1657" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1682:1722" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1745:1782" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1816:3488" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="1906:1976" ph="/* Debug.Log(rt.name); ... */" />
-                <marker date="1526404145093" expanded="true" signature="2002:2358" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="2019:2198" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="2375:2529" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="2417:2525" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
-                <marker date="1526404145093" expanded="true" signature="2650:2720" ph="/* Debug.Log(rt.name); ... */" />
-                <marker date="1526404145093" expanded="true" signature="2766:3122" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="2783:2962" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="3136:3290" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="3178:3286" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
-                <marker date="1526404145093" expanded="true" signature="3395:3462" ph="/* RollOut(); ... */" />
-                <marker date="1526404145093" expanded="true" signature="3533:4354" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="3575:3645" ph="/* Debug.Log(rt.name); ... */" />
-                <marker date="1526404145093" expanded="true" signature="3691:4047" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="3708:3887" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="4061:4215" ph="{...}" />
-                <marker date="1526404145093" expanded="true" signature="4103:4211" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
+                <marker date="1526406939841" expanded="true" signature="6:127" ph="..." />
+                <marker date="1526406939841" expanded="true" signature="168:4411" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="459:877" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="930:1017" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1044:1096" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1129:1337" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1168:1334" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1206:1330" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1262:1289" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1298:1325" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1391:1556" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1395:1553" ph="/* if (Input.GetKeyDown(&quot;a&quot;)) ... */" />
+                <marker date="1526406939841" expanded="true" signature="1579:1652" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1677:1743" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1766:1803" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1837:3543" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="1927:1997" ph="/* Debug.Log(rt.name); ... */" />
+                <marker date="1526406939841" expanded="true" signature="2023:2379" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="2040:2219" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="2396:2550" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="2438:2546" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
+                <marker date="1526406939841" expanded="true" signature="2705:2775" ph="/* Debug.Log(rt.name); ... */" />
+                <marker date="1526406939841" expanded="true" signature="2821:3177" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="2838:3017" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="3191:3345" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="3233:3341" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
+                <marker date="1526406939841" expanded="true" signature="3450:3517" ph="/* RollOut(); ... */" />
+                <marker date="1526406939841" expanded="true" signature="3588:4409" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="3630:3700" ph="/* Debug.Log(rt.name); ... */" />
+                <marker date="1526406939841" expanded="true" signature="3746:4102" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="3763:3942" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="4116:4270" ph="{...}" />
+                <marker date="1526406939841" expanded="true" signature="4158:4266" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
               </folding>
             </state>
           </provider>
@@ -163,8 +134,8 @@
       <file leaf-file-name="ClickPlane.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/ClickPlane.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            <state relative-caret-position="90">
+              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="34" />
               <folding>
                 <marker date="1526404135653" expanded="false" signature="6:50" ph="..." />
                 <marker date="1526404135653" expanded="true" signature="82:967" ph="{...}" />
@@ -689,12 +660,12 @@
       <workItem from="1520785134852" duration="9599000" />
       <workItem from="1520864362957" duration="8354000" />
       <workItem from="1524635267569" duration="1211000" />
-      <workItem from="1526377038488" duration="15343000" />
+      <workItem from="1526377038488" duration="17641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178647000" />
+    <option name="totallyTimeSpent" value="180945000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -706,7 +677,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1268,8 +1239,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/ClickPlane.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        <state relative-caret-position="90">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="34" />
           <folding>
             <marker date="1526404135653" expanded="false" signature="6:50" ph="..." />
             <marker date="1526404135653" expanded="true" signature="82:967" ph="{...}" />
@@ -1282,42 +1253,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Mega/Scripts/Interface/SideSwaper.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        <state relative-caret-position="-1741">
+          <caret line="22" column="108" lean-forward="false" selection-start-line="22" selection-start-column="108" selection-end-line="22" selection-end-column="108" />
           <folding>
-            <marker date="1526404145093" expanded="true" signature="6:127" ph="..." />
-            <marker date="1526404145093" expanded="true" signature="168:4356" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="456:874" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="927:1014" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1041:1093" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1126:1314" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1145:1311" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1183:1307" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1239:1266" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1275:1302" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1368:1533" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1372:1530" ph="/* if (Input.GetKeyDown(&quot;a&quot;)) ... */" />
-            <marker date="1526404145093" expanded="true" signature="1556:1657" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1682:1722" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1745:1782" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1816:3488" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="1906:1976" ph="/* Debug.Log(rt.name); ... */" />
-            <marker date="1526404145093" expanded="true" signature="2002:2358" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="2019:2198" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="2375:2529" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="2417:2525" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
-            <marker date="1526404145093" expanded="true" signature="2650:2720" ph="/* Debug.Log(rt.name); ... */" />
-            <marker date="1526404145093" expanded="true" signature="2766:3122" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="2783:2962" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="3136:3290" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="3178:3286" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
-            <marker date="1526404145093" expanded="true" signature="3395:3462" ph="/* RollOut(); ... */" />
-            <marker date="1526404145093" expanded="true" signature="3533:4354" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="3575:3645" ph="/* Debug.Log(rt.name); ... */" />
-            <marker date="1526404145093" expanded="true" signature="3691:4047" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="3708:3887" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="4061:4215" ph="{...}" />
-            <marker date="1526404145093" expanded="true" signature="4103:4211" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
+            <marker date="1526406939841" expanded="true" signature="6:127" ph="..." />
+            <marker date="1526406939841" expanded="true" signature="168:4411" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="459:877" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="930:1017" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1044:1096" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1129:1337" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1168:1334" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1206:1330" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1262:1289" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1298:1325" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1391:1556" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1395:1553" ph="/* if (Input.GetKeyDown(&quot;a&quot;)) ... */" />
+            <marker date="1526406939841" expanded="true" signature="1579:1652" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1677:1743" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1766:1803" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1837:3543" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="1927:1997" ph="/* Debug.Log(rt.name); ... */" />
+            <marker date="1526406939841" expanded="true" signature="2023:2379" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="2040:2219" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="2396:2550" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="2438:2546" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
+            <marker date="1526406939841" expanded="true" signature="2705:2775" ph="/* Debug.Log(rt.name); ... */" />
+            <marker date="1526406939841" expanded="true" signature="2821:3177" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="2838:3017" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="3191:3345" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="3233:3341" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
+            <marker date="1526406939841" expanded="true" signature="3450:3517" ph="/* RollOut(); ... */" />
+            <marker date="1526406939841" expanded="true" signature="3588:4409" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="3630:3700" ph="/* Debug.Log(rt.name); ... */" />
+            <marker date="1526406939841" expanded="true" signature="3746:4102" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="3763:3942" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="4116:4270" ph="{...}" />
+            <marker date="1526406939841" expanded="true" signature="4158:4266" ph="/* InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition; ... */" />
           </folding>
         </state>
       </provider>

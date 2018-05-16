@@ -46,7 +46,7 @@ namespace Assets.Mega.Scripts.Interface {
             SetActivArrow(true);
             //StartCoroutine(IEnumRotateY(stockArrowTransform, 55));
             while(true) {
-                yield return StartCoroutine(IEnumMove(stockArrowTransform, Vector3.up * 5, 1));
+                yield return StartCoroutine(IEnumMove(stockArrowTransform, Vector3.up * 15, 1));
                 yield return StartCoroutine(IEnumMove(stockArrowTransform, Vector3.zero, 1));
             }
         }

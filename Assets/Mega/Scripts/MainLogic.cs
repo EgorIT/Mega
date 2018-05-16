@@ -111,7 +111,7 @@ namespace Assets.Mega.Scripts {
             RoadsProcessor.inst.StartFromController();
             //StartCoroutine(IEnumWaitAfterStart());
             SetMoveAllMega();
-            GoAllMega(true);
+            GoAllMega(false);
             SetActivZoneParking(false);
 
             actionSelectZone += CallbackSelectZone;

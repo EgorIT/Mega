@@ -35,14 +35,21 @@ namespace Assets.Mega.Scripts {
         public void Start () {
             //parkingBeforTogle.onValueChanged.AddListener(BaseEventData => { MainLogic.inst.SwapParking(parkingBeforTogle.isOn); });
             //floorBeforTogle.onValueChanged.AddListener(BaseEventData => { FloorController.inst.SetFloor(floorBeforTogle.isOn); });
-            secondLineButton.onClick.AddListener(() => { MainLogic.inst.GoVideo2(); });
+            secondLineButton.onClick.AddListener(() => { MainLogic.inst.GoVideo1(); });
             backFromAllShops.onClick.AddListener(() => { MainLogic.inst.GoAllMega(false); });
-            goRoads.onClick.AddListener(() => { MainLogic.inst.GoAllRoads();  });
+            goRoads.onClick.AddListener(() => {
+                MainLogic.inst.GoAllRoads();
+                ParkingArrowsController.inst.ShowArrow();
+                ZoneFlashController.inst.StartFlashAll();
+                KidsArrowController.inst.SetActivZoneClick(false);
+            });
 
             backFromRoads.onClick.AddListener(() => {
                 MainLogic.inst.GoAllMega(false);
                 MainLogic.inst.SetActivZoneParking(false);
                 ParkingArrowsController.inst.SetActivArrow(false);
+                ZoneFlashController.inst.StopFlash();
+                KidsArrowController.inst.SetActivZoneClick(true);
             });
 
             goFloors.onClick.AddListener(() => { MainLogic.inst.GoAllMega(false);  });

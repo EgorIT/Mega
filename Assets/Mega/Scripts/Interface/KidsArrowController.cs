@@ -5,6 +5,8 @@ namespace Assets.Mega.Scripts.Interface {
     public class KidsArrowController : MonoBehaviour {
         public static KidsArrowController inst;
 
+        public GameObject zoneClick;
+
         public Transform kidsArrowTransform;
         public Coroutine coroJump;
 
@@ -16,6 +18,10 @@ namespace Assets.Mega.Scripts.Interface {
             HideArrow();
         }
 
+        public void SetActivZoneClick(bool var) {
+            zoneClick.gameObject.SetActive(var);
+        }
+        
         public void HideArrow() {
             StopCoroJump();
             SetActivKidsArrow(false);

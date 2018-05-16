@@ -37,7 +37,7 @@ public class SideSwaper : MonoBehaviour
 
 	public void Process(int value)
 	{
-		Debug.Log(value);
+		//Debug.Log(value);
 		if (letSwipe)
 		{
 			if (bufferBlink != value - 20)

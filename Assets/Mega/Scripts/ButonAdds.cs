@@ -10,6 +10,7 @@ namespace Assets.Mega.Scripts {
         public Toggle floorBeforTogle;
         public Button secondLineButton;
         public Button videoKidsButton;
+        public Button commercialButton;
         public Button backFromAllShops;
         public Button goRoads;
         public Button goFloors;
@@ -36,7 +37,8 @@ namespace Assets.Mega.Scripts {
         public void Start () {
             //parkingBeforTogle.onValueChanged.AddListener(BaseEventData => { MainLogic.inst.SwapParking(parkingBeforTogle.isOn); });
             //floorBeforTogle.onValueChanged.AddListener(BaseEventData => { FloorController.inst.SetFloor(floorBeforTogle.isOn); });
-            secondLineButton.onClick.AddListener(() => { MainLogic.inst.GoVideoCommercional(); });
+            secondLineButton.onClick.AddListener(() => { MainLogic.inst.GoVideoToBigMega(); });
+            commercialButton.onClick.AddListener(() => { MainLogic.inst.GoVideoCommercional(); });
             videoKidsButton.onClick.AddListener(() => { MainLogic.inst.GoVideokids(); });
             backFromAllShops.onClick.AddListener(() => { MainLogic.inst.GoAllMega(false); });
 

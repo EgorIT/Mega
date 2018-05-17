@@ -225,17 +225,31 @@ namespace Assets.Mega.Scripts {
             }
         }
 
-        [ContextMenu("GoVideo1")]
-        public void GoVideo1 () {
+        [ContextMenu("GoVideoChangePlate")]
+        public void GoVideoChangePlate () {
             StateOne.inst.isShowVideo = true;
             VideoController.inst.SetSourse(VideoController.TypeVideo.changePlate);
             ChangeState(ViewStates.one);
         }
 
-        [ContextMenu("GoVideo2")]
-        public void GoVideo2 () {
+        [ContextMenu("GoVideoToBigMega")]
+        public void GoVideoToBigMega () {
             StateOne.inst.isShowVideo = true;
             VideoController.inst.SetSourse(VideoController.TypeVideo.toBigMega);
+            ChangeState(ViewStates.one);
+        }
+
+        [ContextMenu("GoVideokids")]
+        public void GoVideokids () {
+            StateOne.inst.isShowVideo = true;
+            VideoController.inst.SetSourse(VideoController.TypeVideo.kids);
+            ChangeState(ViewStates.one);
+        }
+
+        [ContextMenu("GoVideoCommercional")]
+        public void GoVideoCommercional () {
+            StateOne.inst.isShowVideo = true;
+            VideoController.inst.SetSourse(VideoController.TypeVideo.commercional);
             ChangeState(ViewStates.one);
         }
 

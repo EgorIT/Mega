@@ -9,6 +9,8 @@ public class VideoController : MonoBehaviour {
     public enum TypeVideo {
         toBigMega,
         changePlate,
+        kids,
+        commercional
     }
 
     public static VideoController inst;
@@ -17,10 +19,16 @@ public class VideoController : MonoBehaviour {
     public VideoPlayer videoPlayer;
     public AudioSource audioSource;
    
-    public AudioClip audioClip1;
-    public VideoClip videoClip1;
-    public AudioClip audioClip2;
-    public VideoClip videoClip2;
+    public AudioClip audioCliptoBigMega;
+    public VideoClip videoCliptoBigMega;
+    public AudioClip audioClipchangePlate;
+    public VideoClip videoClipchangePlate;
+
+    public AudioClip audioClipkids;
+    public VideoClip videoClipkids;
+
+    public AudioClip audioClipcommercional;
+    public VideoClip videoClipcommercional;
 
     public Coroutine fadeCoroutine;
     public Vector3 startScale;
@@ -32,18 +40,27 @@ public class VideoController : MonoBehaviour {
 
     public void Start() {
         videoPlayer.Stop();
+        videoPlayer.SetDirectAudioVolume(0, 0);
         meshRender.material.color = new Color(1, 1, 1, 0);
     }
 
     public void SetSourse(TypeVideo typeVideo) {
         switch (typeVideo) {
             case TypeVideo.toBigMega:
-                videoPlayer.clip = videoClip1;
-                audioSource.clip = audioClip1;
+                videoPlayer.clip = videoCliptoBigMega;
+                audioSource.clip = audioCliptoBigMega;
                 break;
             case TypeVideo.changePlate:
-                videoPlayer.clip = videoClip2;
-                audioSource.clip = audioClip2;
+                videoPlayer.clip = videoClipchangePlate;
+                audioSource.clip = audioClipchangePlate;
+                break;
+            case TypeVideo.kids:
+                videoPlayer.clip = videoClipkids;
+                audioSource.clip = audioClipkids;
+                break;
+            case TypeVideo.commercional:
+                videoPlayer.clip = videoClipcommercional;
+                audioSource.clip = audioClipcommercional;
                 break;
             default:
                 throw new ArgumentOutOfRangeException("typeVideo", typeVideo, null);
@@ -62,6 +79,7 @@ public class VideoController : MonoBehaviour {
         videoPlayer.frame = 1;
         audioSource.time = 0;
         videoPlayer.Play();
+        videoPlayer.SetDirectAudioVolume(0, 0);
         audioSource.Play();
         if(fadeCoroutine != null) {
             StopCoroutine(fadeCoroutine);

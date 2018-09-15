@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -15,10 +18,10 @@ namespace Assets.Mega.Scripts {
         public static KeyController inst;
 
         public float panoramSpeedTouch = 0.0018f;//0.0018f;
-        public float FirstLookSpeedTouch = 0.0017f;//0.0017f;
+        public float firstLookSpeedTouch = 0.0017f;//0.0017f;
         public float rotateSpeedTouch = -0.06f;//0.06f;
 
-        public float panoramSpeedSwipeMouse = -0.0018f;
+        public float panoramSpeedSwipeMouse = -0.005f;//-0.0018f
         public float firstLookSpeedSwipeMouse = -0.007f;
         public float rotateSpeedSwipeMouse = -0.06f;
 
@@ -40,11 +43,24 @@ namespace Assets.Mega.Scripts {
 
         public bool clickOnMap;
 
+        public List<EventTrigger.Entry> listEntries = new List<EventTrigger.Entry>();
+
+
+        public Coroutine coroSumm;
+        public float currentMultiplication;
+        public float currentSum;
+
         public void Awake() {
             inst = this;
         }
 
         public void Start() {
+
+            CastButton(ButtonAdds.inst.btnLeftRotate, true, ChangeCameraAngel);
+            CastButton(ButtonAdds.inst.btnRightRotate, false, ChangeCameraAngel);
+
+            CastButton(ButtonAdds.inst.btnZoomIn, true, ChangeCameraZoom);
+            CastButton(ButtonAdds.inst.btnZoomOut, false, ChangeCameraZoom);
             SetMoveAllMega();
         }
 
@@ -88,7 +104,7 @@ namespace Assets.Mega.Scripts {
         public void CheckDoubleClick() {
             if(doubleClick == 1) {
                 timeToDoubleClick += Time.deltaTime;
-                if(timeToDoubleClick > GlobalParams.timeToDoubleClick) {
+                if(timeToDoubleClick > GP.timeToDoubleClick) {
                     ResetClick();
                 }
             }
@@ -125,16 +141,17 @@ namespace Assets.Mega.Scripts {
 
         }
 
+
         public void Update () {
             float x = 0;
             float y = 0;
 
             if(Input.GetKey(KeyCode.Q)) {
-               MegaCameraController.inst.RotateFromPinch(Time.deltaTime * GlobalParams.speedRotateCamera);
+               MegaCameraController.inst.RotateFromPinch(Time.deltaTime * GP.speedRotateCamera);
                 //SetChangeCamera();
             }
             if(Input.GetKey(KeyCode.E)) {
-                MegaCameraController.inst.RotateFromPinch(-Time.deltaTime * GlobalParams.speedRotateCamera);
+                MegaCameraController.inst.RotateFromPinch(-Time.deltaTime * GP.speedRotateCamera);
                 //SetChangeCamera();
             }
 
@@ -203,8 +220,8 @@ namespace Assets.Mega.Scripts {
                     y = touch.deltaPosition.y;
                 }
                 else {
-                    x = touch.deltaPosition.x * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                    y = touch.deltaPosition.y * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                    x = touch.deltaPosition.x * (MegaCameraController.inst.disCamera.localPosition.z / GP.factorPerspStabilization);
+                    y = touch.deltaPosition.y * (MegaCameraController.inst.disCamera.localPosition.z / GP.factorPerspStabilization);
                 }
             }
 
@@ -221,26 +238,26 @@ namespace Assets.Mega.Scripts {
                             StateFirstFaceLook.inst.StopClickCoroutine();
                         }
                     }
-                    x = -touch.deltaPosition.x * FirstLookSpeedTouch;
-                    y = -touch.deltaPosition.y * FirstLookSpeedTouch;
+                    x = -touch.deltaPosition.x * firstLookSpeedTouch;
+                    y = -touch.deltaPosition.y * firstLookSpeedTouch;
                     swipeFlag = true;
                 } else {
                     touch = Input.GetTouch(0);
 
                     switch (currentAllMegaState) {
                         case AllMegaState.move:
-                            x = -touch.deltaPosition.x * panoramSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                            y = -touch.deltaPosition.y * panoramSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            x = -touch.deltaPosition.x * panoramSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GP.factorPerspStabilization);
+                            y = -touch.deltaPosition.y * panoramSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GP.factorPerspStabilization);
 
                             break;
                         case AllMegaState.rotate:
-                            x = -touch.deltaPosition.x * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                            y = -touch.deltaPosition.y * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            x = -touch.deltaPosition.x * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GP.factorPerspStabilization);
+                            y = -touch.deltaPosition.y * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GP.factorPerspStabilization);
 
                             break;
                         case AllMegaState.zoom:
-                            x = -touch.deltaPosition.x * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-                            y = -touch.deltaPosition.y * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+                            x = -touch.deltaPosition.x * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GP.factorPerspStabilization);
+                            y = -touch.deltaPosition.y * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GP.factorPerspStabilization);
 
                             break;
                         default:
@@ -268,7 +285,7 @@ namespace Assets.Mega.Scripts {
                             MegaCameraController.inst.MoveFromSwipe(x, y);
                             break;
                         case AllMegaState.rotate:
-                            MegaCameraController.inst.RotateFromPinch(Time.deltaTime * GlobalParams.speedRotateCamera * x);
+                            MegaCameraController.inst.RotateFromPinch(Time.deltaTime * GP.speedRotateCamera * x);
                             break;
                         case AllMegaState.zoom:
                             deltaMagnitudeDiff = y * zoomSpeedSwipeMouse;
@@ -276,8 +293,6 @@ namespace Assets.Mega.Scripts {
                             //Debug.Log(deltaMagnitudeDiff);
                             MegaCameraController.inst.ZoomFromPinch(deltaMagnitudeDiff);
                             break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
                     }
                    
                 }
@@ -286,76 +301,6 @@ namespace Assets.Mega.Scripts {
                 
             }
 
-            //if(pinchFlag) {
-            //    //Debug.Log("deltaMagnitudeDiff = " + deltaMagnitudeDiff);
-            //    //MegaCameraController.inst.ZoomFromPinch(deltaMagnitudeDiff);
-            //   // MegaCameraController.inst.RotateFromPinch(dY);
-            //}
-
-            //if(Input.touchSupported && Input.touchCount == 2) { old rotate for 2 finger
-            //    if(IsTouchUI(Input.GetTouch(1).position)) {
-            //        return;
-            //    }
-            //    //swipeFlag = false; old
-            //    //pinchFlag = true;
-            //    //Touch touchZero = Input.GetTouch(0);
-            //    //Touch touchOne = Input.GetTouch(1);
-            //    //Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-            //    //Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
-            //    //float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-            //    //float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
-            //    //deltaMagnitudeDiff = (prevTouchDeltaMag - touchDeltaMag) * speedZoom;
-            //    //deltaMagnitudeDiff *= (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-            //    //Debug.Log("Dif = " + deltaMagnitudeDiff);
-            //
-            //
-            //    swipeFlag = false;
-            //    Touch touchZero = Input.GetTouch(0);
-            //    Touch touchOne = Input.GetTouch(1);
-            //    //rotate block
-            //    var v2 = touchZero.position - touchOne.position;
-            //    var currentRoatateVar = Mathf.Atan2(v2.x, v2.y);
-            //    if(!rotateTouchs) {
-            //        oldRotateVar = currentRoatateVar;
-            //        rotateTouchs = true;
-            //    } else {
-            //        deltaY = currentRoatateVar - oldRotateVar;
-            //        oldRotateVar = currentRoatateVar;
-            //        //DebugLogSalt.Log(deltaY.ToString());
-            //        if(Math.Abs(deltaY) > 0.01f && Math.Abs(deltaY) < 2f) {
-            //            MegaCameraController.inst.RotateFromPinch(Time.deltaTime * GlobalParams.speedRotateCamera * -deltaY);
-            //        }
-            //    }
-            //
-            //
-            //    if(StateFirstFaceLook.inst) {
-            //        StateFirstFaceLook.inst.StopClickCoroutine();
-            //    }
-            //}
-
-            //if(Input.GetAxis("Mouse ScrollWheel") > 0) { old zoom wheel
-            //    MainLogic.inst.ResetTime();
-            //    pinchFlag = true;
-            //    if(Math.Abs(MegaCameraController.inst.disCamera.localPosition.z) < 0.0001) {
-            //        deltaMagnitudeDiff = -1f * speedZoomWheel;
-            //    } else {
-            //        deltaMagnitudeDiff = -1f * speedZoomWheel *
-            //            (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-            //    }
-            //
-            //}
-            //
-            //if(Input.GetAxis("Mouse ScrollWheel") < 0) {
-            //    MainLogic.inst.ResetTime();
-            //
-            //    pinchFlag = true;
-            //    if(Math.Abs(MegaCameraController.inst.disCamera.localPosition.z) < 0.0001) {
-            //        deltaMagnitudeDiff = 1f * speedZoomWheel;
-            //    } else {
-            //        deltaMagnitudeDiff = 1f * speedZoomWheel *
-            //            (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
-            //    }
-            //}
         }
 
 
@@ -365,8 +310,8 @@ namespace Assets.Mega.Scripts {
             int screenW = Screen.width;
             int screenH = Screen.height;
             
-            int timeLineW = (int)((2000f * screenW) / 3840f);
-            int timeLineH = (int)((GlobalParams.full ? 660f : 330f * screenH) / 2160f);
+            float timeLineW = ((2000f * screenW) / 3840f);
+            float timeLineH = (((GP.fullUI ? 660f : 330f) * screenH) / 2160f);
             
             if (v3.x < Screen.width*0.5f + timeLineW * 0.5f + 300
                 && v3.x > Screen.width * 0.5f - timeLineW * 0.5f
@@ -377,6 +322,158 @@ namespace Assets.Mega.Scripts {
             //Debug.Log("bad");
             return false;
         }
+        
+        public void CastButton (Button btn, bool isLeft, Action<bool> actionBool) {
+            var trigger = btn.gameObject.AddComponent<EventTrigger>();
+            var pointerEnter = new EventTrigger.Entry();
+
+            pointerEnter.eventID = EventTriggerType.PointerEnter;
+            pointerEnter.callback.AddListener((e) => { StartMultiplication(isLeft, actionBool); });
+            trigger.triggers.Add(pointerEnter);
+
+            var pointerExit = new EventTrigger.Entry();
+
+            pointerExit.eventID = EventTriggerType.PointerExit;
+            pointerExit.callback.AddListener((e) => { StopMultiplication(); });
+            listEntries.Add(pointerExit);
+
+            trigger.triggers.Add(pointerExit);
+        }
+
+        [EasyButtons.Button]
+        public void HardStopZoom() {
+            foreach (var listEntry in listEntries) {
+                listEntry.callback.Invoke(new PointerEventData(EventSystem.current));
+            }
+        }
+
+        public void StartMultiplication (bool isLeft, Action<bool> actionBool) {
+            StopMultiplication();
+            coroSumm = StartCoroutine(IEnumSummCount(isLeft, actionBool));
+        }
+
+        public void StopMultiplication () {
+            if(coroSumm != null) {
+                StopCoroutine(coroSumm);
+                coroSumm = null;
+            }
+
+            currentSum = 0;
+            currentMultiplication = 1;
+        }
+
+        public IEnumerator IEnumSummCount (bool isLeft, Action<bool> actionBool) {
+            while(true) {
+                currentMultiplication *= 1.05f;
+                currentSum += GP.btnBaseRotateSpeed * (int)currentMultiplication;
+                actionBool.Invoke(isLeft);
+                //ChangeCameraAngel(isLeft);
+                yield return new WaitForSeconds(0.01f);
+            }
+        }
+
+        public void ChangeCameraAngel (bool isLeft) {
+            currentSum = currentSum < GP.btnBaseRotateSpeed ? GP.btnBaseRotateSpeed : currentSum;
+            currentSum = currentSum > GP.btnMaxRotateSpeed ? GP.btnMaxRotateSpeed : currentSum;
+            if (isLeft) {
+                RotateFromButton(currentSum);
+            } else {
+                RotateFromButton(-currentSum);
+            }
+        }
+
+        public void ChangeCameraZoom (bool isLeft) {
+            currentSum = currentSum < GP.btnBaseZoomSpeed ? GP.btnBaseZoomSpeed : currentSum;
+            currentSum = currentSum > GP.btnMaxZoomSpeed ? GP.btnMaxZoomSpeed : currentSum;
+            if(isLeft) {
+                ZoomFromButton(currentSum);
+            } else {
+                ZoomFromButton(-currentSum);
+            }
+        }
+
+
+        public void RotateFromButton (float currentSum) {
+            var x = currentSum * rotateSpeedTouch * (MegaCameraController.inst.disCamera.localPosition.z / GP.factorPerspStabilization);
+            MegaCameraController.inst.RotateFromPinch(Time.deltaTime * GP.speedRotateCamera * x);
+        }
+
+        public void ZoomFromButton (float currentSum) {
+            var deltaMagnitudeDiff = currentSum;
+            MegaCameraController.inst.ZoomFromPinch(deltaMagnitudeDiff);
+        }
+
     }
 }
 
+
+//if(pinchFlag) {
+//    //Debug.Log("deltaMagnitudeDiff = " + deltaMagnitudeDiff);
+//    //MegaCameraController.inst.ZoomFromPinch(deltaMagnitudeDiff);
+//   // MegaCameraController.inst.RotateFromPinch(dY);
+//}
+
+//if(Input.touchSupported && Input.touchCount == 2) { old rotate for 2 finger
+//    if(IsTouchUI(Input.GetTouch(1).position)) {
+//        return;
+//    }
+//    //swipeFlag = false; old
+//    //pinchFlag = true;
+//    //Touch touchZero = Input.GetTouch(0);
+//    //Touch touchOne = Input.GetTouch(1);
+//    //Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+//    //Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+//    //float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+//    //float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+//    //deltaMagnitudeDiff = (prevTouchDeltaMag - touchDeltaMag) * speedZoom;
+//    //deltaMagnitudeDiff *= (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+//    //Debug.Log("Dif = " + deltaMagnitudeDiff);
+//
+//
+//    swipeFlag = false;
+//    Touch touchZero = Input.GetTouch(0);
+//    Touch touchOne = Input.GetTouch(1);
+//    //rotate block
+//    var v2 = touchZero.position - touchOne.position;
+//    var currentRoatateVar = Mathf.Atan2(v2.x, v2.y);
+//    if(!rotateTouchs) {
+//        oldRotateVar = currentRoatateVar;
+//        rotateTouchs = true;
+//    } else {
+//        deltaY = currentRoatateVar - oldRotateVar;
+//        oldRotateVar = currentRoatateVar;
+//        //DebugLogSalt.Log(deltaY.ToString());
+//        if(Math.Abs(deltaY) > 0.01f && Math.Abs(deltaY) < 2f) {
+//            MegaCameraController.inst.RotateFromPinch(Time.deltaTime * GlobalParams.speedRotateCamera * -deltaY);
+//        }
+//    }
+//
+//
+//    if(StateFirstFaceLook.inst) {
+//        StateFirstFaceLook.inst.StopClickCoroutine();
+//    }
+//}
+
+//if(Input.GetAxis("Mouse ScrollWheel") > 0) { old zoom wheel
+//    MainLogic.inst.ResetTime();
+//    pinchFlag = true;
+//    if(Math.Abs(MegaCameraController.inst.disCamera.localPosition.z) < 0.0001) {
+//        deltaMagnitudeDiff = -1f * speedZoomWheel;
+//    } else {
+//        deltaMagnitudeDiff = -1f * speedZoomWheel *
+//            (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+//    }
+//
+//}
+//
+//if(Input.GetAxis("Mouse ScrollWheel") < 0) {
+//    MainLogic.inst.ResetTime();
+//
+//    pinchFlag = true;
+//    if(Math.Abs(MegaCameraController.inst.disCamera.localPosition.z) < 0.0001) {
+//        deltaMagnitudeDiff = 1f * speedZoomWheel;
+//    } else {
+//        deltaMagnitudeDiff = 1f * speedZoomWheel *
+//            (MegaCameraController.inst.disCamera.localPosition.z / GlobalParams.factorPerspStabilization);
+//    }
+//}

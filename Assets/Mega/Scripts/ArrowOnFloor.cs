@@ -26,7 +26,7 @@ namespace Assets.Mega.Scripts {
 
         public void CheckPosition () {
             var dist = (transform.position - MegaCameraController.inst.posCamera.position).sqrMagnitude;
-            if(dist < GlobalParams.arrowDistansSqrt && dist > GlobalParams.arrowMinDistansSqrt && MainLogic.inst.GetViewCurrentStates() ==
+            if(dist < GP.arrowDistansSqrt && dist > GP.arrowMinDistansSqrt && MainLogic.inst.GetViewCurrentStates() ==
                ViewStates.firstFaceLook) {
                 LookBack();
                 if(!collider.enabled) {
@@ -64,7 +64,7 @@ namespace Assets.Mega.Scripts {
                 //meshRenderer.enabled = true;
             }
             var startScale = childTransform.localScale;
-            float time = GlobalParams.timeToFly * 0.3f;
+            float time = GP.timeToFly * 0.3f;
             float currentTime = 0;
             while(currentTime < time) {
                 var t = currentTime / time;

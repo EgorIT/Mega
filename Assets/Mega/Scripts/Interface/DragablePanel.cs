@@ -22,6 +22,7 @@ public class DragablePanel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
 
     public void OnBeginDrag (PointerEventData eventData) {
+        return;
         //Debug.Log("OnBeginDrag");
         InterfaceController.inst.isDrag = true;
         startedHeight = eventData.position.y;
@@ -40,6 +41,7 @@ public class DragablePanel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
 
     public void OnDrag (PointerEventData data) {
+        return;
         rectTransform.anchoredPosition = startedPosition - new Vector2(0, startedHeight - data.position.y);
         InterfaceController.inst.upperPanelRectTransform.anchoredPosition = startedPosition - new Vector2(0, startedHeight - data.position.y);
 
@@ -55,9 +57,20 @@ public class DragablePanel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
     
     public void OnEndDrag (PointerEventData eventData) {
+        return;
         //Debug.Log("OnEndDrag");
         InterfaceController.inst.isDrag = false;
         StartCoroutine(Rolling(eventData.position.y > startedHeight));
+    }
+
+    [EasyButtons.Button]
+    public void RollIn() {
+        StartCoroutine(Rolling(true));
+    }
+
+    [EasyButtons.Button]
+    public void RollOut () {
+        StartCoroutine(Rolling(false));
     }
 
     private IEnumerator Rolling (bool rollIn) {
@@ -80,13 +93,13 @@ public class DragablePanel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if(rollIn) {
             rectTransform.anchoredPosition = normalPosition;
             InterfaceController.inst.upperPanelRectTransform.anchoredPosition = normalPosition;
-            GlobalParams.full = true;
+            GP.fullUI = true;
             //Debug.Log("true");
             //Countdown();
         } else {
             rectTransform.anchoredPosition = hiddenPosition;
             InterfaceController.inst.upperPanelRectTransform.anchoredPosition = hiddenPosition;
-            GlobalParams.full = false;
+            GP.fullUI = false;
             //Debug.Log("false");
         }
         yield return null;

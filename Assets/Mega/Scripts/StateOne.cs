@@ -69,10 +69,10 @@ namespace Assets.Mega.Scripts {
 
             MegaCameraController.inst.isFirstLookScene = false;
 
-            ButonAdds.inst.HideUpButton();
+            ButtonAdds.inst.HideUpButton();
             MainLogic.inst.isRoadLook = false;
 
-            MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
+            MegaCameraController.inst.distansAllMega = GP.distansOnAllMega;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
             if (!isShowVideo && LogoController.inst) {
                 LogoController.inst.FadeOn(1);
@@ -83,8 +83,8 @@ namespace Assets.Mega.Scripts {
             }
             
             imageOne.raycastTarget = true;
-            MegaCameraController.inst.SetNewPosCamera(new Vector3(12f, 0, -70f), GlobalParams.eulerAnglesForCameraInAllMega, 
-                GlobalParams.fieldOfViewOnStateOne, GlobalParams.distansOnStateOne, TypeMoveCamera.slow);
+            MegaCameraController.inst.SetNewPosCamera(new Vector3(12f, 0, -70f), GP.eulerAnglesForCameraInAllMega, 
+                GP.fieldOfViewOnStateOne, GP.distansOnStateOne, TypeMoveCamera.slow);
 
             InterfaceController.inst.HardHideAllTable();
         }

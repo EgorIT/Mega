@@ -22,11 +22,11 @@ namespace Assets.Mega.Scripts {
             Debug.Log("StartState StateAllMega");
             KidsArrowController.inst.HideArrow();
             StockArrowController.inst.HideArrow();
-            ButonAdds.inst.ShowUpButton();
+            //ButtonAdds.inst.ShowUpButton();
             MegaCameraController.inst.isFirstLookScene = false;
             //InterfaceController.inst.ShowBasic();
-            MegaCameraController.inst.SetNewPosCamera(MegaCameraController.inst.stateLookVector3AllMega, GlobalParams.eulerAnglesForCameraInAllMega, 
-                GlobalParams.fieldOfViewOnAllMega, MegaCameraController.inst.distansAllMega, TypeMoveCamera.slow);
+            MegaCameraController.inst.SetNewPosCamera(MegaCameraController.inst.stateLookVector3AllMega, GP.eulerAnglesForCameraInAllMega, 
+                GP.fieldOfViewOnAllMega, MegaCameraController.inst.distansAllMega, TypeMoveCamera.slow);
             MegaCameraController.inst.ortoRayCastCamera.gameObject.SetActive(true);
         }
 

@@ -23,7 +23,10 @@ public class InterfaceController : MonoBehaviour {
     }
 
     public void Start() {
-        listTables = GameObject.FindObjectsOfType<Table>().ToList();
+        ButtonAdds.inst.btnRollIn.onClick.AddListener(RollInFromBtn);
+        ButtonAdds.inst.btnRollOut.onClick.AddListener(RollOutFromBtn);
+        ButtonAdds.inst.btnRollIn.gameObject.SetActive(false);
+        listTables = FindObjectsOfType<Table>().ToList();
     }
 
     //[ContextMenu("HideAllTable")]
@@ -43,7 +46,36 @@ public class InterfaceController : MonoBehaviour {
     [ContextMenu("ShowBasic")]
     public void ShowBasic() {
         //HardHideAllTable();
+        ButtonAdds.inst.SetActiveButtons(true);
         basicTable.RollIn();
+    }
+
+    public void RollInFromBtn() {
+        foreach(var table in listTables) {
+            if (table.isSelectTable) {
+                table.dragablePanel.RollIn();
+                ButtonAdds.inst.btnRollIn.gameObject.SetActive(false);
+                ButtonAdds.inst.btnRollOut.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void RollOutFromBtn () {
+        foreach(var table in listTables) {
+            if(table.isSelectTable) {
+                table.dragablePanel.RollOut();
+                ButtonAdds.inst.btnRollIn.gameObject.SetActive(true);
+                ButtonAdds.inst.btnRollOut.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void SwapCurrentTable(Table currentTable) {
+        foreach (var table in listTables) {
+            table.isSelectTable = false;
+        }
+
+        currentTable.isSelectTable = true;
     }
 
     //[ContextMenu("HardHideBasic")]

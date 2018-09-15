@@ -51,7 +51,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void Start () {
-        currentDistans = GlobalParams.distansOnStateOne;
+        currentDistans = GP.distansOnStateOne;
         currentEndAng = new Vector3(angelXCamera.eulerAngles.x, angelYCamera.eulerAngles.y, 0);
         CorrectOrtoCamerForRayCast();
         if(TableController.inst) {
@@ -144,7 +144,7 @@ public class MegaCameraController : MonoBehaviour {
 
     private IEnumerator IEnumPausaForUi () {
         _dontUseUi = true;
-        yield return new WaitForSeconds(GlobalParams.timeToFly * 0.5f);
+        yield return new WaitForSeconds(GP.timeToFly * 0.5f);
         _dontUseUi = false;
     }
 
@@ -158,20 +158,20 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public void CorrectOrtoCamerForRayCast() {
-        var t = GetCurrentDistans() / (GlobalParams.maxDistancePesr - GlobalParams.minDistancePesr);
+        var t = GetCurrentDistans() / (GP.maxDistancePesr - GP.minDistancePesr);
         var newOrtoSize = Mathf.Lerp(i1, i2, t);
         ortoRayCastCamera.orthographicSize = newOrtoSize;
     }
 
     public bool CheckPerSize (float delta) {
-        if(GetCurrentDistans() - delta < GlobalParams.maxDistancePesr) {
-            disCamera.localPosition = new Vector3(0, 0, GlobalParams.maxDistancePesr + 100);
+        if(GetCurrentDistans() - delta < GP.maxDistancePesr) {
+            disCamera.localPosition = new Vector3(0, 0, GP.maxDistancePesr + 100);
             return false;
         }
-        if(GetCurrentDistans() + delta > GlobalParams.minDistancePesr) {
-            disCamera.localPosition = new Vector3(0, 0, GlobalParams.minDistancePesr - 100);
+        if(GetCurrentDistans() + delta > GP.minDistancePesr) {
+            disCamera.localPosition = new Vector3(0, 0, GP.minDistancePesr - 100);
+            GoToFirstLook(true);
             return false;
-            //GoToFirstLook(true);
         }
         return true;
     }
@@ -211,53 +211,57 @@ public class MegaCameraController : MonoBehaviour {
             StopCoroutine(moveBack);
             moveBack = null;
         }
-        moveBack = StartCoroutine(IEnumChangePosAndAngPersCamera(lastGoodPos, GlobalParams.eulerAnglesForCameraInShops, 
+        moveBack = StartCoroutine(IEnumChangePosAndAngPersCamera(lastGoodPos, GP.eulerAnglesForCameraInShops, 
             currentFieldOfView, GetCurrentDistans(), TypeMoveCamera.normal));
     }
 
-    //public void GoToFirstLook(bool isHardMove) {
-    //    if (!isHardMove && MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook) {
-    //        StartCoroutine(FadeHardMove());
-    //    }
-    //    TableController.inst.HideAllTable();
-    //    PauseForUi();
-    //    StateFirstFaceLook.inst.isHardMove = isHardMove;
-    //    MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
-    //    
-    //    StartCoroutine(WaitToOff());
-    //    ortoRayCastCamera.gameObject.SetActive(false);
-    //    //MainLogic.inst.SwapRoof(true);
-    //}
+    public void GoToFirstLook(bool isHardMove) {
+        if (!isHardMove && MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook) {
+            StartCoroutine(FadeHardMove());
+        }
+        TableController.inst.HideAllTable();
+        PauseForUi();
+        StateFirstFaceLook.inst.isHardMove = isHardMove;
+        MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
+        
+        StartCoroutine(WaitToOff());
+        ortoRayCastCamera.gameObject.SetActive(false);
+
+        InterfaceController.inst.RollOutFromBtn();
+        ButtonAdds.inst.HideUpButton();
+        KeyController.inst.HardStopZoom();
+        //MainLogic.inst.SwapRoof(true);
+    }
 
     public IEnumerator FadeHardMove() {
-        float time = GlobalParams.timeToFly * 0.5f;
+        float time = GP.timeToFly * 0.5f;
         float currentTime = 0;
         float endAlfa = 1;
         float startAlfa = 0;
 
         while (currentTime < time) {
             var t = currentTime / time;
-            ButonAdds.inst.fadeImage.color = new Color(1,1,1,Mathf.Lerp(startAlfa, endAlfa, Mathf.Pow(t, 0.3f)));
+            ButtonAdds.inst.fadeImage.color = new Color(1,1,1,Mathf.Lerp(startAlfa, endAlfa, Mathf.Pow(t, 0.3f)));
             currentTime += Time.deltaTime;
             yield return null;
         }
-        ButonAdds.inst.fadeImage.color = new Color(1, 1, 1, endAlfa);
+        ButtonAdds.inst.fadeImage.color = new Color(1, 1, 1, endAlfa);
 
         currentTime = 0;
         while(currentTime < time) {
             var t = currentTime / time;
-            ButonAdds.inst.fadeImage.color = new Color(1, 1, 1, Mathf.Lerp(endAlfa, startAlfa, t * t));
+            ButtonAdds.inst.fadeImage.color = new Color(1, 1, 1, Mathf.Lerp(endAlfa, startAlfa, t * t));
             currentTime += Time.deltaTime;
             yield return null;
         }
-        ButonAdds.inst.fadeImage.color = new Color(1, 1, 1, startAlfa);
+        ButtonAdds.inst.fadeImage.color = new Color(1, 1, 1, startAlfa);
 
     }
 
     public void GoOutFirstLook() {
         //TableController.inst.ShowAllShops();
         PauseForUi();
-        distansAllMega = GlobalParams.distansOnAllMega;//GlobalParams.minDistancePesr - 100;
+        distansAllMega = GP.distansOnAllMega;//GlobalParams.minDistancePesr - 100;
         stateLookVector3AllMega = posCamera.position;
         MainLogic.inst.ChangeState(ViewStates.allMega);
         MainLogic.inst.HideRoof(3);
@@ -266,7 +270,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public IEnumerator WaitToOff() {
-        yield return new WaitForSeconds(GlobalParams.timeToFly - 0.2f);
+        yield return new WaitForSeconds(GP.timeToFly - 0.2f);
         yield return new WaitForSeconds(1f);
         isFirstLookScene = true;
     }
@@ -303,16 +307,16 @@ public class MegaCameraController : MonoBehaviour {
         angelYCamera.localEulerAngles += new Vector3(0, x * factor, 0);
 
         var currentX = angelXCamera.localEulerAngles.x > 180 ? angelXCamera.localEulerAngles.x - 360 : angelXCamera.localEulerAngles.x;
-        if(currentX >= GlobalParams.cameraXmaxPerspective || currentX <= GlobalParams.cameraXMinPerspective) {
+        if(currentX >= GP.cameraXmaxPerspective || currentX <= GP.cameraXMinPerspective) {
             angelXCamera.localEulerAngles += new Vector3(-y * factor, 0, 0);
         }
 
         currentX = angelXCamera.localEulerAngles.x > 180 ? angelXCamera.localEulerAngles.x - 360 : angelXCamera.localEulerAngles.x;
-        if(currentX < GlobalParams.cameraXmaxPerspective) {
-            angelXCamera.localEulerAngles = new Vector3(GlobalParams.cameraXmaxPerspective, angelXCamera.localEulerAngles.y, 0);
+        if(currentX < GP.cameraXmaxPerspective) {
+            angelXCamera.localEulerAngles = new Vector3(GP.cameraXmaxPerspective, angelXCamera.localEulerAngles.y, 0);
         }
-        if(currentX > GlobalParams.cameraXMinPerspective) {
-            angelXCamera.localEulerAngles = new Vector3(GlobalParams.cameraXMinPerspective, angelXCamera.localEulerAngles.y, 0);
+        if(currentX > GP.cameraXMinPerspective) {
+            angelXCamera.localEulerAngles = new Vector3(GP.cameraXMinPerspective, angelXCamera.localEulerAngles.y, 0);
         }
         currentEndAng = new Vector3(angelXCamera.eulerAngles.x, angelYCamera.eulerAngles.y, 0);
         //Debug.Log(angelXCamera.localEulerAngles.x);
@@ -371,7 +375,7 @@ public class MegaCameraController : MonoBehaviour {
         var startDisCamera = disCamera.localPosition.z;
         var startFieldOfView = perspectiveCamera.fieldOfView;
         var startPerlocalEulerAngles = perspectiveCamera.transform.localEulerAngles;
-        float time = GlobalParams.timeToFly;
+        float time = GP.timeToFly;
         if (GetCurrentDistans() > -5000) {
             time = time * 0.5f;
         }

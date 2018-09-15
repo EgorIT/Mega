@@ -83,21 +83,21 @@ namespace Assets.Mega.Scripts {
                     index = i;
                 }
             }
-            return new Vector3(listStateLooksTransform[index].position.x, GlobalParams.distansEye, listStateLooksTransform[index].position.z);
+            return new Vector3(listStateLooksTransform[index].position.x, GP.distansEye, listStateLooksTransform[index].position.z);
         }
 
         public void StartState () {
             Debug.Log("StartState StateFirstFaceLook");
             //Debug.Log("go StartState");
             if(isHardMove) {
-                MegaCameraController.inst.SetNewPosCamera(FindPoint(), new Vector3(0, GlobalParams.eulerAnglesForCameraInShops.y, 0),
-                    GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.fast);
+                MegaCameraController.inst.SetNewPosCamera(FindPoint(), new Vector3(0, GP.eulerAnglesForCameraInShops.y, 0),
+                    GP.fieldOfViewOnFirstLook, GP.distansOnFirstLook, TypeMoveCamera.fast);
                 StartCoroutine(WaitAfterStartState());
             } else {
                 MegaCameraController.inst.SetNewPosCamera(hardMovePointerMoveToShop.lookPoint.position,
                     hardMovePointerMoveToShop.lookPoint.eulerAngles,
-                    GlobalParams.fieldOfViewOnFirstLook,
-                    GlobalParams.distansOnFirstLook,
+                    GP.fieldOfViewOnFirstLook,
+                    GP.distansOnFirstLook,
                     TypeMoveCamera.fast);
                 StartCoroutine(WaitAfterStartState());
             }
@@ -107,7 +107,7 @@ namespace Assets.Mega.Scripts {
         }
 
         public IEnumerator WaitAfterStartState () {
-            yield return new WaitForSeconds(GlobalParams.timeToFly - 1.8f);
+            yield return new WaitForSeconds(GP.timeToFly - 1.8f);
             TableController.inst.HideAllTable();
             AllCaps.inst.HideAllCaps();
             MainLogic.inst.ShowRoof();
@@ -145,7 +145,7 @@ namespace Assets.Mega.Scripts {
         public void MoveForThisArrowOnFloor (ArrowOnFloor arrowOnFloor) {
             StopClickCoroutine();
             var v3 = new Vector3(/*arrowOnFloor.pointerEventData.pointerCurrentRaycast.worldPosition.x*/arrowOnFloor.transform.position.x,
-                GlobalParams.distansEye,
+                GP.distansEye,
                 /*arrowOnFloor.pointerEventData.pointerCurrentRaycast.worldPosition.z*/arrowOnFloor.transform.position.z);
 
             clickCoroutine = StartCoroutine(IEnumCheckSwipe(v3, MegaCameraController.inst.currentEndAng));
@@ -163,7 +163,7 @@ namespace Assets.Mega.Scripts {
             ArrowController.inst.AllArrowBack();
             //Debug.Log(pointMove.y);
             MegaCameraController.inst.SetNewPosCamera(pointMove, endAng,
-                GlobalParams.fieldOfViewOnFirstLook, GlobalParams.distansOnFirstLook, TypeMoveCamera.normal);
+                GP.fieldOfViewOnFirstLook, GP.distansOnFirstLook, TypeMoveCamera.normal);
         }
 
         //public void GoToNearestShop () {

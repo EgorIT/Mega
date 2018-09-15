@@ -70,7 +70,7 @@ namespace Assets.Mega.Scripts {
                 StopCoroutine(showCoro);
                 showCoro = null;
             }
-            showCoro = StartCoroutine(IEnumChangeScale(GlobalParams.scaleIconShop));
+            showCoro = StartCoroutine(IEnumChangeScale(GP.scaleIconShop));
         }
 
         //public void Update() {
@@ -80,7 +80,7 @@ namespace Assets.Mega.Scripts {
 
         public IEnumerator IEnumChangeScale (Vector3 endScale) {
             var startScale = iconShop.transform.localScale;
-            float time = GlobalParams.timeToShowIcons;
+            float time = GP.timeToShowIcons;
             float currentTime = 0;
             while(currentTime < time) {
                // Debug.Log(shopName + " " + iconShop.transform.localScale.x + " " + startScale + " " + endScale);

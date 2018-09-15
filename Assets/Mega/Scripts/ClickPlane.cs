@@ -9,7 +9,7 @@ namespace Assets.Mega.Scripts {
             //Debug.Log(namePlane);
             switch(namePlane) {
                 case "Kids":
-                    ButonAdds.inst.kids.OnPointerClick(new PointerEventData(EventSystem.current));
+                    ButtonAdds.inst.kids.OnPointerClick(new PointerEventData(EventSystem.current));
                     break;
                 case "20":
                     MainLogic.inst.actionSelectZone(20);

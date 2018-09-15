@@ -79,20 +79,20 @@ namespace Assets.Mega.Scripts {
 
         [ContextMenu("SetZoom")]
         public void SetZoom () {//vsy mega
-            ButonAdds.inst.SetActivCurrentUpButton(ButonAdds.inst.zoomCameraImage);
+            ButtonAdds.inst.SetActiveCurrentUpButton(ButtonAdds.inst.zoomCameraImage);
             KeyController.inst.SetZoom();
         }
 
         [ContextMenu("SetRotate")]
         public void SetRotate () {//360 
-            ButonAdds.inst.SetActivCurrentUpButton(ButonAdds.inst.rotateCameraImage);
+            ButtonAdds.inst.SetActiveCurrentUpButton(ButtonAdds.inst.rotateCameraImage);
             KeyController.inst.SetRotate();
             GoAllMega(false);
         }
 
         [ContextMenu("SetMoveAllMega")]
         public void SetMoveAllMega () {//panorama 
-            ButonAdds.inst.SetActivCurrentUpButton(ButonAdds.inst.moveCameraImage);
+            ButtonAdds.inst.SetActiveCurrentUpButton(ButtonAdds.inst.moveCameraImage);
             KeyController.inst.SetMoveAllMega();
         }
 
@@ -112,7 +112,7 @@ namespace Assets.Mega.Scripts {
             //StartCoroutine(IEnumWaitAfterStart());
             SetMoveAllMega();
             GoAllMega(false);
-            SetActivZoneParking(false);
+            SetActiveZoneParking(false);
 
             actionSelectZone += CallbackSelectZone;
         }
@@ -137,7 +137,7 @@ namespace Assets.Mega.Scripts {
 
         [ContextMenu("GoAllMega")]
         public void GoAllMega (bool showRoof) {
-            MegaCameraController.inst.distansAllMega = GlobalParams.distansOnAllMega;
+            MegaCameraController.inst.distansAllMega = GP.distansOnAllMega;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
             ChangeState(ViewStates.allMega);
             //if(TableController.inst) {
@@ -146,10 +146,10 @@ namespace Assets.Mega.Scripts {
             if (showRoof) {
                 ShowRoof();
             } else {
-                HideRoof(3);
+                HideRoof(1);
             }
        
-            ButonAdds.inst.ShowUpButton();
+            ButtonAdds.inst.ShowUpButton();
             isRoadLook = false;
             KidsArrowController.inst.HideArrow();
             StockArrowController.inst.HideArrow();
@@ -157,7 +157,7 @@ namespace Assets.Mega.Scripts {
 
         [ContextMenu("GoStock")]
         public void GoStock () {
-            MegaCameraController.inst.distansAllMega = GlobalParams.stockDistancePesr;
+            MegaCameraController.inst.distansAllMega = GP.stockDistancePesr;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(83f, 0, -45f);
             ChangeState(ViewStates.allMega);
             if(TableController.inst) {
@@ -169,7 +169,8 @@ namespace Assets.Mega.Scripts {
 
         [ContextMenu("GoKids")]
         public void GoKids () {
-            MegaCameraController.inst.distansAllMega = GlobalParams.kidsDistancePesr;
+            ButtonAdds.inst.SetActiveButtons(false);
+            MegaCameraController.inst.distansAllMega = GP.kidsDistancePesr;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(140f, 0, -55f);
             ChangeState(ViewStates.allMega);
             if(TableController.inst) {
@@ -181,22 +182,22 @@ namespace Assets.Mega.Scripts {
 
 
         public void GoAllRoads() {
-            MegaCameraController.inst.distansAllMega = GlobalParams.maxDistancePesr;
+            MegaCameraController.inst.distansAllMega = GP.maxDistancePesr;
             MegaCameraController.inst.stateLookVector3AllMega = new Vector3(-37f, 0, -220f);
             ChangeState(ViewStates.allMega);
             if(TableController.inst) {
                 TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
             }
-            SetActivZoneParking(true);
+            SetActiveZoneParking(true);
             ParkingArrowsController.inst.SetActivArrow(true);
             ShowRoof();
             SetMoveAllMega();
-            ButonAdds.inst.HideUpButton();
+            ButtonAdds.inst.HideUpButton();
 
             isRoadLook = true;
         }
 
-        public void SetActivZoneParking(bool var) {
+        public void SetActiveZoneParking(bool var) {
             zoneView.SetActive(var);
             zoneClick.SetActive(var);
         }
@@ -258,8 +259,8 @@ namespace Assets.Mega.Scripts {
                 currentTime += Time.deltaTime;
             }
             
-            if(currentTime > GlobalParams.needTimeToSleep && GetViewCurrentStates() != ViewStates.one) {
-                currentTime = GlobalParams.needTimeToSleep;
+            if(currentTime > GP.needTimeToSleep && GetViewCurrentStates() != ViewStates.one) {
+                currentTime = GP.needTimeToSleep;
                 //ChangeState(ViewStates.one);
                 //Timeline.inst.Sleep();
                 //AllCaps.inst.ActivateAll();
@@ -267,7 +268,7 @@ namespace Assets.Mega.Scripts {
             }
 
 
-            if(MegaCameraController.inst.GetCurrentDistans() >= GlobalParams.maxDistancePesr && MegaCameraController.inst.GetCurrentDistans() < -100) {
+            if(MegaCameraController.inst.GetCurrentDistans() >= GP.maxDistancePesr && MegaCameraController.inst.GetCurrentDistans() < -100) {
                 if(!showTableAndCaps) {
                     showTableAndCaps = true;
                     if(TableController.inst) {
@@ -319,6 +320,7 @@ namespace Assets.Mega.Scripts {
             //    return;
             //}
             //Debug.Log("newState = " + newState.ToString());
+            KeyController.inst.HardStopZoom();
             MegaCameraController.inst.PauseForUi();
             for(int i = 0; i < listViewStates.Count; i++) {
                 if(listViewStates[i].GetViewStates() == viewCurrentStates) {

@@ -11,13 +11,4 @@ public class TableData : MonoBehaviour
 	public Text[] blackArray;
 	public Text[] brownArray;
     
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

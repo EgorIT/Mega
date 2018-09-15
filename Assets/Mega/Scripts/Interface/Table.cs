@@ -1,4 +1,5 @@
 using System.Collections;
+using Assets.Mega.Scripts;
 using UnityEngine;
 
 public class Table : MonoBehaviour {
@@ -14,11 +15,15 @@ public class Table : MonoBehaviour {
 
     public bool isButtonRect;
 
+    public bool isSelectTable;
+
+    public DragablePanel dragablePanel;
     public void Awake () {
         rt = gameObject.GetComponent<RectTransform>();
     }
 
     public void Start() {
+        dragablePanel = GetComponent<DragablePanel>();
         if (!isButtonRect) {
             rt.anchoredPosition = outPosition;
             InterfaceController.inst.upperPanelRectTransform.anchoredPosition = outPosition;
@@ -26,14 +31,25 @@ public class Table : MonoBehaviour {
        
     }
 
+    public void RollOut () {
+        if(!canStartRoll) {
+            canStartRoll = true;
+            if(gameObject.activeInHierarchy) {
+                StartCoroutine(Rolling(false));
+            }
+        }
+    }
+
     public void RollIn () {
         if(canStartRoll) {
+            InterfaceController.inst.SwapCurrentTable(this);
             canStartRoll = false;
             StartCoroutine(Rolling(true));
         }
     }
 
     private IEnumerator Rolling (bool rollIn) {
+
         float time = 0;
         //Debug.Log(rt.name);
         //Vector3 startPosition = rt.anchoredPosition;
@@ -53,6 +69,7 @@ public class Table : MonoBehaviour {
             rt.anchoredPosition = inPosition;
             InterfaceController.inst.upperPanelRectTransform.anchoredPosition = rt.anchoredPosition;
             Countdown();
+ 
         } else {
             rt.anchoredPosition = outPosition;
             
@@ -61,14 +78,7 @@ public class Table : MonoBehaviour {
         yield return null;
     }
 
-    public void RollOut () {
-        if(!canStartRoll) {
-            canStartRoll = true;
-            if (gameObject.activeInHierarchy) {
-                StartCoroutine(Rolling(false));
-            }
-        }
-    }
+
 
     public void Countdown () {
        /* if(countdown != null)

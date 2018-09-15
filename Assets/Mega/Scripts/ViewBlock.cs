@@ -29,7 +29,7 @@ namespace Assets.Mega.Scripts {
                 x = posPointMidlle.x / zoneCollider.points.Length;
                 y = posPointMidlle.y / zoneCollider.points.Length;
             }
-            pointMidlle.transform.localPosition = new Vector3(x, GlobalParams.deltaYpointMidlleInViewBlock, y);
+            pointMidlle.transform.localPosition = new Vector3(x, GP.deltaYpointMidlleInViewBlock, y);
             pointMidlle.SetActive(false);
 
             finalCameraTransform.localPosition = Vector3.zero;
@@ -95,10 +95,10 @@ namespace Assets.Mega.Scripts {
                 List<Vector3> listVector3 = new List<Vector3>();
                 for (int i = 0; i < meshCollider.sharedMesh.vertices.Length; i++) {
                     listVector3.Add(new Vector3(meshCollider.sharedMesh.vertices[i].x * r,
-                        GlobalParams.deltaPerimetrInViewBlock, meshCollider.sharedMesh.vertices[i].y * r));
+                        GP.deltaPerimetrInViewBlock, meshCollider.sharedMesh.vertices[i].y * r));
                 }
                 listVector3.Add(new Vector3(meshCollider.sharedMesh.vertices[0].x * r,
-                    GlobalParams.deltaPerimetrInViewBlock, meshCollider.sharedMesh.vertices[0].y * r));
+                    GP.deltaPerimetrInViewBlock, meshCollider.sharedMesh.vertices[0].y * r));
 
                 /* for(int i = 0; i < zoneCollider.points.Length; i++) {
                      listVector3.Add(new Vector3(zoneCollider.points[i].x, GlobalParams.deltaPerimetrInViewBlock, zoneCollider.points[i].y));

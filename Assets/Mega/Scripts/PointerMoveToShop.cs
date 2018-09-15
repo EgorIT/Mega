@@ -24,7 +24,7 @@ namespace Assets.Mega.Scripts {
 
         public void Setup () {
             shopCap = transform.parent.GetComponent<ShopCap>();
-            lookPoint.position = new Vector3(lookPoint.position.x, GlobalParams.distansEye, lookPoint.position.z);
+            lookPoint.position = new Vector3(lookPoint.position.x, GP.distansEye, lookPoint.position.z);
             if(!dontUseAng) {
                 lookPoint.LookAt(shopCap.tableShop.transform);
                 lookPoint.eulerAngles = new Vector3(0, lookPoint.eulerAngles.y, 0);
@@ -48,14 +48,14 @@ namespace Assets.Mega.Scripts {
         }
 
 
-        /*public void GoToFirstLook () {
-            TableController.inst.DisAllShops();
-            PauseForUI();
+        public void GoToFirstLook () {
+            //TableController.inst.DisAllShops();
+            //PauseForUI();
             StateFirstFaceLook.inst.isHardMove = true;
             MainLogic.inst.ChangeState(ViewStates.firstFaceLook);
-            isFirstLookScene = true;
-            StartCoroutine(WaitToOff());
+            //isFirstLookScene = true;
+            //StartCoroutine(WaitToOff());
             //MainLogic.inst.SwapRoof(true);
-        }*/
+        }
     }
 }

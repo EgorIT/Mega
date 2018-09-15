@@ -11,11 +11,6 @@ public class RoofProcessor : MonoBehaviour {
     public static RoofProcessor inst;
     private List<Material> materials = new List<Material>();
     public GameObject glass;
-    
-
-    public void Awake() {
-        inst = this;
-    }
 
     private enum BlendMode {
         Opaque,
@@ -23,6 +18,27 @@ public class RoofProcessor : MonoBehaviour {
         Fade,
         Transparent
     }
+
+    public void Awake() {
+        inst = this;
+    }
+
+    public void Start () {
+        List<MeshRenderer> mrl = new List<MeshRenderer>();
+        GameObject go = GameObject.FindWithTag("Roof");
+        mrl = go.GetComponentsInChildren<MeshRenderer>().ToList();
+
+        mrl.ForEach(x => {
+            x.materials.ToList().ForEach(y => {
+                materials.Add(y);
+                //Debug.Log(y.name+" "+y.GetInstanceID());
+            });
+
+        });
+
+    }
+
+
 
     public void DoTransparent () {
         StartCoroutine(TransparentCoroutine());
@@ -115,20 +131,7 @@ public class RoofProcessor : MonoBehaviour {
         yield return null;
     }
 
-    void Start () {
-        List<MeshRenderer> mrl = new List<MeshRenderer>();
-        GameObject go = GameObject.FindWithTag("Roof");
-        mrl = go.GetComponentsInChildren<MeshRenderer>().ToList();
 
-        mrl.ForEach(x => {
-            x.materials.ToList().ForEach(y => {
-                materials.Add(y);
-                //Debug.Log(y.name+" "+y.GetInstanceID());
-            });
-
-        });
-
-    }
 
     private void Switcher (Material material, BlendMode blendMode) {
         switch(blendMode) {

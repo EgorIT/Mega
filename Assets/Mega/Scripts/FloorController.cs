@@ -66,7 +66,7 @@ namespace Assets.Mega.Scripts {
             }
             float startAlfaFloor = allMeshFloor[0].material.color.a;
             float finalAlfaFloor = 0;
-            float time = GlobalParams.timeFloorSwap * 0.5f;
+            float time = GP.timeFloorSwap * 0.5f;
             float currentTime = 0;
             while(currentTime < time) {
                 for(int i = 0; i < allMeshFloor.Count; i++) {
@@ -91,7 +91,7 @@ namespace Assets.Mega.Scripts {
             }
             startAlfaFloor = 0;
             finalAlfaFloor = 1;
-            time = time = GlobalParams.timeFloorSwap * 0.5f;
+            time = time = GP.timeFloorSwap * 0.5f;
             currentTime = 0;
             while(currentTime < time) {
                 for(int i = 0; i < allMeshFloor.Count; i++) {

@@ -11,11 +11,11 @@ public class CupController: MonoBehaviour {
     public RectTransform content;
     public int? buffered;
     public BoxCollider bufferedCollider;
-    public RectTransform fullscreen;
-    private float widthImage = 436;
-    private float hightImage = 436;
-    private float deltaImage = 470;
-    private float contentSizeX = 1884 * 2;//1884
+    //public RectTransform fullscreen;
+    private float widthImage = 436 * 0.5f;
+    private float hightImage = 436 * 0.5f;
+    private float deltaImage = 470 * 0.5f;
+    private float contentSizeX = 1884 * 2 * 0.5f;//1884
 
     public int currentI;
 
@@ -34,41 +34,60 @@ public class CupController: MonoBehaviour {
     public void ScaleFullscreen (int i) {
         Descaler.inst.currentCupController = this;
         currentI = i;
-        fullscreen.gameObject.SetActive(true);
-        fullscreen.GetComponent<Image>().sprite = sprites[i].sprite;
+        Descaler.inst.fullScreenRect.gameObject.SetActive(true);
+        Descaler.inst.fotoRect.GetComponent<Image>().sprite = sprites[i].sprite;
         StartCoroutine(ScaleUpFullscreen());
     }
 
     [EasyButtons.Button]
     public void SetNextImage() {
+        Descaler.inst.btnNextFoto.gameObject.SetActive(true);
+        Descaler.inst.btnBeforFoto.gameObject.SetActive(true);
         if (currentI == sprites.Length - 1) {
+            Descaler.inst.btnNextFoto.gameObject.SetActive(false);
             return;
         }
 
         currentI++;
-        fullscreen.GetComponent<Image>().sprite = sprites[currentI].sprite;
+        if(currentI == sprites.Length - 1) {
+            Descaler.inst.btnNextFoto.gameObject.SetActive(false);
+        }
+
+        Descaler.inst.fotoRect.GetComponent<Image>().sprite = sprites[currentI].sprite;
     }
 
     [EasyButtons.Button]
     public void SetBeforImage () {
+        Descaler.inst.btnNextFoto.gameObject.SetActive(true);
+        Descaler.inst.btnBeforFoto.gameObject.SetActive(true);
         if(currentI == 0) {
             return;
         }
 
         currentI--;
-        fullscreen.GetComponent<Image>().sprite = sprites[currentI].sprite;
+        if(currentI == 0) {
+            Descaler.inst.btnBeforFoto.gameObject.SetActive(false);
+        }
+
+        Descaler.inst.fotoRect.GetComponent<Image>().sprite = sprites[currentI].sprite;
     }
 
     private IEnumerator ScaleUpFullscreen () {
-        fullscreen.localScale = Vector2.zero;
-        float time = 0.2f;
-        while(time > 0) {
+        Descaler.inst.fotoRect.localScale = Vector2.zero;
+        Descaler.inst.fullScreenRect.localScale = Vector2.zero;
+        var  time = 0.2f;
+        var currentTime = 0f;
+        while(currentTime < time) {
+            var t = currentTime / time;
             //content.sizeDelta = new Vector2(2028-minus, 362);
-            fullscreen.localScale = Vector2.Lerp(Vector2.one, Vector2.zero, time / .5f);
-            time -= Time.deltaTime;
+            Descaler.inst.fotoRect.localScale = Vector2.Lerp(Vector2.zero, Vector2.one * 0.5f, t);
+            Descaler.inst.fullScreenRect.localScale = Vector2.Lerp(Vector2.zero, Vector2.one, t);
+            currentTime += Time.deltaTime;
             yield return null;
         }
-        fullscreen.localScale = Vector2.one;
+
+        Descaler.inst.fotoRect.localScale = Vector2.one * 0.5f;
+        Descaler.inst.fullScreenRect.localScale = Vector2.one;
         yield return null;
     }
 

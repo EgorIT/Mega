@@ -41,20 +41,21 @@ public class WindowMod : MonoBehaviour {
 
     private IEnumerator ReadVideoInfo () {
         yield return new WaitForSeconds(2f);
-        if(!File.Exists(pathInfo)) {
-            Debug.LogError("Path error " + pathInfo);
-            SetSize(3850, 2160);
-            yield break;
-        }
-        var pathInfoGlobalStr = File.ReadAllText(pathInfo);
-        var xmlGlobal = new XmlDocument();
-        xmlGlobal.LoadXml(pathInfoGlobalStr);
-        int i = 0;
-        foreach(XmlElement node in xmlGlobal.SelectNodes("list/info")) {
-            width = Int32.Parse(node.SelectSingleNode("widht").InnerText);
-            height = Int32.Parse(node.SelectSingleNode("height").InnerText);
-        }
-        SetSize(width, height);
+        SetSize(1920, 1080);
+        //if(!File.Exists(pathInfo)) {
+        //    Debug.LogError("Path error " + pathInfo);
+        //    
+        //    yield break;
+        //}
+        //var pathInfoGlobalStr = File.ReadAllText(pathInfo);
+        //var xmlGlobal = new XmlDocument();
+        //xmlGlobal.LoadXml(pathInfoGlobalStr);
+        //int i = 0;
+        //foreach(XmlElement node in xmlGlobal.SelectNodes("list/info")) {
+        //    width = Int32.Parse(node.SelectSingleNode("widht").InnerText);
+        //    height = Int32.Parse(node.SelectSingleNode("height").InnerText);
+        //}
+        //SetSize(width, height);
     }
 
     //public static void StartFromController () {

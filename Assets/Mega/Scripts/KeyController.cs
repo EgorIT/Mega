@@ -56,11 +56,18 @@ namespace Assets.Mega.Scripts {
 
         public void Start() {
 
-            CastButton(ButtonAdds.inst.btnLeftRotate, true, ChangeCameraAngel);
-            CastButton(ButtonAdds.inst.btnRightRotate, false, ChangeCameraAngel);
+            //CastButton(ButtonAdds.inst.btnLeftRotate, true, ChangeCameraAngel);
+            //CastButton(ButtonAdds.inst.btnRightRotate, false, ChangeCameraAngel);
 
-            CastButton(ButtonAdds.inst.btnZoomIn, true, ChangeCameraZoom);
-            CastButton(ButtonAdds.inst.btnZoomOut, false, ChangeCameraZoom);
+            ButtonAdds.inst.btnLeftRotate.onClick.AddListener(() => { RotateCameraForAngel(true); });
+            ButtonAdds.inst.btnRightRotate.onClick.AddListener(() => { RotateCameraForAngel(false); });
+
+            ButtonAdds.inst.btnZoomIn.onClick.AddListener(() => { ZoomCameraForDis(true); });
+            ButtonAdds.inst.btnZoomOut.onClick.AddListener(() => { ZoomCameraForDis(false); });
+
+            
+            //CastButton(ButtonAdds.inst.btnZoomIn, true, ChangeCameraZoom);
+            //CastButton(ButtonAdds.inst.btnZoomOut, false, ChangeCameraZoom);
             SetMoveAllMega();
         }
 
@@ -402,6 +409,45 @@ namespace Assets.Mega.Scripts {
             var deltaMagnitudeDiff = currentSum;
             MegaCameraController.inst.ZoomFromPinch(deltaMagnitudeDiff);
         }
+
+
+        public void ZoomCameraForDis (bool isForward) {
+            ButtonAdds.inst.SetInteractable(false);
+            StartCoroutine(IEnumZoomCameraForDis(isForward));
+        }
+
+        public IEnumerator IEnumZoomCameraForDis (bool isForward) {
+            int indexStep = 0;
+            int countSpets = 5;
+            var dis = 2000;//Mathf.Abs(GP.maxDistancePesr) / 8 - 500;
+            var speedZoom = dis / countSpets;
+            while(indexStep < countSpets) {
+                MegaCameraController.inst.ZoomFromPinch(isForward ? speedZoom : -speedZoom);
+                indexStep++;
+                yield return null;
+            }
+
+            ButtonAdds.inst.SetInteractable(true);
+        }
+
+        public void RotateCameraForAngel(bool isLeft) {
+            ButtonAdds.inst.SetInteractable(false);
+            StartCoroutine(IEnumRotateCameraForAngel(isLeft));
+        }
+
+        public IEnumerator IEnumRotateCameraForAngel(bool isLeft) {
+            int indexStep = 0;
+            int countSpets = 7;
+            int angel = 30;
+            int speedRotate = angel / countSpets;
+            while (indexStep < countSpets) {
+                MegaCameraController.inst.RotateFromPinch(isLeft ? speedRotate : -speedRotate);
+                indexStep++;
+                yield return null;
+            }
+            ButtonAdds.inst.SetInteractable(true);
+        }
+
 
     }
 }

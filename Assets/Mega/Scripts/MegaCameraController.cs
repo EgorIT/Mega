@@ -39,7 +39,17 @@ public class MegaCameraController : MonoBehaviour {
     public float currentFieldOfView;
     private bool _dontUseUi;
 
-    public bool isFirstLookScene;
+    private bool _isFirstLookScene = false;
+    public bool isFirstLookScene {
+        set {
+            _isFirstLookScene = value;
+            if (value) {
+                Debug.Log("adsdf");
+            }
+        }
+
+        get { return _isFirstLookScene; }
+    }
 
     public float distansAllMega;
     public Vector3 stateLookVector3AllMega;
@@ -164,16 +174,21 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public bool CheckPerSize (float delta) {
-        if(GetCurrentDistans() - delta < GP.maxDistancePesr) {
-            disCamera.localPosition = new Vector3(0, 0, GP.maxDistancePesr + 100);
-            return false;
+        bool flag = true;
+
+        var dis1 = GetCurrentDistans() - Mathf.Abs(delta);
+        if(dis1 < GP.maxDistancePesr && delta < 0) {
+            disCamera.localPosition = new Vector3(0, 0, GP.maxDistancePesr);
+            flag = false;
         }
-        if(GetCurrentDistans() + delta > GP.minDistancePesr) {
-            disCamera.localPosition = new Vector3(0, 0, GP.minDistancePesr - 100);
+        var dis2 = GetCurrentDistans() + Mathf.Abs(delta);
+        if(dis2 > GP.minDistancePesr && delta > 0) {
+            disCamera.localPosition = new Vector3(0, 0, GP.minDistancePesr);
             GoToFirstLook(true);
-            return false;
+            flag = false;
         }
-        return true;
+
+        return flag;
     }
 
     public float GetCurrentDistans() {
@@ -219,6 +234,7 @@ public class MegaCameraController : MonoBehaviour {
         if (!isHardMove && MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook) {
             StartCoroutine(FadeHardMove());
         }
+        ButtonAdds.inst.homeOnBasic.gameObject.SetActive(true);
         TableController.inst.HideAllTable();
         PauseForUi();
         StateFirstFaceLook.inst.isHardMove = isHardMove;
@@ -270,8 +286,7 @@ public class MegaCameraController : MonoBehaviour {
     }
 
     public IEnumerator WaitToOff() {
-        yield return new WaitForSeconds(GP.timeToFly - 0.2f);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
         isFirstLookScene = true;
     }
 
@@ -330,8 +345,7 @@ public class MegaCameraController : MonoBehaviour {
         mainCoroutine = StartCoroutine(IEnumSetNewPosCamera(endPos, endAng, finalFieldOfView, finalDistans, TypeCameraOnState.perspective, typeMoveCamera));
     }
 
-    public IEnumerator IEnumSetNewPosCamera (Vector3 endPos, Vector3 endAng, float finalFieldOfView, 
-        float finalDistans, TypeCameraOnState newTypeCameraOnState, TypeMoveCamera typeMoveCamera) {
+    public IEnumerator IEnumSetNewPosCamera (Vector3 endPos, Vector3 endAng, float finalFieldOfView, float finalDistans, TypeCameraOnState newTypeCameraOnState, TypeMoveCamera typeMoveCamera) {
         if(currentTypeCameraOnState == newTypeCameraOnState) {
             /*if(newTypeCameraOnState == TypeCameraOnState.orto) {
                 if(moveCamera != null) {

@@ -39,8 +39,21 @@ namespace Assets.Mega.Scripts {
         public Button btnRollIn;
         public Button btnRollOut;
 
+        public Button homeOnBasic;
+
         public void Awake () {
             inst = this;
+        }
+
+        public void SetInteractable (bool var) {
+            btnLeftRotate.interactable = var;
+            btnRightRotate.interactable = var;
+
+            btnZoomIn.interactable = var;
+            btnZoomOut.interactable = var;
+
+            btnRollIn.interactable = var;
+            btnRollOut.interactable = var;
         }
 
         public void Start () {
@@ -50,6 +63,15 @@ namespace Assets.Mega.Scripts {
             commercialButton.onClick.AddListener(() => { MainLogic.inst.GoVideoCommercional(); });
             videoKidsButton.onClick.AddListener(() => { MainLogic.inst.GoVideokids(); });
             backFromAllShops.onClick.AddListener(() => { MainLogic.inst.GoAllMega(false); });
+
+            homeOnBasic.onClick.AddListener(() => {
+                homeOnBasic.gameObject.SetActive(false);
+                MainLogic.inst.ChangeState(ViewStates.allMega);
+
+                InterfaceController.inst.RollInFromBtn();
+                //ButtonAdds.inst.btnRollIn.gameObject.SetActive(false);
+                //ButtonAdds.inst.btnRollIn.gameObject.SetActive(true);
+            });
 
             goRoads.onClick.AddListener(() => {
                 MainLogic.inst.GoAllRoads();

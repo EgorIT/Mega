@@ -86,6 +86,10 @@ namespace Assets.Mega.Scripts {
             MegaCameraController.inst.SetNewPosCamera(new Vector3(12f, 0, -70f), GP.eulerAnglesForCameraInAllMega, 
                 GP.fieldOfViewOnStateOne, GP.distansOnStateOne, TypeMoveCamera.slow);
 
+            //InterfaceController.inst.ShowBasic();
+
+           // ButtonAdds.inst.btnRollIn.gameObject.SetActive(true);
+           // ButtonAdds.inst.btnRollOut.gameObject.SetActive(false);
             InterfaceController.inst.HardHideAllTable();
         }
 

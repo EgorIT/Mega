@@ -13,7 +13,7 @@ namespace Assets.Mega.Scripts {
         public static Vector3 eulerAnglesForCameraInStateOne = new Vector3(3, 0, 0);
         
         public static float timeToBackFromBorder = 0.5f;
-        public static float timeToFly = 3.5f;
+        public static float timeToFly = 2.5f;
         public static float timeToShowIcons = 0.4f;
 
         public static Vector3 scaleIconShop = new Vector3(0.03f, 0.03f, 0.03f);
@@ -29,11 +29,11 @@ namespace Assets.Mega.Scripts {
         public static float fieldOfViewOnAllMega = 1f;
         public static float fieldOfViewOnFirstLook = 95f;
 
-        public static float distansOnStateOne = -8200f;
-        public static float distansOnAllMega = -8200f;
+        public static float distansOnStateOne = -8000f;
+        public static float distansOnAllMega = -8000f;
         public static float distansOnFirstLook = 0f;
 
-        public static float minDistancePesr = -1000f;
+        public static float minDistancePesr = -1999f;
         public static float maxDistancePesr = -26000f;
         public static float kidsDistancePesr = -4500f;
         public static float stockDistancePesr = -1800f;
@@ -42,8 +42,8 @@ namespace Assets.Mega.Scripts {
 
         public static float distansEye = 1f;
 
-        public static float arrowDistansSqrt = 100f;
-        public static float arrowMinDistansSqrt = 10f;
+        public static float arrowDistansSqrt = 225f;
+        public static float arrowMinDistansSqrt = 15f;
 
         public static float timeFloorSwap = 1f;
 

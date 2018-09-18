@@ -20,6 +20,11 @@ namespace Assets.Mega.Scripts {
 
         public void StartState () {
             Debug.Log("StartState StateAllMega");
+
+            MainLogic.inst.isRoadLook = false;
+            //MegaCameraController.inst.distansAllMega = GP.distansOnAllMega;
+            //MegaCameraController.inst.stateLookVector3AllMega = new Vector3(12f, 0, -70f);
+
             KidsArrowController.inst.HideArrow();
             StockArrowController.inst.HideArrow();
             //ButtonAdds.inst.ShowUpButton();
@@ -28,6 +33,17 @@ namespace Assets.Mega.Scripts {
             MegaCameraController.inst.SetNewPosCamera(MegaCameraController.inst.stateLookVector3AllMega, GP.eulerAnglesForCameraInAllMega, 
                 GP.fieldOfViewOnAllMega, MegaCameraController.inst.distansAllMega, TypeMoveCamera.slow);
             MegaCameraController.inst.ortoRayCastCamera.gameObject.SetActive(true);
+
+
+            InterfaceController.inst.ShowBasic();
+
+            //ButtonAdds.inst.btnRollIn.gameObject.SetActive(true);
+            //ButtonAdds.inst.btnRollOut.gameObject.SetActive(false);
+
+            MainLogic.inst.HideRoof(1);
+
+            MegaCameraController.inst.isFirstLookScene = false;
+
         }
 
         public ViewStates GetViewStates () {

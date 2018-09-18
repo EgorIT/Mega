@@ -177,8 +177,12 @@ namespace Assets.Mega.Scripts {
                 TableController.inst.SetAngelsForIcons(MegaCameraController.inst.angelYCamera.localEulerAngles.y);
             }
             KidsArrowController.inst.ShowArrow();
+
+            ButtonAdds.inst.SetActiveButtons(false);
             //InterfaceController.inst.HardHideBasic();
         }
+
+
 
 
         public void GoAllRoads() {

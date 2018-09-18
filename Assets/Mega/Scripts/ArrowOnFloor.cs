@@ -26,8 +26,7 @@ namespace Assets.Mega.Scripts {
 
         public void CheckPosition () {
             var dist = (transform.position - MegaCameraController.inst.posCamera.position).sqrMagnitude;
-            if(dist < GP.arrowDistansSqrt && dist > GP.arrowMinDistansSqrt && MainLogic.inst.GetViewCurrentStates() ==
-               ViewStates.firstFaceLook) {
+            if(dist < GP.arrowDistansSqrt && dist > GP.arrowMinDistansSqrt && MainLogic.inst.GetViewCurrentStates() == ViewStates.firstFaceLook) {
                 LookBack();
                 if(!collider.enabled) {
                     StartCoroutine(IEnumChangeScale(Vector3.one));
